@@ -1,0 +1,50 @@
+<div class="filtrado">
+    <mat-form-field appearance="fill">
+        <mat-label>Ordenado por</mat-label>
+        <mat-select>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <span class="example-spacer"></span>
+    <button mat-icon-button>
+        <mat-icon>share</mat-icon>
+    </button>
+</div>
+<div class="listado">
+    <mat-card *ngFor="let item of list" class="card-politico">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"><img src="assets/images/iconos/partidos/juntos.png" />
+            </div>
+            <mat-card-title>Juntos por el Perú</mat-card-title>
+            <mat-card-subtitle>Fundación 2017 - 4 años </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                30 Maestria, 20 Bachilleres, 2 E.Media
+                <br>
+                5 Reelección
+            </p>
+        </mat-card-content>
+        <hr>
+        <mat-card-actions>
+            <button mat-icon-button>
+                <mat-icon>description</mat-icon>                
+            </button>
+            <div class="texto">Ver CV</div>
+            <button mat-icon-button>
+                <mat-icon>thumb_down_alt</mat-icon>                
+            </button>
+            <button mat-icon-button>
+                <mat-icon>thumb_up_alt</mat-icon>                
+            </button>
+            <div class="texto">Me representa</div>            
+            <span class="example-spacer"></span>
+            <button mat-icon-button>
+                <mat-icon>share</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+<br>

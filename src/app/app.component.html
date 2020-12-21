@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>¿Qué partido buscas?</span>
+    <span class="example-spacer"></span>    
+    <button mat-icon-button >
+        <mat-icon>search</mat-icon>
+    </button>
+</mat-toolbar>
+
+
+<mat-drawer-container class="sideNavPrincipal" autosize>
+    <mat-drawer #drawer class="menu" mode="over">
+      <p>MENU</p>
+    </mat-drawer>  
+    <mat-drawer-content class="contenido">     
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from '../../servicios/restapi.service';
 
 @Component({
   selector: 'app-partidos',
@@ -6,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./partidos.component.scss']
 })
 export class PartidosComponent implements OnInit {  
-  constructor() { }
+  constructor(private restApi:RestApiService) { }
 
   list=["","","","",""]
 
   ngOnInit(): void {
+    this.restApi.getOrganizacionPolitica().subscribe(res =>{
+      if( res['status'] === 'success' ){
+        console.log(res);
+      }else{
+      }
+    }, error => {  });
   }
+
+
+
 
 }

@@ -13,6 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+//
+import { HttpClientModule } from '@angular/common/http';
 
  
 /*Componnetes */
@@ -35,7 +37,8 @@ import { PartidosComponent } from './paginas/partidos/partidos.component';
     MatButtonModule,
     MatSidenavModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

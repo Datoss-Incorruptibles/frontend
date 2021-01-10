@@ -13,6 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 //
 import { HttpClientModule } from '@angular/common/http';
 
@@ -30,6 +32,7 @@ import { PartidosComponent } from './paginas/partidos/partidos.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,
@@ -38,7 +41,7 @@ import { PartidosComponent } from './paginas/partidos/partidos.component';
     MatSidenavModule,
     MatSelectModule,
     MatCardModule,
-    HttpClientModule
+    MatProgressBarModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

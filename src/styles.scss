@@ -1,7 +1,86 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+//angular theme
+@import '~@angular/material/theming';
+@include mat-core(); 
 
-/* You can add global styles to this file, and also import other style files */
+$bv-brand: (
+    50: #274482,
+    100: #dde6f3,
+    200: #b4c9e4,
+    300: #7fa3d1,
+    400: #6992c9,
+    500: #fff,
+    600: #4072b4,
+    700: #38649d,
+    800: #305687,
+    900: #284770,
+    A100: #ffffff,
+    A200: #dde6f3,
+    A400: #6992c9,
+    A700: #38649d,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: #274482,
+        600: #274482,
+        700: #274482,
+        800: #274482,
+        900: #274482,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: #274482,
+    )
+);
+
+$bv-orange: (
+    50: #ffffff,
+    100: #fff7f4,
+    200: #fecdbd,
+    300: #fc9977,
+    400: #fc8259,
+    500: #fb6c3b,
+    600: #fa551d,
+    700: #f44205,
+    800: #d63a04,
+    900: #b83204,
+    A100: #ffffff,
+    A200: #fff7f4,
+    A400: #fc8259,
+    A700: #f44205,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: #274482,
+        600: #274482,
+        700: #274482,
+        800: #274482,
+        900: #274482,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: #274482,
+    )
+);
+
+// mandatory stuff for theming
+$bv-palette-primary: mat-palette($bv-brand);
+$bv-palette-accent:  mat-palette($bv-orange);
+
+// include the custom theme components into a theme object
+$bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
+
+// include the custom theme object into the angular material theme
+@include angular-material-theme($bv-theme);
+
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -11,5 +90,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 app-partidos{
     width: 100%;
     padding: 40px 22px;
+    background-color: #D5E4FF;
+    mat-form-field{
+        &.mat-form-field-type-mat-select{
+            .mat-form-field-flex{
+                background-color: white;
+                border-style: solid;
+                border-color: #687CA7;
+                border-width: 1px;
+                border-radius: 6px;
+            }
+            .mat-form-field-underline{
+                display: none;
+            }
+        }
+    }
 }
 

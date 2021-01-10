@@ -12,20 +12,37 @@
         <mat-icon>share</mat-icon>
     </button>
 </div>
+<mat-progress-bar mode="indeterminate" *ngIf="partidos.length==0" ></mat-progress-bar>
 <div class="listado">
-    <mat-card *ngFor="let item of list" class="card-politico">
+    <mat-card *ngFor="let partido of partidos" class="card-politico">
         <mat-card-header>
-            <div mat-card-avatar class="example-header-image"><img src="assets/images/iconos/partidos/juntos.png" />
+            <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />
             </div>
-            <mat-card-title>Juntos por el Perú</mat-card-title>
-            <mat-card-subtitle>Fundación 2017 - 4 años </mat-card-subtitle>
+            <mat-card-title>{{partido.nombre}}</mat-card-title>
+            <mat-card-subtitle>Fundación {{partido.fundacion_fecha}} - {{ fnAnios(partido.fundacion_fecha) }} años </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <p>
-                30 Maestria, 20 Bachilleres, 2 E.Media
+           
+            <p> 
+                 <!--Estudios ID 1 -->
+                • 
+                <span *ngFor="let indicador of fnIndicadores(partido,1)">
+                    {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                </span>
+                <!--Sentencias y procesos, ID 3 -->
                 <br>
-                5 Reelección
-            </p>
+                • 
+                <span *ngFor="let indicador of fnIndicadores(partido,3)">
+                    {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                </span>
+                <!--trayectoria ID 2 -->
+                <br>
+                • 
+                <span *ngFor="let indicador of fnIndicadores(partido,2)">
+                    {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                </span>
+                
+            </p> 
         </mat-card-content>
         <hr>
         <mat-card-actions>

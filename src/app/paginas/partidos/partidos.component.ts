@@ -9,18 +9,24 @@ import { RestApiService } from '../../servicios/restapi.service';
 export class PartidosComponent implements OnInit {  
   constructor(private restApi:RestApiService) { }
 
-  list=["","","","",""]
+  partidos:any=[];
 
   ngOnInit(): void {
     this.restApi.getOrganizacionPolitica().subscribe(res =>{
+      console.log(res); 
+      this.partidos=res;
       if( res['status'] === 'success' ){
-        console.log(res);
+        
       }else{
       }
     }, error => {  });
   }
 
+  fnAnios(anio){
+    return (new Date()).getFullYear() - parseInt(anio);
+  }
 
-
-
+  fnIndicadores(partido,id){
+    return partido.indicadorescategoriaorg.filter(elem => elem.indicador==id)
+  }
 }

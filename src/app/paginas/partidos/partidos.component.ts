@@ -15,11 +15,19 @@ export class PartidosComponent implements OnInit {
     this.restApi.getOrganizacionPolitica().subscribe(res =>{
       console.log(res); 
       this.partidos=res;
-      if( res['status'] === 'success' ){
-        
-      }else{
-      }
+      this.onOrdernar("nombre");
     }, error => {  });
+  }
+
+  onOrdernar(parametro){
+    console.log(parametro);
+    this.partidos=this.partidos.sort(function(a,b){
+      console.log(a[parametro] < b[parametro]);
+      
+        if(a[parametro] < b[parametro]) { return -1; }
+        if(a[parametro] > b[parametro]) { return 1; }
+      return 0;      
+    });
   }
 
   fnAnios(anio){

@@ -17,7 +17,10 @@ export class RestApiService {
   getOrganizacionPolitica() {
     return this.http.get(this.domain+"organizacionpolitica/?format=json",this.httpOptions);
   }
-  
+
+  onOrdernar(data){
+    console.log(data);
+  }
 
 
 }

@@ -1,10 +1,9 @@
 <div class="filtrado">
     <mat-form-field appearance="fill">
         <mat-label>Ordenado por</mat-label>
-        <mat-select>
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2">Option 2</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
+        <mat-select (selectionChange)="onOrdernar($event.value)">
+            <mat-option value="nombre">Nombre</mat-option>
+            <mat-option value="fundacion_fecha">Antiguedad</mat-option>
         </mat-select>
     </mat-form-field>
     <span class="example-spacer"></span>
@@ -19,10 +18,9 @@
             <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />
             </div>
             <mat-card-title>{{partido.nombre}}</mat-card-title>
-            <mat-card-subtitle>Fundación {{partido.fundacion_fecha}} - {{ fnAnios(partido.fundacion_fecha) }} años </mat-card-subtitle>
+            <mat-card-subtitle>Fundación {{partido.fundacion_fecha + " &nbsp;&nbsp;&nbsp; "}} {{ fnAnios(partido.fundacion_fecha) }} años </mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content>
-           
+        <mat-card-content>           
             <p> 
                  <!--Estudios ID 1 -->
                 • 
@@ -38,7 +36,7 @@
                 <!--trayectoria ID 2 -->
                 <br>
                 • 
-                <span *ngFor="let indicador of fnIndicadores(partido,2)">
+                <span *ngFor="let indicador of fnIndicadores(partido,5)">
                     {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
                 </span>
                 

@@ -45,13 +45,13 @@
                 <br>
                 • 
                 <span *ngFor="let indicador of fnIndicadores(partido,4)">
-                    {{indicador.cantidad + "% " + indicador.indicador_categoria_nombre}}
+                    {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
                 </span>
                 <!--vizcarra ID 6 -->
                 <br>
                 • 
                 <span *ngFor="let indicador of fnIndicadores(partido,6)">
-                    {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                    {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
                 </span>
                 
             </p> 

@@ -41,6 +41,18 @@
                 <span *ngFor="let indicador of fnIndicadores(partido,5)">
                     {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
                 </span>
+                <!--congreso actual ID 4 -->
+                <br>
+                • 
+                <span *ngFor="let indicador of fnIndicadores(partido,4)">
+                    {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                </span>
+                <!--vizcarra ID 6 -->
+                <br>
+                • 
+                <span *ngFor="let indicador of fnIndicadores(partido,6)">
+                    {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                </span>
                 
             </p> 
         </mat-card-content>

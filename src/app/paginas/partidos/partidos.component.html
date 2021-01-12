@@ -24,34 +24,25 @@
         </mat-card-header>
         <mat-card-content>           
             <p> 
-                 <!--Estudios ID 1 -->
-                • 
-                <span *ngFor="let indicador of fnIndicadores(partido,1)">
-                    {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                 <!--Estudios ID 1 -->                
+                <span *ngFor="let indicador of fnIndicadores(partido,1); let i = index">
+                    <span *ngIf="i==0">• </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}                    
                 </span>
-                <!--Sentencias y procesos, ID 3 -->
-                <br>
-                • 
-                <span *ngFor="let indicador of fnIndicadores(partido,3)">
-                    {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                <!--Sentencias y procesos, ID 3 -->                
+                <span *ngFor="let indicador of fnIndicadores(partido,3); let i = index">
+                    <span *ngIf="i==0"><br>• </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
                 </span>
                 <!--trayectoria ID 2 -->
-                <br>
-                • 
-                <span *ngFor="let indicador of fnIndicadores(partido,5)">
-                    {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                <span *ngFor="let indicador of fnIndicadores(partido,5); let i = index">
+                    <span *ngIf="i==0"><br>• </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
                 </span>
                 <!--congreso actual ID 4 -->
-                <br>
-                • 
-                <span *ngFor="let indicador of fnIndicadores(partido,4)">
-                    {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
+                <span *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
+                    <span *ngIf="i==0"><br>• </span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
                 </span>
                 <!--vizcarra ID 6 -->
-                <br>
-                • 
-                <span *ngFor="let indicador of fnIndicadores(partido,6)">
-                    {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
+                <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
+                    <span *ngIf="i==0"><br>• </span> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
                 </span>
                 
             </p> 

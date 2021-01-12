@@ -4,7 +4,7 @@
         <mat-select (selectionChange)="onOrdernar($event.value)">
             <mat-option value="nombre">Nombre</mat-option>
             <mat-option value="fundacion_fecha">Antiguedad</mat-option>
-            <mat-option value="indicadorCantidadSentencias">Sentencias</mat-option>
+            <mat-option value="indicadorCantidadSentencias">Numero de Sentencias</mat-option>
             
         </mat-select>
     </mat-form-field>
@@ -45,13 +45,15 @@
             </p> 
         </mat-card-content>
         <hr>
-        <!--mat-card-actions>
+        <mat-card-actions>
 
 
-            <button mat-icon-button>
+            <button routerLink="/partido/{{partido.id}}" [state]="partido" mat-icon-button>
                 <mat-icon>description</mat-icon>                
             </button>
-            <div class="texto">Ver CV</div>
+            <div class="texto">Ver más</div>
+
+            <!--
             <button mat-icon-button>
                 <mat-icon>thumb_down_alt</mat-icon>                
             </button>
@@ -64,8 +66,11 @@
                 <mat-icon>share</mat-icon>
             </button>
 
+            -->
             
-        </!--mat-card-actions-->
+
+            
+        </mat-card-actions>
     </mat-card>
 </div>
 <br>

@@ -14,19 +14,24 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatTabsModule} from '@angular/material/tabs';
 
 //
 import { HttpClientModule } from '@angular/common/http';
 
  
 /*Componnetes */
-import { PartidosComponent } from './paginas/partidos/partidos.component';
+import { PartidosComponent } from '../app/paginas/partidos/partidos.component';
+import { DetalleComponent } from '../app/paginas/detalle/detalle.component';
+import { DetallePartidoIndicadoresComponent } from '../app/paginas/detalle-partido-indicadores/detalle-partido-indicadores.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PartidosComponent
+    PartidosComponent,
+    DetalleComponent,
+    DetallePartidoIndicadoresComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { PartidosComponent } from './paginas/partidos/partidos.component';
     MatSidenavModule,
     MatSelectModule,
     MatCardModule,
-    MatProgressBarModule    
+    MatProgressBarModule   ,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

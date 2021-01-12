@@ -3,8 +3,8 @@ import { RestApiService } from '../../servicios/restapi.service';
 
 @Component({
   selector: 'app-partidos',
-  templateUrl: './partidos.component.html',
-  styleUrls: ['./partidos.component.scss']
+  templateUrl: 'partidos.component.html',
+  styleUrls: ['partidos.component.scss']
 })
 export class PartidosComponent implements OnInit {  
   constructor(private restApi:RestApiService) { }

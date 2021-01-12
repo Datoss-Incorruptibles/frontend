@@ -1,4 +1,113 @@
 <div class="ComponenteIndicadores" *ngIf="partido">
+    <div class="indicadores">
+        <div class="sentencias">
+            <div style="margin-left:10px" >
+            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                gavel
+            </mat-icon>
+            <label>Sentencias</label>
+            </div>
+            <div style="flex-direction: row; display: flex;">
+                <div class="colum_sentencia">
+                    <div>
+                        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                            thumb_up
+                        </mat-icon>
+                        <div>Sin sentencias</div>
+                    </div>
+                </div>
+                <div class="colum_sentencia">
+                    <div>
+                        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                            thumb_down
+                        </mat-icon>
+                        <div>Civiles y penales</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="trayectoria_politica">
+            <div style="margin-left:10px; margin-bottom: 20px;" >
+                <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                    business_center
+                </mat-icon>
+                <label>Trayectoria Politica</label>
+                <div style="flex-direction: row; display: flex;">
+                    <div class="colum_trayectoria">
+                        <div>
+                            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                accessibility
+                            </mat-icon>
+                            <label>10</label>
+                            <div>reeleccion</div>
+                        </div>
+                    </div>
+                    <div class="colum_trayectoria">
+                        <div>
+                            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                accessibility
+                            </mat-icon>
+                            <label>5</label>
+                            <div>3ra reelecion</div>
+                        </div>
+                    </div>
+                    <div class="colum_trayectoria">
+                        <div>
+                            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                accessibility
+                            </mat-icon><label>5</label>
+                            <div>ex alcades</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="academico">
+            <div style="margin-left:10px" >
+            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                school
+            </mat-icon>
+            <label>Academicas</label>
+            </div>
+            <div style="flex-direction: row; display: flex;">
+                <div class="tabla_academico">
+                    ..
+                </div>
+                <div class="leyenda_academico">
+                    <div>Doctorado</div>
+                    <div>Maestria</div>
+                    <div>Titulados</div>
+                    <div>Bachiller</div>
+                    <div>Secundaria</div>
+                </div>
+            </div>
+        </div>
+        <div class="profesiones" style="padding-top: 10px;">
+            <div style="margin-left:10px" >
+            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                school
+            </mat-icon>
+            <label>Profesiones</label>
+            </div>
+            <div style="flex-direction: row; display: flex;">
+                <div class="tabla_academico">
+                    ..
+                </div>
+                <div class="leyenda_academico">
+                    <div>Abogados</div>
+                    <div>Administracion</div>
+                </div>
+            </div>
+        </div>
+        <div class="bienes_ingresos" style="padding-top: 10px;">
+            <div style="margin-left:10px" >
+            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                money
+            </mat-icon>
+            <label>Bienes e ingresos</label>
+            </div>
+        </div>
+    </div>
     {{ "Indicador Estudio : " + partido.indicadorCantidadEstudio}}
     <br>
     {{ "Indicador Cantidad de Sentencias : " + partido.indicadorCantidadSentencias}}

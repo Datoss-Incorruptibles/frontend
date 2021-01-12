@@ -1,0 +1,63 @@
+.indicador{
+    color: #dc8e1a;
+}
+.indicadores_partido{
+    flex-direction: row;
+    display: flex;
+    color: 000000;
+}
+.indicador_unitario{
+    width: 33.3%;
+    height: 50px;
+    text-align: center;
+}
+.sentenciados{
+    color:#ff0000;
+}
+.barra_navegacion{
+    background-color:#fafafa;
+    height: 30px; 
+    flex-direction: row;
+    display: flex;
+}
+.opcion_navegacion{
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    margin-top: 5px;
+}
+.indicadores{
+    background-color:#fafafa;
+    height: 100%;
+    padding: 20px 25px;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 0;
+}
+.sentencias{
+    margin-bottom: 20px;
+}
+.colum_sentencia{
+    height: 100%;
+    width: 50%;
+    text-align: center;
+}
+.colum_trayectoria{
+    height: 100%;
+    width: 33.3%;
+    text-align: center;
+}
+.tabla_academico{
+    text-align: center;
+    width: 80%;
+    height: 160px;
+    margin-left: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+.leyenda_academico{
+    text-align: center;
+    width: 20%;
+    margin-left: 10px;
+}

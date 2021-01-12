@@ -1,3 +1,47 @@
 .paginaPartido{
     max-width: 100vw;
 }
+.cabecera{
+    width: 100%;
+    padding: 10px 0px;
+    background-color: #D5E4FF;
+}
+.partido_info{
+    flex-direction: row;
+    display: flex;
+}
+.imagen_partido{
+    height: 75px;
+    width: 70px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.imagn{
+    width: 100%;
+    height: 100%;
+    border-radius:150px;
+}
+.texto_partido{
+    margin-top: 6px;
+    font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    width: 70%;
+}
+#nombrepartido{
+    font-size: 20px;
+    font-weight: 500;
+    color: #274482;
+}
+#fundacionpartido{
+    margin-top: 3px;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;;
+}
+#porcentajepartido{
+    margin-top: 3px;
+    color: #dc8e1a;
+}
+.iconoshare{
+    position: relative;
+    text-align: right;
+}

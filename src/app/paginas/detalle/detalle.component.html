@@ -1,6 +1,22 @@
 <div class="paginaPartido">
-    <p>{{partido.nombre}}</p>
-
+    
+    <div class="cabecera">
+        <div class="partido_info">
+            <div class="imagen_partido">
+                <img _ngcontent-jxr-c95="" src="https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo/21" class="imagn">
+            </div>
+            <div class="texto_partido">
+                <div id="nombrepartido">{{partido.nombre}}</div>
+                <div id="fundacionpartido">Fundacion y años del partido</div>
+                <div id="porcentajepartido">Porcentaje en el congreso / posicion relativa</div>
+            </div>
+            <div class="iconoshare">
+                <mat-icon _ngcontent-jxr-c95="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                    share
+                </mat-icon>
+            </div>
+        </div>
+      </div>
     <mat-tab-group  mat-stretch-tabs>
         <mat-tab label="Indicadores">
             <app-detalle-partido-indicadores [partido]="partido"></app-detalle-partido-indicadores>

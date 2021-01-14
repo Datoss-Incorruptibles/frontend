@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { URL_API, PARAMS_OPTION, CHARGE } from '../shared/_constants/constant.commons';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,17 @@ export class RestApiService {
     return this.http.get(this.domain+"organizacionpolitica/?format=json",this.httpOptions);
   }
 
+
+  getParlamentoByOrganization(idOrganization: string) {
+    let _url = this.domain + URL_API.candidato;
+    let params = new HttpParams().set("cargo_ids", CHARGE.PARLAMENTO_ANDINO).set("organizacion_politica_id", idOrganization); //Create new HttpParams
+    
+    return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
+  }
+
   onOrdernar(data){
     console.log(data);
   }
-
+  
 
 }

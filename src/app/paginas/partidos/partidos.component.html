@@ -15,6 +15,11 @@
 </div>
 <mat-progress-bar mode="indeterminate" *ngIf="partidos.length==0" ></mat-progress-bar>
 <div class="listado">
+
+    <!-- <app-partido-andino></app-partido-andino>
+ -->
+
+
     <mat-card *ngFor="let partido of partidos" class="card-politico">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />

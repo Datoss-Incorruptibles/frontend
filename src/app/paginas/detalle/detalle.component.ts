@@ -13,7 +13,7 @@ export class DetalleComponent implements OnInit {
   ngOnInit(): void {
 
     if(history.state.id){
-      this.partido=history.state;
+      this.partido=history.state; 
     }else{
       this.router.navigate(['/partidos']);
     }

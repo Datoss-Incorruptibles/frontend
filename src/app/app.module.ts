@@ -26,6 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PartidosComponent } from '../app/paginas/partidos/partidos.component';
 import { DetalleComponent } from '../app/paginas/detalle/detalle.component';
 import { DetallePartidoIndicadoresComponent } from '../app/paginas/detalle-partido-indicadores/detalle-partido-indicadores.component';
+import { PartidoAndinoComponent } from './paginas/detalle/partido-andino/partido-andino.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -33,10 +35,18 @@ import { DetallePartidoIndicadoresComponent } from '../app/paginas/detalle-parti
     AppComponent,
     PartidosComponent,
     DetalleComponent,
-    DetallePartidoIndicadoresComponent
+    DetallePartidoIndicadoresComponent,
+    PartidoAndinoComponent
+  ],
+  exports:[
+     PartidosComponent,
+    DetalleComponent,
+    DetallePartidoIndicadoresComponent,
+    PartidoAndinoComponent
   ],
   imports: [
     BrowserModule,
+    
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
@@ -51,7 +61,8 @@ import { DetallePartidoIndicadoresComponent } from '../app/paginas/detalle-parti
     MatCardModule,
     MatProgressBarModule   ,
     MatTabsModule,
-    MatListModule
+    MatListModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

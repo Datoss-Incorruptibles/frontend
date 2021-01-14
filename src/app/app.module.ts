@@ -15,6 +15,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 //
 import { HttpClientModule } from '@angular/common/http';
@@ -37,6 +39,7 @@ import { DetallePartidoIndicadoresComponent } from '../app/paginas/detalle-parti
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     HttpClientModule,
     MatSliderModule,
     MatToolbarModule,
@@ -47,7 +50,8 @@ import { DetallePartidoIndicadoresComponent } from '../app/paginas/detalle-parti
     MatSelectModule,
     MatCardModule,
     MatProgressBarModule   ,
-    MatTabsModule
+    MatTabsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

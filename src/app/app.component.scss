@@ -9,9 +9,11 @@
     height: calc( 100% - 56px);
     /*border: 1px solid rgba(0, 0, 0, 0.5);*/
     .menu{
+        
         padding: 20px;
     }
     .contenido{
+
         display: flex;
         height: 100%;
         /*align-items: center;*/
@@ -19,3 +21,32 @@
     }
 
 }
+mat-nav-list span{
+    color: white;
+}
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+
+}
+
+
+#acercade{
+    position: absolute;
+    bottom: 0;
+    width: 250px;
+    height: 150px;
+}
+
+mat-sidenav {
+    width: 250px;
+    background-color: #2c4484;
+
+}
+
+main {
+   width: 100%;
+    padding: 20px 12px;
+    background-color: #D5E4FF;
+}
+

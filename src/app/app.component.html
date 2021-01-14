@@ -1,3 +1,5 @@
+
+<!--
 <mat-toolbar color="primary">
     <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
@@ -9,13 +11,100 @@
     </button>
 </mat-toolbar>
 
-
 <mat-drawer-container class="sideNavPrincipal" autosize>
     <mat-drawer #drawer class="menu" mode="over">
       <p>MENU</p>
     </mat-drawer>  
     <mat-drawer-content class="contenido">     
         <router-outlet></router-outlet>
+        
     </mat-drawer-content>
 </mat-drawer-container>
+-->
+<!--
+<mat-toolbar color="primary" >
+    <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>¿Qué partido buscas?</span>
+    <span class="example-spacer"></span>    
+    <button mat-icon-button >
+        <mat-icon>search</mat-icon>
+    </button>
+
+</mat-toolbar>
+
+
+<mat-drawer-container class="sideNavPrincipal" autosize>
+    <mat-drawer #drawer class="menu" mode="over">
+      <p>MENU</p>
+    </mat-drawer>  
+    <mat-drawer-content class="contenido">   
+        
+     
+        <router-outlet ></router-outlet>
+       
+        
+    </mat-drawer-content>
+</mat-drawer-container>
+-->
+
+
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav role="navigation" class="shadow border-0" fixedInViewport>
+
+        <mat-nav-list >     
+
+            <div fxLayoutAlign="end" >
+            <button style="color:white;" mat-icon-button (click)="sidenav.close()" >
+                <mat-icon>cancel</mat-icon>
+            </button>
+            </div>    
+            <a mat-list-item routerLink="/" routerLinkActive (click)="sidenav.close()">
+                <mat-icon></mat-icon> <span class="nav-caption">Porqué elegir bien?</span>
+            </a>
+            <hr style="color:#ced4e2;" />
+            <a mat-list-item routerLink="/" routerLinkActive (click)="sidenav.close()">
+                <mat-icon></mat-icon> <span class="nav-caption">Partidos</span>   
+            </a>
+            <a mat-list-item routerLink="/" routerLinkActive (click)="sidenav.close()">
+                <mat-icon></mat-icon> <span class="nav-caption">Candidatos</span>   
+            </a>
+            <a mat-list-item routerLink="/" routerLinkActive (click)="sidenav.close()">
+                <mat-icon></mat-icon> <span class="nav-caption">Indicadores Generales</span>   
+            </a>
+            	
+            <hr style="color: #ced4e2;" />
+            <a mat-list-item routerLink="/" routerLinkActive (click)="sidenav.close()">
+                <mat-icon></mat-icon><span class="nav-caption">Me representan</span>
+            </a>
+            <hr style="color: #ced4e2;" />
+
+            <div  id="acercade" > 
+                <hr style="color: #ced4e2;" />
+                <a mat-list-item routerLink="/" routerLinkActive (click)="sidenav.close()">
+                    <mat-icon></mat-icon><span class="nav-caption">Acerca de</span>
+                </a>
+
+            </div>
+          </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content >
+        <div (sidenavToggle)="sidenav.toggle()" >
+            <mat-toolbar color="primary" >
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <span>¿Qué partido buscas?</span>
+                <span class="example-spacer"></span>    
+                <button mat-icon-button >
+                    <mat-icon>search</mat-icon>
+                </button>
+            </mat-toolbar>
+        </div>
+        <main>
+             <router-outlet ></router-outlet>
+        </main>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
 

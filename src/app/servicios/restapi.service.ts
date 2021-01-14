@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RestApiService {
-  private domain: string = "https://tpznealyvb.execute-api.us-east-2.amazonaws.com/dev/api/";
+  private domain: string = "https://api-dev.candidatos.pe/v1/";
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

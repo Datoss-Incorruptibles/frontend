@@ -1,4 +1,4 @@
-export interface IPartidoAndino{
+export interface Candidato{
     id: string; 
     jne_idcandidato: string; 
     jne_idhojavida: string; 

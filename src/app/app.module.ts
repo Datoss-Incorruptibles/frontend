@@ -27,6 +27,8 @@ import { PartidosComponent } from '../app/paginas/partidos/partidos.component';
 import { DetalleComponent } from '../app/paginas/detalle/detalle.component';
 import { DetallePartidoIndicadoresComponent } from '../app/paginas/detalle-partido-indicadores/detalle-partido-indicadores.component';
 import { PartidoAndinoComponent } from './paginas/detalle/partido-andino/partido-andino.component';
+import { ListadoPresidenteComponent} from './paginas/detalle/listado-presidente/listado-presidente.component';
+import { ListadoCongresistaComponent} from './paginas/detalle/listado-congresista/listado-congresista.component';
 import { SharedModule } from './shared/shared.module';
 
 
@@ -36,17 +38,20 @@ import { SharedModule } from './shared/shared.module';
     PartidosComponent,
     DetalleComponent,
     DetallePartidoIndicadoresComponent,
-    PartidoAndinoComponent
+    PartidoAndinoComponent,
+    ListadoPresidenteComponent,
+    ListadoCongresistaComponent
   ],
   exports:[
-     PartidosComponent,
+    PartidosComponent,
     DetalleComponent,
     DetallePartidoIndicadoresComponent,
-    PartidoAndinoComponent
+    PartidoAndinoComponent,
+    ListadoPresidenteComponent,
+    ListadoCongresistaComponent
   ],
   imports: [
-    BrowserModule,
-    
+    BrowserModule,    
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,

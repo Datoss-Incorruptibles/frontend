@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { IPartidoAndino } from '../../../shared/_interfaces/partido-andino.interface';
+ 
 
 @Component({
   selector: 'app-partido-andino',

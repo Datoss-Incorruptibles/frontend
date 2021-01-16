@@ -1,7 +1,7 @@
 <div class="filtrado">
 <mat-form-field appearance="fill">
     <mat-label>Filtro: Región</mat-label>
-    <mat-select #matselect [(ngModel)]="regselect" (selectionChange)="onFiltroRegion($event.value)">
+    <mat-select  (selectionChange)="onFiltroRegion($event.value)">
         <mat-option *ngFor="let region of REGIONES" [value] = "region.name">
             {{region.name}}
         </mat-option>    

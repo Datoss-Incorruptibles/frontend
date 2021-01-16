@@ -29,3 +29,22 @@
 hr{
     border: 0.5px solid #ebebeb;
 }
+
+
+
+.card-header{
+    width: 100%;
+    display: block;
+}
+.card-name{
+    width: 90%;
+    display: inline-block;
+}
+
+.card-position{
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+}
+

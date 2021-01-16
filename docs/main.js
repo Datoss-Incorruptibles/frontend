@@ -360,6 +360,67 @@ PartidosComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
 
 /***/ }),
 
+/***/ "AO1e":
+/*!************************************************************************************!*\
+  !*** ./src/app/paginas/detalle/listado-presidente/listado-presidente.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: ListadoPresidenteComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListadoPresidenteComponent", function() { return ListadoPresidenteComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _servicios_restapi_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../servicios/restapi.service */ "XPnp");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _shared_components_card_card_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../shared/_components/card/card.component */ "PHdk");
+
+
+
+
+
+
+function ListadoPresidenteComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-card", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const candidato_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("candidato", candidato_r1);
+} }
+class ListadoPresidenteComponent {
+    constructor(restApiService, activeRoute) {
+        this.restApiService = restApiService;
+        this.activeRoute = activeRoute;
+    }
+    ngOnInit() {
+        this.restApiService.getPresidenteByOrganization(this.politicParty.id).subscribe((data) => {
+            this.presidente = data;
+        });
+    }
+}
+ListadoPresidenteComponent.ɵfac = function ListadoPresidenteComponent_Factory(t) { return new (t || ListadoPresidenteComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_servicios_restapi_service__WEBPACK_IMPORTED_MODULE_1__["RestApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"])); };
+ListadoPresidenteComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ListadoPresidenteComponent, selectors: [["app-listado-presidente"]], inputs: { politicParty: "politicParty" }, decls: 1, vars: 1, consts: [[4, "ngFor", "ngForOf"], [3, "candidato"]], template: function ListadoPresidenteComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ListadoPresidenteComponent_div_0_Template, 2, 1, "div", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.presidente);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _shared_components_card_card_component__WEBPACK_IMPORTED_MODULE_4__["CardComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2luYXMvZGV0YWxsZS9saXN0YWRvLXByZXNpZGVudGUvbGlzdGFkby1wcmVzaWRlbnRlLmNvbXBvbmVudC5zY3NzIn0= */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ListadoPresidenteComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-listado-presidente',
+                templateUrl: './listado-presidente.component.html',
+                styleUrls: ['./listado-presidente.component.scss']
+            }]
+    }], function () { return [{ type: _servicios_restapi_service__WEBPACK_IMPORTED_MODULE_1__["RestApiService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }]; }, { politicParty: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
+
+
+/***/ }),
+
 /***/ "AytR":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -593,6 +654,67 @@ DetallePartidoIndicadoresComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
+/***/ "Lsm6":
+/*!**************************************************************************************!*\
+  !*** ./src/app/paginas/detalle/listado-congresista/listado-congresista.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: ListadoCongresistaComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListadoCongresistaComponent", function() { return ListadoCongresistaComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _servicios_restapi_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../servicios/restapi.service */ "XPnp");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _shared_components_card_card_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../shared/_components/card/card.component */ "PHdk");
+
+
+
+
+
+
+function ListadoCongresistaComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-card", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const candidato_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("candidato", candidato_r1);
+} }
+class ListadoCongresistaComponent {
+    constructor(restApiService, activeRoute) {
+        this.restApiService = restApiService;
+        this.activeRoute = activeRoute;
+    }
+    ngOnInit() {
+        this.restApiService.getCongresistasByOrganization(this.politicParty.id).subscribe((data) => {
+            this.congresistas = data;
+        });
+    }
+}
+ListadoCongresistaComponent.ɵfac = function ListadoCongresistaComponent_Factory(t) { return new (t || ListadoCongresistaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_servicios_restapi_service__WEBPACK_IMPORTED_MODULE_1__["RestApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"])); };
+ListadoCongresistaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ListadoCongresistaComponent, selectors: [["app-listado-congresista"]], inputs: { politicParty: "politicParty" }, decls: 1, vars: 1, consts: [[4, "ngFor", "ngForOf"], [3, "candidato"]], template: function ListadoCongresistaComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ListadoCongresistaComponent_div_0_Template, 2, 1, "div", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.congresistas);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _shared_components_card_card_component__WEBPACK_IMPORTED_MODULE_4__["CardComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2luYXMvZGV0YWxsZS9saXN0YWRvLWNvbmdyZXNpc3RhL2xpc3RhZG8tY29uZ3Jlc2lzdGEuY29tcG9uZW50LnNjc3MifQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ListadoCongresistaComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-listado-congresista',
+                templateUrl: './listado-congresista.component.html',
+                styleUrls: ['./listado-congresista.component.scss']
+            }]
+    }], function () { return [{ type: _servicios_restapi_service__WEBPACK_IMPORTED_MODULE_1__["RestApiService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }]; }, { politicParty: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
+
+
+/***/ }),
+
 /***/ "PCNd":
 /*!*****************************************!*\
   !*** ./src/app/shared/shared.module.ts ***!
@@ -708,31 +830,38 @@ class CardComponent {
     }
 }
 CardComponent.ɵfac = function CardComponent_Factory(t) { return new (t || CardComponent)(); };
-CardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CardComponent, selectors: [["app-card"]], inputs: { candidato: "candidato" }, decls: 11, vars: 5, consts: [[1, "card-politico"], ["mat-card-avatar", "", 1, "header-image"], [3, "src"], [1, "container"]], template: function CardComponent_Template(rf, ctx) { if (rf & 1) {
+CardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CardComponent, selectors: [["app-card"]], inputs: { candidato: "candidato" }, decls: 14, vars: 6, consts: [[1, "card-politico"], ["mat-card-avatar", "", 1, "header-image"], [3, "src"], [1, "title"], [1, "card-name"], [1, "card-position"], [1, "container"]], template: function CardComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card-header");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-card-title");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-card-title", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-card-subtitle");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "span", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "mat-card-content", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "hr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "mat-card-actions");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mat-card-subtitle");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "mat-card-content", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "mat-card-actions");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", ctx.candidato.ruta_archivo, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", ctx.candidato.nombres, " ", ctx.candidato.apellido_paterno, " ", ctx.candidato.apellido_materno, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"]("", ctx.candidato.nombres, " ", ctx.candidato.apellido_paterno, " ", ctx.candidato.apellido_materno, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.candidato.jne_posicion, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.candidato.profesion, " ");
-    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardAvatar"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardContent"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardActions"]], styles: [".card-politico[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n  margin-top: 10px;\n}\n.card-politico[_ngcontent-%COMP%]   .header-image[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 80px;\n}\n.card-politico[_ngcontent-%COMP%]   .header-image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  border-radius: 50%;\n}\n.card-politico[_ngcontent-%COMP%]   .mat-card-header[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n}\n.card-politico[_ngcontent-%COMP%]   .mat-card-actions[_ngcontent-%COMP%] {\n  font-size: 12px;\n  display: flex;\n}\n.card-politico[_ngcontent-%COMP%]   .mat-card-actions[_ngcontent-%COMP%]   .texto[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\nhr[_ngcontent-%COMP%] {\n  border: 0.5px solid #ebebeb;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL19jb21wb25lbnRzL2NhcmQvY2FyZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBQ0EsZ0JBQUE7QUFDSjtBQUNJO0VBQ0ksV0FBQTtFQUNBLFlBQUE7QUFDUjtBQUNRO0VBQ0ksa0JBQUE7QUFDWjtBQUdRO0VBQ0ksV0FBQTtFQUNBLFlBQUE7QUFEWjtBQUlJO0VBQ0ksZUFBQTtFQUNBLGFBQUE7QUFGUjtBQUdRO0VBQ0ksYUFBQTtFQUNBLG1CQUFBO0FBRFo7QUFNQTtFQUNJLDJCQUFBO0FBSEoiLCJmaWxlIjoic3JjL2FwcC9zaGFyZWQvX2NvbXBvbmVudHMvY2FyZC9jYXJkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmQtcG9saXRpY297XG4gICAgbWFyZ2luLWJvdHRvbTogMjBweDtcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xuXG4gICAgLmhlYWRlci1pbWFnZXtcbiAgICAgICAgd2lkdGg6IDgwcHg7XG4gICAgICAgIGhlaWdodDogIDgwcHg7XG5cbiAgICAgICAgaW1ne1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAgICAgICB9XG4gICAgfVxuICAgIC5tYXQtY2FyZC1oZWFkZXJ7XG4gICAgICAgIGltZ3tcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICB9XG4gICAgfVxuICAgIC5tYXQtY2FyZC1hY3Rpb25ze1xuICAgICAgICBmb250LXNpemU6IDEycHg7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIC50ZXh0b3tcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICB9XG4gICAgfVxufVxuXG5ocntcbiAgICBib3JkZXI6IDAuNXB4IHNvbGlkICNlYmViZWI7XG59Il19 */"] });
+    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardAvatar"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardContent"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardActions"]], styles: [".card-politico[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n  margin-top: 10px;\n}\n.card-politico[_ngcontent-%COMP%]   .header-image[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 80px;\n}\n.card-politico[_ngcontent-%COMP%]   .header-image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  border-radius: 50%;\n}\n.card-politico[_ngcontent-%COMP%]   .mat-card-header[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n}\n.card-politico[_ngcontent-%COMP%]   .mat-card-actions[_ngcontent-%COMP%] {\n  font-size: 12px;\n  display: flex;\n}\n.card-politico[_ngcontent-%COMP%]   .mat-card-actions[_ngcontent-%COMP%]   .texto[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\nhr[_ngcontent-%COMP%] {\n  border: 0.5px solid #ebebeb;\n}\n.card-header[_ngcontent-%COMP%] {\n  width: 100%;\n  display: block;\n}\n.card-name[_ngcontent-%COMP%] {\n  width: 90%;\n  display: inline-block;\n}\n.card-position[_ngcontent-%COMP%] {\n  width: 10%;\n  text-align: center;\n  display: inline-block;\n  position: absolute;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL19jb21wb25lbnRzL2NhcmQvY2FyZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBQ0EsZ0JBQUE7QUFDSjtBQUNJO0VBQ0ksV0FBQTtFQUNBLFlBQUE7QUFDUjtBQUNRO0VBQ0ksa0JBQUE7QUFDWjtBQUdRO0VBQ0ksV0FBQTtFQUNBLFlBQUE7QUFEWjtBQUlJO0VBQ0ksZUFBQTtFQUNBLGFBQUE7QUFGUjtBQUdRO0VBQ0ksYUFBQTtFQUNBLG1CQUFBO0FBRFo7QUFNQTtFQUNJLDJCQUFBO0FBSEo7QUFRQTtFQUNJLFdBQUE7RUFDQSxjQUFBO0FBTEo7QUFPQTtFQUNJLFVBQUE7RUFDQSxxQkFBQTtBQUpKO0FBT0E7RUFDSSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxxQkFBQTtFQUNBLGtCQUFBO0FBSkoiLCJmaWxlIjoic3JjL2FwcC9zaGFyZWQvX2NvbXBvbmVudHMvY2FyZC9jYXJkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmQtcG9saXRpY297XG4gICAgbWFyZ2luLWJvdHRvbTogMjBweDtcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xuXG4gICAgLmhlYWRlci1pbWFnZXtcbiAgICAgICAgd2lkdGg6IDgwcHg7XG4gICAgICAgIGhlaWdodDogIDgwcHg7XG5cbiAgICAgICAgaW1ne1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAgICAgICB9XG4gICAgfVxuICAgIC5tYXQtY2FyZC1oZWFkZXJ7XG4gICAgICAgIGltZ3tcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICB9XG4gICAgfVxuICAgIC5tYXQtY2FyZC1hY3Rpb25ze1xuICAgICAgICBmb250LXNpemU6IDEycHg7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIC50ZXh0b3tcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICB9XG4gICAgfVxufVxuXG5ocntcbiAgICBib3JkZXI6IDAuNXB4IHNvbGlkICNlYmViZWI7XG59XG5cblxuXG4uY2FyZC1oZWFkZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgZGlzcGxheTogYmxvY2s7XG59XG4uY2FyZC1uYW1le1xuICAgIHdpZHRoOiA5MCU7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuXG4uY2FyZC1wb3NpdGlvbntcbiAgICB3aWR0aDogMTAlO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xufVxuXG4iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CardComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -762,7 +891,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
 /* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/tabs */ "wZkO");
 /* harmony import */ var _detalle_partido_indicadores_detalle_partido_indicadores_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../detalle-partido-indicadores/detalle-partido-indicadores.component */ "ISOd");
-/* harmony import */ var _partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./partido-andino/partido-andino.component */ "3vRu");
+/* harmony import */ var _listado_presidente_listado_presidente_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./listado-presidente/listado-presidente.component */ "AO1e");
+/* harmony import */ var _listado_congresista_listado_congresista_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./listado-congresista/listado-congresista.component */ "Lsm6");
+/* harmony import */ var _partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./partido-andino/partido-andino.component */ "3vRu");
+
+
 
 
 
@@ -789,7 +922,7 @@ class DetalleComponent {
     }
 }
 DetalleComponent.ɵfac = function DetalleComponent_Factory(t) { return new (t || DetalleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
-DetalleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DetalleComponent, selectors: [["app-detalle"]], decls: 26, vars: 3, consts: [[1, "paginaPartido"], [1, "cabecera"], [1, "partido_info"], [1, "imagen_partido"], ["_ngcontent-jxr-c95", "", "src", "https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo/21", 1, "imagn"], [1, "texto_partido"], ["id", "nombrepartido"], ["id", "fundacionpartido"], ["id", "porcentajepartido"], [1, "iconoshare"], ["_ngcontent-jxr-c95", "", "role", "img", "aria-hidden", "true", "data-mat-icon-type", "font", 1, "mat-icon", "notranslate", "material-icons", "mat-icon-no-color"], ["mat-stretch-tabs", ""], ["label", "Indicadores"], [3, "partido"], ["label", "Presidente"], ["label", "Congresistas"], ["label", "P. Andino"], [3, "politicParty"], ["label", "Medios"]], template: function DetalleComponent_Template(rf, ctx) { if (rf & 1) {
+DetalleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DetalleComponent, selectors: [["app-detalle"]], decls: 26, vars: 5, consts: [[1, "paginaPartido"], [1, "cabecera"], [1, "partido_info"], [1, "imagen_partido"], ["_ngcontent-jxr-c95", "", "src", "https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo/21", 1, "imagn"], [1, "texto_partido"], ["id", "nombrepartido"], ["id", "fundacionpartido"], ["id", "porcentajepartido"], [1, "iconoshare"], ["_ngcontent-jxr-c95", "", "role", "img", "aria-hidden", "true", "data-mat-icon-type", "font", 1, "mat-icon", "notranslate", "material-icons", "mat-icon-no-color"], ["mat-stretch-tabs", ""], ["label", "Indicadores"], [3, "partido"], ["label", "Presidente"], [3, "politicParty"], ["label", "Congresistas"], ["label", "P. Andino"], ["label", "Medios"]], template: function DetalleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -819,13 +952,13 @@ DetalleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "app-detalle-partido-indicadores", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "mat-tab", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Content 2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "app-listado-presidente", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-tab", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Content 3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-tab", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "app-listado-congresista", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-tab", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "app-partido-andino", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-tab", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "app-partido-andino", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "mat-tab", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Content 5");
@@ -837,9 +970,13 @@ DetalleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.partido.nombre);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("partido", ctx.partido);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("politicParty", ctx.partido);
-    } }, directives: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_2__["MatIcon"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__["MatTabGroup"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__["MatTab"], _detalle_partido_indicadores_detalle_partido_indicadores_component__WEBPACK_IMPORTED_MODULE_4__["DetallePartidoIndicadoresComponent"], _partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_5__["PartidoAndinoComponent"]], styles: [".paginaPartido[_ngcontent-%COMP%] {\n  max-width: 100vw;\n}\n\n.cabecera[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 10px 0px;\n  background-color: #D5E4FF;\n}\n\n.partido_info[_ngcontent-%COMP%] {\n  flex-direction: row;\n  display: flex;\n}\n\n.imagen_partido[_ngcontent-%COMP%] {\n  height: 75px;\n  width: 70px;\n  margin-left: 5%;\n  margin-right: 5%;\n}\n\n.imagn[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  border-radius: 150px;\n}\n\n.texto_partido[_ngcontent-%COMP%] {\n  margin-top: 6px;\n  font: 400 14px/20px Roboto, \"Helvetica Neue\", sans-serif;\n  letter-spacing: normal;\n  width: 70%;\n}\n\n#nombrepartido[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 500;\n  color: #274482;\n}\n\n#fundacionpartido[_ngcontent-%COMP%] {\n  margin-top: 3px;\n  color: rgba(0, 0, 0, 0.54);\n  font-size: 14px;\n}\n\n#porcentajepartido[_ngcontent-%COMP%] {\n  margin-top: 3px;\n  color: #dc8e1a;\n}\n\n.iconoshare[_ngcontent-%COMP%] {\n  position: relative;\n  text-align: right;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnaW5hcy9kZXRhbGxlL2RldGFsbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtBQUNKOztBQUNBO0VBQ0ksV0FBQTtFQUNBLGlCQUFBO0VBQ0EseUJBQUE7QUFFSjs7QUFBQTtFQUNJLG1CQUFBO0VBQ0EsYUFBQTtBQUdKOztBQURBO0VBQ0ksWUFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7QUFJSjs7QUFGQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esb0JBQUE7QUFLSjs7QUFIQTtFQUNJLGVBQUE7RUFDQSx3REFBQTtFQUNBLHNCQUFBO0VBQ0EsVUFBQTtBQU1KOztBQUpBO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQU9KOztBQUxBO0VBQ0ksZUFBQTtFQUNBLDBCQUFBO0VBQ0EsZUFBQTtBQVFKOztBQU5BO0VBQ0ksZUFBQTtFQUNBLGNBQUE7QUFTSjs7QUFQQTtFQUNJLGtCQUFBO0VBQ0EsaUJBQUE7QUFVSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2luYXMvZGV0YWxsZS9kZXRhbGxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBhZ2luYVBhcnRpZG97XG4gICAgbWF4LXdpZHRoOiAxMDB2dztcbn1cbi5jYWJlY2VyYXtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBwYWRkaW5nOiAxMHB4IDBweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRDVFNEZGO1xufVxuLnBhcnRpZG9faW5mb3tcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgIGRpc3BsYXk6IGZsZXg7XG59XG4uaW1hZ2VuX3BhcnRpZG97XG4gICAgaGVpZ2h0OiA3NXB4O1xuICAgIHdpZHRoOiA3MHB4O1xuICAgIG1hcmdpbi1sZWZ0OiA1JTtcbiAgICBtYXJnaW4tcmlnaHQ6IDUlO1xufVxuLmltYWdue1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBib3JkZXItcmFkaXVzOjE1MHB4O1xufVxuLnRleHRvX3BhcnRpZG97XG4gICAgbWFyZ2luLXRvcDogNnB4O1xuICAgIGZvbnQ6IDQwMCAxNHB4LzIwcHggUm9ib3RvLCBcIkhlbHZldGljYSBOZXVlXCIsIHNhbnMtc2VyaWY7XG4gICAgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDtcbiAgICB3aWR0aDogNzAlO1xufVxuI25vbWJyZXBhcnRpZG97XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgY29sb3I6ICMyNzQ0ODI7XG59XG4jZnVuZGFjaW9ucGFydGlkb3tcbiAgICBtYXJnaW4tdG9wOiAzcHg7XG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XG4gICAgZm9udC1zaXplOiAxNHB4Oztcbn1cbiNwb3JjZW50YWplcGFydGlkb3tcbiAgICBtYXJnaW4tdG9wOiAzcHg7XG4gICAgY29sb3I6ICNkYzhlMWE7XG59XG4uaWNvbm9zaGFyZXtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XG59Il19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("politicParty", ctx.partido);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("politicParty", ctx.partido);
+    } }, directives: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_2__["MatIcon"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__["MatTabGroup"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__["MatTab"], _detalle_partido_indicadores_detalle_partido_indicadores_component__WEBPACK_IMPORTED_MODULE_4__["DetallePartidoIndicadoresComponent"], _listado_presidente_listado_presidente_component__WEBPACK_IMPORTED_MODULE_5__["ListadoPresidenteComponent"], _listado_congresista_listado_congresista_component__WEBPACK_IMPORTED_MODULE_6__["ListadoCongresistaComponent"], _partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_7__["PartidoAndinoComponent"]], styles: [".paginaPartido[_ngcontent-%COMP%] {\n  max-width: 100vw;\n}\n\n.cabecera[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 10px 0px;\n  background-color: #D5E4FF;\n}\n\n.partido_info[_ngcontent-%COMP%] {\n  flex-direction: row;\n  display: flex;\n}\n\n.imagen_partido[_ngcontent-%COMP%] {\n  height: 75px;\n  width: 70px;\n  margin-left: 5%;\n  margin-right: 5%;\n}\n\n.imagn[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  border-radius: 150px;\n}\n\n.texto_partido[_ngcontent-%COMP%] {\n  margin-top: 6px;\n  font: 400 14px/20px Roboto, \"Helvetica Neue\", sans-serif;\n  letter-spacing: normal;\n  width: 70%;\n}\n\n#nombrepartido[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 500;\n  color: #274482;\n}\n\n#fundacionpartido[_ngcontent-%COMP%] {\n  margin-top: 3px;\n  color: rgba(0, 0, 0, 0.54);\n  font-size: 14px;\n}\n\n#porcentajepartido[_ngcontent-%COMP%] {\n  margin-top: 3px;\n  color: #dc8e1a;\n}\n\n.iconoshare[_ngcontent-%COMP%] {\n  position: relative;\n  text-align: right;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnaW5hcy9kZXRhbGxlL2RldGFsbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtBQUNKOztBQUNBO0VBQ0ksV0FBQTtFQUNBLGlCQUFBO0VBQ0EseUJBQUE7QUFFSjs7QUFBQTtFQUNJLG1CQUFBO0VBQ0EsYUFBQTtBQUdKOztBQURBO0VBQ0ksWUFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7QUFJSjs7QUFGQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esb0JBQUE7QUFLSjs7QUFIQTtFQUNJLGVBQUE7RUFDQSx3REFBQTtFQUNBLHNCQUFBO0VBQ0EsVUFBQTtBQU1KOztBQUpBO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQU9KOztBQUxBO0VBQ0ksZUFBQTtFQUNBLDBCQUFBO0VBQ0EsZUFBQTtBQVFKOztBQU5BO0VBQ0ksZUFBQTtFQUNBLGNBQUE7QUFTSjs7QUFQQTtFQUNJLGtCQUFBO0VBQ0EsaUJBQUE7QUFVSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2luYXMvZGV0YWxsZS9kZXRhbGxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBhZ2luYVBhcnRpZG97XG4gICAgbWF4LXdpZHRoOiAxMDB2dztcbn1cbi5jYWJlY2VyYXtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBwYWRkaW5nOiAxMHB4IDBweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRDVFNEZGO1xufVxuLnBhcnRpZG9faW5mb3tcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgIGRpc3BsYXk6IGZsZXg7XG59XG4uaW1hZ2VuX3BhcnRpZG97XG4gICAgaGVpZ2h0OiA3NXB4O1xuICAgIHdpZHRoOiA3MHB4O1xuICAgIG1hcmdpbi1sZWZ0OiA1JTtcbiAgICBtYXJnaW4tcmlnaHQ6IDUlO1xufVxuLmltYWdue1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBib3JkZXItcmFkaXVzOjE1MHB4O1xufVxuLnRleHRvX3BhcnRpZG97XG4gICAgbWFyZ2luLXRvcDogNnB4O1xuICAgIGZvbnQ6IDQwMCAxNHB4LzIwcHggUm9ib3RvLCBcIkhlbHZldGljYSBOZXVlXCIsIHNhbnMtc2VyaWY7XG4gICAgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDtcbiAgICB3aWR0aDogNzAlO1xufVxuI25vbWJyZXBhcnRpZG97XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgY29sb3I6ICMyNzQ0ODI7XG59XG4jZnVuZGFjaW9ucGFydGlkb3tcbiAgICBtYXJnaW4tdG9wOiAzcHg7XG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XG4gICAgZm9udC1zaXplOiAxNHB4Oztcbn1cbiNwb3JjZW50YWplcGFydGlkb3tcbiAgICBtYXJnaW4tdG9wOiAzcHg7XG4gICAgY29sb3I6ICNkYzhlMWE7XG59XG4uaWNvbm9zaGFyZXtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DetalleComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1024,6 +1161,16 @@ class RestApiService {
         let params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]().set("cargo_ids", _shared_constants_constant_commons__WEBPACK_IMPORTED_MODULE_2__["CHARGE"].PARLAMENTO_ANDINO).set("organizacion_politica_id", idOrganization); //Create new HttpParams
         return this.http.get(_url, { headers: this.httpOptions.headers, params: params });
     }
+    getPresidenteByOrganization(idOrganization) {
+        let _url = this.domain + _shared_constants_constant_commons__WEBPACK_IMPORTED_MODULE_2__["URL_API"].candidato;
+        let params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]().set("cargo_ids", _shared_constants_constant_commons__WEBPACK_IMPORTED_MODULE_2__["CHARGE"].PRESIDENTE).set("organizacion_politica_id", idOrganization); //Create new HttpParams
+        return this.http.get(_url, { headers: this.httpOptions.headers, params: params });
+    }
+    getCongresistasByOrganization(idOrganization) {
+        let _url = this.domain + _shared_constants_constant_commons__WEBPACK_IMPORTED_MODULE_2__["URL_API"].candidato;
+        let params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]().set("cargo_ids", _shared_constants_constant_commons__WEBPACK_IMPORTED_MODULE_2__["CHARGE"].CONGRESISTA).set("organizacion_politica_id", idOrganization); //Create new HttpParams
+        return this.http.get(_url, { headers: this.httpOptions.headers, params: params });
+    }
     onOrdernar(data) {
         console.log(data);
     }
@@ -1072,7 +1219,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_paginas_detalle_detalle_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../app/paginas/detalle/detalle.component */ "SCjV");
 /* harmony import */ var _app_paginas_detalle_partido_indicadores_detalle_partido_indicadores_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../app/paginas/detalle-partido-indicadores/detalle-partido-indicadores.component */ "ISOd");
 /* harmony import */ var _paginas_detalle_partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./paginas/detalle/partido-andino/partido-andino.component */ "3vRu");
-/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./shared/shared.module */ "PCNd");
+/* harmony import */ var _paginas_detalle_listado_presidente_listado_presidente_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./paginas/detalle/listado-presidente/listado-presidente.component */ "AO1e");
+/* harmony import */ var _paginas_detalle_listado_congresista_listado_congresista_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./paginas/detalle/listado-congresista/listado-congresista.component */ "Lsm6");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./shared/shared.module */ "PCNd");
 
 
 
@@ -1100,6 +1249,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 class AppModule {
 }
 AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
@@ -1120,13 +1271,15 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBarModule"],
             _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"],
             _angular_material_list__WEBPACK_IMPORTED_MODULE_15__["MatListModule"],
-            _shared_shared_module__WEBPACK_IMPORTED_MODULE_22__["SharedModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_24__["SharedModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _app_paginas_partidos_partidos_component__WEBPACK_IMPORTED_MODULE_18__["PartidosComponent"],
         _app_paginas_detalle_detalle_component__WEBPACK_IMPORTED_MODULE_19__["DetalleComponent"],
         _app_paginas_detalle_partido_indicadores_detalle_partido_indicadores_component__WEBPACK_IMPORTED_MODULE_20__["DetallePartidoIndicadoresComponent"],
-        _paginas_detalle_partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_21__["PartidoAndinoComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _paginas_detalle_partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_21__["PartidoAndinoComponent"],
+        _paginas_detalle_listado_presidente_listado_presidente_component__WEBPACK_IMPORTED_MODULE_22__["ListadoPresidenteComponent"],
+        _paginas_detalle_listado_congresista_listado_congresista_component__WEBPACK_IMPORTED_MODULE_23__["ListadoCongresistaComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
         _angular_flex_layout__WEBPACK_IMPORTED_MODULE_16__["FlexLayoutModule"],
@@ -1142,10 +1295,12 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBarModule"],
         _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"],
         _angular_material_list__WEBPACK_IMPORTED_MODULE_15__["MatListModule"],
-        _shared_shared_module__WEBPACK_IMPORTED_MODULE_22__["SharedModule"]], exports: [_app_paginas_partidos_partidos_component__WEBPACK_IMPORTED_MODULE_18__["PartidosComponent"],
+        _shared_shared_module__WEBPACK_IMPORTED_MODULE_24__["SharedModule"]], exports: [_app_paginas_partidos_partidos_component__WEBPACK_IMPORTED_MODULE_18__["PartidosComponent"],
         _app_paginas_detalle_detalle_component__WEBPACK_IMPORTED_MODULE_19__["DetalleComponent"],
         _app_paginas_detalle_partido_indicadores_detalle_partido_indicadores_component__WEBPACK_IMPORTED_MODULE_20__["DetallePartidoIndicadoresComponent"],
-        _paginas_detalle_partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_21__["PartidoAndinoComponent"]] }); })();
+        _paginas_detalle_partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_21__["PartidoAndinoComponent"],
+        _paginas_detalle_listado_presidente_listado_presidente_component__WEBPACK_IMPORTED_MODULE_22__["ListadoPresidenteComponent"],
+        _paginas_detalle_listado_congresista_listado_congresista_component__WEBPACK_IMPORTED_MODULE_23__["ListadoCongresistaComponent"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -1154,13 +1309,17 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _app_paginas_partidos_partidos_component__WEBPACK_IMPORTED_MODULE_18__["PartidosComponent"],
                     _app_paginas_detalle_detalle_component__WEBPACK_IMPORTED_MODULE_19__["DetalleComponent"],
                     _app_paginas_detalle_partido_indicadores_detalle_partido_indicadores_component__WEBPACK_IMPORTED_MODULE_20__["DetallePartidoIndicadoresComponent"],
-                    _paginas_detalle_partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_21__["PartidoAndinoComponent"]
+                    _paginas_detalle_partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_21__["PartidoAndinoComponent"],
+                    _paginas_detalle_listado_presidente_listado_presidente_component__WEBPACK_IMPORTED_MODULE_22__["ListadoPresidenteComponent"],
+                    _paginas_detalle_listado_congresista_listado_congresista_component__WEBPACK_IMPORTED_MODULE_23__["ListadoCongresistaComponent"]
                 ],
                 exports: [
                     _app_paginas_partidos_partidos_component__WEBPACK_IMPORTED_MODULE_18__["PartidosComponent"],
                     _app_paginas_detalle_detalle_component__WEBPACK_IMPORTED_MODULE_19__["DetalleComponent"],
                     _app_paginas_detalle_partido_indicadores_detalle_partido_indicadores_component__WEBPACK_IMPORTED_MODULE_20__["DetallePartidoIndicadoresComponent"],
-                    _paginas_detalle_partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_21__["PartidoAndinoComponent"]
+                    _paginas_detalle_partido_andino_partido_andino_component__WEBPACK_IMPORTED_MODULE_21__["PartidoAndinoComponent"],
+                    _paginas_detalle_listado_presidente_listado_presidente_component__WEBPACK_IMPORTED_MODULE_22__["ListadoPresidenteComponent"],
+                    _paginas_detalle_listado_congresista_listado_congresista_component__WEBPACK_IMPORTED_MODULE_23__["ListadoCongresistaComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1179,7 +1338,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_13__["MatProgressBarModule"],
                     _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"],
                     _angular_material_list__WEBPACK_IMPORTED_MODULE_15__["MatListModule"],
-                    _shared_shared_module__WEBPACK_IMPORTED_MODULE_22__["SharedModule"],
+                    _shared_shared_module__WEBPACK_IMPORTED_MODULE_24__["SharedModule"],
                 ],
                 providers: [],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]

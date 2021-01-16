@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IPartidoAndino } from '../../_interfaces/partido-andino.interface';
+import { Candidato } from '../../_interfaces/candidato.interface';
 
 @Component({
   selector: 'app-card',
@@ -8,7 +8,7 @@ import { IPartidoAndino } from '../../_interfaces/partido-andino.interface';
 })
 export class CardComponent implements OnInit {
 
-  @Input() candidato: IPartidoAndino;
+  @Input() candidato: Candidato;
   
   constructor() { }
 

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
-import { IPartidoAndino } from '../../../shared/_interfaces/partido-andino.interface';
+import { Candidato } from '../../../shared/_interfaces/candidato.interface';
  
 
 @Component({
@@ -13,7 +13,7 @@ export class PartidoAndinoComponent implements OnInit {
 
   @Input() politicParty: any; 
 
-  listParlamentoAndino: IPartidoAndino[];
+  listParlamentoAndino: Candidato[];
 
   constructor(private restApiService: RestApiService,
     private activeRoute: ActivatedRoute) {
@@ -21,7 +21,7 @@ export class PartidoAndinoComponent implements OnInit {
    }
 
   ngOnInit(): void { 
-    this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((data: IPartidoAndino[])=>{
+    this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((data: Candidato[])=>{
       this.listParlamentoAndino = data;
     });
   }

@@ -26,6 +26,10 @@ export class DetalleComponent implements OnInit {
     return (new Date()).getFullYear() - parseInt(anio);
   }
   fnIndicadores(partido,id){
-    return partido.indicadorescategoriaorg.filter(elem => elem.indicador==id)
+    return partido.indicadorescategoriaorg.filter(elem =>{
+      if(elem != null){
+        return  elem.indicador==id
+      }
+    });
   }
 }

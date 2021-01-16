@@ -20,9 +20,11 @@ export class PartidosComponent implements OnInit {
         partido.indicadorCantidadSentencias=0;
         partido.indicadorCantidadTrayectoria=0;
         partido.indicadorescategoriaorg.forEach(indicador => {
-          if(indicador.indicador==1) partido.indicadorCantidadEstudio+=indicador.cantidad;
+          if(indicador != null){
+          if(indicador.indicador==1 ) partido.indicadorCantidadEstudio+=indicador.cantidad;
           if(indicador.indicador==3) partido.indicadorCantidadSentencias+=indicador.cantidad;
           if(indicador.indicador==5) partido.indicadorCantidadTrayectoria+=indicador.cantidad;
+          }
         });
       });
       console.log(this.partidos);
@@ -45,6 +47,10 @@ export class PartidosComponent implements OnInit {
   }
 
   fnIndicadores(partido,id){
-    return partido.indicadorescategoriaorg.filter(elem => elem.indicador==id)
+    return partido.indicadorescategoriaorg.filter(elem =>{
+      if(elem != null){
+        return  elem.indicador==id
+      }
+    });
   }
 }

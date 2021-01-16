@@ -3,12 +3,25 @@
     <div class="cabecera">
         <div class="partido_info">
             <div class="imagen_partido">
-                <img _ngcontent-jxr-c95="" src="https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo/21" class="imagn">
+                <img _ngcontent-jxr-c95="" src={{partido.ruta_archivo}} class="imagn">
             </div>
             <div class="texto_partido">
                 <div id="nombrepartido">{{partido.nombre}}</div>
-                <div id="fundacionpartido">Fundacion y años del partido</div>
-                <div id="porcentajepartido">Porcentaje en el congreso / posicion relativa</div>
+                <div id="fundacionpartido">Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años </div>
+                <div id="porcentajepartido">
+                    <p>
+                        <span *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
+                            <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
+                        </span>
+                    </p>
+    
+                    <!--vizcarra ID 6 -->
+                    <p>
+                    <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
+                        <span *ngIf="i==0"> </span> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
+                    </span>
+                    </p>
+                </div>
             </div>
             <div class="iconoshare">
                 <mat-icon _ngcontent-jxr-c95="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
@@ -17,8 +30,8 @@
             </div>
         </div>
       </div>
-    <mat-tab-group  mat-stretch-tabs>
-        <mat-tab label="Indicadores">
+    <mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs>
+        <mat-tab label="Resumen">
             <app-detalle-partido-indicadores [partido]="partido"></app-detalle-partido-indicadores>
         </mat-tab>
         <mat-tab label="Presidente">
@@ -31,6 +44,6 @@
             <app-partido-andino [politicParty]="partido"></app-partido-andino>
 
         </mat-tab>
-        <mat-tab label="Medios">Content 5</mat-tab>
+        <mat-tab label="Historia">Content 5</mat-tab>
     </mat-tab-group>
 </div>

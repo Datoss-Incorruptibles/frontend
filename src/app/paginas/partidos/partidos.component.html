@@ -24,8 +24,10 @@
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />
             </div>
-            <mat-card-title>{{partido.nombre}}</mat-card-title>
-            <mat-card-subtitle>Fundación {{partido.fundacion_fecha + " &nbsp;&nbsp;&nbsp; "}} {{ fnAnios(partido.fundacion_fecha) }} años </mat-card-subtitle>
+            <mat-card-title mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
+                {{partido.nombre}}
+            </mat-card-title>
+            <mat-card-subtitle>Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años </mat-card-subtitle>
             <mat-card-subtitle>
                 <!--congreso actual ID 4 -->
                 <p>
@@ -76,11 +78,10 @@
         <mat-card-actions>
 
 
-            <button routerLink="/partido/{{partido.id}}" [state]="partido" mat-icon-button>
-                <mat-icon>description</mat-icon>                
+            <button routerLink="/partido/{{partido.id}}" [state]="partido" mat-button>
+                <mat-icon>description</mat-icon> <span> Ver más</span>             
             </button>
-            <div class="texto">Ver más</div>
-
+            
             <!--
             <button mat-icon-button>
                 <mat-icon>thumb_down_alt</mat-icon>                

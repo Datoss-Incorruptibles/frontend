@@ -1,3 +1,7 @@
+import { importExpr } from "@angular/compiler/src/output/output_ast";
+
+import { IndicadorCandidato } from './indicador-candidato';
+
 export interface Candidato{
     id: string; 
     jne_idcandidato: string; 
@@ -22,5 +26,5 @@ export interface Candidato{
     ruta_archivo: string;
     fecha_registro: string;
     fecha_modificacion: string;
-    indicadores_categoria_candidato: []; 
+    indicadores_categoria_candidato: IndicadorCandidato[]; 
 }

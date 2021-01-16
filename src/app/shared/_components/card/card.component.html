@@ -8,20 +8,80 @@
         <mat-card-title class="title">
     
             <span class="card-name">
-                {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
+                {{candidato.jne_posicion}}. {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
             </span>
-            <span class="card-position">
+           <!-- <span class="card-position">
                 {{candidato.jne_posicion}}
             </span>
+            -->
         </mat-card-title>
         <mat-card-subtitle> {{candidato.profesion}} </mat-card-subtitle>
     
     </mat-card-header>
     <mat-card-content class="container">
+        <p>
+            <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
+                <span *ngIf="i==0"></span> indicador_categoria_nombre | EX-{{indicador.indicador_categoria_nombre}}
+                <br>
+            </span>
+        </p>
+        
+        <p>
+            <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
+                <span *ngIf="i==0"></span> indicador_categoria | {{indicador.indicador_categoria}}
+                <br>
+            </span>
+        </p>
+
+        <p>
+            <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
+                <span *ngIf="i==0"></span> indicador_nombre | {{indicador.indicador_nombre}}
+                <br>
+            </span>
+        </p>
+
+        <p>
+            <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
+                <span *ngIf="i==0"></span> indicador | {{indicador.indicador}}
+                <br>
+            </span>
+        </p>
+
+        <p>
+            <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
+                <span *ngIf="i==0"></span> cantidad | {{indicador.cantidad}}
+                <br>
+            </span>
+        </p>
+
+        <p>
+            <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
+                <span *ngIf="i==0"></span> porcentaje | {{indicador.porcentaje}}
+                <br>
+            </span>
+        </p>
+
+        <p>
+            <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
+                <span *ngIf="i==0"></span> alerta | {{indicador.alerta}}
+                <br>
+            </span>
+        </p>
+        <p>
+            <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
+                <span *ngIf="i==0"></span> estado {{indicador.estado}}
+                <br>
+            </span>
+        </p>
+
+
 
     </mat-card-content>
     <hr>
     <mat-card-actions>
+        <button  mat-button>
+            <mat-icon>description</mat-icon> <span> Ver más</span>             
+        </button>
 
 
 

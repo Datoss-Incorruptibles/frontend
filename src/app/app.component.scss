@@ -21,8 +21,14 @@
     }
 
 }
-mat-nav-list span{
-    color: white;
+mat-nav-list {
+    span,button{
+        color: white;
+    }
+    br{
+        color:#ced4e2
+    }
+
 }
 
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {

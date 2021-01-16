@@ -15,11 +15,36 @@ export class ListadoPresidenteComponent implements OnInit {
 
   constructor(private restApiService: RestApiService,
     private activeRoute: ActivatedRoute) { }
+    ngOnInit(): void {
+      this.restApiService.getPresidenteByOrganization(this.politicParty.id).subscribe(res =>{
+        this.presidente=<Candidato[]>res;            
+        console.log(this.presidente);
+        this.onOrdernar();
+      }, error => {  });
+    }
 
-  ngOnInit(): void {
-     this.restApiService.getPresidenteByOrganization(this.politicParty.id).subscribe((data: Candidato[])=>{
-      this.presidente = data;
-    });
+  onOrdernar(){
+    this.presidente = this.presidente.sort((n1,n2) => {
+      if (n1.cargo_id > n2.cargo_id) {
+          return 1;
+      }
+  
+      if (n1.cargo_id < n2.cargo_id) {
+          return -1;
+      }
+      return 0;
+
+  });
+
+  }
+  onCargoPolitico(i){
+    if(i == 0){
+      return "Candidato a la Presidencia";
+    }else if(i == 1){
+      return "1er vice Presidente";
+    }else{
+      return "2do  vice Presidente";
+    }
   }
 
 }

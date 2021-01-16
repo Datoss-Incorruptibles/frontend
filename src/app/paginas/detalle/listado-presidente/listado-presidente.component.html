@@ -1,3 +1,7 @@
-<div *ngFor="let candidato of presidente">
+<div *ngFor="let candidato of presidente; let i = index">
+    <div class="container">
+       <mat-icon>people</mat-icon> <span class=""> <strong> {{onCargoPolitico(i)}} </strong></span>
+
+    </div>
     <app-card [candidato]="candidato"></app-card> 
 </div>

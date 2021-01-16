@@ -22,4 +22,8 @@ export class ListadoCongresistaComponent implements OnInit {
     });
   }
 
+  onFiltroRegion(value){
+
+  }
+
 }

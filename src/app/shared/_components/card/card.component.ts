@@ -9,11 +9,10 @@ import { Candidato } from '../../_interfaces/candidato.interface';
 export class CardComponent implements OnInit {
 
   @Input() candidato: Candidato;
-  
   constructor() { }
 
   ngOnInit(): void {
-    
   }
+
 
 }

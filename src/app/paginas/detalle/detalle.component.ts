@@ -22,4 +22,10 @@ export class DetalleComponent implements OnInit {
   ngOnDestroy() {
     //this.sub.unsubscribe();
   }
+  fnAnios(anio){
+    return (new Date()).getFullYear() - parseInt(anio);
+  }
+  fnIndicadores(partido,id){
+    return partido.indicadorescategoriaorg.filter(elem => elem.indicador==id)
+  }
 }

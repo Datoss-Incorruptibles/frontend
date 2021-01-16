@@ -1,3 +1,11 @@
+<mat-form-field appearance="fill">
+    <mat-label>Filtro:Región</mat-label>
+    <mat-select (selectionChange)="onFiltroRegion($event.value)">
+        <mat-option value="LIMA">LIMA</mat-option>
+        
+    </mat-select>
+</mat-form-field>
+
 <div *ngFor="let candidato of congresistas">
     <app-card [candidato]="candidato"></app-card> 
 </div>

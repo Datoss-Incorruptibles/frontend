@@ -21,7 +21,10 @@
     <mat-card-content class="container">
         <p>
             <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
-                <span *ngIf="i==0"></span> indicador_categoria_nombre | EX-{{indicador.indicador_categoria_nombre}}
+                <span [ngSwitch]="indicador.indicador_categoria">
+                <span *ngSwitchCase="12"> indicador_categoria_nombre | EX-{{indicador.indicador_categoria_nombre}}</span>
+                <span *ngSwitchDefault> indicador_categoria_nombre | {{indicador.indicador_categoria_nombre}}</span> 
+                </span>
                 <br>
             </span>
         </p>
@@ -70,6 +73,13 @@
         <p>
             <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
                 <span *ngIf="i==0"></span> estado {{indicador.estado}}
+                <br>
+            </span>
+        </p>
+
+        <p>
+            <span >
+                 jne_idhojavida | {{candidato.jne_idhojavida}}
                 <br>
             </span>
         </p>

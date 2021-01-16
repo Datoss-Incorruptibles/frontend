@@ -23,7 +23,22 @@ export class PartidoAndinoComponent implements OnInit {
   ngOnInit(): void { 
     this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((data: Candidato[])=>{
       this.listParlamentoAndino = data;
+      this.onOrdernar();
     });
+  }
+
+  onOrdernar(){
+    this.listParlamentoAndino = this.listParlamentoAndino.sort((n1,n2) => {
+      if (n1.jne_posicion > n2.jne_posicion) {
+          return 1;
+      }
+  
+      if (n1.jne_posicion < n2.jne_posicion) {
+          return -1;
+      }
+      return 0;
+
+   });
   }
 
 }

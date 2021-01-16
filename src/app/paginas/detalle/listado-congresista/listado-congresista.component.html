@@ -1,11 +1,26 @@
+<div class="filtrado">
 <mat-form-field appearance="fill">
-    <mat-label>Filtro:Región</mat-label>
-    <mat-select (selectionChange)="onFiltroRegion($event.value)">
-        <mat-option value="LIMA">LIMA</mat-option>
-        
+    <mat-label>Filtro: Región</mat-label>
+    <mat-select #matselect [(ngModel)]="regselect" (selectionChange)="onFiltroRegion($event.value)">
+        <mat-option *ngFor="let region of REGIONES" [value] = "region.name">
+            {{region.name}}
+        </mat-option>    
     </mat-select>
 </mat-form-field>
 
-<div *ngFor="let candidato of congresistas">
+<div class="container" *ngIf="regselect == 'LIMA'">
+    <mat-icon>people</mat-icon> <span>
+         <strong> Candidatos al congreso por Lima  </strong>        
+     </span>
+ </div>
+ <div class="container" *ngIf="regselect != 'LIMA'">
+    <mat-icon>people</mat-icon> <span>
+         <strong> Candidatos al congreso por {{regselect}} </strong>
+        </span>
+ </div>
+
+</div>
+
+<div *ngFor="let candidato of congresistasTemp">
     <app-card [candidato]="candidato"></app-card> 
 </div>

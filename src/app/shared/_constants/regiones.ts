@@ -1,0 +1,30 @@
+import { Region } from '../_interfaces/region'
+
+export const REGIONES: Region[] =[
+{"id":"01","name":"Amazonas"},
+{"id":"02","name":"Ancash"},
+{"id":"03","name":"Apurimac"},
+{"id":"04","name":"Arequipa"},
+{"id":"05","name":"Ayacucho"},
+{"id":"06","name":"Cajamarca"},
+{"id":"07","name":"Callao"},
+{"id":"08","name":"Cusco"},
+{"id":"09","name":"Huancavelica"},
+{"id":"10","name":"Huanuco"},
+{"id":"11","name":"Ica"},
+{"id":"12","name":"Junin"},
+{"id":"13","name":"La Libertad"},
+{"id":"14","name":"Lambayeque"},
+{"id":"15","name":"Lima"},
+{"id":"16","name":"Lima Provincias"},
+{"id":"17","name":"Loreto"},
+{"id":"18","name":"Madre de Dios"},
+{"id":"19","name":"Moquegua"},
+{"id":"20","name":"Pasco"},
+{"id":"21","name":"Piura"},
+{"id":"22","name":"Puno"},
+{"id":"23","name":"San Martin"},
+{"id":"24","name":"Tacna"},
+{"id":"25","name":"Tumbes"},
+{"id":"26","name":"Ucayali"}
+]

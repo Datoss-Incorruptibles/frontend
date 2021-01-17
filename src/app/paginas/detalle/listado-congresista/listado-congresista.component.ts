@@ -21,8 +21,8 @@ export class ListadoCongresistaComponent implements OnInit {
     private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.restApiService.getCongresistasByOrganization(this.politicParty.id).subscribe((data: Candidato[])=>{
-      this.congresistas = data;
+    this.restApiService.getCongresistasByOrganization(this.politicParty.id).subscribe((data: any)=>{
+      this.congresistas = <Candidato[]>data.results;
       this.onFiltroRegion("LIMA");
     });
     
@@ -48,6 +48,11 @@ export class ListadoCongresistaComponent implements OnInit {
 
   });
   return congresistas;
+  }
+
+  onScroll() {
+    console.log('scrolled!!');
+
   }
 
 }

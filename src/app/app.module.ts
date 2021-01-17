@@ -31,6 +31,10 @@ import { ListadoPresidenteComponent} from './paginas/detalle/listado-presidente/
 import { ListadoCongresistaComponent} from './paginas/detalle/listado-congresista/listado-congresista.component';
 import { SharedModule } from './shared/shared.module';
 
+/*Utils */
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [
@@ -64,11 +68,12 @@ import { SharedModule } from './shared/shared.module';
     MatSidenavModule,
     MatSelectModule,
     MatCardModule,
-    MatProgressBarModule   ,
+    MatProgressBarModule,
     MatTabsModule,
     MatListModule,
     SharedModule,
-  ],
+    ScrollingModule,
+    InfiniteScrollModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -6,7 +6,9 @@ import { URL_API, PARAMS_OPTION, CHARGE } from '../shared/_constants/constant.co
   providedIn: 'root'
 })
 export class RestApiService {
-  private domain: string = "https://api-dev.candidatos.pe/v1/";
+  // private domain: string = "https://api-dev.candidatos.pe/v1/";
+  private domain: string = "http://127.0.0.1:8000/v1/";
+
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -15,8 +17,13 @@ export class RestApiService {
 
   constructor(private http: HttpClient) { }
 
-  getOrganizacionPolitica() {
-    return this.http.get(this.domain+"organizacionpolitica/?format=json",this.httpOptions);
+  getOrganizacionPolitica(nextUrl?) {
+    if(nextUrl){
+      return this.http.get(`${nextUrl}` ,this.httpOptions);
+    }else{
+      return this.http.get(this.domain+`organizacionpolitica/?limit=5&format=json`,this.httpOptions);
+    }
+
   }
 
 

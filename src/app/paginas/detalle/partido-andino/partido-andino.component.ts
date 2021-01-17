@@ -21,8 +21,8 @@ export class PartidoAndinoComponent implements OnInit {
    }
 
   ngOnInit(): void { 
-    this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((data: Candidato[])=>{
-      this.listParlamentoAndino = data;
+    this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((data: any)=>{
+      this.listParlamentoAndino = <Candidato[]>data.results;
       this.onOrdernar();
     });
   }
@@ -40,5 +40,8 @@ export class PartidoAndinoComponent implements OnInit {
 
    });
   }
-
+  onScroll() {
+    console.log('scrolled!!');
+    // this.getPartidosPoliticos()
+  }
 }

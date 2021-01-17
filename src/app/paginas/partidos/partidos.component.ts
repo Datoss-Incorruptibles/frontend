@@ -72,7 +72,9 @@ export class PartidosComponent implements OnInit {
         if(indicador.indicador==5) partido.indicadorCantidadTrayectoria+=indicador.cantidad;
         }
       });
-    });
+      //console.log(this.partidos);
+      this.onOrdernar("nombre");
+    }, error => {  });
   }
 
   onOrdernar(parametro){

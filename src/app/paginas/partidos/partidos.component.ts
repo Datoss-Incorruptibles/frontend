@@ -27,7 +27,7 @@ export class PartidosComponent implements OnInit {
           }
         });
       });
-      console.log(this.partidos);
+      //console.log(this.partidos);
       this.onOrdernar("nombre");
     }, error => {  });
   }

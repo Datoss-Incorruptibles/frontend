@@ -18,7 +18,7 @@ export class ListadoPresidenteComponent implements OnInit {
     ngOnInit(): void {
       this.restApiService.getPresidenteByOrganization(this.politicParty.id).subscribe(res =>{
         this.presidente=<Candidato[]>res;            
-        console.log(this.presidente);
+        //console.log(this.presidente);
         this.onOrdernar();
       }, error => {  });
     }

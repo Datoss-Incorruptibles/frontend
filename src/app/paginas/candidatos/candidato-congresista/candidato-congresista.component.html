@@ -51,8 +51,20 @@
     [scrollWindow]="false"
 
     >
-    <div *ngFor="let candidato of congresistas">
-        <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+    <div [ngSwitch]="congresistas.length">
+        <div *ngSwitchCase = 0 >
+          <div class="container2">
+            <span >
+                <strong> Sin Candidatos en la region </strong>        
+            </span>
+          </div>
+    
+        </div>
+        <div *ngSwitchDefault>
+            <div *ngFor="let candidato of congresistas">
+                <app-card [candidato]="candidato"></app-card> 
+            </div>
+        </div>
     </div>
 </div>
 

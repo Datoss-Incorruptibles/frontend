@@ -23,12 +23,14 @@
 </div>
 
 <div
-class="listado"
+class="scroll"
 infiniteScroll
 [infiniteScrollDistance]="2"
 [infiniteScrollThrottle]="50"
-(scrolled)="onScroll()">
-    <div *ngFor="let candidato of congresistasTemp">
+[scrollWindow]="false"
+(scrolled)="onScroll()"
+>
+    <div *ngFor="let candidato of congresistas">
         <app-card [candidato]="candidato"></app-card> 
     </div>
 </div>

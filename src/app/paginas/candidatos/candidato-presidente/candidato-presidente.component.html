@@ -1,5 +1,13 @@
 
-
-<div *ngFor="let candidato of presidente">
-    <app-card [candidato]="candidato"></app-card> 
+<div
+class="scrollA"
+infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+[scrollWindow]="false"
+(scrolled)="onScrollA()"
+>
+    <div *ngFor="let candidato of presidentes">
+        <app-card [candidato]="candidato"></app-card> 
+    </div>
 </div>

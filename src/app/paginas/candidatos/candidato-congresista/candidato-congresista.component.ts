@@ -12,26 +12,30 @@ import { REGIONES } from '../../../shared/_constants/regiones'
 export class CandidatoCongresistaComponent implements OnInit {
 
 
-  congresistas: Candidato[];
   congresistasTemp: Candidato[];
   REGIONES = REGIONES;
   regselect: string;
+
+  congresistas: Candidato[];
+  nextPageUrl = "start";
+  candidatoPageX;
 
   constructor(private restApiService: RestApiService,
     private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.restApiService.getCongresistas().subscribe((data: Candidato[])=>{
-      this.congresistas = data;
-      this.onFiltroRegion("LIMA");
-    });
+    this.getCongresistas()
     
   }
 
+  // se filtrara desde back o con query params
   onFiltroRegion(value: string){
      this.regselect = value;
+     console.log(this.congresistas);
      let temp = this.congresistas.filter(congresista => congresista.distrito_electoral == value.toUpperCase());
-     this.congresistasTemp =  this.onOrdernar(temp);
+     console.log(temp);
+     this.congresistasTemp =  this.onOrdernar(this.congresistas);
+     console.log(this.congresistasTemp);
      
   }
 
@@ -49,5 +53,29 @@ export class CandidatoCongresistaComponent implements OnInit {
   });
   return congresistas;
   }
+  getCongresistas(){
+    if(this.nextPageUrl == null)  {
+      //do nothing
+    }else if(this.nextPageUrl == "start"){
+      this.restApiService.getCongresistas().subscribe((res:any) =>{
+        this.congresistas=res.results;   
+        this.nextPageUrl = res.next ;
+        console.log(this.congresistas);
+        // this.onFiltroRegion("LIMA");
+      }, error => {  });
+    }else if(this.nextPageUrl){
+      this.restApiService.getCongresistas(this.nextPageUrl).subscribe((res :any)=>{
+        this.candidatoPageX=<Candidato[]>res.results;            
+        this.nextPageUrl = res.next 
+        this.congresistas = this.congresistas.concat(this.candidatoPageX)
+        // this.onFiltroRegion("LIMA");
+        console.log(this.congresistas);
+      }, error => {  });
+    }
+  }
 
+  onScrollB(){
+    console.log("on scrool CONGRESISTAS");
+    this.getCongresistas()
+  }
 }

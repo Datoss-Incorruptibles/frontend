@@ -48,8 +48,8 @@ export class ListadoPresidenteComponent implements OnInit {
   }
 
 
-  onScroll() {
-    console.log('scrolled!!');
-    // this.getPartidosPoliticos()
+  onScroll(){
+    console.log("on scrool detallle LISTADO PRESIDNETE ");
+    // this.getParlAndino()
   }
 }

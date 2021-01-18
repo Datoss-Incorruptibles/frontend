@@ -1,9 +1,11 @@
 <div
-class="listado"
+class="scroll"
 infiniteScroll
 [infiniteScrollDistance]="2"
 [infiniteScrollThrottle]="50"
-(scrolled)="onScroll()">
+[scrollWindow]="false"
+(scrolled)="onScroll()"
+>
      <div *ngFor="let candidato of listParlamentoAndino">
           <app-card [candidato]="candidato"></app-card> 
      </div>

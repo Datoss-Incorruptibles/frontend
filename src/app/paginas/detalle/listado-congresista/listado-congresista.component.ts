@@ -17,22 +17,43 @@ export class ListadoCongresistaComponent implements OnInit {
   REGIONES = REGIONES;
   regselect: string;
 
+
+  nextPageUrl ="start";
+  candidatoPageX;
+
   constructor(private restApiService: RestApiService,
     private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.restApiService.getCongresistasByOrganization(this.politicParty.id).subscribe((data: any)=>{
-      this.congresistas = <Candidato[]>data.results;
-      this.onFiltroRegion("LIMA");
-    });
+    this.getCongresistasByOrganization();
     
+  }
+
+  getCongresistasByOrganization(){
+    if(this.nextPageUrl == null)  {
+      //do nothing
+    }else if(this.nextPageUrl == "start"){
+      this.restApiService.getCongresistasByOrganization(this.politicParty.id).subscribe((res:any) =>{
+        this.congresistas=res.results;   
+        this.nextPageUrl = res.next ;
+        console.log(this.congresistas);
+        // this.onFiltroRegion("LIMA");
+      }, error => {  });
+    }else if(this.nextPageUrl){
+      this.restApiService.getCongresistasByOrganization(this.politicParty.id,this.nextPageUrl).subscribe((res :any)=>{
+        this.candidatoPageX=<Candidato[]>res.results;            
+        this.nextPageUrl = res.next 
+        this.congresistas = this.congresistas.concat(this.candidatoPageX)
+        // this.onFiltroRegion("LIMA");
+        console.log(this.congresistas);
+      }, error => {  });
+    }
   }
 
   onFiltroRegion(value: string){
      this.regselect = value;
      let temp = this.congresistas.filter(congresista => congresista.distrito_electoral == value.toUpperCase());
      this.congresistasTemp =  this.onOrdernar(temp);
-     
   }
 
   onOrdernar(congresistas:Candidato[]) : any {
@@ -50,9 +71,9 @@ export class ListadoCongresistaComponent implements OnInit {
   return congresistas;
   }
 
-  onScroll() {
-    console.log('scrolled!!');
-
+  onScroll(){
+    console.log("on scrool detallle congresistas  ");
+    this.getCongresistasByOrganization()
   }
 
 }

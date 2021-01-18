@@ -1,9 +1,10 @@
 
 <div 
-class="listado"
+class="scroll"
 infiniteScroll
 [infiniteScrollDistance]="2"
 [infiniteScrollThrottle]="50"
+[scrollWindow]="false"
 (scrolled)="onScroll()"
 >
 <div *ngFor="let candidato of presidente; let i = index">

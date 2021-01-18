@@ -14,6 +14,8 @@ export class PartidoAndinoComponent implements OnInit {
   @Input() politicParty: any; 
 
   listParlamentoAndino: Candidato[];
+  nextPageUrl = "start";
+  candidatoPageX;
 
   constructor(private restApiService: RestApiService,
     private activeRoute: ActivatedRoute) {
@@ -21,10 +23,31 @@ export class PartidoAndinoComponent implements OnInit {
    }
 
   ngOnInit(): void { 
-    this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((data: any)=>{
-      this.listParlamentoAndino = <Candidato[]>data.results;
-      this.onOrdernar();
-    });
+    this.getParlamentoByOrganization();
+  }
+
+  getParlamentoByOrganization(){
+    if(this.nextPageUrl == null)  {
+      //do nothing
+    }else if(this.nextPageUrl == "start"){
+      this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((res:any) =>{
+        this.listParlamentoAndino=res.results;   
+        this.nextPageUrl = res.next ;
+        console.log(this.listParlamentoAndino);
+        // this.onOrdernar();
+
+      }, error => {  });
+
+    }else if(this.nextPageUrl){
+      this.restApiService.getParlamentoByOrganization(this.politicParty.id,this.nextPageUrl).subscribe((res :any)=>{
+        this.candidatoPageX=<Candidato[]>res.results;            
+        this.nextPageUrl = res.next 
+        this.listParlamentoAndino = this.listParlamentoAndino.concat(this.candidatoPageX)
+        console.log(this.listParlamentoAndino);
+        // this.onOrdernar();
+
+      }, error => {  });
+    }
   }
 
   onOrdernar(){
@@ -40,8 +63,10 @@ export class PartidoAndinoComponent implements OnInit {
 
    });
   }
-  onScroll() {
-    console.log('scrolled!!');
-    // this.getPartidosPoliticos()
+
+  onScroll(){
+    console.log("on scrool detallle LISTADO ANDINO ");
+    this.getParlamentoByOrganization();
+
   }
 }

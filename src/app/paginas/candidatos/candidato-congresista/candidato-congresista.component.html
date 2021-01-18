@@ -3,23 +3,43 @@
     <mat-form-field appearance="fill">
         <mat-label>Filtro: Región</mat-label>
         <mat-select  (selectionChange)="onFiltroRegion($event.value)">
-            <mat-option *ngFor="let region of REGIONES" [value] = "region.name">
-                {{region.name}}
+            <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
+                {{region.distrito_electoral}}
             </mat-option>    
         </mat-select>
     </mat-form-field>
-    
-    <div class="container" *ngIf="regselect == 'LIMA'">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Filtro: Partido</mat-label>
+        <mat-select  (selectionChange)="onFiltroOrganizacion($event.value)">
+            <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
+                {{partido.nombre}}
+            </mat-option>    
+        </mat-select>
+    </mat-form-field>
+
+
+    <div class="container" *ngIf="regSelect == null">
         <mat-icon>people</mat-icon> <span>
-             <strong> Candidatos al congreso por Lima  </strong>        
+             <strong> Candidatos al congreso por LIMA  </strong>        
          </span>
      </div>
-     <div class="container" *ngIf="regselect != 'LIMA'">
+     <div class="container" *ngIf="regSelect != null">
         <mat-icon>people</mat-icon> <span>
-             <strong> Candidatos al congreso por {{regselect}} </strong>
+             <strong> Candidatos al congreso por {{regSelect}} </strong>
             </span>
      </div>
-    
+
+     <div class="container" *ngIf="orgSelect == null">
+        <mat-icon>people</mat-icon> <span>
+             <strong> Partido Politico ACCION POPULAR  </strong>        
+         </span>
+     </div>
+     <div class="container" *ngIf="orgSelect != null">
+        <mat-icon>people</mat-icon> <span>
+             <strong> Partido Politico {{orgSelect}} </strong>
+            </span>
+     </div>
 </div>
 
 <div
@@ -32,7 +52,7 @@
 
     >
     <div *ngFor="let candidato of congresistas">
-        <app-card [candidato]="candidato"></app-card> 
+        <app-card-candidato [candidato]="candidato"></app-card-candidato> 
     </div>
 </div>
 

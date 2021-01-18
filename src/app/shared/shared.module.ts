@@ -16,11 +16,12 @@ import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { CardComponent } from './_components/card/card.component';
+import { CardCandidatoComponent } from './_components/card-candidato/card-candidato.component';
 
 
 @NgModule({
-  declarations: [CardComponent],
-  exports:[CardComponent],
+  declarations: [CardComponent, CardCandidatoComponent],
+  exports:[CardComponent,CardCandidatoComponent],
   imports: [
     CommonModule,
     MatSliderModule,
@@ -33,7 +34,8 @@ import { CardComponent } from './_components/card/card.component';
     MatCardModule,
     MatProgressBarModule   ,
     MatTabsModule,
-    MatListModule
+    MatListModule,
+    FlexLayoutModule
   ]
 })
 export class SharedModule { }

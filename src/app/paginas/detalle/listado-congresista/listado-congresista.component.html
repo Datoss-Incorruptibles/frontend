@@ -3,8 +3,8 @@
 <mat-form-field appearance="fill">
     <mat-label>Filtro: Región</mat-label>
     <mat-select  (selectionChange)="onFiltroRegion($event.value)">
-        <mat-option *ngFor="let region of REGIONES" [value] = "region.name">
-            {{region.name}}
+        <mat-option *ngFor="let region of REGIONES" [value] = "region.distrito_electoral">
+            {{region.distrito_electoral}}
         </mat-option>    
     </mat-select>
 </mat-form-field>

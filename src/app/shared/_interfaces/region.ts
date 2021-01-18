@@ -1,4 +1,5 @@
 export class Region{
     id: string;
-    name: string;
+    region: string;
+    distrito_electoral: string;
 }

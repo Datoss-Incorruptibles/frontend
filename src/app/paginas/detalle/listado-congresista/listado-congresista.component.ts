@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { Candidato } from '../../../shared/_interfaces/candidato.interface';
-import { REGIONES } from '../../../shared/_constants/regiones'
+import { Region } from '../../../shared/_interfaces/region';
 
 @Component({
   selector: 'app-listado-congresista',
@@ -14,7 +14,7 @@ export class ListadoCongresistaComponent implements OnInit {
   @Input() politicParty: any; 
   congresistas: Candidato[];
   congresistasTemp: Candidato[];
-  REGIONES = REGIONES;
+  REGIONES : Region[];
   regselect: string;
 
 
@@ -26,6 +26,7 @@ export class ListadoCongresistaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCongresistasByOrganization();
+    this.getRegiones();
     
   }
 
@@ -49,6 +50,29 @@ export class ListadoCongresistaComponent implements OnInit {
       }, error => {  });
     }
   }
+  getCongresistasByOrganizationAndRegion(){
+    if(this.nextPageUrl == null)  {
+      //do nothing
+    }else if(this.nextPageUrl == "start"){
+      this.restApiService.getCongresistasByOrganization(this.politicParty.id).subscribe((res:any) =>{
+        this.congresistas=res.results;   
+        this.nextPageUrl = res.next ;
+        console.log(this.congresistas);
+        // this.onFiltroRegion("LIMA");
+      }, error => {  });
+    }else if(this.nextPageUrl){
+      this.restApiService.getCongresistasByOrganization(this.politicParty.id,this.nextPageUrl).subscribe((res :any)=>{
+        this.candidatoPageX=<Candidato[]>res.results;            
+        this.nextPageUrl = res.next 
+        this.congresistas = this.congresistas.concat(this.candidatoPageX)
+        // this.onFiltroRegion("LIMA");
+        console.log(this.congresistas);
+      }, error => {  });
+    }
+  }
+
+
+
 
   onFiltroRegion(value: string){
      this.regselect = value;
@@ -69,6 +93,15 @@ export class ListadoCongresistaComponent implements OnInit {
 
   });
   return congresistas;
+  }
+
+  getRegiones(){
+    this.restApiService.getRegiones().subscribe((res:any) =>{
+      this.REGIONES=res.results;   
+      console.log(this.REGIONES);
+      // this.onFiltroRegion("LIMA");
+    }, error => {  });;
+
   }
 
   onScroll(){

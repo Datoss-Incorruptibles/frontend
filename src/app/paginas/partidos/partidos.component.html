@@ -14,13 +14,22 @@
     </button>
 </div>
 <mat-progress-bar mode="indeterminate" *ngIf="partidos.length==0" ></mat-progress-bar>
-<div class="listado">
-
+<!-- <cdk-virtual-scroll-viewport 
+class="listado" 
+itemSize="50" > -->
+<div 
+class="listado"
+infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+(scrolled)="onScroll()"
+>
+    
     <!-- <app-partido-andino></app-partido-andino>
  -->
 
 
-    <mat-card *ngFor="let partido of partidos" class="card-politico">
+   <mat-card *ngFor="let partido of partidos" class="card-politico">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />
             </div>
@@ -29,14 +38,12 @@
             </mat-card-title>
             <mat-card-subtitle>Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años </mat-card-subtitle>
             <mat-card-subtitle>
-                <!--congreso actual ID 4 -->
                 <p>
                     <span *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
                         <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
                     </span>
                 </p>
 
-                <!--vizcarra ID 6 -->
                 <p>
                 <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
                     <span *ngIf="i==0"> </span> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
@@ -48,7 +55,6 @@
         </mat-card-header>
         <mat-card-content class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-between stretch">                
                 <div>
-                <!--Sentencias y procesos, ID 3 -->                
                 <span *ngFor="let indicador of fnIndicadores(partido,3); let i = index">
                     <p>
                     <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
@@ -57,7 +63,6 @@
                 </div>  
                 
                 <div>
-                 <!--Estudios ID 1 -->                
                 <span *ngFor="let indicador of fnIndicadores(partido,1); let i = index">
                     <p>
                     <span *ngIf="i==0"></span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}   
@@ -66,7 +71,6 @@
                 </div>
 
                 <div>
-                <!--trayectoria ID 2 -->
                 <span *ngFor="let indicador of fnIndicadores(partido,5); let i = index">
                     <p>
                     <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
@@ -82,24 +86,10 @@
                 <mat-icon>description</mat-icon> <span> Ver más</span>             
             </button>
             
-            <!--
-            <button mat-icon-button>
-                <mat-icon>thumb_down_alt</mat-icon>                
-            </button>
-            <button mat-icon-button>
-                <mat-icon>thumb_up_alt</mat-icon>                
-            </button>
-            <div class="texto">Me representa</div>            
-            <span class="example-spacer"></span>
-            <button mat-icon-button>
-                <mat-icon>share</mat-icon>
-            </button>
-
-            -->
-            
-
-            
-        </mat-card-actions>
+        </mat-card-actions> 
     </mat-card>
+
+<!-- </cdk-virtual-scroll-viewport> -->
 </div>
+
 <br>

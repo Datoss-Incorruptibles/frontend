@@ -31,6 +31,12 @@ import { PartidoAndinoComponent } from './paginas/detalle/partido-andino/partido
 import { ListadoPresidenteComponent } from './paginas/detalle/listado-presidente/listado-presidente.component';
 import { ListadoCongresistaComponent } from './paginas/detalle/listado-congresista/listado-congresista.component';
 import { SharedModule } from './shared/shared.module';
+
+/*Utils */
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
+
 import { CandidatoPresidenteComponent } from '../app/paginas/candidatos/candidato-presidente/candidato-presidente.component';
 import { CandidatoCongresistaComponent } from '../app/paginas/candidatos/candidato-congresista/candidato-congresista.component';
 import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-andino/candidato-andino.component';
@@ -74,11 +80,12 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     MatSidenavModule,
     MatSelectModule,
     MatCardModule,
-    MatProgressBarModule   ,
+    MatProgressBarModule,
     MatTabsModule,
     MatListModule,
     SharedModule,
-  ],
+    ScrollingModule,
+    InfiniteScrollModule],
   providers: [],
   bootstrap: [AppComponent]
 })

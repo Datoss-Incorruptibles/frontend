@@ -32,7 +32,8 @@ mat-nav-list {
 }
 
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
-    height: 100%;
+    // desactivate to perform infinite scroll
+    // height: 100%;
 
 }
 

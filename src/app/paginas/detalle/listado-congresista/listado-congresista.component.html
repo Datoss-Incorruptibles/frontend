@@ -22,6 +22,16 @@
 
 </div>
 
-<div *ngFor="let candidato of congresistasTemp">
-    <app-card [candidato]="candidato"></app-card> 
+<div
+class="scroll"
+infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+[scrollWindow]="false"
+(scrolled)="onScroll()"
+>
+    <div *ngFor="let candidato of congresistas">
+        <app-card [candidato]="candidato"></app-card> 
+    </div>
 </div>
+

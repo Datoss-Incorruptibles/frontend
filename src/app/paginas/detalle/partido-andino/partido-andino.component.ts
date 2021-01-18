@@ -34,7 +34,7 @@ export class PartidoAndinoComponent implements OnInit {
         this.listParlamentoAndino=res.results;   
         this.nextPageUrl = res.next ;
         console.log(this.listParlamentoAndino);
-        // this.onOrdernar();
+        this.onOrdernar();
 
       }, error => {  });
 
@@ -44,7 +44,7 @@ export class PartidoAndinoComponent implements OnInit {
         this.nextPageUrl = res.next 
         this.listParlamentoAndino = this.listParlamentoAndino.concat(this.candidatoPageX)
         console.log(this.listParlamentoAndino);
-        // this.onOrdernar();
+        this.onOrdernar();
 
       }, error => {  });
     }

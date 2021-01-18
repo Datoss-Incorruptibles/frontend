@@ -16,7 +16,7 @@ export class PartidosComponent implements OnInit {
 
 
   partidos:any=[];
-  nextPageUrl ="";
+  nextPageUrl = "start";
   partidosPageX
 
 
@@ -34,27 +34,25 @@ export class PartidosComponent implements OnInit {
 
 
   getPartidosPoliticos(){
+    if(this.nextPageUrl == null)  {
+      //do nothing
+    }else if(this.nextPageUrl == "start"){
+      this.restApi.getOrganizacionPolitica().subscribe((res:any) =>{
+        this.partidos=res.results;   
+        this.nextPageUrl = res.next                 
+        this.groupPartidosByIndicador()
+        // console.log(this.partidos);
+        // this.onOrdernar("nombre");
+      }, error => {  });
 
-    if(this.nextPageUrl){
+    }else if(this.nextPageUrl){
       this.restApi.getOrganizacionPolitica(this.nextPageUrl).subscribe((res:any) =>{
         this.partidosPageX=res.results;   
         this.nextPageUrl = res.next 
         this.partidos = this.partidos.concat(this.partidosPageX)
-  
-        ////////////
         this.groupPartidosByIndicador()
-        console.log(this.partidos);
-        this.onOrdernar("nombre");
-      }, error => {  });
-    }else{
-      this.restApi.getOrganizacionPolitica().subscribe((res:any) =>{
-        this.partidos=res.results;   
-        this.nextPageUrl = res.next                 
-        // this.partidos=res;                     
-        ////////////
-        this.groupPartidosByIndicador()
-        console.log(this.partidos);
-        this.onOrdernar("nombre");
+        // console.log(this.partidos);
+        // this.onOrdernar("nombre");
       }, error => {  });
     }
 

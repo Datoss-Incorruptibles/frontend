@@ -17,6 +17,19 @@ export class RestApiService {
 
   constructor(private http: HttpClient) { }
 
+
+  //ORGANIZACION POLITICA
+  getPresidente(nextUrl?) {
+    let _url = this.domain + URL_API.candidato;
+    let id_cargos = CHARGE.PRESIDENTE;
+    let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", "5");//Create new HttpParams
+    if(nextUrl){
+      return this.http.get(`${nextUrl}`);
+    }else{
+      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
+    }
+  }
+
   getOrganizacionPolitica(nextUrl?) {
     if(nextUrl){
       return this.http.get(`${nextUrl}` ,this.httpOptions);
@@ -25,20 +38,7 @@ export class RestApiService {
     }
 
   }
-
-  getParlamentoByOrganization(idOrganization: string, nextUrl?) {
-    let _url = this.domain + URL_API.candidato;
-    let params = new HttpParams()
-    .set("cargo_ids", CHARGE.PARLAMENTO_ANDINO)
-    .set("organizacion_politica_id", idOrganization)
-    .set("limit", "5"); 
-
-      if(nextUrl){
-        return this.http.get(`${nextUrl}`);
-      }else{
-        return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
-      }
-    }
+  //PRESIDENTES
 
   getPresidenteByOrganization(idOrganization: string,nextUrl?) {
     let _url = this.domain + URL_API.candidato;
@@ -56,6 +56,19 @@ export class RestApiService {
 
   }
 
+  //CONGRESISTAS
+  getCongresistas(nextUrl?) {
+    let _url = this.domain + URL_API.candidato;
+    let id_cargos = CHARGE.CONGRESISTA;
+    let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", "5");//Create new HttpParams
+    if(nextUrl){
+      return this.http.get(`${nextUrl}`);
+    }else{
+      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
+    }
+  }
+
+
   getCongresistasByOrganization(idOrganization: string, nextUrl?) {
     let _url = this.domain + URL_API.candidato;
     let params = new HttpParams()
@@ -68,40 +81,35 @@ export class RestApiService {
         return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
       }
     }
-
-  getPresidente(nextUrl?) {
-    let _url = this.domain + URL_API.candidato;
-    let id_cargos = CHARGE.PRESIDENTE;
-    let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", "5");//Create new HttpParams
-    if(nextUrl){
-      return this.http.get(`${nextUrl}`);
-    }else{
-      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
-    }
-  }
-
-  getCongresistas(nextUrl?) {
-    let _url = this.domain + URL_API.candidato;
-    let id_cargos = CHARGE.CONGRESISTA;
-    let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", "5");//Create new HttpParams
-    if(nextUrl){
-      return this.http.get(`${nextUrl}`);
-    }else{
-      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
-    }
+  getCongresistasByRegion(idUbigeos: string, nextUrl?) {
+      let _url = this.domain + URL_API.candidato;
+      let params = new HttpParams()
+      .set("cargo_ids", CHARGE.CONGRESISTA)
+      .set("ubigeo_postula", idUbigeos)
+      .set("limit", "5"); //Create new HttpParams
+        if(nextUrl){
+          return this.http.get(`${nextUrl}`);
+        }else{
+          return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
+        }
   }
 
   getCongresistasByOrganizacionAndRegion(idOrganization: string,idUbigeos: string,nextUrl?) {
-    let _url = this.domain + URL_API.candidato;
-    let id_cargos = CHARGE.CONGRESISTA;
-    let params = new HttpParams().set("cargo_ids", id_cargos).set("organizacion_politica_id", idOrganization).set("ubigeo_postula", idUbigeos).set("limit", "5");//Create new HttpParams
-    if(nextUrl){
-      return this.http.get(`${nextUrl}`);
-    }else{
-      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
-    }
+      let _url = this.domain + URL_API.candidato;
+      let id_cargos = CHARGE.CONGRESISTA;
+      let params = new HttpParams()
+      .set("cargo_ids", id_cargos)
+      .set("organizacion_politica_id", idOrganization)
+      .set("ubigeo_postula", idUbigeos)
+      .set("limit", "5");//Create new HttpParams
+      if(nextUrl){
+        return this.http.get(`${nextUrl}`);
+      }else{
+        return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
+      }
   }
-
+  
+  //PARLAMENTO ANDINO
   
   getParlamento(nextUrl?) {
     let _url = this.domain + URL_API.candidato;
@@ -112,17 +120,23 @@ export class RestApiService {
       return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
     }
   }
-  getParlamentobyOrgnizacion(idOrganization,nextUrl?) {
+
+  getParlamentoByOrganization(idOrganization: string, nextUrl?) {
     let _url = this.domain + URL_API.candidato;
-    let params = new HttpParams().set("cargo_ids", CHARGE.PARLAMENTO_ANDINO).set("organizacion_politica_id", idOrganization).set("limit", "5"); //Create new HttpParams
-    if(nextUrl){
-      return this.http.get(`${nextUrl}`);
-    }else{
-      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
+    let params = new HttpParams()
+    .set("cargo_ids", CHARGE.PARLAMENTO_ANDINO)
+    .set("organizacion_politica_id", idOrganization)
+    .set("limit", "5"); 
+
+      if(nextUrl){
+        return this.http.get(`${nextUrl}`);
+      }else{
+        return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
+      }
     }
-  }
 
 
+  //FILTROS
   getRegiones(){
     let _url = this.domain + URL_API.ubigeo;
     let params = new HttpParams();
@@ -139,7 +153,7 @@ export class RestApiService {
   onOrdernar(data){
     console.log(data);
   }
-  
+
   getCandidato(id){
     return this.http.get(this.domain+`candidato/${id}/?format=json`,this.httpOptions);
   }

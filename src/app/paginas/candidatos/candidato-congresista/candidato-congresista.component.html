@@ -12,6 +12,7 @@
     <mat-form-field appearance="fill">
         <mat-label>Filtro: Partido</mat-label>
         <mat-select  (selectionChange)="onFiltroOrganizacion($event.value)">
+            <mat-option value="sinseleccion" >SIN SELECCIÓN</mat-option>
             <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
                 {{partido.nombre}}
             </mat-option>    

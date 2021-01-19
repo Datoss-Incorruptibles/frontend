@@ -28,21 +28,7 @@ export class CandidatoAndinoComponent implements OnInit {
     this.getParlamentoByOrganization(String(this.orgIdSelect));
     this.getOrganizaciones();
   }
-
-  // se ordeanra desde back o con query params
-  // onOrdernar(){
-  //   this.listParlamentoAndino = this.listParlamentoAndino.sort((n1,n2) => {
-  //     if (n1.jne_posicion > n2.jne_posicion) {
-  //         return 1;
-  //     }
   
-  //     if (n1.jne_posicion < n2.jne_posicion) {
-  //         return -1;
-  //     }
-  //     return 0;
-  //  });
-  // }
-
   getParlamentoByOrganization( organizacionId: string){
     if(this.nextPageUrl == null)  {
       //do nothing

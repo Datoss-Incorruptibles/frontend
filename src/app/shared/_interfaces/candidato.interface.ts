@@ -27,5 +27,5 @@ export interface Candidato{
     ruta_archivo: string; 
     fecha_registro: string;
     fecha_modificacion: null;
-    indicadores_categoria_candidato: IndicadorCandidato[];
+    indicadores: IndicadorCandidato[];
 }

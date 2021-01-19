@@ -31,7 +31,7 @@ export class RestApiService {
     let params = new HttpParams()
     .set("cargo_ids", CHARGE.PARLAMENTO_ANDINO)
     .set("organizacion_politica_id", idOrganization)
-    .set("limit", "5"); //Create new HttpParams
+    .set("limit", "5"); 
 
       if(nextUrl){
         return this.http.get(`${nextUrl}`);
@@ -129,5 +129,8 @@ export class RestApiService {
     console.log(data);
   }
   
+  getCandidato(id){
+    return this.http.get(this.domain+`candidato/${id}/?format=json`,this.httpOptions);
+  }
 
 }

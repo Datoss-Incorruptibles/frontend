@@ -108,11 +108,8 @@
     </mat-card-content>
     <hr>
     <mat-card-actions>
-        <button  mat-button>
+        <button routerLink="/candidato/{{candidato.id}}" [state]="candidato" mat-button >
             <mat-icon>description</mat-icon> <span> Ver más</span>             
         </button>
-
-
-
     </mat-card-actions>
 </mat-card>

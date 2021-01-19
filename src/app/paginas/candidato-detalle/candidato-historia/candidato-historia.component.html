@@ -1,0 +1,101 @@
+<div *ngIf="candidato" class="candidato">
+  <mat-card>
+    <div>
+      <div class="sentencias">
+        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+            gavel
+        </mat-icon>
+        <span class="title">
+          <label>Judicial</label>
+        </span>
+      </div>
+      <div *ngIf="candidato.sentencias">
+        <div *ngFor="let sentencia of candidato.sentencias">
+          {{sentencia.sentencia}}
+          {{sentencia.nro_expediente}}
+          {{sentencia.fallo}}
+          {{sentencia.cumple_fallo}}
+          {{sentencia.tipo_proceso}}
+          <br>
+          <br>
+        </div>
+      </div>
+      <div *ngIf="!candidato.sentencias">
+        No hay data amig@...
+      </div>
+    </div>
+    <hr>
+    <div>
+      <div>
+        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+            school
+        </mat-icon>
+        <span class="title">
+          <label>Academicas</label>
+        </span>
+      </div>
+      <div *ngIf="candidato.estudios">
+        <div *ngFor="let estudio of candidato.estudios">
+          {{estudio.grado}}
+          {{estudio.institucion}}
+          {{estudio.estudio}}
+          {{estudio.anio_bachiller}}
+          {{estudio.anio_titulo}}
+          <br>
+          <br>
+        </div>
+      </div>
+      <div *ngIf="!candidato.estudios">
+        No hay data amig@...
+      </div>
+    </div>
+    <hr>
+    <div>
+      <div>
+        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+          business_center
+        </mat-icon>
+        <span class="title">
+          <label>Experiencia Laboral</label>
+        </span>
+      </div>
+      <div *ngIf="candidato.experiencialaboral">
+        <div *ngFor="let experiencialaboral of candidato.experiencialaboral">
+          {{experiencialaboral.centro_trabajo}}
+          {{experiencialaboral.ocupacion_profesion}}
+          {{experiencialaboral.anio_trabajo_desde}}
+          {{experiencialaboral.anio_trabajo_hasta}}
+          <br>
+          <br>
+        </div>
+      </div>
+      <div *ngIf="!candidato.experiencialaboral">
+        No hay data amig@...
+      </div>
+    </div>
+    <hr>
+    <div>
+      <div>
+        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+          account_balance
+        </mat-icon>
+        <span class="title">
+          <label>Experiencia Laboral</label>
+        </span>
+      </div>
+      <div *ngIf="candidato.experienciapolitica">
+        <div *ngFor="let experienciapolitica of candidato.experienciapolitica">
+          {{experienciapolitica.centro_trabajo}}
+          {{experienciapolitica.ocupacion_profesion}}
+          {{experienciapolitica.anio_trabajo_desde}}
+          {{experienciapolitica.anio_trabajo_hasta}}
+          <br>
+          <br>
+        </div>
+      </div>
+      <div *ngIf="!candidato.experienciapolitica">
+        No hay data amig@...
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -19,10 +19,10 @@ export class ListadoPresidenteComponent implements OnInit {
       this.restApiService.getPresidenteByOrganization(this.politicParty.id).subscribe((res :any) =>{
         this.presidente=<Candidato[]>res.results;            
         console.log(this.presidente);
-        this.onOrdernar();
+        //this.onOrdernar();
       }, error => {  });
     }
-
+/*
   onOrdernar(){
     this.presidente = this.presidente.sort((n1,n2) => {
       if (n1.cargo_id > n2.cargo_id) {
@@ -37,6 +37,7 @@ export class ListadoPresidenteComponent implements OnInit {
   });
 
   }
+  */
   onCargoPolitico(i){
     if(i == 0){
       return "Candidato a la Presidencia";

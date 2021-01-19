@@ -25,11 +25,12 @@ import { HttpClientModule } from '@angular/common/http';
 /*Componnetes */
 import { PartidosComponent } from '../app/paginas/partidos/partidos.component';
 import { DetalleComponent } from '../app/paginas/detalle/detalle.component';
-import { DetallePartidoIndicadoresComponent } from '../app/paginas/detalle-partido-indicadores/detalle-partido-indicadores.component';
+import { DetallePartidoIndicadoresComponent } from './paginas/detalle-partido-indicadores/detalle-partido-indicadores.component';
 import { PartidoAndinoComponent } from './paginas/detalle/partido-andino/partido-andino.component';
 import { ListadoPresidenteComponent } from './paginas/detalle/listado-presidente/listado-presidente.component';
 import { ListadoCongresistaComponent } from './paginas/detalle/listado-congresista/listado-congresista.component';
 import { SharedModule } from './shared/shared.module';
+import { HistoriaPartidoComponent } from './paginas/detalle/historia-partido/historia-partido.component';
 
 /*Componentes Candidato */
 import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.component';
@@ -53,6 +54,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     PartidoAndinoComponent,
     ListadoPresidenteComponent,
     ListadoCongresistaComponent,
+    HistoriaPartidoComponent,
 
 /*Componentes Candidato */
     CandidatosComponent,
@@ -69,6 +71,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     PartidoAndinoComponent,
     ListadoPresidenteComponent,
     ListadoCongresistaComponent,
+    HistoriaPartidoComponent,
 
     /*Componentes Candidato */
     CandidatosComponent,

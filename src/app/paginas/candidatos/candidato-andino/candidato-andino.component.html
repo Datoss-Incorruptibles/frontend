@@ -1,3 +1,15 @@
+
+<div class="filtrado">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Filtro: Partido</mat-label>
+        <mat-select  (selectionChange)="onFiltroOrganizacion($event.value)">
+            <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
+                {{partido.nombre}}
+            </mat-option>    
+        </mat-select>
+    </mat-form-field>
+
 <div
 class="scrollC"
 infiniteScroll

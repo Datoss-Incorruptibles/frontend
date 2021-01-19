@@ -72,7 +72,7 @@ export class ListadoCongresistaComponent implements OnInit {
         this.congresistas=res.results;   
         this.nextPageUrl = res.next ;
         console.log(this.congresistas);
-         this.onOrdernar();
+        //this.onOrdernar();
         // this.onFiltroRegion("LIMA");
       }, error => {  });
     }else if(this.nextPageUrl){
@@ -82,7 +82,7 @@ export class ListadoCongresistaComponent implements OnInit {
         this.congresistas = this.congresistas.concat(this.candidatoPageX)
         // this.onFiltroRegion("LIMA");
         console.log(this.congresistas);
-        this.onOrdernar();
+        //this.onOrdernar();
       }, error => {  });
     }
   }
@@ -94,7 +94,7 @@ export class ListadoCongresistaComponent implements OnInit {
      let temp = this.congresistas.filter(congresista => congresista.distrito_electoral == value.toUpperCase());
      this.congresistasTemp =  this.onOrdernar(temp);
   }
-*/
+
   onOrdernar() {
     this.congresistas = this.congresistas.sort((n1,n2) => {
       if (n1.jne_posicion > n2.jne_posicion) {
@@ -106,7 +106,7 @@ export class ListadoCongresistaComponent implements OnInit {
       return 0;
     });
   }
-
+*/
   getRegiones(){
     this.restApiService.getRegiones().subscribe((res:any) =>{
       this.REGIONES=res.results;   

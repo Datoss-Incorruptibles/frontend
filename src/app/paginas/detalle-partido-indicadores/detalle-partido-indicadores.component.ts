@@ -6,12 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['detalle-partido-indicadores.component.scss']
 })
 export class DetallePartidoIndicadoresComponent implements OnInit {
-  @Input() partido: null;
+  @Input() partido: any;
   
+  indicadores:[];
   constructor() { }
 
   ngOnInit(): void {
-
+    this.indicadores=this.partido.indicadorescategoriaorg;
+    console.log(this.indicadores);
   }
 
 }

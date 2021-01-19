@@ -18,7 +18,7 @@
         </mat-select>
     </mat-form-field>
 
-
+<!--
     <div class="container" *ngIf="regSelect == null">
         <mat-icon>people</mat-icon> <span>
              <strong> Candidatos al congreso por LIMA  </strong>        
@@ -40,7 +40,9 @@
              <strong> Partido Politico {{orgSelect}} </strong>
             </span>
      </div>
+     -->
 </div>
+
 
 <div
     class="scrollB"
@@ -51,21 +53,22 @@
     [scrollWindow]="false"
 
     >
-    <div [ngSwitch]="congresistas.length">
-        <div *ngSwitchCase = 0 >
+    <span [ngSwitch]="congresistas.length">
+        <span *ngSwitchCase = 0 >
           <div class="container2">
             <span >
                 <strong> Sin Candidatos en la region </strong>        
             </span>
           </div>
     
-        </div>
-        <div *ngSwitchDefault>
+        </span>
+        <span *ngSwitchDefault>
             <div *ngFor="let candidato of congresistas">
-                <app-card [candidato]="candidato"></app-card> 
+                <app-card-candidato [candidato]="candidato"></app-card-candidato> 
             </div>
-        </div>
-    </div>
+        </span>
+    </span>
+    
 </div>
 
     

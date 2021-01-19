@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { Candidato } from '../../../shared/_interfaces/candidato.interface';
-
+import { Partido } from '../../../shared/_interfaces/partido.interface';
 @Component({
   selector: 'app-candidato-andino',
   templateUrl: './candidato-andino.component.html',
@@ -10,10 +10,14 @@ import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 })
 export class CandidatoAndinoComponent implements OnInit {
 
-
+  ORGANIZACIONES: Partido[];
   listParAndino: Candidato[];
+  orgSelect: string;
+  orgIdSelect = 1;//Accion popular
+  
   nextPageUrl = "start";
   listParlAndinoPageX;
+
 
   constructor(private restApiService: RestApiService,
     private activeRoute: ActivatedRoute) {
@@ -21,7 +25,8 @@ export class CandidatoAndinoComponent implements OnInit {
    }
 
   ngOnInit(): void { 
-    this.getParlAndino();
+    this.getParlamentoByOrganization(String(this.orgIdSelect));
+    this.getOrganizaciones();
   }
 
   // se ordeanra desde back o con query params
@@ -38,27 +43,53 @@ export class CandidatoAndinoComponent implements OnInit {
   //  });
   // }
 
-  getParlAndino(){
+  getParlamentoByOrganization( organizacionId: string){
     if(this.nextPageUrl == null)  {
       //do nothing
     }else if(this.nextPageUrl == "start"){
-      this.restApiService.getParlamento().subscribe((res:any) =>{
-        this.listParAndino =res.results;   
-        this.nextPageUrl = res.next                 
+      this.restApiService.getParlamentoByOrganization(organizacionId).subscribe((res:any) =>{
+        this.listParAndino=res.results;   
+        this.nextPageUrl = res.next ;
+        console.log(this.listParAndino);
+         //this.onOrdernar();
+        // this.onFiltroRegion("LIMA");
       }, error => {  });
     }else if(this.nextPageUrl){
-      this.restApiService.getParlamento(this.nextPageUrl).subscribe((res :any)=>{
+      this.restApiService.getParlamentoByOrganization(organizacionId,this.nextPageUrl).subscribe((res :any)=>{
         this.listParlAndinoPageX=<Candidato[]>res.results;            
         this.nextPageUrl = res.next 
         this.listParAndino = this.listParAndino.concat(this.listParlAndinoPageX)
+        // this.onFiltroRegion("LIMA");
+        console.log(this.listParAndino);
+        //this.onOrdernar();
       }, error => {  });
-
     }
   }
 
+  getOrganizaciones(){
+    this.restApiService.getOrganizacionesNames().subscribe((res:any) =>{
+      this.ORGANIZACIONES=res.results;   
+      console.log(this.ORGANIZACIONES);
+    }, error => {  });;
+
+  }
+  onFiltroOrganizacion(value: number){
+    this.orgIdSelect = value;
+    this.ORGANIZACIONES.forEach(element => {
+      if(element.id==value){
+        this.orgSelect=element.nombre;
+        return ;
+      }
+    });
+    console.log(this.orgIdSelect);
+    console.log(this.orgSelect);
+    this.nextPageUrl = "start";
+    this.getParlamentoByOrganization( String(this.orgIdSelect));
+
+  }
 
   onScroll(){
     console.log("on scrool Parlemnto andino");
-    this.getParlAndino()
+    this.getParlamentoByOrganization(String(this.orgIdSelect));
   }
 }

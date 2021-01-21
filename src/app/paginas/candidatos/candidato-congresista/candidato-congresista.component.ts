@@ -35,10 +35,12 @@ export class CandidatoCongresistaComponent implements OnInit {
     this.getCongresistasByRegion(this.unigeoIdSelect);
     this.getRegiones();
     this.getOrganizaciones();
- 
   }
 
+
   onFiltroRegion(value: string){
+    //reset list
+    this.listOfDiferrentPages = [];
     if(this.sinSelect==true){
       this.nextPageUrl = "start";
       this.unigeoIdSelect = value;
@@ -57,7 +59,10 @@ export class CandidatoCongresistaComponent implements OnInit {
     this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect);
     }
   }
+
   onFiltroOrganizacion(value: any){
+    //reset list
+    this.listOfDiferrentPages = [];
     if(value=="sinseleccion"){
       this.nextPageUrl = "start";
       this.sinSelect=true;

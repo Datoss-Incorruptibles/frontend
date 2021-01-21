@@ -1,100 +1,103 @@
-<div class="filtrado">
-    <mat-form-field appearance="fill">
-        <mat-label>Ordenado por</mat-label>
-        <mat-select (selectionChange)="onOrdernar($event.value)">
-            <mat-option value="nombre">Nombre</mat-option>
-            <mat-option value="fundacion_fecha">Antiguedad</mat-option>
-            <mat-option value="indicadorCantidadSentencias">Numero de Sentencias</mat-option>
-            
-        </mat-select>
-    </mat-form-field>
-    <span class="example-spacer"></span>
-    <button mat-icon-button>
-        <mat-icon>share</mat-icon>
-    </button>
-</div>
-<mat-progress-bar mode="indeterminate" *ngIf="partidos.length==0" ></mat-progress-bar>
-<!-- <cdk-virtual-scroll-viewport 
-class="listado" 
-itemSize="50" > -->
-<div 
-class="listado"
-infiniteScroll
-[infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="150"
-
-(scrolled)="onScroll()"
->
-    
-    <!-- <app-partido-andino></app-partido-andino>
- -->
+ <div *ngIf="partidos">
 
 
-   <mat-card *ngFor="let partido of partidos" class="card-politico">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />
-            </div>
-            <mat-card-title mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
-                {{partido.nombre}}
-            </mat-card-title>
-            <mat-card-subtitle>Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años </mat-card-subtitle>
-            <mat-card-subtitle>
-                <p>
-                    <span *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
-                        <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
-                    </span>
-                </p>
-
-                <p>
-                <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
-                    <span *ngIf="i==0"> </span> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
-                </span>
-                </p>
+ <div class="filtrado">
+        <mat-form-field appearance="fill">
+            <mat-label>Ordenado por</mat-label>
+            <mat-select (selectionChange)="onOrdernar($event.value)">
+                <mat-option value="nombre">Nombre</mat-option>
+                <mat-option value="fundacion_fecha">Antiguedad</mat-option>
+                <mat-option value="indicadorCantidadSentencias">Numero de Sentencias</mat-option>
                 
+            </mat-select>
+        </mat-form-field>
+        <span class="example-spacer"></span>
+        <button mat-icon-button>
+            <mat-icon>share</mat-icon>
+        </button>
+    </div>
+    <mat-progress-bar mode="indeterminate" *ngIf="partidos.length==0" ></mat-progress-bar>
+    <!-- <cdk-virtual-scroll-viewport 
+    class="listado" 
+    itemSize="50" > -->
+    <div 
+    class="listado"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="150"
 
-            </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-between stretch">                
-                <div>
-                <span *ngFor="let indicador of fnIndicadores(partido,3); let i = index">
-                    <p>
-                    <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
-                    </p>    
-                </span>
-                </div>  
-                
-                <div>
-                <span *ngFor="let indicador of fnIndicadores(partido,1); let i = index">
-                    <p>
-                    <span *ngIf="i==0"></span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}   
-                     </p>
-                </span>
+    (scrolled)="onScroll()"
+    >
+        
+        <!-- <app-partido-andino></app-partido-andino>
+    -->
+    <mat-card *ngFor="let partido of partidos" class="card-politico">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />
                 </div>
-
-                <div>
-                <span *ngFor="let indicador of fnIndicadores(partido,5); let i = index">
+                <mat-card-title mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
+                    {{partido.nombre}}
+                </mat-card-title>
+                <mat-card-subtitle>Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años </mat-card-subtitle>
+                <mat-card-subtitle>
                     <p>
-                    <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                        <span *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
+                            <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
+                        </span>
                     </p>
-                </span>             
-            </div>
-        </mat-card-content>
-        <hr>
-        <mat-card-actions>
+
+                    <p>
+                    <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
+                        <span *ngIf="i==0"> </span> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
+                    </span>
+                    </p>
+                    
+
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-between stretch">                
+                    <div>
+                    <span *ngFor="let indicador of fnIndicadores(partido,3); let i = index">
+                        <p>
+                        <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                        </p>    
+                    </span>
+                    </div>  
+                    
+                    <div>
+                    <span *ngFor="let indicador of fnIndicadores(partido,1); let i = index">
+                        <p>
+                        <span *ngIf="i==0"></span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}   
+                        </p>
+                    </span>
+                    </div>
+
+                    <div>
+                    <span *ngFor="let indicador of fnIndicadores(partido,5); let i = index">
+                        <p>
+                        <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                        </p>
+                    </span>             
+                </div>
+            </mat-card-content>
+            <hr>
+            <mat-card-actions>
 
 
-            <button routerLink="/partido/{{partido.id}}" [state]="partido" mat-button>
-                <mat-icon>description</mat-icon> <span> Ver más</span>             
-            </button>
-            
-        </mat-card-actions> 
-    </mat-card>
+                <button routerLink="/partido/{{partido.id}}" [state]="partido" mat-button>
+                    <mat-icon>description</mat-icon> <span> Ver más</span>             
+                </button>
+                
+            </mat-card-actions> 
+        </mat-card>
 
-<!-- </cdk-virtual-scroll-viewport> -->
-</div>
+    <!-- </cdk-virtual-scroll-viewport> -->
+    </div>
 
-<br>
+    <br>
 
-<div class="spinner">
-    <mat-spinner *ngIf="showLoader"  diameter=40></mat-spinner>
+    <div class="spinner">
+        <mat-spinner *ngIf="showLoader"  diameter=40></mat-spinner>
+    </div>
+
 </div>

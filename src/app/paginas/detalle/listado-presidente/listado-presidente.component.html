@@ -1,19 +1,18 @@
-
-<div 
-class="scroll"
-infiniteScroll
-[infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="50"
-[scrollWindow]="false"
-(scrolled)="onScroll()"
->
-<div *ngFor="let candidato of presidente; let i = index">
-    <div class="container">
-       <mat-icon>people</mat-icon> <span class=""> <strong> {{onCargoPolitico(i)}} </strong></span>
-
+<div *ngIf="presidente">
+    <div 
+    class="scroll"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    [scrollWindow]="false"
+    (scrolled)="onScroll()"
+    >
+        <div *ngFor="let candidato of presidente; let i = index">
+            <div class="container">
+            <mat-icon>people</mat-icon> <span class=""> <strong> {{onCargoPolitico(i)}} </strong></span>
+    
+            </div>
+            <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
+        </div>
     </div>
-    <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
-</div>
-
-
 </div>

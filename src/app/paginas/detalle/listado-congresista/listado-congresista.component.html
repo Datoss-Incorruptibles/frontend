@@ -1,67 +1,69 @@
-
-<div class="filtrado">
-<mat-form-field appearance="fill">
-    <mat-label>Filtro: Región</mat-label>
-    <mat-select  (selectionChange)="onFiltroRegion($event.value)">
-        <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
-            {{region.distrito_electoral}}
-        </mat-option>    
-    </mat-select>
-</mat-form-field>
-
-<div class="container" *ngIf="regSelect == null">
-    <mat-icon>people</mat-icon> <span>
-         <strong> Candidatos al congreso por LIMA  </strong>        
-     </span>
- </div>
- <div class="container" *ngIf="regSelect != null">
-    <mat-icon>people</mat-icon> <span>
-         <strong> Candidatos al congreso por {{regSelect}} </strong>
-        </span>
- </div>
-
-</div>
-
-<div
-class="scroll"
-infiniteScroll
-[infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="150"
-[scrollWindow]="false"
-(scrolled)="onScroll()"
->
-<div [ngSwitch]="congresistas.length">
-    <div *ngSwitchCase = 0 >
-      <div class="container2">
-          
-        <span >
-            <strong> Sin Candidatos en la region </strong>        
-        </span>
-      </div>
-
-    </div>
-    <div *ngSwitchDefault>
-        <div *ngFor="let candidato of congresistas">
-            <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
+<div *ngIf="congresistas">
+    <div class="filtrado">
+        <mat-form-field appearance="fill">
+            <mat-label>Filtro: Región</mat-label>
+            <mat-select  (selectionChange)="onFiltroRegion($event.value)">
+                <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
+                    {{region.distrito_electoral}}
+                </mat-option>    
+            </mat-select>
+        </mat-form-field>
+        
+        <div class="container" *ngIf="regSelect == null">
+            <mat-icon>people</mat-icon> <span>
+                 <strong> Candidatos al congreso por LIMA  </strong>        
+             </span>
+         </div>
+         <div class="container" *ngIf="regSelect != null">
+            <mat-icon>people</mat-icon> <span>
+                 <strong> Candidatos al congreso por {{regSelect}} </strong>
+                </span>
+         </div>
+        
         </div>
-        <div class="spinner">
-            <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+        
+        <div
+        class="scroll"
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="150"
+        [scrollWindow]="false"
+        (scrolled)="onScroll()"
+        
+        >
+        <div [ngSwitch]="congresistas.length">
+            <div *ngSwitchCase = 0 >
+              <div class="container2">
+                  
+                <span >
+                    <strong> Sin Candidatos en la region </strong>        
+                </span>
+              </div>
+        
+            </div>
+            <div *ngSwitchDefault>
+                <div *ngFor="let candidato of congresistas">
+                    <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
+                </div>
+                <div class="spinner">
+                    <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<!--
-    <div *ngIf="congresistas.length == 0">
-        <div *ngFor="let candidato of congresistas">
-            <app-card [candidato]="candidato"></app-card> 
-        </div>
-    </div>
-    <div *ngIf="congresistas.length!=0">
-        <div *ngFor="let candidato of congresistas">
-            <app-card [candidato]="candidato"></app-card> 
-        </div>
-    </div>
-
-    -->
+        
+        <!--
+            <div *ngIf="congresistas.length == 0">
+                <div *ngFor="let candidato of congresistas">
+                    <app-card [candidato]="candidato"></app-card> 
+                </div>
+            </div>
+            <div *ngIf="congresistas.length!=0">
+                <div *ngFor="let candidato of congresistas">
+                    <app-card [candidato]="candidato"></app-card> 
+                </div>
+            </div>
+        
+            -->
+        </div>        
 </div>
 

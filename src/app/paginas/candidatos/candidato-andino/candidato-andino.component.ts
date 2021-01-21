@@ -71,6 +71,9 @@ export class CandidatoAndinoComponent implements OnInit {
 
   }
   onFiltroOrganizacion(value: number){
+    //reset list
+    this.listOfDiferrentPages = [];
+
     this.orgIdSelect = value;
     this.ORGANIZACIONES.forEach(element => {
       if(element.id==value){

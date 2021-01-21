@@ -34,6 +34,8 @@ export class ListadoCongresistaComponent implements OnInit {
     
   }
   onFiltroRegion(value: string){
+    //reset list
+    this.listOfDiferrentPages = [];
     this.unigeoIdSelect = value;
     this.REGIONES.forEach(element => {
       if(element.id==value){

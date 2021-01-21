@@ -1,16 +1,19 @@
-<div
-class="scroll"
-infiniteScroll
-[infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="50"
-[scrollWindow]="false"
-(scrolled)="onScroll()"
->
-     <div *ngFor="let candidato of listParlamentoAndino">
-          <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
-     </div>
-</div>
+<div *ngIf="listParlamentoAndino">
 
-<div class="spinner">
-     <mat-spinner *ngIf="showLoader"  diameter=40></mat-spinner>
- </div>
+     <div
+     class="scroll"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     [scrollWindow]="false"
+     (scrolled)="onScroll()"
+     >
+          <div *ngFor="let candidato of listParlamentoAndino">
+               <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
+          </div>
+     </div>
+     
+     <div class="spinner">
+          <mat-spinner *ngIf="showLoader"  diameter=40></mat-spinner>
+      </div>
+</div>

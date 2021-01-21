@@ -1,77 +1,80 @@
 
-<div class="filtrado">
-    <mat-form-field appearance="fill">
-        <mat-label>Filtro: Región</mat-label>
-        <mat-select  (selectionChange)="onFiltroRegion($event.value)">
-            <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
-                {{region.distrito_electoral}}
-            </mat-option>    
-        </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-        <mat-label>Filtro: Partido</mat-label>
-        <mat-select  (selectionChange)="onFiltroOrganizacion($event.value)">
-            <mat-option value="sinseleccion" >SIN SELECCIÓN</mat-option>
-            <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
-                {{partido.nombre}}
-            </mat-option>    
-        </mat-select>
-    </mat-form-field>
-
-<!--
-    <div class="container" *ngIf="regSelect == null">
-        <mat-icon>people</mat-icon> <span>
-             <strong> Candidatos al congreso por LIMA  </strong>        
-         </span>
-     </div>
-     <div class="container" *ngIf="regSelect != null">
-        <mat-icon>people</mat-icon> <span>
-             <strong> Candidatos al congreso por {{regSelect}} </strong>
-            </span>
-     </div>
-
-     <div class="container" *ngIf="orgSelect == null">
-        <mat-icon>people</mat-icon> <span>
-             <strong> Partido Politico ACCION POPULAR  </strong>        
-         </span>
-     </div>
-     <div class="container" *ngIf="orgSelect != null">
-        <mat-icon>people</mat-icon> <span>
-             <strong> Partido Politico {{orgSelect}} </strong>
-            </span>
-     </div>
-     -->
-</div>
-
-
-<div
-    class="scrollB"
-    infiniteScroll
-    [infiniteScrollDistance]="2"
-    [infiniteScrollThrottle]="50"
-    (scrolled)="onScrollB()"
-    [scrollWindow]="false"
-
-    >
-    <span [ngSwitch]="congresistas.length">
-        <span *ngSwitchCase = 0 >
-          <div class="container2">
-            <span >
-                <strong> Sin Candidatos en la region </strong>        
-            </span>
-          </div>
+<div *ngIf="congresistas">
+    <div class="filtrado">
+        <mat-form-field appearance="fill">
+            <mat-label>Filtro: Región</mat-label>
+            <mat-select  (selectionChange)="onFiltroRegion($event.value)">
+                <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
+                    {{region.distrito_electoral}}
+                </mat-option>    
+            </mat-select>
+        </mat-form-field>
     
+        <mat-form-field appearance="fill">
+            <mat-label>Filtro: Partido</mat-label>
+            <mat-select  (selectionChange)="onFiltroOrganizacion($event.value)">
+                <mat-option value="sinseleccion" >SIN SELECCIÓN</mat-option>
+                <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
+                    {{partido.nombre}}
+                </mat-option>    
+            </mat-select>
+        </mat-form-field>
+    
+    <!--
+        <div class="container" *ngIf="regSelect == null">
+            <mat-icon>people</mat-icon> <span>
+                 <strong> Candidatos al congreso por LIMA  </strong>        
+             </span>
+         </div>
+         <div class="container" *ngIf="regSelect != null">
+            <mat-icon>people</mat-icon> <span>
+                 <strong> Candidatos al congreso por {{regSelect}} </strong>
+                </span>
+         </div>
+    
+         <div class="container" *ngIf="orgSelect == null">
+            <mat-icon>people</mat-icon> <span>
+                 <strong> Partido Politico ACCION POPULAR  </strong>        
+             </span>
+         </div>
+         <div class="container" *ngIf="orgSelect != null">
+            <mat-icon>people</mat-icon> <span>
+                 <strong> Partido Politico {{orgSelect}} </strong>
+                </span>
+         </div>
+         -->
+    </div>
+    
+    
+    <div
+        class="scrollB"
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="50"
+        (scrolled)="onScrollB()"
+        [scrollWindow]="false"
+    
+        >
+        <span [ngSwitch]="congresistas.length">
+            <span *ngSwitchCase = 0 >
+              <div class="container2">
+                <span >
+                    <strong> Sin Candidatos en la region </strong>        
+                </span>
+              </div>
+        
+            </span>
+            <span *ngSwitchDefault>
+                <div *ngFor="let candidato of congresistas">
+                    <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+                </div>
+                <div class="spinner">
+                    <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+                </div>
+            </span>
         </span>
-        <span *ngSwitchDefault>
-            <div *ngFor="let candidato of congresistas">
-                <app-card-candidato [candidato]="candidato"></app-card-candidato> 
-            </div>
-            <div class="spinner">
-                <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
-            </div>
-        </span>
-    </span>
+        
+    </div>
     
 </div>
 

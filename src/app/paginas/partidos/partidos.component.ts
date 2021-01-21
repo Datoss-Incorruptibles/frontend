@@ -32,8 +32,6 @@ export class PartidosComponent implements OnInit {
 
   }
 
-
-
   getPartidosPoliticos(){
     if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
       // console.log("NO HAY duplicado en array amigo");

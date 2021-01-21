@@ -8,12 +8,37 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DetallePartidoIndicadoresComponent implements OnInit {
   @Input() partido: any;
   
-  indicadores:[];
+  indicadores: any[];
   constructor() { }
 
   ngOnInit(): void {
     this.indicadores=this.partido.indicadorescategoriaorg;
     console.log(this.indicadores);
   }
+  getCantIndicador(id){
+    let cont = 0;
+    this.fnIndicadores(id).forEach(element => {
+      cont = element.cantidad + cont;
+    }); 
+    return cont;
+  }
+  
+  getCantidadEdSuperior(){
+    let cont = 0;
+    this.fnIndicadores(1).forEach(element => {
+      if(element.indicador_categoria== 2 ||element.indicador_categoria== 3){
+        cont = element.cantidad + cont;
+      }
+    }); 
+    return cont;
+  }
 
+  fnIndicadores(id){
+    return this.indicadores.filter(elem =>{
+      if(elem != null){
+        return  elem.indicador==id
+      }
+    });
+  }
+  
 }

@@ -2,183 +2,82 @@
     <div class="indicadores">
         <div class="sentencias">
             <div style="margin-left:10px" >
-            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+            <mat-icon class="fondoSentencias"  aria-hidden="true">
                 gavel
             </mat-icon>
-            <label class="font">Sentencias</label>
+            <label class="colorSentencias"> {{getCantIndicador(10)}} Con Sentencias</label>
             </div>
-
-            <div *ngFor="let indicador of indicadores" >
-                <div *ngIf="indicador.indicador==3">
-                    <p> indicador_categoria_nombre: {{indicador.indicador_categoria_nombre}} </p>
-                    <p>indicador_categoria: {{indicador.indicador_categoria}}  </p>
-                    <p>indicador: {{indicador.indicador}}  </p>
-                    <p>cantidad: {{indicador.cantidad}}  </p>
-                    <p>porcentaje: {{indicador.porcentaje}}  </p>
-                    <p>alerta: {{indicador.alerta}}  </p>
-                    <p>indicador_titulo: {{indicador.indicador_titulo}} </p>
-                    <p>indicador_ubicacion: {{indicador.indicador_ubicacion}} </p>
-                    <p>indicador_alerta: {{indicador.indicador_alerta}} </p> 
-                    <hr/>
+            <div class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-between stretch">
+                <div>
+                    <span *ngFor="let indicador of fnIndicadores(8); let i = index">
+                        <p>
+                        <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                        </p>    
+                    </span>
+                   
                 </div>
-            </div>
-            <!--           
-            <div style="flex-direction: row; display: flex;">
-                <div class="colum_sentencia">
-                    <div>
-                        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-                            thumb_up
-                        </mat-icon>
-                        <div>Sin sentencias</div>
-                    </div>
-                </div>
-                <div class="colum_sentencia">
-                    <div>
-                        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-                            thumb_down
-                        </mat-icon>
-                        <div>Civiles y penales</div>
-                    </div>
+                <div>
+                    <span *ngFor="let indicador of fnIndicadores(9); let i = index">
+                        <p>
+                        <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                        </p>    
+                    </span>
                 </div>
             </div>
-            -->
-
-        </div>
-        <div class="trayectoria_politica">
-            <div style="margin-left:10px; margin-bottom: 20px;" >
-                <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-                    business_center
-                </mat-icon>
-                <label class="font">Trayectoria Politica</label>
-                
-                <div *ngFor="let indicador of indicadores" >
-                    <div *ngIf="indicador.indicador==5||indicador.indicador==2 ">
-                        <p> indicador_categoria_nombre: {{indicador.indicador_categoria_nombre}} </p>
-                        <p>indicador_categoria: {{indicador.indicador_categoria}}  </p>
-                        <p>indicador: {{indicador.indicador}}  </p>
-                        <p>cantidad: {{indicador.cantidad}}  </p>
-                        <p>porcentaje: {{indicador.porcentaje}}  </p>
-                        <p>alerta: {{indicador.alerta}}  </p>
-                        <p>indicador_titulo: {{indicador.indicador_titulo}} </p>
-                        <p>indicador_ubicacion: {{indicador.indicador_ubicacion}} </p>
-                        <p>indicador_alerta: {{indicador.indicador_alerta}} </p> 
-                        <hr/>
-                    </div>
-                </div>
-
-                <!--
-                <div style="flex-direction: row; display: flex;">
-                    <div class="colum_trayectoria">
-                        <div>
-                            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-                                accessibility
-                            </mat-icon>
-                            <label>10</label>
-                            <div>reeleccion</div>
-                        </div>
-                    </div>
-                    <div class="colum_trayectoria">
-                        <div>
-                            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-                                accessibility
-                            </mat-icon>
-                            <label>5</label>
-                            <div>3ra reelecion</div>
-                        </div>
-                    </div>
-                    <div class="colum_trayectoria">
-                        <div>
-                            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-                                accessibility
-                            </mat-icon><label>5</label>
-                            <div>ex alcades</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        -->
         </div>
         <div class="academico">
             <div style="margin-left:10px" >
-            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+            <mat-icon   class="fondoAcademico" aria-hidden="true">
                 school
             </mat-icon>
-            <label class="font">Academicas</label>
+            <label class="colorAcademico"> {{getCantidadEdSuperior()}} Ed.Superior</label>
             </div>
 
-            <div *ngFor="let indicador of indicadores" >
-                <div *ngIf="indicador.indicador==1  ">
-                    <p> indicador_categoria_nombre: {{indicador.indicador_categoria_nombre}} </p>
-                    <p>indicador_categoria: {{indicador.indicador_categoria}}  </p>
-                    <p>indicador: {{indicador.indicador}}  </p>
-                    <p>cantidad: {{indicador.cantidad}}  </p>
-                    <p>porcentaje: {{indicador.porcentaje}}  </p>
-                    <p>alerta: {{indicador.alerta}}  </p>
-                    <p>indicador_titulo: {{indicador.indicador_titulo}} </p>
-                    <p>indicador_ubicacion: {{indicador.indicador_ubicacion}} </p>
-                    <p>indicador_alerta: {{indicador.indicador_alerta}} </p> 
-                    <hr/>
+            <div class="container">
+                <span *ngFor="let indicador of fnIndicadores(1); let i = index">
+                    <p>
+                    <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                    </p>    
+                </span>
+
+                <div fxLayout="column" fxLayoutAlign="center center" >
+                    <div>
+                        <p class="colorAcademico">- Con universidades sin licencia Sunedu</p>
+                    </div>
                 </div>
             </div>
 
-            <!--
 
-            <div style="flex-direction: row; display: flex;">
-                <div class="tabla_academico">
-                    ..
-                </div>
-                <div class="leyenda_academico">
-                    <div>Doctorado</div>
-                    <div>Maestria</div>
-                    <div>Titulados</div>
-                    <div>Bachiller</div>
-                    <div>Secundaria</div>
-                </div>
-            </div>
-        </div>
-        <div class="profesiones" style="padding-top: 10px;">
-            <div style="margin-left:10px" >
-            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-                school
-            </mat-icon>
-            <label>Profesiones</label>
-            </div>
-            <div style="flex-direction: row; display: flex;">
-                <div class="tabla_academico">
-                    ..
-                </div>
-                <div class="leyenda_academico">
-                    <div>Abogados</div>
-                    <div>Administracion</div>
-                </div>
-            </div>
-        </div>
-        <div class="bienes_ingresos" style="padding-top: 10px;">
-            <div style="margin-left:10px" >
-            <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-                money
-            </mat-icon>
-            <label>Bienes e ingresos</label>
-            </div>
-        </div>
-        -->
     </div>
-    <label class="font">TIPO CIVIL</label>
-    <div *ngFor="let indicador of indicadores" >
-        <div *ngIf="indicador.indicador==8  ">
-            <p> indicador_categoria_nombre: {{indicador.indicador_categoria_nombre}} </p>
-            <p>indicador_categoria: {{indicador.indicador_categoria}}  </p>
-            <p>indicador: {{indicador.indicador}}  </p>
-            <p>cantidad: {{indicador.cantidad}}  </p>
-            <p>porcentaje: {{indicador.porcentaje}}  </p>
-            <p>alerta: {{indicador.alerta}}  </p>
-            <p>indicador_titulo: {{indicador.indicador_titulo}} </p>
-            <p>indicador_ubicacion: {{indicador.indicador_ubicacion}} </p>
-            <p>indicador_alerta: {{indicador.indicador_alerta}} </p> 
-            <hr/>
-        </div>
-    </div>
+        <div class="trayectoria_politica">
+            <div style="margin-left:10px; margin-bottom: 20px;" >
+                <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
+                    account_balance
+                </mat-icon>
+                <label class="colorPolitico"> {{getCantIndicador(5)}} En Cargos Anteriores</label>
+                <div class="container">
+                    <span *ngFor="let indicador of fnIndicadores(5); let i = index">
+                        <p>
+                        <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                        </p>    
+                    </span>
+                    <span *ngFor="let indicador of fnIndicadores(11); let i = index">
+                        <p>
+                        <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                        </p>    
+                    </span>
+                    <div fxLayout="column" fxLayoutAlign="center center" >
+                        <div>
+                            <p class="colorPolitico">- Votaciones en el congreso</p>
+                        </div>
+                    </div>
+    
+                </div>
 
+
+        </div>
+
+        
     {{ "Indicador Estudio : " + partido.indicadorCantidadEstudio}}
     <br>
     {{ "Indicador Cantidad de Sentencias : " + partido.indicadorCantidadSentencias}}

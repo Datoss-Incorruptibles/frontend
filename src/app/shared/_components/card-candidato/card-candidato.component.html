@@ -35,8 +35,10 @@
         <p>
             <span *ngFor="let indicador of candidato.indicadores, let i = index">
                 <span [ngSwitch]="indicador.indicador_categoria_id">
-                <span *ngSwitchCase=12> indicador_categoria | EX-{{indicador.indicador_categoria}}</span>
-                <span *ngSwitchDefault> indicador_categoria | {{indicador.indicador_categoria}}</span> 
+                    <span *ngSwitchCase= 12> indicador_categoria | EX-{{indicador.indicador_categoria}}</span>
+                    <span *ngSwitchCase= 113> indicador_categoria | {{indicador.cantidad}}-{{indicador.indicador_categoria}}</span>
+                    <span *ngSwitchCase= 114> indicador_categoria | {{indicador.cantidad}}-{{indicador.indicador_categoria}}</span>
+                    <span *ngSwitchDefault> indicador_categoria | {{indicador.indicador_categoria}}</span> 
                 </span>
                 <br>
             </span>

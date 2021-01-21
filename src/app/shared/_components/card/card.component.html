@@ -1,7 +1,5 @@
 <mat-card class="card-politico">
 
-
-
     <mat-card-header>    
         <div mat-card-avatar class="header-image"><img src="{{candidato.ruta_archivo}}" /></div>
     
@@ -25,7 +23,8 @@
         <p>
             <span *ngFor="let indicador of candidato.indicadores, let i = index">
                 <span [ngSwitch]="indicador.indicador_categoria_id">
-                <span *ngSwitchCase=12> indicador_categoria | EX-{{indicador.indicador_categoria}}</span>
+                <span *ngSwitchCase= 12> indicador_categoria | EX-{{indicador.indicador_categoria}}</span>
+                <span *ngSwitchCase= 113> indicador_categoria | {{indicador.cantidad}} Sentencias</span>
                 <span *ngSwitchDefault> indicador_categoria | {{indicador.indicador_categoria}}</span> 
                 </span>
                 <br>
@@ -39,16 +38,12 @@
             </span>
         </p>
 
-
-
     </mat-card-content>
     <hr>
     <mat-card-actions>
         <button routerLink="/candidato/{{candidato.id}}" [state]="candidato" mat-button>
             <mat-icon>description</mat-icon> <span> Ver más</span>             
         </button>
-
-
 
     </mat-card-actions>
 </mat-card>

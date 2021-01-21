@@ -37,9 +37,7 @@
 .sentencias{
     margin-bottom: 20px;
 }
-.font{
-    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
-}
+
 .colum_sentencia{
     height: 100%;
     width: 50%;
@@ -64,3 +62,51 @@
     width: 20%;
     margin-left: 10px;
 }
+.colorSentencias{
+    color: #DF2854;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.colorAcademico{
+    color: #1CBAD9;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.colorPolitico{
+    color: #DBA837;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.fondoSentencias{
+    background-color: #DF2854;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
+.fondoAcademico{
+
+    background-color: #1CBAD9;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
+.fondoPolitico{
+    background-color: #DBA837;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+.container{
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+

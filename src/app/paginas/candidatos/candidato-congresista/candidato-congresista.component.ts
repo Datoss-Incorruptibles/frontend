@@ -13,6 +13,9 @@ import { Partido } from '../../../shared/_interfaces/partido.interface';
 export class CandidatoCongresistaComponent implements OnInit {
 
 
+  listOfDiferrentPages = []
+  showLoader = false;
+
   REGIONES: Region[];
   ORGANIZACIONES: Partido[];
   regSelect: string;
@@ -76,21 +79,29 @@ export class CandidatoCongresistaComponent implements OnInit {
   
   }
   getCongresistasByRegion(unigeoIdSelect: string){
-    if(this.nextPageUrl == null)  {
-      //do nothing
-    }else if(this.nextPageUrl == "start"){
-      this.restApiService.getCongresistasByRegion(unigeoIdSelect).subscribe((res:any) =>{
-        this.congresistas=res.results;   
-        this.nextPageUrl = res.next ;
-        console.log(this.congresistas);
-      }, error => {  });
-    }else if(this.nextPageUrl){
-      this.restApiService.getCongresistasByRegion(unigeoIdSelect,this.nextPageUrl).subscribe((res :any)=>{
-        this.candidatoPageX=<Candidato[]>res.results;            
-        this.nextPageUrl = res.next 
-        this.congresistas = this.congresistas.concat(this.candidatoPageX)
-        console.log(this.congresistas);
-      }, error => {  });
+    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
+      this.listOfDiferrentPages.push(this.nextPageUrl);
+
+      if(this.nextPageUrl == null)  {
+        //do nothing
+      }else if(this.nextPageUrl == "start"){
+        this.restApiService.getCongresistasByRegion(unigeoIdSelect).subscribe((res:any) =>{
+          this.congresistas=res.results;   
+          this.nextPageUrl = res.next ;
+          console.log(this.congresistas);
+        }, error => {  });
+      }else if(this.nextPageUrl){
+        this.showLoader= true;
+
+        this.restApiService.getCongresistasByRegion(unigeoIdSelect,this.nextPageUrl).subscribe((res :any)=>{
+          this.candidatoPageX=<Candidato[]>res.results;            
+          this.nextPageUrl = res.next;
+          this.showLoader= false;
+
+          this.congresistas = this.congresistas.concat(this.candidatoPageX)
+          console.log(this.congresistas);
+        }, error => {  });
+      }
     }
   }
   getCongresistasByOrganizacionAndRegion( organizacionId: string,unigeoId: string){

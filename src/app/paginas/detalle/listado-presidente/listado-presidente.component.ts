@@ -11,6 +11,7 @@ import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 export class ListadoPresidenteComponent implements OnInit {
 
   @Input() politicParty: any; 
+  fromPartido = true;
   presidente: Candidato[];
 
   constructor(private restApiService: RestApiService,

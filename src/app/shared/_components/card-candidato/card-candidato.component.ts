@@ -7,10 +7,14 @@ import { Candidato } from '../../_interfaces/candidato.interface';
 })
 export class CardCandidatoComponent implements OnInit {
   @Input() candidato: Candidato;
+  @Input() fromPartido;
+
   constructor() { }
 
 
   ngOnInit(): void {
+    // console.log(this.fromPartido);
+    
   }
 
 }

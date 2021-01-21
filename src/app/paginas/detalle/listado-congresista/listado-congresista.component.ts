@@ -12,6 +12,11 @@ import { Region } from '../../../shared/_interfaces/region';
 export class ListadoCongresistaComponent implements OnInit {
 
   @Input() politicParty: any; 
+  
+  fromPartido = true;
+  showLoader = false;
+  listOfDiferrentPages = []
+
   congresistas: Candidato[];
   REGIONES : Region[];
   regSelect: string;
@@ -42,48 +47,36 @@ export class ListadoCongresistaComponent implements OnInit {
     this.getCongresistasByOrganizacionAndRegion(this.unigeoIdSelect);
 
   }
-/*
-  getCongresistasByOrganization(){
-    if(this.nextPageUrl == null)  {
-      //do nothing
-    }else if(this.nextPageUrl == "start"){
-      this.restApiService.getCongresistasByOrganization(this.politicParty.id).subscribe((res:any) =>{
-        this.congresistas=res.results;   
-        this.nextPageUrl = res.next ;
-        console.log(this.congresistas);
-        // this.onFiltroRegion("LIMA");
-      }, error => {  });
-    }else if(this.nextPageUrl){
-      this.restApiService.getCongresistasByOrganization(this.politicParty.id,this.nextPageUrl).subscribe((res :any)=>{
-        this.candidatoPageX=<Candidato[]>res.results;            
-        this.nextPageUrl = res.next 
-        this.congresistas = this.congresistas.concat(this.candidatoPageX)
-        // this.onFiltroRegion("LIMA");
-        console.log(this.congresistas);
-      }, error => {  });
-    }
-  }
-  */
+
   getCongresistasByOrganizacionAndRegion(unigeoId: string){
-    if(this.nextPageUrl == null)  {
-      //do nothing
-    }else if(this.nextPageUrl == "start"){
-      this.restApiService.getCongresistasByOrganizacionAndRegion(this.politicParty.id,unigeoId).subscribe((res:any) =>{
-        this.congresistas=res.results;   
-        this.nextPageUrl = res.next ;
-        console.log(this.congresistas);
-        //this.onOrdernar();
-        // this.onFiltroRegion("LIMA");
-      }, error => {  });
-    }else if(this.nextPageUrl){
-      this.restApiService.getCongresistasByOrganizacionAndRegion(this.politicParty,unigeoId,this.nextPageUrl).subscribe((res :any)=>{
-        this.candidatoPageX=<Candidato[]>res.results;            
-        this.nextPageUrl = res.next 
-        this.congresistas = this.congresistas.concat(this.candidatoPageX)
-        // this.onFiltroRegion("LIMA");
-        console.log(this.congresistas);
-        //this.onOrdernar();
-      }, error => {  });
+    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
+      this.listOfDiferrentPages.push(this.nextPageUrl);
+
+      if(this.nextPageUrl == null)  {
+        //do nothing
+      }else if(this.nextPageUrl == "start"){
+        this.restApiService.getCongresistasByOrganizacionAndRegion(this.politicParty.id,unigeoId).subscribe((res:any) =>{
+          this.congresistas=res.results;   
+          this.nextPageUrl = res.next ;
+          console.log(this.congresistas);
+          //this.onOrdernar();
+          // this.onFiltroRegion("LIMA");
+        }, error => {  });
+      }else if(this.nextPageUrl){
+        this.showLoader= true;
+
+        this.restApiService.getCongresistasByOrganizacionAndRegion(this.politicParty,unigeoId,this.nextPageUrl).subscribe((res :any)=>{
+          this.candidatoPageX=<Candidato[]>res.results;            
+          this.nextPageUrl = res.next;
+          this.showLoader= false;
+
+          this.congresistas = this.congresistas.concat(this.candidatoPageX)
+          // this.onFiltroRegion("LIMA");
+          console.log(this.congresistas);
+          //this.onOrdernar();
+        }, error => {  });
+      }
+
     }
   }
 

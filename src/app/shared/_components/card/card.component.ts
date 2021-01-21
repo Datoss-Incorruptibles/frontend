@@ -9,6 +9,12 @@ import { Candidato } from '../../_interfaces/candidato.interface';
 export class CardComponent implements OnInit {
 
   @Input() candidato: Candidato;
+  // se pocredera a eliminar este componente porque se repite con el de card-candidato
+    // se pocredera a eliminar este componente porque se repite con el de card-candidato
+      // se pocredera a eliminar este componente porque se repite con el de card-candidato
+        // se pocredera a eliminar este componente porque se repite con el de card-candidato
+          // se pocredera a eliminar este componente porque se repite con el de card-candidato
+
   constructor() { }
 
   ngOnInit(): void {

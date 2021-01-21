@@ -1,39 +1,7 @@
 <div>
   <div *ngIf="candidato">
-    <mat-card class="card-politico">
-      <mat-card-header>    
-          <!-- <div mat-card-avatar  class="header-image"><img src="{{candidato.ruta_archivo}}" /></div> -->
-          <mat-card-title class="title">
-              <div fxLayout="row" fxLayoutAlign="end center">
-                  <span>
-                      <!-- <div mat-card-avatar ><img class="imgPartido" mat-card-avatar src="{{candidato.organizacion_politica_logo}}" /> -->
-                      <div fxFlex> 
-                      <p>
-                          {{candidato.jne_organizacion_politica}}
-                      </p>
-                      </div>
-                      <br>
-                  </span>
-              </div>
-              <span class="card-name">
-                   {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
-              </span>
-          </mat-card-title>
-          <mat-card-subtitle> {{candidato.profesion}} </mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content class="container">
-            <p>
-              <span >
-                  DNI - {{candidato.documento_identidad}}
-                  <br>
-              </span>
-          </p>
-      </mat-card-content>
-      <hr>
-    </mat-card>
+    <app-card-candidato [candidato]="candidato"></app-card-candidato> 
   </div>
-
-
       <mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs>
         <mat-tab label="Historia">
             <app-candidato-historia [candidato]="candidato"></app-candidato-historia>

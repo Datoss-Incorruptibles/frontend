@@ -12,6 +12,10 @@ import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 export class PartidoAndinoComponent implements OnInit {
 
   @Input() politicParty: any; 
+  
+  fromPartido = true;
+  showLoader = false;
+  listOfDiferrentPages = []
 
   listParlamentoAndino: Candidato[];
   nextPageUrl = "start";
@@ -27,26 +31,34 @@ export class PartidoAndinoComponent implements OnInit {
   }
 
   getParlamentoByOrganization(){
-    if(this.nextPageUrl == null)  {
-      //do nothing
-    }else if(this.nextPageUrl == "start"){
-      this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((res:any) =>{
-        this.listParlamentoAndino=res.results;   
-        this.nextPageUrl = res.next ;
-        console.log(this.listParlamentoAndino);
-        //this.onOrdernar();
+    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
+      this.listOfDiferrentPages.push(this.nextPageUrl);
 
-      }, error => {  });
+      if(this.nextPageUrl == null)  {
+        //do nothing
+      }else if(this.nextPageUrl == "start"){
+        this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((res:any) =>{
+          this.listParlamentoAndino=res.results;   
+          this.nextPageUrl = res.next ;
+          console.log(this.listParlamentoAndino);
+          //this.onOrdernar();
 
-    }else if(this.nextPageUrl){
-      this.restApiService.getParlamentoByOrganization(this.politicParty.id,this.nextPageUrl).subscribe((res :any)=>{
-        this.candidatoPageX=<Candidato[]>res.results;            
-        this.nextPageUrl = res.next 
-        this.listParlamentoAndino = this.listParlamentoAndino.concat(this.candidatoPageX)
-        console.log(this.listParlamentoAndino);
-        //this.onOrdernar();
+        }, error => {  });
 
-      }, error => {  });
+      }else if(this.nextPageUrl){
+        this.showLoader= true;
+
+        this.restApiService.getParlamentoByOrganization(this.politicParty.id,this.nextPageUrl).subscribe((res :any)=>{
+          this.candidatoPageX=<Candidato[]>res.results;            
+          this.nextPageUrl = res.next;
+          this.showLoader= false;
+
+          this.listParlamentoAndino = this.listParlamentoAndino.concat(this.candidatoPageX)
+          console.log(this.listParlamentoAndino);
+          //this.onOrdernar();
+
+        }, error => {  });
+      }
     }
   }
 /*

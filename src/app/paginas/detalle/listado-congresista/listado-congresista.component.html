@@ -26,7 +26,7 @@
 class="scroll"
 infiniteScroll
 [infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="50"
+[infiniteScrollThrottle]="150"
 [scrollWindow]="false"
 (scrolled)="onScroll()"
 >
@@ -42,10 +42,14 @@ infiniteScroll
     </div>
     <div *ngSwitchDefault>
         <div *ngFor="let candidato of congresistas">
-            <app-card [candidato]="candidato"></app-card> 
+            <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
+        </div>
+        <div class="spinner">
+            <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
         </div>
     </div>
 </div>
+
 <!--
     <div *ngIf="congresistas.length == 0">
         <div *ngFor="let candidato of congresistas">

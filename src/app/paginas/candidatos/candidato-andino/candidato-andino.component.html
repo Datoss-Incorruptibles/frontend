@@ -21,5 +21,8 @@ infiniteScroll
     <div *ngFor="let candidato of listParAndino">
         <app-card-candidato [candidato]="candidato"></app-card-candidato> 
     </div>  
+    <div class="spinner">
+        <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+    </div>
 </div>
 

@@ -5,7 +5,7 @@
     
         <mat-card-title class="title">
           
-            <div fxLayout="row" fxLayoutAlign="end center">
+            <div *ngIf="!fromPartido" fxLayout="row" fxLayoutAlign="end center">
                 <span>
                     <div mat-card-avatar ><img class="imgPartido" mat-card-avatar src="{{candidato.organizacion_politica_logo}}" />
                     </div>

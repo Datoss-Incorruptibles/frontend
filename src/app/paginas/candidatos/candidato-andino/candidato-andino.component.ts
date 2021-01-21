@@ -10,6 +10,9 @@ import { Partido } from '../../../shared/_interfaces/partido.interface';
 })
 export class CandidatoAndinoComponent implements OnInit {
 
+  listOfDiferrentPages = []
+  showLoader = false;
+
   ORGANIZACIONES: Partido[];
   listParAndino: Candidato[];
   orgSelect: string;
@@ -30,25 +33,33 @@ export class CandidatoAndinoComponent implements OnInit {
   }
   
   getParlamentoByOrganization( organizacionId: string){
-    if(this.nextPageUrl == null)  {
-      //do nothing
-    }else if(this.nextPageUrl == "start"){
-      this.restApiService.getParlamentoByOrganization(organizacionId).subscribe((res:any) =>{
-        this.listParAndino=res.results;   
-        this.nextPageUrl = res.next ;
-        console.log(this.listParAndino);
-         //this.onOrdernar();
-        // this.onFiltroRegion("LIMA");
-      }, error => {  });
-    }else if(this.nextPageUrl){
-      this.restApiService.getParlamentoByOrganization(organizacionId,this.nextPageUrl).subscribe((res :any)=>{
-        this.listParlAndinoPageX=<Candidato[]>res.results;            
-        this.nextPageUrl = res.next 
-        this.listParAndino = this.listParAndino.concat(this.listParlAndinoPageX)
-        // this.onFiltroRegion("LIMA");
-        console.log(this.listParAndino);
-        //this.onOrdernar();
-      }, error => {  });
+    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
+      this.listOfDiferrentPages.push(this.nextPageUrl);
+
+      if(this.nextPageUrl == null)  {
+        //do nothing
+      }else if(this.nextPageUrl == "start"){
+        this.restApiService.getParlamentoByOrganization(organizacionId).subscribe((res:any) =>{
+          this.listParAndino=res.results;   
+          this.nextPageUrl = res.next ;
+          console.log(this.listParAndino);
+          //this.onOrdernar();
+          // this.onFiltroRegion("LIMA");
+        }, error => {  });
+      }else if(this.nextPageUrl){
+        this.showLoader= true;
+
+        this.restApiService.getParlamentoByOrganization(organizacionId,this.nextPageUrl).subscribe((res :any)=>{
+          this.listParlAndinoPageX=<Candidato[]>res.results;            
+          this.nextPageUrl = res.next;
+          this.showLoader= false;
+
+          this.listParAndino = this.listParAndino.concat(this.listParlAndinoPageX)
+          // this.onFiltroRegion("LIMA");
+          console.log(this.listParAndino);
+          //this.onOrdernar();
+        }, error => {  });
+      }
     }
   }
 

@@ -21,7 +21,8 @@ itemSize="50" > -->
 class="listado"
 infiniteScroll
 [infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="50"
+[infiniteScrollThrottle]="150"
+
 (scrolled)="onScroll()"
 >
     
@@ -93,3 +94,7 @@ infiniteScroll
 </div>
 
 <br>
+
+<div class="spinner">
+    <mat-spinner *ngIf="showLoader"  diameter=40></mat-spinner>
+</div>

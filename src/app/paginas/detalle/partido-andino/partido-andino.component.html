@@ -7,6 +7,10 @@ infiniteScroll
 (scrolled)="onScroll()"
 >
      <div *ngFor="let candidato of listParlamentoAndino">
-          <app-card [candidato]="candidato"></app-card> 
+          <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
      </div>
 </div>
+
+<div class="spinner">
+     <mat-spinner *ngIf="showLoader"  diameter=40></mat-spinner>
+ </div>

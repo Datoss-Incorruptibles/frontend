@@ -3,3 +3,12 @@
   overflow: scroll;
   // background-color:red;
 }
+.spinner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner ::ng-deep .mat-spinner circle {
+  stroke: #000000;
+}

@@ -17,6 +17,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 //
 import { HttpClientModule } from '@angular/common/http';
@@ -98,6 +99,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     MatProgressBarModule,
     MatTabsModule,
     MatListModule,
+    MatProgressSpinnerModule,
     SharedModule,
     ScrollingModule,
     InfiniteScrollModule],

@@ -44,6 +44,7 @@ export class ListadoCongresistaComponent implements OnInit {
     console.log(this.unigeoIdSelect);
     console.log(this.regSelect);
     this.nextPageUrl = "start";
+    this.listOfDiferrentPages = [];
     this.getCongresistasByOrganizacionAndRegion(this.unigeoIdSelect);
 
   }

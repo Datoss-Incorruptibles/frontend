@@ -10,7 +10,7 @@ import { Partido } from '../../../shared/_interfaces/partido.interface';
 })
 export class CandidatoAndinoComponent implements OnInit {
 
-  listOfDiferrentPages = []
+  listOfDiferrentPages = [];
   showLoader = false;
 
   ORGANIZACIONES: Partido[];
@@ -81,6 +81,7 @@ export class CandidatoAndinoComponent implements OnInit {
     console.log(this.orgIdSelect);
     console.log(this.orgSelect);
     this.nextPageUrl = "start";
+    this.listOfDiferrentPages = [];
     this.getParlamentoByOrganization( String(this.orgIdSelect));
 
   }

@@ -54,6 +54,7 @@
     [scrollWindow]="false"
 
     >
+    <span *ngIf="congresistas">
     <span [ngSwitch]="congresistas.length">
         <span *ngSwitchCase = 0 >
           <div class="container2">
@@ -72,6 +73,7 @@
             </div>
         </span>
     </span>
+</span>
     
 </div>
 

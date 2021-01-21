@@ -41,6 +41,7 @@ export class CandidatoCongresistaComponent implements OnInit {
   onFiltroRegion(value: string){
     if(this.sinSelect==true){
       this.nextPageUrl = "start";
+      this.listOfDiferrentPages = [];
       this.unigeoIdSelect = value;
       this.getCongresistasByRegion(this.unigeoIdSelect);
     }else{
@@ -54,12 +55,14 @@ export class CandidatoCongresistaComponent implements OnInit {
     console.log(this.unigeoIdSelect);
     console.log(this.regSelect);
     this.nextPageUrl = "start";
+    this.listOfDiferrentPages = [];
     this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect);
     }
   }
   onFiltroOrganizacion(value: any){
     if(value=="sinseleccion"){
       this.nextPageUrl = "start";
+      this.listOfDiferrentPages = [];
       this.sinSelect=true;
       this.getCongresistasByRegion(this.unigeoIdSelect);
     }else{
@@ -74,6 +77,7 @@ export class CandidatoCongresistaComponent implements OnInit {
       console.log(this.orgIdSelect);
       console.log(this.orgSelect);
       this.nextPageUrl = "start";
+      this.listOfDiferrentPages = [];
       this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect);
     }
   
@@ -105,21 +109,25 @@ export class CandidatoCongresistaComponent implements OnInit {
     }
   }
   getCongresistasByOrganizacionAndRegion( organizacionId: string,unigeoId: string){
-    if(this.nextPageUrl == null)  {
-      //do nothing
-    }else if(this.nextPageUrl == "start"){
-      this.restApiService.getCongresistasByOrganizacionAndRegion(organizacionId,unigeoId).subscribe((res:any) =>{
-        this.congresistas=res.results;   
-        this.nextPageUrl = res.next ;
-        console.log(this.congresistas);
-      }, error => {  });
-    }else if(this.nextPageUrl){
-      this.restApiService.getCongresistasByOrganizacionAndRegion(organizacionId,unigeoId,this.nextPageUrl).subscribe((res :any)=>{
-        this.candidatoPageX=<Candidato[]>res.results;            
-        this.nextPageUrl = res.next 
-        this.congresistas = this.congresistas.concat(this.candidatoPageX)
-        console.log(this.congresistas);
-      }, error => {  });
+    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
+      this.listOfDiferrentPages.push(this.nextPageUrl);
+    
+      if(this.nextPageUrl == null)  {
+        //do nothing
+      }else if(this.nextPageUrl == "start"){
+        this.restApiService.getCongresistasByOrganizacionAndRegion(organizacionId,unigeoId).subscribe((res:any) =>{
+          this.congresistas=res.results;   
+          this.nextPageUrl = res.next ;
+          console.log(this.congresistas);
+        }, error => {  });
+      }else if(this.nextPageUrl){
+        this.restApiService.getCongresistasByOrganizacionAndRegion(organizacionId,unigeoId,this.nextPageUrl).subscribe((res :any)=>{
+          this.candidatoPageX=<Candidato[]>res.results;            
+          this.nextPageUrl = res.next 
+          this.congresistas = this.congresistas.concat(this.candidatoPageX)
+          console.log(this.congresistas);
+        }, error => {  });
+      }
     }
   }
 

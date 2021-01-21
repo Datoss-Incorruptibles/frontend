@@ -1,3 +1,5 @@
+![Deploy status](https://github.com/Datoss-Incorruptibles/frontend/workflows/Deploy%20to%20Firebase%20Hosting%20on%20merge/badge.svg?branch=main)
+
 # Elecciones2021
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.

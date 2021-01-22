@@ -30,18 +30,44 @@
     flex: 1 1 auto;
 }
 
-.container{
-    div{
-        float: left;
-        //border: 1px solid;
-        width: 50em;
-        
-    }
-
-  }
-
 .spinner{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.colorSentencias{
+    color: #DF2854;
+    font-weight: bold;
+}
+.colorAcademico{
+    color: #1CBAD9;
+    font-weight: bold;
+}
+
+.colorPolitico{
+    color: #DBA837;
+    font-weight: bold;
+}
+
+.fondoSentencias{
+    background-color: #DF2854;
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.fondoAcademico{
+
+    background-color: #1CBAD9;
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.fondoPolitico{
+    background-color: #DBA837;
+    color: white;
+    border-radius: 50%;
+    align-items: center;
 }

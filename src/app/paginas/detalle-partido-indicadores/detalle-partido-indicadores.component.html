@@ -25,6 +25,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="academico" >
+            <div style="margin-left:10px" >
+            <mat-icon   class="fondoSentencias" aria-hidden="true">
+                school
+            </mat-icon>
+            <label class="colorSentencias">Con universidades sin licencia Sunedu</label>
+            </div>
+
+            <div class="container">
+
+            </div>
+        </div>
+
         <div class="academico">
             <div style="margin-left:10px" >
             <mat-icon   class="fondoAcademico" aria-hidden="true">
@@ -39,22 +53,18 @@
                     <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
                     </p>    
                 </span>
-
-                <div fxLayout="column" fxLayoutAlign="center center" >
-                    <div>
-                        <p class="colorAcademico">- Con universidades sin licencia Sunedu</p>
-                    </div>
-                </div>
             </div>
+        </div>
 
-
-    </div>
+   
         <div class="trayectoria_politica">
             <div style="margin-left:10px; margin-bottom: 20px;" >
                 <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
                     account_balance
                 </mat-icon>
                 <label class="colorPolitico"> {{getCantIndicador(5)}} En Cargos Anteriores</label>
+                
+            </div>
                 <div class="container">
                     <span *ngFor="let indicador of fnIndicadores(5); let i = index">
                         <p>
@@ -66,19 +76,18 @@
                         <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
                         </p>    
                     </span>
+
+                </div>
+                    <!--
                     <div fxLayout="column" fxLayoutAlign="center center" >
                         <div>
                             <p class="colorPolitico">- Votaciones en el congreso</p>
                         </div>
                     </div>
-    
-                </div>
-
-
+                    -->
         </div>
 
-        
-    {{ "Indicador Estudio : " + partido.indicadorCantidadEstudio}}
-    <br>
-    {{ "Indicador Cantidad de Sentencias : " + partido.indicadorCantidadSentencias}}
+
+    </div>
+
 </div>

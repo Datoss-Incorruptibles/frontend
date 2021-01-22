@@ -57,19 +57,25 @@
             </mat-card-header>
             <mat-card-content class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-between stretch">                
                     <div>
-                    <span *ngFor="let indicador of fnIndicadores(partido,3); let i = index">
-                        <p>
-                        <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
-                        </p>    
-                    </span>
-                    </div>  
-                    
-                    <div>
-                    <span *ngFor="let indicador of fnIndicadores(partido,1); let i = index">
-                        <p>
-                        <span *ngIf="i==0"></span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}   
-                        </p>
-                    </span>
+                        <div style="margin-left:10px" >
+                            <mat-icon   class="fondoAcademico" aria-hidden="true">
+                                school
+                            </mat-icon>
+                            <label class="colorAcademico"> {{getCantidadEdSuperior(partido)}} Ed.Superior</label>
+                        </div>
+                
+                        <div>
+
+                        </div>
+
+                        <div>
+
+                        </div>
+                        <div>
+
+                            
+                        </div>
+
                     </div>
 
                     <div>

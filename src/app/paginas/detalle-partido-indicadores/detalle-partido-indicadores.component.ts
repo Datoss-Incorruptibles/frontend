@@ -26,7 +26,7 @@ export class DetallePartidoIndicadoresComponent implements OnInit {
   getCantidadEdSuperior(){
     let cont = 0;
     this.fnIndicadores(1).forEach(element => {
-      if(element.indicador_categoria== 2 ||element.indicador_categoria== 3){
+      if(element.indicador_categoria!=4){
         cont = element.cantidad + cont;
       }
     }); 

@@ -106,5 +106,22 @@ export class PartidosComponent implements OnInit {
         return  elem.indicador==id
       }
     });
+
+  }
+  getCantIndicador(partido,id){
+    let cont = 0;
+    this.fnIndicadores(partido,id).forEach(element => {
+      cont = element.cantidad + cont;
+    }); 
+    return cont;
+  } 
+  getCantidadEdSuperior(partido){
+    let cont = 0;
+    this.fnIndicadores(partido,1).forEach(element => {
+      if(element.indicador_categoria!=4){
+        cont = element.cantidad + cont;
+      }
+    }); 
+    return cont;
   }
 }

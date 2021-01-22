@@ -47,10 +47,13 @@
         
 
     </mat-card-content>
-    <hr>
-    <mat-card-actions>
-        <button routerLink="/candidato/{{candidato.id}}" [state]="candidato" mat-button >
-            <mat-icon>description</mat-icon> <span> Ver más</span>             
-        </button>
-    </mat-card-actions>
+    <div *ngIf="!fromDetalle">
+        <hr>
+        <mat-card-actions >
+            <button routerLink="/candidato/{{candidato.id}}" [state]="candidato" mat-button >
+                <mat-icon>description</mat-icon> <span> Ver más</span>             
+            </button>
+        </mat-card-actions>      
+    </div>
+
 </mat-card>

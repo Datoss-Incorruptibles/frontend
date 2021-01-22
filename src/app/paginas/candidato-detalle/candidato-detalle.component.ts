@@ -10,6 +10,7 @@ import { Location } from '@angular/common';
 })
 export class CandidatoDetalleComponent implements OnInit {
 
+  fromDetalle = true;
   candidato;
   constructor(private route: ActivatedRoute,private restApi:RestApiService,private location: Location) { }
 

@@ -1,23 +1,20 @@
 <div>
   <div *ngIf="candidato">
-    <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+    <app-card-candidato [candidato]="candidato" [fromDetalle]="fromDetalle"></app-card-candidato> 
   </div>
       <mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs>
         <mat-tab label="Historia">
             <app-candidato-historia [candidato]="candidato"></app-candidato-historia>
         </mat-tab>
-        <mat-tab label="Propuestas">
-            <!-- <app-candidato-congresista></app-candidato-congresista> -->
+        <!-- <mat-tab label="Propuestas">
         </mat-tab>
         <mat-tab label="Equipo">
-            <!-- <app-candidato-andino></app-candidato-andino> -->
         </mat-tab>  
         <mat-tab label="Medios">
-          <!-- <app-candidato-andino></app-candidato-andino> -->
-        </mat-tab>  
+        </mat-tab>   -->
       </mat-tab-group>
 
-  <div>
+  <div class="goBack">
     <button (click)="goBack()" mat-raised-button color="primary">Volver</button>
   </div>
 

@@ -15,14 +15,13 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
-import { CardComponent } from './_components/card/card.component';
 import { CardCandidatoComponent } from './_components/card-candidato/card-candidato.component';
 import { AppRoutingModule } from './../app-routing.module';
 
 
 @NgModule({
-  declarations: [CardComponent, CardCandidatoComponent],
-  exports:[CardComponent,CardCandidatoComponent],
+  declarations: [ CardCandidatoComponent],
+  exports:[CardCandidatoComponent],
   imports: [
     AppRoutingModule,
     CommonModule,

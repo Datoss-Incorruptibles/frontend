@@ -25,10 +25,15 @@
                     // border-color: black;
                 }
             }
+
             .content{
                 margin-left: 20px;
-                min-width: 100px;                
+                min-width: 100px;  
+                .card-name{
+                    font-size: 20px;
+                }              
             }
+
             .orgPolitcaImg{
                 // align-self: flex-start;
                 margin-left: auto;

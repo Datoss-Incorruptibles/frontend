@@ -13,19 +13,19 @@
         <div *ngFor="let sentencia of candidato.sentencias">
           <ul>
             <li>
-              {{sentencia.sentencia}}
+             TIPO DE PROCESO: {{sentencia.tipo_proceso}}
             </li>
             <li>
-              {{sentencia.nro_expediente}}
+              SENTENCIA:{{sentencia.sentencia}}
             </li>
             <li>
-              {{sentencia.fallo}}
+             FALLO: {{sentencia.fallo}}
             </li>
             <li>
-              {{sentencia.cumple_fallo}}
+             CUMPLE FALLO: {{sentencia.cumple_fallo}}
             </li>
             <li>
-              {{sentencia.tipo_proceso}}
+              NRO EXPEDIENTE: {{sentencia.nro_expediente}}
             </li>
           </ul>
         </div>
@@ -47,20 +47,20 @@
       <div *ngIf="candidato.estudios">
         <div *ngFor="let estudio of candidato.estudios">
           <ul>
-            <li>
-              {{estudio.grado}}
-            </li>
-            <li>
-              {{estudio.institucion}}
-            </li>
-            <li>
+            <li *ngIf="estudio.estudio">
               {{estudio.estudio}}
             </li>
-            <li>
-              {{estudio.anio_bachiller}}
+            <li *ngIf="estudio.institucion">
+              {{estudio.institucion}}
             </li>
-            <li>
-              {{estudio.anio_titulo}}
+            <li *ngIf="estudio.grado">
+              {{estudio.grado}}
+            </li>
+            <li *ngIf="estudio.anio_bachiller">
+              BACHILLER : {{estudio.anio_bachiller}}
+            </li>
+            <li *ngIf="estudio.anio_titulo">
+              TITULO : {{estudio.anio_titulo}}
             </li>
           </ul>
         </div>
@@ -86,16 +86,7 @@
               {{experiencialaboral.centro_trabajo}}
             </li>
             <li>
-              {{experiencialaboral.ocupacion_profesion}}
-            </li>
-            <li>
-              {{experiencialaboral.anio_trabajo_desde}}
-            </li>
-            <li>
-              {{experiencialaboral.anio_trabajo_hasta}}
-            </li>
-            <li>
-              {{experiencialaboral.anio_titulo}}
+              {{experiencialaboral.ocupacion_profesion}} {{experiencialaboral.anio_trabajo_desde}}-{{experiencialaboral.anio_trabajo_hasta}}
             </li>
           </ul>
         </div>
@@ -121,13 +112,7 @@
               {{experienciapolitica.centro_trabajo}}
             </li>
             <li>
-              {{experienciapolitica.ocupacion_profesion}}
-            </li>
-            <li>
-              {{experienciapolitica.anio_trabajo_desde}}
-            </li>
-            <li>
-              {{experienciapolitica.anio_trabajo_hasta}}
+              {{experienciapolitica.ocupacion_profesion}} {{experienciapolitica.anio_trabajo_desde}}-{{experienciapolitica.anio_trabajo_hasta}}
             </li>
           </ul>
         </div>

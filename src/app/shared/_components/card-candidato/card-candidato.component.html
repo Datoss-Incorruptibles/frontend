@@ -1,37 +1,23 @@
 <mat-card class="card-politico">
-
-    <mat-card-header>    
-        <div mat-card-avatar  class="header-image"><img src="{{candidato.ruta_archivo}}" /></div>
-    
-        <mat-card-title class="title">
-          
-            <div *ngIf="!fromPartido" fxLayout="row" fxLayoutAlign="end center">
-                <span>
-                    <div mat-card-avatar ><img class="imgPartido" mat-card-avatar src="{{candidato.organizacion_politica_logo}}" />
-                    </div>
-
-                    <div fxFlex> 
-                    <p>
-                        {{candidato.jne_organizacion_politica}}
-                    </p>
-                    </div>
-                </span>
-
+        <div class="header">
+            <div mat-card-avatar  class="header-image">
+                <img class="imgCandidato" src="{{candidato.ruta_archivo}}" />
+                <img class="imgPartido" mat-card-avatar src="{{candidato.organizacion_politica_logo}}" />
             </div>
-
-            <span class="card-name">
-                {{candidato.jne_posicion}}. {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
-            </span>
-
- 
-        </mat-card-title>
-        <mat-card-subtitle > 
-            <p>{{candidato.profesion}}</p>
-            <p>{{candidato.distrito_electoral}} </p>
-            <p>DNI: {{candidato.documento_identidad}} - jne_idhojavida : {{candidato.jne_idhojavida}}</p>
-         </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content class="container">
+            <div class="content">
+                <div class="card-name">
+                <p>
+                    {{candidato.jne_posicion}}. {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
+                </p>    
+                </div>
+                <div>
+                    <p>{{candidato.profesion}}</p>
+                    <p>{{candidato.distrito_electoral}} </p>
+                    <p>DNI: {{candidato.documento_identidad}} - jne_idhojavida : {{candidato.jne_idhojavida}}</p>
+                </div>
+            </div>
+        </div>
+    <mat-card-content *ngIf="!fromDetalle" class="container">
         <p>
             <span *ngFor="let indicador of candidato.indicadores, let i = index">
                 <span [ngSwitch]="indicador.indicador_id">
@@ -44,8 +30,14 @@
                 <br>
             </span>
         </p>
-        
-
+    </mat-card-content>
+    <mat-card-content *ngIf="fromDetalle" class="container">
+        <p>
+            <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
+                <span>- {{indicador.indicador_categoria_nombre}}</span>
+                <br>
+            </span>
+        </p>
     </mat-card-content>
     <div *ngIf="!fromDetalle">
         <hr>

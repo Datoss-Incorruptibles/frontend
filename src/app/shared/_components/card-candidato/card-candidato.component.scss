@@ -1,22 +1,44 @@
 .card-politico{
     margin-bottom: 20px;
     margin-top: 10px;
+    .header{
+            display: flex;
+            justify-content:flex-start;
+            flex-wrap: nowrap; 
 
-    .header-image{
-        width: 80px;
-        height:  80px;
+            .header-image{
+                position: relative;
+                width: 100px;
+                height: 120px;
+                .imgCandidato{
+                    border-radius: 80%;
+                    width: 81px;
+                    height: 108px;
+                    border: 2px solid;
+                    // border-color: rgb(228, 22, 22);
+                    border-color: rgb(232, 6, 6);
+                }
+                .imgPartido{
+                    position: absolute;
+                    right: 0px;
+                    bottom:0px;
+                    border: 1px solid;
+                    // border-color: black;
+                }
+            }
 
-        img{
-            border-radius: 50%;
-            border: 2px solid;
-            border-color: red;
-        }
-    }
-    .mat-card-header{
-        img{
-            width: 100%;
-            height: 100%;
-        }
+            .content{
+                margin-left: 20px;
+                min-width: 100px;  
+                .card-name{
+                    font-size: 20px;
+                }              
+            }
+
+            .orgPolitcaImg{
+                // align-self: flex-start;
+                margin-left: auto;
+            }
     }
     .mat-card-actions{
         font-size: 12px;
@@ -38,10 +60,6 @@ hr{
     width: 100%;
     display: block;
 }
-.card-name{
-    width: 90%;
-    display: inline-block;
-}
 
 .card-position{
     width: 100%;
@@ -52,7 +70,4 @@ hr{
     margin: 10px;
 
 }
-.imgPartido{
-    border: 1px solid;
-    border-color: black;
-}
+

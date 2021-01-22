@@ -86,12 +86,10 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-
-app-partidos{
    /* width: 100%;
     padding: 40px 22px;
     background-color: #D5E4FF;*/
-    mat-form-field{
+ mat-form-field{
         &.mat-form-field-type-mat-select{
             .mat-form-field-flex{
                 background-color: white;
@@ -99,13 +97,12 @@ app-partidos{
                 border-color: #687CA7;
                 border-width: 1px;
                 border-radius: 6px;
-            }
+        }
             .mat-form-field-underline{
                 display: none;
-            }
         }
-    }
-}
+     }
+ }
 mat-drawer-content{
     background-color: #D5E4FF;
 }

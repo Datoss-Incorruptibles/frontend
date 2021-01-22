@@ -11,13 +11,23 @@
       </div>
       <div *ngIf="candidato.sentencias">
         <div *ngFor="let sentencia of candidato.sentencias">
-          {{sentencia.sentencia}}
-          {{sentencia.nro_expediente}}
-          {{sentencia.fallo}}
-          {{sentencia.cumple_fallo}}
-          {{sentencia.tipo_proceso}}
-          <br>
-          <br>
+          <ul>
+            <li>
+              {{sentencia.sentencia}}
+            </li>
+            <li>
+              {{sentencia.nro_expediente}}
+            </li>
+            <li>
+              {{sentencia.fallo}}
+            </li>
+            <li>
+              {{sentencia.cumple_fallo}}
+            </li>
+            <li>
+              {{sentencia.tipo_proceso}}
+            </li>
+          </ul>
         </div>
       </div>
       <div *ngIf="!candidato.sentencias">
@@ -36,13 +46,23 @@
       </div>
       <div *ngIf="candidato.estudios">
         <div *ngFor="let estudio of candidato.estudios">
-          {{estudio.grado}}
-          {{estudio.institucion}}
-          {{estudio.estudio}}
-          {{estudio.anio_bachiller}}
-          {{estudio.anio_titulo}}
-          <br>
-          <br>
+          <ul>
+            <li>
+              {{estudio.grado}}
+            </li>
+            <li>
+              {{estudio.institucion}}
+            </li>
+            <li>
+              {{estudio.estudio}}
+            </li>
+            <li>
+              {{estudio.anio_bachiller}}
+            </li>
+            <li>
+              {{estudio.anio_titulo}}
+            </li>
+          </ul>
         </div>
       </div>
       <div *ngIf="!candidato.estudios">
@@ -61,12 +81,23 @@
       </div>
       <div *ngIf="candidato.experiencialaboral">
         <div *ngFor="let experiencialaboral of candidato.experiencialaboral">
-          {{experiencialaboral.centro_trabajo}}
-          {{experiencialaboral.ocupacion_profesion}}
-          {{experiencialaboral.anio_trabajo_desde}}
-          {{experiencialaboral.anio_trabajo_hasta}}
-          <br>
-          <br>
+          <ul>
+            <li>
+              {{experiencialaboral.centro_trabajo}}
+            </li>
+            <li>
+              {{experiencialaboral.ocupacion_profesion}}
+            </li>
+            <li>
+              {{experiencialaboral.anio_trabajo_desde}}
+            </li>
+            <li>
+              {{experiencialaboral.anio_trabajo_hasta}}
+            </li>
+            <li>
+              {{experiencialaboral.anio_titulo}}
+            </li>
+          </ul>
         </div>
       </div>
       <div *ngIf="!candidato.experiencialaboral">
@@ -85,12 +116,20 @@
       </div>
       <div *ngIf="candidato.experienciapolitica">
         <div *ngFor="let experienciapolitica of candidato.experienciapolitica">
-          {{experienciapolitica.centro_trabajo}}
-          {{experienciapolitica.ocupacion_profesion}}
-          {{experienciapolitica.anio_trabajo_desde}}
-          {{experienciapolitica.anio_trabajo_hasta}}
-          <br>
-          <br>
+          <ul>
+            <li>
+              {{experienciapolitica.centro_trabajo}}
+            </li>
+            <li>
+              {{experienciapolitica.ocupacion_profesion}}
+            </li>
+            <li>
+              {{experienciapolitica.anio_trabajo_desde}}
+            </li>
+            <li>
+              {{experienciapolitica.anio_trabajo_hasta}}
+            </li>
+          </ul>
         </div>
       </div>
       <div *ngIf="!candidato.experienciapolitica">

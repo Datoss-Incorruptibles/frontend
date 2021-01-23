@@ -7,23 +7,23 @@
             </mat-icon>
             <label class="colorSentencias"> {{getCantIndicador(8)+getCantIndicador(9) }} Sentencias</label>
             </div>
-            <div class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-between stretch">
-                <div>
+            <div class="container" >
+                <p>
                     <span *ngFor="let indicador of fnIndicadores(8); let i = index">
-                        <p>
+            
                         <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
-                        </p>    
+                        <br>
+    
                     </span>
-                   
-                </div>
-                <div>
+                    
                     <span *ngFor="let indicador of fnIndicadores(9); let i = index">
-                        <p>
+     
                         <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
-                        </p>    
+                        <br>
                     </span>
-                </div>
+                 </p>
             </div>
+         
         </div>
 
         <div class="academico" >

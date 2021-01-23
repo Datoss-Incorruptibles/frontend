@@ -38,36 +38,29 @@
 
 .colorSentencias{
     color: #DF2854;
-    font-weight: bold;
+    font-size: 15px;
 }
 .colorAcademico{
     color: #1CBAD9;
-    font-weight: bold;
+    font-size: 15px;
 }
 
 .colorPolitico{
     color: #DBA837;
-    font-weight: bold;
+    font-size: 15px;
 }
 
 .fondoSentencias{
-    background-color: #DF2854;
-    color: white;
-    border-radius: 50%;
-    align-items: center;
+    color: #DF2854;
 }
 
 .fondoAcademico{
-
-    background-color: #1CBAD9;
-    color: white;
-    border-radius: 50%;
-    align-items: center;
+    color: #1CBAD9;
 }
 
 .fondoPolitico{
-    background-color: #DBA837;
-    color: white;
-    border-radius: 50%;
-    align-items: center;
+    color: #DBA837;
+}
+mat-card-actions{
+    padding-top: 0;
 }

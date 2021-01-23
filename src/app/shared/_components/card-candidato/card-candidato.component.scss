@@ -10,18 +10,21 @@
                 width: 100px;
                 height: 120px;
                 .imgCandidato{
-                    border-radius: 80%;
+                    border-radius: 10%;
                     width: 81px;
                     height: 108px;
-                    border: 2px solid;
-                    // border-color: rgb(228, 22, 22);
-                    border-color: rgb(232, 6, 6);
+                    border: 1px solid;
+                     border-color: #C4C4C4;
+                    //border-color: rgb(232, 6, 6);
                 }
                 .imgPartido{
                     position: absolute;
                     right: 0px;
                     bottom:0px;
-                    border: 1px solid;
+                    border-radius: 10px;
+                    width: 35px;
+                    height: 35px;
+                    //border: 1px solid;
                     // border-color: black;
                 }
             }
@@ -50,6 +53,10 @@
 hr{
     border: 0.5px solid #ebebeb;
 }
+.partido-name{
+    font-size:  11px;
+    color: #938D8D;
+}
 
 
 
@@ -66,5 +73,8 @@ hr{
 .container{
     margin: 10px;
 
+}
+.profesion{
+    //margin-left: 50px;
 }
 

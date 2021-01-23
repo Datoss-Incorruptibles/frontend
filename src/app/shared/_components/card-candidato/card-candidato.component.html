@@ -1,35 +1,43 @@
 <mat-card class="card-politico">
+
         <div class="header">
             <div mat-card-avatar  class="header-image">
                 <img class="imgCandidato" src="{{candidato.ruta_archivo}}" />
-                <img class="imgPartido" mat-card-avatar src="{{candidato.organizacion_politica_logo}}" />
+                <img class="imgPartido" src="{{candidato.organizacion_politica_logo}}" />
             </div>
             <div class="content">
+                <p class="partido-name" >{{candidato.jne_organizacion_politica}} - {{candidato.distrito_electoral}} </p>
                 <div class="card-name">
                 <p>
-                    {{candidato.jne_posicion}}. {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
+                    N° {{candidato.jne_posicion}}. {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
                 </p>    
                 </div>
                 <div class="content-primary">
-                    <p>{{candidato.profesion}}</p>
-                    <p>{{candidato.distrito_electoral}} </p>
-                    <p>DNI: {{candidato.documento_identidad}} - jne_idhojavida : {{candidato.jne_idhojavida}}</p>
+                    <div class="profesion"> <p >{{candidato.profesion}} <br>                 
+                    </p></div>
+                   
+                    <p>
+                        <span *ngFor="let indicador of candidato.indicadores, let i = index">
+                            <span [ngSwitch]="indicador.indicador_id">
+                                <span *ngSwitchCase= 2>• EX {{indicador.indicador_categoria}}</span>
+                                <span *ngSwitchCase= 8>• Con {{indicador.cantidad}} Sentencia(s)  {{indicador.indicador}}</span>
+                                <span *ngSwitchCase= 9>• Con {{indicador.cantidad}} Sentencia(s) {{indicador.indicador}}</span>
+                                <span *ngSwitchCase= 11>• {{indicador.cantidad}}-{{indicador.indicador_categoria}}</span>
+                                <span *ngSwitchDefault>• {{indicador.indicador_categoria}}</span> 
+                            </span>
+                            <br>
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
     <mat-card-content *ngIf="!fromDetalle" class="container">
-        <p>
-            <span *ngFor="let indicador of candidato.indicadores, let i = index">
-                <span [ngSwitch]="indicador.indicador_id">
-                    <span *ngSwitchCase= 2>• EX {{indicador.indicador_categoria}}</span>
-                    <span *ngSwitchCase= 8>• Con {{indicador.cantidad}} Sentencia(s)  {{indicador.indicador}}</span>
-                    <span *ngSwitchCase= 9>• Con {{indicador.cantidad}} Sentencia(s) {{indicador.indicador}}</span>
-                    <span *ngSwitchCase= 11>• {{indicador.cantidad}}-{{indicador.indicador_categoria}}</span>
-                    <span *ngSwitchDefault>• {{indicador.indicador_categoria}}</span> 
-                </span>
-                <br>
-            </span>
-        </p>
+
+        <div fxLayout="row" fxLayoutAlign="end center">
+
+            <p> DNI: {{candidato.documento_identidad}} - jne_idhojavida : {{candidato.jne_idhojavida}} </p>
+        </div>
+        
     </mat-card-content>
     <mat-card-content *ngIf="fromDetalle" class="container">
         <p>

@@ -30,47 +30,39 @@
                 </div>
             </div >
             <div class="content-secondary">
-                <div>
-                    <span *ngFor="let indicador of candidato.indicadores, let i = index">
-                        <span [ngSwitch]="indicador.indicador_id" class="listaIndicadores">
-                            <span *ngSwitchCase= 2>
+                    <div *ngFor="let indicador of candidato.indicadores, let i = index" class="indicador">
+                        <div [ngSwitch]="indicador.indicador_id" class="indicador-detail">
+                            <div *ngSwitchCase= 2>
                                 <mat-icon   class="fondoPolitico" aria-hidden="true">
                                     account_balance
                                 </mat-icon>
-                                <p>
+                                <span>
                                     EX - {{indicador.indicador_categoria}}
-                                </p>
                                 </span>
-                            <span *ngSwitchCase= 8>
+                            </div>
+                            <div *ngSwitchCase= 8>
                                 <mat-icon class="fondoSentencias"  aria-hidden="true">
                                     gavel
                                 </mat-icon>
-                                <p>
+                                <span>
                                     CON {{indicador.cantidad}} Sentencia(s)  {{indicador.indicador}}
-                                </p>
-                            </span>
-                            <span *ngSwitchCase= 9>
+                                </span>
+                            </div>
+                            <div *ngSwitchCase= 9>
                                 <mat-icon class="fondoSentencias"  aria-hidden="true">
                                     gavel
                                 </mat-icon>
-                                <p>
                                     CON {{indicador.cantidad}} Sentencia(s) {{indicador.indicador}}
-                                </p>
-                            </span>
-                            <span *ngSwitchCase= 11>
-                                <p>
+                            </div>
+                            <div *ngSwitchCase= 11>
                                     • {{indicador.cantidad}}-{{indicador.indicador_categoria}}
-                                </p>
-                            </span>
-                            <span *ngSwitchDefault>
-                                <p>
+                            </div>
+                            <div *ngSwitchDefault>
                                     • {{indicador.indicador_categoria}}
-                                </p>
-                            </span> 
-                        </span>
+                            </div> 
+                        </div>
                         <br>
-                    </span>
-                </div>
+                    </div>
             </div>
 
         </div>

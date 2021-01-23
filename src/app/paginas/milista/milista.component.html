@@ -1,0 +1,17 @@
+<mat-progress-bar mode="indeterminate" *ngIf="!misCandidatos" ></mat-progress-bar>
+
+<div
+class="scrollA"
+infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+[scrollWindow]="false"
+(scrolled)="onScroll()"
+>
+    <div *ngFor="let candidato of misCandidatos">
+        <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+    </div>
+    <div class="spinner">
+        <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+    </div>
+</div>

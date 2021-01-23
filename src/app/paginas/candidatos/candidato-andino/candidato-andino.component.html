@@ -1,6 +1,6 @@
 <div >
     <div class="filtrado">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="filterRegion">
             <mat-label>Filtro: Partido</mat-label>
             <mat-select  (selectionChange)="onFiltroOrganizacion($event.value)">
                 <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">

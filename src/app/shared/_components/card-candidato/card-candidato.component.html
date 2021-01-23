@@ -1,42 +1,84 @@
 <mat-card class="card-politico">
-
+    <!-- N° {{candidato.jne_posicion}}.  -->
         <div class="header">
-            <div mat-card-avatar  class="header-image">
-                <img class="imgCandidato" src="{{candidato.ruta_archivo}}" />
-                <img class="imgPartido" src="{{candidato.organizacion_politica_logo}}" />
-            </div>
-            <div class="content">
-                <p class="partido-name" >{{candidato.jne_organizacion_politica}} - {{candidato.distrito_electoral}} </p>
-                <div class="card-name">
-                <p>
-                    N° {{candidato.jne_posicion}}. {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
-                </p>    
-                </div>
+            <div class="header-image-title">
+                <div mat-card-avatar  class="header-image">
+                    <img class="imgCandidato" src="{{candidato.ruta_archivo}}" />
+                    <img class="imgPartido" src="{{candidato.organizacion_politica_logo}}" />
+                </div>  
                 <div class="content-primary">
-                    <div class="profesion"> <p >{{candidato.profesion}} <br>                 
-                    </p></div>
-                   
-                    <p>
-                        <span *ngFor="let indicador of candidato.indicadores, let i = index">
-                            <span [ngSwitch]="indicador.indicador_id">
-                                <span *ngSwitchCase= 2>• EX {{indicador.indicador_categoria}}</span>
-                                <span *ngSwitchCase= 8>• Con {{indicador.cantidad}} Sentencia(s)  {{indicador.indicador}}</span>
-                                <span *ngSwitchCase= 9>• Con {{indicador.cantidad}} Sentencia(s) {{indicador.indicador}}</span>
-                                <span *ngSwitchCase= 11>• {{indicador.cantidad}}-{{indicador.indicador_categoria}}</span>
-                                <span *ngSwitchDefault>• {{indicador.indicador_categoria}}</span> 
+                    <div class="partido-name" >
+                        <p>
+                            {{candidato.jne_organizacion_politica}} - {{candidato.distrito_electoral}} 
+                        </p>
+                    </div>
+                    <div class="card-name">
+                        <p>
+                        {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
+                        </p>    
+                    </div>
+                    <div class="profesion"> 
+                        <p >{{candidato.profesion}} <br>                 
+                        </p>
+                    </div>
+                    <!-- <div class="number">
+                        {{candidato.jne_posicion}}
+                    </div> -->
+                </div>
+                <div class="number" *ngIf="!fromPresidente">
+                    {{candidato.jne_posicion}}
+                </div>
+            </div >
+            <div class="content-secondary">
+                <div>
+                    <span *ngFor="let indicador of candidato.indicadores, let i = index">
+                        <span [ngSwitch]="indicador.indicador_id" class="listaIndicadores">
+                            <span *ngSwitchCase= 2>
+                                <mat-icon   class="fondoPolitico" aria-hidden="true">
+                                    account_balance
+                                </mat-icon>
+                                <p>
+                                    EX - {{indicador.indicador_categoria}}
+                                </p>
+                                </span>
+                            <span *ngSwitchCase= 8>
+                                <mat-icon class="fondoSentencias"  aria-hidden="true">
+                                    gavel
+                                </mat-icon>
+                                <p>
+                                    CON {{indicador.cantidad}} Sentencia(s)  {{indicador.indicador}}
+                                </p>
                             </span>
-                            <br>
+                            <span *ngSwitchCase= 9>
+                                <mat-icon class="fondoSentencias"  aria-hidden="true">
+                                    gavel
+                                </mat-icon>
+                                <p>
+                                    CON {{indicador.cantidad}} Sentencia(s) {{indicador.indicador}}
+                                </p>
+                            </span>
+                            <span *ngSwitchCase= 11>
+                                <p>
+                                    • {{indicador.cantidad}}-{{indicador.indicador_categoria}}
+                                </p>
+                            </span>
+                            <span *ngSwitchDefault>
+                                <p>
+                                    • {{indicador.indicador_categoria}}
+                                </p>
+                            </span> 
                         </span>
-                    </p>
+                        <br>
+                    </span>
                 </div>
             </div>
+
         </div>
     <mat-card-content *ngIf="!fromDetalle" class="container">
 
-        <div fxLayout="row" fxLayoutAlign="end center">
-
+        <!-- <div fxLayout="row" fxLayoutAlign="end center">
             <p> DNI: {{candidato.documento_identidad}} - jne_idhojavida : {{candidato.jne_idhojavida}} </p>
-        </div>
+        </div> -->
         
     </mat-card-content>
     <mat-card-content *ngIf="fromDetalle" class="container">
@@ -47,13 +89,31 @@
             </span>
         </p>
     </mat-card-content>
-    <div *ngIf="!fromDetalle">
+    <div>
         <hr>
-        <mat-card-actions >
-            <button routerLink="/candidato/{{candidato.id}}" [state]="candidato" mat-button >
-                <mat-icon>description</mat-icon> <span> Ver más</span>             
-            </button>
+        <mat-card-actions>
+            <div class="actions-ver-mas" *ngIf="!fromDetalle">
+                <button routerLink="/candidato/{{candidato.id}}" [state]="candidato" mat-button >
+                    <mat-icon>description</mat-icon> <span> Ver más</span>             
+                </button>
+            </div>
+            <div class="actions-merepresenta" >
+                <div>
+                    <button mat-button (click)="representa(0)" 
+                    [ngClass]="{'deactivate': step === 'step00', 'thumb_down':step === 'step01' }"
+                    >
+                        <mat-icon>thumb_down_outline</mat-icon> <span> No me representa</span>             
+                    </button>
+                </div>
+                <div>
+                    <button mat-button (click)="representa(1)"
+                    [ngClass]="{'deactivate': step === 'step10', 'thumb_up':step === 'step11' }"
+                    >
+                        <mat-icon>thumb_up</mat-icon> <span> Me representa</span>             
+                    </button>
+                </div>
+            </div>
+
         </mat-card-actions>      
     </div>
-
 </mat-card>

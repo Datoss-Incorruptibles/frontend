@@ -9,7 +9,8 @@ import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 })
 export class CandidatoPresidenteComponent implements OnInit {
   selector: string = '.main-panel';
-  
+  fromPresidente = true;
+
   listOfDiferrentPages = []
   showLoader = false;
 

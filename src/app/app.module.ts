@@ -38,6 +38,9 @@ import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.compon
 import { CandidatoDetalleComponent } from '../app/paginas/candidato-detalle/candidato-detalle.component';
 import { CandidatoHistoriaComponent } from '../app/paginas/candidato-detalle/candidato-historia/candidato-historia.component'
 
+/*Mi lista  */
+import { MilistaComponent } from '../app/paginas/milista/milista.component';
+
 /*Utils */
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -63,7 +66,8 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     CandidatoCongresistaComponent,
     CandidatoAndinoComponent,
     CandidatoDetalleComponent,
-    CandidatoHistoriaComponent
+    CandidatoHistoriaComponent,
+    MilistaComponent
   ],
   exports:[
     PartidosComponent,
@@ -79,7 +83,8 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     CandidatoPresidenteComponent,
     CandidatoCongresistaComponent,
     CandidatoAndinoComponent,
-    CandidatoDetalleComponent
+    CandidatoDetalleComponent,
+    MilistaComponent
 
   ],
   imports: [

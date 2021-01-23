@@ -4,6 +4,7 @@ import { PartidosComponent } from '../app/paginas/partidos/partidos.component';
 import { DetalleComponent } from '../app/paginas/detalle/detalle.component';
 import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.component';
 import { CandidatoDetalleComponent } from '../app/paginas/candidato-detalle/candidato-detalle.component';
+import { MilistaComponent } from "./paginas/milista/milista.component";
 
 const routes: Routes = [
   { path: '',   redirectTo: '/partidos', pathMatch: 'full' }, 
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'partido/:id', component: DetalleComponent},
   { path: 'candidatos', component: CandidatosComponent },
   { path: 'candidato/:id', component: CandidatoDetalleComponent },
+  { path: 'milista', component: MilistaComponent },
 
 ];
 

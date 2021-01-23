@@ -2,9 +2,47 @@
     margin-bottom: 20px;
     margin-top: 10px;
     .header{
+        .header-image-title{
             display: flex;
             justify-content:flex-start;
             flex-wrap: nowrap; 
+            .content-primary{
+                position: relative;
+                margin-left: 10px;
+                // .number{
+                //     position: absolute;
+                //     right: 0px;
+                //     top:0px;
+                //     font-size:36px;
+                //     color: #938D8D;
+                // }
+                .partido-name{
+                    font-size:10px;
+                    margin-bottom: 5px;
+                    p{
+                        margin: 0;
+                    }
+                }
+                .card-name{
+                    font-size:18px;
+                    margin-bottom: 4px;
+                    p{
+                        margin: 0;
+                    }
+                }
+                .profesion{
+                    font-size:13px;
+                    color: #938D8D;
+                }
+                // overflow: auto;
+            } 
+            .number{
+                position: absolute;
+                right: 10px;
+                top:10px;
+                font-size:36px;
+                color: #938D8D;
+            }
             .header-image{
                 position: relative;
                 width: 100px;
@@ -28,21 +66,62 @@
                     // border-color: black;
                 }
             }
-
-            .content{
-                margin-left: 20px;
-                min-width: 100px;  
-                .card-name{
-                    font-size: 20px;
-                }      
-                .content-primary{
-                    overflow: auto;
-                }        
+        }
+        .content-secondary{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 10px;
+            margin-left: 5px;
+            .listaIndicadores{
+                font-size:12px;
+                color:#515151;
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                span{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    p{
+                        margin: 0;
+                    }
+                }
             }
+        }
+
+
+        .content{
+            margin-left: 20px;
+            min-width: 100px;  
+            .card-name{
+                font-size: 20px;
+            }      
+            .content-primary{
+                // overflow: auto;
+            } 
+            .content-secondary{
+                // overflow: auto;
+            }         
+        }
+ 
     }
     .mat-card-actions{
         font-size: 12px;
         display: flex;
+        flex-direction: column ;
+
+        .actions-merepresenta{
+            display: flex;
+            justify-content:  space-evenly ;
+ 
+        }
+        .actions-ver-mas{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .texto{
             display: flex;
             align-items: center;
@@ -72,9 +151,49 @@ hr{
 }
 .container{
     margin: 10px;
+}
+
+.deactivate{
+    // background-color: blue;
+    color: #828282;
+
+}
+.actions-merepresenta{
+    color: #828282;
+
+}
+
+.actions-ver-mas{
+    color: #828282;
+
+}
+.thumb_down{
+    color: #000000;
+    
+}
+
+.thumb_up{
+    color: #040404;
 
 }
 .profesion{
     //margin-left: 50px;
 }
 
+
+.fondoPolitico{
+    color: #DBA837;
+    margin-right: 5px;
+}
+
+.fondoSentencias{
+    color: #DF2854;
+    margin-right: 5px;
+
+}
+
+.fondoAcademico{
+    color: #1CBAD9;
+    margin-right: 5px;
+
+}

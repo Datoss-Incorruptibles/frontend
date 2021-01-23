@@ -1,77 +1,105 @@
 <div *ngIf="candidato" class="candidato">
   <mat-card>
-    <div>
+    <div  class="candidato-sentencias-wrapper">
       <div class="sentencias">
-        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+        <div  class="tile-wrapper">
+          <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
             gavel
-        </mat-icon>
-        <span class="title">
-          <label>Judicial</label>
-        </span>
-      </div>
-      <div *ngIf="candidato.sentencias">
-        <div *ngFor="let sentencia of candidato.sentencias">
-          <ul>
-            <li>
-             TIPO DE PROCESO: {{sentencia.tipo_proceso}}
-            </li>
-            <li>
-              SENTENCIA:{{sentencia.sentencia}}
-            </li>
-            <li>
-             FALLO: {{sentencia.fallo}}
-            </li>
-            <li>
-             CUMPLE FALLO: {{sentencia.cumple_fallo}}
-            </li>
-            <li>
-              NRO EXPEDIENTE: {{sentencia.nro_expediente}}
-            </li>
-          </ul>
+          </mat-icon>
+          <span class="title">
+            <label>Sentencias</label>
+          </span>
+        </div>
+        <div *ngIf="candidato.sentencias">
+          <div  class="title-penales">
+            Sentencias Penales:
+          </div>
+          <div *ngFor="let sentencia of candidato.sentencias" class="indicador-penal-wrapper">
+            <div [ngSwitch]="sentencia.tipo_proceso" >
+              <div *ngSwitchCase="'penal'" class="indicador-detail">
+                <div class="sentencia">
+                  {{sentencia.sentencia}}
+                </div>
+                <div  class="anio">
+                  AQUI VA EL ANIO :P
+                </div>
+                <div class="fallo">
+                  {{sentencia.fallo}} - {{sentencia.cumple_fallo}}
+                </div>
+              </div>
+              <span *ngSwitchDefault class="vacio" >
+                -----
+              </span>
+            </div>
+          </div>
+          <div *ngIf="candidato.sentencias" class="title-civiles">
+            Sentencias Civiles:
+          </div>
+          <div *ngFor="let sentencia of candidato.sentencias" class="indicador-civil-wrapper">
+            <div [ngSwitch]="sentencia.tipo_proceso" >
+              <div *ngSwitchCase="'civil'" class="indicador-detail">
+                <div  class="sentencia">
+                  {{sentencia.sentencia}}
+                </div>
+                <div  class="anio">
+                  AQUI VA EL ANIO :P
+                </div>
+                <div class="fallo">
+                  {{sentencia.fallo}} - {{sentencia.cumple_fallo}}
+                </div>
+              </div>
+              <span *ngSwitchDefault class="vacio" >
+                -----
+              </span>
+            </div>
+          </div>
+
+        </div> 
+        <div *ngIf="!candidato.sentencias" class="vacio">
+          No tiene sentencias   
         </div>
       </div>
-      <div *ngIf="!candidato.sentencias">
-        No hay informacion  
-      </div>
     </div>
-    <hr>
-    <div>
-      <div>
+    <div class="candidato-estudios-wrapper">
+      <div class="tile-wrapper">
         <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
             school
         </mat-icon>
         <span class="title">
-          <label>Academicas</label>
+          <label>Estudios</label>
         </span>
       </div>
       <div *ngIf="candidato.estudios">
-        <div *ngFor="let estudio of candidato.estudios">
-          <ul>
-            <li *ngIf="estudio.estudio">
-              {{estudio.estudio}}
-            </li>
-            <li *ngIf="estudio.institucion">
+        <div *ngFor="let estudio of candidato.estudios" class="indicador-detail">
+            <div *ngIf="estudio.estudio">
+              {{estudio.estudio}} 
+              <span *ngIf="estudio.grado">
+                - {{estudio.grado}}
+              </span>
+            </div>
+            <div *ngIf="estudio.institucion" class="institucion">
               {{estudio.institucion}}
-            </li>
-            <li *ngIf="estudio.grado">
+            </div>
+            <div *ngIf="estudio" class="anio">
+              ANIO HERE
+            </div>
+            <!-- <div *ngIf="estudio.grado">
               {{estudio.grado}}
-            </li>
-            <li *ngIf="estudio.anio_bachiller">
+            </div> 
+          <div *ngIf="estudio.anio_bachiller">
               BACHILLER : {{estudio.anio_bachiller}}
-            </li>
-            <li *ngIf="estudio.anio_titulo">
+            </div>
+            <div *ngIf="estudio.anio_titulo">
               TITULO : {{estudio.anio_titulo}}
-            </li>
-          </ul>
+            </div> -->
         </div>
       </div>
-      <div *ngIf="!candidato.estudios">
-        No hay informacion  
+      <div *ngIf="!candidato.estudios" class="vacio">
+        No tiene estudios  
       </div>
     </div>
-    <hr>
-    <div>
-      <div>
+    <div  class="candidato-experiencialaboral-wrapper">
+      <div class="tile-wrapper">
         <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
           business_center
         </mat-icon>
@@ -80,45 +108,46 @@
         </span>
       </div>
       <div *ngIf="candidato.experiencialaboral">
-        <div *ngFor="let experiencialaboral of candidato.experiencialaboral">
-          <ul>
-            <li>
+        <div *ngFor="let experiencialaboral of candidato.experiencialaboral" class="indicador-detail">
+            <div>
+              {{experiencialaboral.ocupacion_profesion}}
+            </div>
+            <div class="centro_trabajo">
               {{experiencialaboral.centro_trabajo}}
-            </li>
-            <li>
-              {{experiencialaboral.ocupacion_profesion}} {{experiencialaboral.anio_trabajo_desde}}-{{experiencialaboral.anio_trabajo_hasta}}
-            </li>
-          </ul>
+            </div>
+            <div class="anio_trabajo_desde">
+              {{experiencialaboral.anio_trabajo_desde}}-{{experiencialaboral.anio_trabajo_hasta}}
+            </div>
         </div>
       </div>
-      <div *ngIf="!candidato.experiencialaboral">
-        No hay informacion  
+      <div *ngIf="!candidato.experiencialaboral" class="vacio">
+        No tiene experiencia laboral  
       </div>
     </div>
-    <hr>
-    <div>
-      <div>
+    <div   class="candidato-experienciapolitica-wrapper">
+      <div class="tile-wrapper">
         <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
           account_balance
         </mat-icon>
         <span class="title">
-          <label>Trajectoria Politica</label>
+          <label>Trayectoria Politica</label>
         </span>
       </div>
       <div *ngIf="candidato.experienciapolitica">
-        <div *ngFor="let experienciapolitica of candidato.experienciapolitica">
-          <ul>
-            <li>
+        <div *ngFor="let experienciapolitica of candidato.experienciapolitica" class="indicador-detail">
+            <div>
+              {{experienciapolitica.ocupacion_profesion}} 
+            </div>
+            <div class="centro_trabajo">
               {{experienciapolitica.centro_trabajo}}
-            </li>
-            <li>
-              {{experienciapolitica.ocupacion_profesion}} {{experienciapolitica.anio_trabajo_desde}}-{{experienciapolitica.anio_trabajo_hasta}}
-            </li>
-          </ul>
+            </div>
+            <div class="anio_trabajo_desde">
+              {{experienciapolitica.anio_trabajo_desde}}-{{experienciapolitica.anio_trabajo_hasta}}
+            </div>
         </div>
       </div>
-      <div *ngIf="!candidato.experienciapolitica">
-        No hay informacion  
+      <div *ngIf="!candidato.experienciapolitica" class="vacio">
+        No tiene experiencia politica  
       </div>
     </div>
   </mat-card>

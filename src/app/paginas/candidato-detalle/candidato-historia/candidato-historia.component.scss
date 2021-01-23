@@ -1,6 +1,88 @@
 .candidato{
-  margin: 10px;
+  margin-bottom: 10px;
+
+    // .indicador-penal-wrapper{
+    //   .indicador-detail{
+    //     margin-bottom:10px;
+    //   }
+    // }
+    // .indicador-civil-wrapper{
+    //   .indicador-detail{
+    //     margin-bottom:10px;
+
+    //   }
+    // }
+
 }
-.title{
-  font-size: 20px;
+  mat-card  > div{
+    margin-bottom:20px;
+  }
+
+  mat-icon{
+    color: #274482;
+
+  }
+
+.tile-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .title{
+    font-size: 20px;
+    color: #274482;
+    margin-left: 5px;
+  }
+}
+
+
+.indicador-detail{
+  font-size:15px;
+  margin-bottom:5px;
+  margin-top:5px;
+  margin-left:30px;
+
+}
+
+
+  .title-penales{
+    font-size:15px;
+    margin-left:30px;
+
+  }
+  .title-civiles{
+    font-size:15px;
+    margin-left:30px;
+
+  }
+
+.sentencia{
+  color: #4F4F4F;
+}
+
+.anio{
+  color: #938D8D;
+}
+
+.fallo{
+  color: #938D8D;
+}
+
+.institucion{
+  color: #938D8D;
+}
+
+.centro_trabajo{
+  color: #938D8D;
+}
+
+
+
+.anio_trabajo_desde{
+  color: #938D8D;
+}
+
+.vacio{
+  margin-left:30px;
+
 }

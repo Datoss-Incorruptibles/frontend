@@ -9,7 +9,7 @@
                 <div class="content-primary">
                     <div class="partido-name" >
                         <p>
-                            {{candidato.jne_organizacion_politica}} - {{candidato.distrito_electoral}} 
+                            {{candidato.jne_organizacion_politica}} <span *ngIf="candidato.distrito_electoral!=' '"> - {{candidato.distrito_electoral}} </span>   
                         </p>
                     </div>
                     <div class="card-name">
@@ -73,6 +73,7 @@
         </div> -->
         
     </mat-card-content>
+    <!--
     <mat-card-content *ngIf="fromDetalle" class="container">
         <p>
             <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
@@ -81,6 +82,7 @@
             </span>
         </p>
     </mat-card-content>
+    -->
     <div>
         <hr>
         <mat-card-actions>

@@ -13,6 +13,7 @@ export class ListadoPresidenteComponent implements OnInit {
   @Input() politicParty: any; 
   fromPartido = true;
   presidente: Candidato[];
+  fromPresidente = true;
 
   constructor(private restApiService: RestApiService,
     private activeRoute: ActivatedRoute) { }
@@ -23,22 +24,7 @@ export class ListadoPresidenteComponent implements OnInit {
         //this.onOrdernar();
       }, error => {  });
     }
-/*
-  onOrdernar(){
-    this.presidente = this.presidente.sort((n1,n2) => {
-      if (n1.cargo_id > n2.cargo_id) {
-          return 1;
-      }
-  
-      if (n1.cargo_id < n2.cargo_id) {
-          return -1;
-      }
-      return 0;
 
-  });
-
-  }
-  */
   onCargoPolitico(i){
     if(i == 0){
       return "Candidato a la Presidencia";

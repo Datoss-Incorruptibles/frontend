@@ -38,23 +38,36 @@
                 <mat-card-title mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
                     {{partido.nombre}}
                 </mat-card-title>
-                <mat-card-subtitle>Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años </mat-card-subtitle>
-                <mat-card-subtitle>
-                    <p>
-                        <span *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
-                            <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
-                        </span>
-                    </p>
-
-                    <p>
-                    <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
-                        <span *ngIf="i==0"> </span> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
-                    </span>
-                    </p>
-                    
+                <mat-card-subtitle>Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años 
 
                 </mat-card-subtitle>
             </mat-card-header>
+            <div class="vacancia" *ngIf="getCantIndicador(partido,6)!=0">
+                <label class="vacanciaTitle"> Votos de Vacancia Presidencial: </label>
+                     <p>
+                    <strong>
+                    <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
+                        <span *ngIf="i==0" class="afavor" > {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
+                        <span *ngIf="i==1"> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
+                        <span *ngIf="i==2 "> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
+                        
+                    </span>
+                    </strong>
+                    <br>
+                        
+                    <span  class="porcentaje" *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
+                        <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
+                    </span>
+                    </p>
+            </div>
+            <!--            
+                <div class="noinfo" *ngIf="getCantIndicador(partido,6)==0">
+                <label class="vacanciaTitle"> No tuvo participacion en el congreso actual </label>
+
+            </div>
+
+            -->
+
             <mat-card-content class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-around stretch">                
                     <div>
 

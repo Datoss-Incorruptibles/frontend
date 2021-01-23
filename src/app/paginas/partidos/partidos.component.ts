@@ -124,4 +124,15 @@ export class PartidosComponent implements OnInit {
     }); 
     return cont;
   }
+/*
+  //43 a favor, 41 en contra y 42 abstencion
+  fnIndicadorbycategoria(partido,id){
+    return partido.indicadorescategoriaorg.filter(elem =>{
+      if(elem != null){
+        return  elem.indicador==id
+      }
+    });
+
+  }
+*/
 }

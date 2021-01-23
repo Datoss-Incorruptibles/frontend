@@ -8,6 +8,26 @@
             <div class="texto_partido">
                 <div id="nombrepartido">{{partido.nombre}}</div>
                 <div id="fundacionpartido">Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años </div>
+                
+                <div class="vacancia" *ngIf="getCantIndicador(partido,6)!=0">
+                    <label class="vacanciaTitle"> Votos de Vacancia Presidencial: </label>
+                         <p>
+                        <strong>
+                        <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
+                            <span *ngIf="i==0" class="afavor" > {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
+                            <span *ngIf="i==1"> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
+                            <span *ngIf="i==2 "> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
+                            
+                        </span>
+                        </strong>
+                        <br>
+                            
+                        <span  class="porcentaje" *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
+                            <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
+                        </span>
+                        </p>
+                </div>
+                <!--
                 <div id="porcentajepartido">
                     <p>
                         <span *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
@@ -15,7 +35,7 @@
                         </span>
                     </p>
     
-                    <!--vizcarra ID 6 -->
+                   vizcarra ID 6 
                     <p>
                     <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
                         <span *ngIf="i==0"> </span> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
@@ -23,6 +43,7 @@
                     </p>
                 </div>
             </div>
+            -->
             <div class="iconoshare">
                 <mat-icon _ngcontent-jxr-c95="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
                     share

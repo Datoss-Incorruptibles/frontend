@@ -32,4 +32,14 @@ export class DetalleComponent implements OnInit {
       }
     });
   }
+  getCantIndicador(partido,id){
+    let cont = 0;
+    this.fnIndicadores(partido,id).forEach(element => {
+      cont = element.cantidad + cont;
+    }); 
+    return cont;
+  } 
+
+
+
 }

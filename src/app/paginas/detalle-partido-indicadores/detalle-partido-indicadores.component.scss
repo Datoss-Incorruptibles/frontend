@@ -29,10 +29,10 @@
 .indicadores{
     background-color:#fafafa;
     height: 100%;
-    padding: 20px 25px;
-    
+    padding:0;
+    margin-top: 15px;
     letter-spacing: normal;
-    margin: 0;
+
 }
 .sentencias{
     margin-bottom: 20px;
@@ -79,31 +79,17 @@
 }
 
 .fondoSentencias{
-    background-color: #DF2854;
-    color: white;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    background-size: 100% auto;
+    color: #DF2854;
 }
 
 .fondoAcademico{
 
-    background-color: #1CBAD9;
-    color: white;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    background-size: 100% auto;
+    color: #1CBAD9;
 }
 
 .fondoPolitico{
-    background-color: #DBA837;
-    color: white;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    background-size: 100% auto;
+    color: #DBA837;
+
 }
 .container{
     margin-top: 20px;

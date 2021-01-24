@@ -1,6 +1,6 @@
 <div *ngIf="congresistas">
     <div class="filtrado">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="filterRegion">
             <mat-label>Filtro: Región</mat-label>
             <mat-select  (selectionChange)="onFiltroRegion($event.value)">
                 <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
@@ -42,8 +42,10 @@
         
             </div>
             <div *ngSwitchDefault>
-                <div *ngFor="let candidato of congresistas">
-                    <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
+                <div class="wrapper">
+                    <div *ngFor="let candidato of congresistas" class="candidato">
+                        <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
+                    </div>
                 </div>
                 <div class="spinner">
                     <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
@@ -64,6 +66,6 @@
             </div>
         
             -->
-        </div>        
+     </div>        
 </div>
 

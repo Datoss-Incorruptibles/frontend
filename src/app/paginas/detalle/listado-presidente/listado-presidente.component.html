@@ -7,12 +7,15 @@
     [scrollWindow]="false"
     (scrolled)="onScroll()"
     >
-        <div *ngFor="let candidato of presidente; let i = index">
-            <div class="container">
-            <mat-icon>people</mat-icon> <span class=""> <strong> {{onCargoPolitico(i)}} </strong></span>
-    
+        <div class="wrapper">
+            <div *ngFor="let candidato of presidente; let i = index" class="candidato">
+                <div class="container">
+                <mat-icon>people</mat-icon> <span class=""> <strong> {{onCargoPolitico(i)}} </strong></span>
+        
+                </div>
+                <app-card-candidato [candidato]="candidato"[fromPresidente]="fromPresidente"></app-card-candidato> 
             </div>
-            <app-card-candidato [candidato]="candidato"[fromPresidente]="fromPresidente"></app-card-candidato> 
         </div>
+
     </div>
 </div>

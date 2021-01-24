@@ -29,153 +29,69 @@
     (scrolled)="onScroll()"
     >
         
-        <!-- <app-partido-andino></app-partido-andino>
-    -->
-    <mat-card *ngFor="let partido of partidos" class="card-politico">
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />
+        <div class="wrapper">
+            <mat-card *ngFor="let partido of partidos" class="card-politico">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />
+                    </div>
+                    <mat-card-title mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
+                        {{partido.nombre}}
+                    </mat-card-title>
+                    <mat-card-subtitle>Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años 
+    
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <div class="vacancia" *ngIf="getCantIndicador(partido,6)!=0">
+                    <label class="vacanciaTitle"> Votos de Vacancia Presidencial: </label>
+                         <p>
+                        <strong>
+                        <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
+                            <span *ngIf="i==0" class="afavor" > {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
+                            <span *ngIf="i==1"> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
+                            <span *ngIf="i==2 "> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
+                            
+                        </span>
+                        </strong>
+                        <br>
+                            
+                        <span  class="porcentaje" *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
+                            <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
+                        </span>
+                        </p>
                 </div>
-                <mat-card-title mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
-                    {{partido.nombre}}
-                </mat-card-title>
-                <mat-card-subtitle>Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años 
-
-                </mat-card-subtitle>
-            </mat-card-header>
-            <div class="vacancia" *ngIf="getCantIndicador(partido,6)!=0">
-                <label class="vacanciaTitle"> Votos de Vacancia Presidencial: </label>
-                     <p>
-                    <strong>
-                    <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
-                        <span *ngIf="i==0" class="afavor" > {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
-                        <span *ngIf="i==1"> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
-                        <span *ngIf="i==2 "> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
-                        
-                    </span>
-                    </strong>
-                    <br>
-                        
-                    <span  class="porcentaje" *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
-                        <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
-                    </span>
-                    </p>
-            </div>
-            <!--            
-                <div class="noinfo" *ngIf="getCantIndicador(partido,6)==0">
-                <label class="vacanciaTitle"> No tuvo participacion en el congreso actual </label>
-
-            </div>
-
-            -->
-
-            <mat-card-content class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-around stretch">                
-                    <div>
-
+                <!--            
+                    <div class="noinfo" *ngIf="getCantIndicador(partido,6)==0">
+                    <label class="vacanciaTitle"> No tuvo participacion en el congreso actual </label>
+    
+                </div>
+    
+                -->
+    
+                <mat-card-content class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-around stretch">                
                         <div>
-                            <mat-icon class="fondoSentencias"  aria-hidden="true">
-                                gavel
-                            </mat-icon>
-                            <label class="colorSentencias"> {{getCantIndicador(partido,8)+getCantIndicador(partido,9)}} Con Sentencias</label>
-                        </div>
-
-                        <div >
-                            <mat-icon   class="fondoSentencias" aria-hidden="true">
-                                school
-                            </mat-icon>
-                            <label class="colorSentencias"> {{ getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Basica</label>
-                        </div>
-                
-                        <div >
-                            <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
-                                account_balance
-                            </mat-icon>
-                            <label class="colorPolitico"> {{getCantIndicador(partido,5)}} En Cargos Anteriores</label>
-                            
-                        </div>
-                        <!--
-                        <div>
-                            <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
-                                account_balance
-                            </mat-icon>
-                            <label class="colorPolitico"> X% Nuevos en politica</label>
-                            
-                        </div>
-                        -->
-                    </div>
-
-                    <div>
-                        <!--
-                        <div >
-                            <mat-icon   class="fondoSentencias" aria-hidden="true">
-                                school
-                            </mat-icon>
-                            <label class="colorSentencias"> - sin licencia Sunedu</label>
-                        </div>       
-                         -->   
-                        <div>
-                            <mat-icon   class="fondoAcademico" aria-hidden="true">
-                                school
-                            </mat-icon>
-                            <label class="colorAcademico"> {{getCantidadEdSuperior(partido)}} Ed. Superior</label>
-                        </div>
-
-                        <div >
-                            <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
-                                account_balance
-                            </mat-icon>
-                            <label class="colorPolitico"> {{getCantIndicador(partido,11)}} De otros partidos</label>  
-                        </div>
-                        <!--
-                        <div >
-                            <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
-                                attach_money
-                            </mat-icon>
-                            <label class="colorPolitico"> S/. - Ingresos Promedio</label>  
-                        </div>
-                        -->
-
-
-                    </div>
-                <!-- CON TABLAS SE VE MEJOR EN MOVIL
-                <table>
-                      <tr>
-                        <td> 
-                        <div>
-                            <mat-icon class="fondoSentencias"  aria-hidden="true">
-                                gavel
-                            </mat-icon>
-                            <label class="colorSentencias"> {{getCantIndicador(partido,8)+getCantIndicador(partido,9)}} Con Sentencias</label>
-                        </div>
-                      </td>
-                        <td>
-                         <div >
-                            <mat-icon   class="fondoSentencias" aria-hidden="true">
-                                school
-                            </mat-icon>
-                            <label class="colorSentencias"> - sin licencia Sunedu</label>
-                        </div>
-                    </td>
-                      </tr>
-                      <tr>
-                        <td>                           
+    
+                            <div>
+                                <mat-icon class="fondoSentencias"  aria-hidden="true">
+                                    gavel
+                                </mat-icon>
+                                <label class="colorSentencias"> {{getCantIndicador(partido,8)+getCantIndicador(partido,9)}} Con Sentencias</label>
+                            </div>
+    
                             <div >
                                 <mat-icon   class="fondoSentencias" aria-hidden="true">
                                     school
                                 </mat-icon>
                                 <label class="colorSentencias"> {{ getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Basica</label>
                             </div>
-                        </td>
-                        <td>                            
-                            <div>
-                                <mat-icon   class="fondoAcademico" aria-hidden="true">
-                                    school
+                    
+                            <div >
+                                <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
+                                    account_balance
                                 </mat-icon>
-                                <label class="colorAcademico"> {{getCantidadEdSuperior(partido)}} Ed. Superior</label>
+                                <label class="colorPolitico"> {{getCantIndicador(partido,5)}} En Cargos Anteriores</label>
+                                
                             </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
+                            <!--
                             <div>
                                 <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
                                     account_balance
@@ -183,30 +99,114 @@
                                 <label class="colorPolitico"> X% Nuevos en politica</label>
                                 
                             </div>
-                        </td>
-                        <td>
+                            -->
+                        </div>
+    
+                        <div>
+                            <!--
+                            <div >
+                                <mat-icon   class="fondoSentencias" aria-hidden="true">
+                                    school
+                                </mat-icon>
+                                <label class="colorSentencias"> - sin licencia Sunedu</label>
+                            </div>       
+                             -->   
+                            <div>
+                                <mat-icon   class="fondoAcademico" aria-hidden="true">
+                                    school
+                                </mat-icon>
+                                <label class="colorAcademico"> {{getCantidadEdSuperior(partido)}} Ed. Superior</label>
+                            </div>
+    
+                            <div >
+                                <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
+                                    account_balance
+                                </mat-icon>
+                                <label class="colorPolitico"> {{getCantIndicador(partido,11)}} De otros partidos</label>  
+                            </div>
+                            <!--
                             <div >
                                 <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
                                     attach_money
                                 </mat-icon>
                                 <label class="colorPolitico"> S/. - Ingresos Promedio</label>  
                             </div>
+                            -->
+    
+    
+                        </div>
+                    <!-- CON TABLAS SE VE MEJOR EN MOVIL
+                    <table>
+                          <tr>
+                            <td> 
+                            <div>
+                                <mat-icon class="fondoSentencias"  aria-hidden="true">
+                                    gavel
+                                </mat-icon>
+                                <label class="colorSentencias"> {{getCantIndicador(partido,8)+getCantIndicador(partido,9)}} Con Sentencias</label>
+                            </div>
+                          </td>
+                            <td>
+                             <div >
+                                <mat-icon   class="fondoSentencias" aria-hidden="true">
+                                    school
+                                </mat-icon>
+                                <label class="colorSentencias"> - sin licencia Sunedu</label>
+                            </div>
                         </td>
-                      </tr>
+                          </tr>
+                          <tr>
+                            <td>                           
+                                <div >
+                                    <mat-icon   class="fondoSentencias" aria-hidden="true">
+                                        school
+                                    </mat-icon>
+                                    <label class="colorSentencias"> {{ getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Basica</label>
+                                </div>
+                            </td>
+                            <td>                            
+                                <div>
+                                    <mat-icon   class="fondoAcademico" aria-hidden="true">
+                                        school
+                                    </mat-icon>
+                                    <label class="colorAcademico"> {{getCantidadEdSuperior(partido)}} Ed. Superior</label>
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                <div>
+                                    <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
+                                        account_balance
+                                    </mat-icon>
+                                    <label class="colorPolitico"> X% Nuevos en politica</label>
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div >
+                                    <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
+                                        attach_money
+                                    </mat-icon>
+                                    <label class="colorPolitico"> S/. - Ingresos Promedio</label>  
+                                </div>
+                            </td>
+                          </tr>
+    
+                    </table>
+                    -->
+                </mat-card-content>
+                <hr>          
+                <mat-card-actions>
+                    <button style="color: #65676B;" routerLink="/partido/{{partido.id}}" [state]="partido" mat-button>
+                        <mat-icon>description</mat-icon> <span> Ver más</span>             
+                    </button>
+                    
+                </mat-card-actions> 
+            </mat-card>
+        </div>
 
-                </table>
-                -->
-            </mat-card-content>
-            <hr>          
-            <mat-card-actions>
-                <button style="color: #65676B;" routerLink="/partido/{{partido.id}}" [state]="partido" mat-button>
-                    <mat-icon>description</mat-icon> <span> Ver más</span>             
-                </button>
-                
-            </mat-card-actions> 
-    </mat-card>
 
-    <!-- </cdk-virtual-scroll-viewport> -->
     </div>
 
     <br>

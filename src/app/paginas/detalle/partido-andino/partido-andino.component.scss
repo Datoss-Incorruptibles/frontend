@@ -3,3 +3,30 @@
   overflow: scroll;
   // background-color:red;
 }
+
+
+
+.wrapper{
+  display: flex;
+  align-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.candidato{
+  width: 450px ;
+}
+
+@media only screen and (max-width: 400px) {
+  .candidato{
+    max-width: 300px ;
+    min-width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .candidato{
+    max-width: 600px ;
+    min-width: 500px;
+  }
+}

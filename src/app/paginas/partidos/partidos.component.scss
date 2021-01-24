@@ -80,9 +80,36 @@ mat-card-actions{
 .afavor{
     color: red;
 }
+
 .noinfo{
     background-color: #C4C4C4;
     text-align: center;
     color: black;
-
 }
+
+
+
+.wrapper{
+    display: flex;
+    align-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  
+  .card-politico{
+    width: 450px ;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .card-politico{
+      max-width: 300px ;
+      min-width: 200px;
+    }
+  }
+  
+  @media only screen and (min-width: 1250px) {
+    .card-politico{
+      max-width: 600px ;
+      min-width: 500px;
+    }
+  }

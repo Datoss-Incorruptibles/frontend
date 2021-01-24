@@ -64,8 +64,8 @@
               </div>
         
             </span>
-            <span *ngSwitchDefault>
-                <div *ngFor="let candidato of congresistas">
+            <span *ngSwitchDefault class="wrapper">
+                <div *ngFor="let candidato of congresistas" class="congresistas">
                     <app-card-candidato [candidato]="candidato"></app-card-candidato> 
                 </div>
                 <div class="spinner">

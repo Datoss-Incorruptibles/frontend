@@ -16,7 +16,8 @@ export class CandidatoAndinoComponent implements OnInit {
   ORGANIZACIONES: Partido[];
   listParAndino: Candidato[];
   orgSelect: string;
-  orgIdSelect = 1;//Accion popular
+  orgIdSelect : number;//Accion popular
+  sinSelect= true;
   
   nextPageUrl = "start";
   listParlAndinoPageX;
@@ -28,8 +29,38 @@ export class CandidatoAndinoComponent implements OnInit {
    }
 
   ngOnInit(): void { 
-    this.getParlamentoByOrganization(String(this.orgIdSelect));
+    this.getParlamento();
     this.getOrganizaciones();
+  }
+  getParlamento(){
+    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
+      this.listOfDiferrentPages.push(this.nextPageUrl);
+
+      if(this.nextPageUrl == null)  {
+        //do nothing
+      }else if(this.nextPageUrl == "start"){
+        this.restApiService.getParlamento().subscribe((res:any) =>{
+          this.listParAndino=res.results;   
+          this.nextPageUrl = res.next ;
+          console.log(this.listParAndino);
+          //this.onOrdernar();
+          // this.onFiltroRegion("LIMA");
+        }, error => {  });
+      }else if(this.nextPageUrl){
+        this.showLoader= true;
+
+        this.restApiService.getParlamento(this.nextPageUrl).subscribe((res :any)=>{
+          this.listParlAndinoPageX=<Candidato[]>res.results;            
+          this.nextPageUrl = res.next;
+          this.showLoader= false;
+
+          this.listParAndino = this.listParAndino.concat(this.listParlAndinoPageX)
+          // this.onFiltroRegion("LIMA");
+          console.log(this.listParAndino);
+          //this.onOrdernar();
+        }, error => {  });
+      }
+    }
   }
   
   getParlamentoByOrganization( organizacionId: string){
@@ -68,12 +99,16 @@ export class CandidatoAndinoComponent implements OnInit {
       this.ORGANIZACIONES=res.results;   
       console.log(this.ORGANIZACIONES);
     }, error => {  });;
-
   }
-  onFiltroOrganizacion(value: number){
-    //reset list
-    this.listOfDiferrentPages = [];
 
+  onFiltroOrganizacion(value: any){
+     //reset list
+    this.listOfDiferrentPages = [];
+    this.nextPageUrl = "start";
+    if(value=="sinseleccion"){
+      this.getParlamento();
+    }else {
+      
     this.orgIdSelect = value;
     this.ORGANIZACIONES.forEach(element => {
       if(element.id==value){
@@ -83,13 +118,20 @@ export class CandidatoAndinoComponent implements OnInit {
     });
     console.log(this.orgIdSelect);
     console.log(this.orgSelect);
-    this.nextPageUrl = "start";
+    
     this.getParlamentoByOrganization( String(this.orgIdSelect));
+
+    }
+   
 
   }
 
   onScroll(){
     console.log("on scrool Parlemnto andino");
-    this.getParlamentoByOrganization(String(this.orgIdSelect));
+    if(this.sinSelect== true){
+      this.getParlamento();
+    }else{
+      this.getParlamentoByOrganization(String(this.orgIdSelect));
+    }
   }
 }

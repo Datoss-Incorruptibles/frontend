@@ -216,10 +216,14 @@ export class CandidatoCongresistaComponent implements OnInit {
 
   onScrollB(){
     console.log("on scrool CONGRESISTAS");
-    if(this.sinSelectPartido=true){
-      this.getCongresistasByRegion(String(this.orgIdSelect));
+    if(this.sinSelectPartido==true  && this.sinSelectRegion == false){
+      this.getCongresistasByRegion(this.unigeoIdSelect);
+    }else if(this.sinSelectPartido==true  && this.sinSelectRegion == true){
+      this.getCongresistas();
+    }else if(this.sinSelectPartido==false  && this.sinSelectRegion == true){
+      this.getCongresistasByOrganizacion(String(this.orgIdSelect));
     }else{
-      this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect)
+    this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect);
     }
     
   }

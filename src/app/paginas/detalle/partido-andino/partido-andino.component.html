@@ -8,9 +8,12 @@
      [scrollWindow]="false"
      (scrolled)="onScroll()"
      >
-          <div *ngFor="let candidato of listParlamentoAndino">
+     <div class="wrapper">
+          <div *ngFor="let candidato of listParlamentoAndino" class="candidato">
                <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
           </div>
+     </div>
+         
      </div>
      
      <div class="spinner">

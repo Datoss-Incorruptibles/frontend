@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Elecciones2021';
   showFiller=false;
+
+  ngOnInit(): void {
+    // temporal , only to prevent crash with olds values saved in localStorage
+    localStorage.removeItem("ids")
+  }
 }

@@ -3,6 +3,13 @@
     display: flex;
 }
 
+@media only screen and (max-width: 480px) {
+    .mat-form-field {
+    font-size:10px;
+    }
+}
+
+
 .listado{
     .card-politico{
         margin-bottom: 20px;

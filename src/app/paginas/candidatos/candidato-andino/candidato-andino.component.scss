@@ -4,11 +4,19 @@
   // background-color:red;
 }
 .filtrado{
-  margin: 10px;
+  margin: 10px 10px 0 10px;
   .filterRegion{
-    width: 150px;
-    height: 50px;
+    // width: 150px;
+    // height: 50px;
   }
+}
+
+
+@media only screen and (max-width: 480px) {
+  .filterRegion {
+    font-size:10px ;
+    width: 120px !important;
+    }
 }
 
 .spinner{

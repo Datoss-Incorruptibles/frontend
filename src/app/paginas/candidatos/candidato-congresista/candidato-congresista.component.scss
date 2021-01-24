@@ -1,14 +1,21 @@
 .filtrado{
-    margin: 10px;
-    .filterRegion{
-        width: 150px;
-        height: 50px;
-    }
-    .filterOrg{
-        width: 150px;
-        height: 50px;
+    margin: 10px 10px 0 10px;
+    // .filterRegion{
+    //     height: 50px;
+    // }
+    // .filterOrg{
+    //     height: 50px;
+    // }
+}
+
+@media only screen and (max-width: 480px) {
+  .filterRegion ,.filterOrg{
+    font-size:10px ;
+    width: 120px !important;
     }
 }
+
+
 .container{
     color: #2c4484;
     font-size: medium;

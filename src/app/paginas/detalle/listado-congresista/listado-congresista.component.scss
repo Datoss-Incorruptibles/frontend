@@ -1,6 +1,15 @@
 .filtrado{
     margin: 20px;
+    width: 100%;
 }
+
+@media only screen and (max-width: 480px) {
+  .filterRegion {
+    font-size:10px !important;
+    }
+}
+
+
 .container{
     color: #2c4484;
     font-size: medium;

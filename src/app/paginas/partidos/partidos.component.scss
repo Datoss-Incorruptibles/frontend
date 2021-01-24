@@ -99,6 +99,16 @@ mat-card-actions{
   .card-politico{
     width: 450px ;
   }
+
+  .indicador{
+    font-size:12px;
+    color:#515151;
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+}
   
   @media only screen and (max-width: 400px) {
     .card-politico{

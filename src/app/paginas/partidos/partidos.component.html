@@ -68,23 +68,23 @@
                 -->
     
                 <mat-card-content class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-around stretch">                
-                        <div>
+                        <div >
     
-                            <div>
+                            <div class="indicador">
                                 <mat-icon class="fondoSentencias"  aria-hidden="true">
                                     gavel
                                 </mat-icon>
                                 <label class="colorSentencias"> {{getCantIndicador(partido,8)+getCantIndicador(partido,9)}} Con Sentencias</label>
                             </div>
     
-                            <div >
+                            <div class="indicador">
                                 <mat-icon   class="fondoSentencias" aria-hidden="true">
                                     school
                                 </mat-icon>
-                                <label class="colorSentencias"> {{ getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Basica</label>
+                                <label class="colorSentencias"> {{getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Basica</label>
                             </div>
                     
-                            <div >
+                            <div class="indicador">
                                 <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
                                     account_balance
                                 </mat-icon>
@@ -111,14 +111,14 @@
                                 <label class="colorSentencias"> - sin licencia Sunedu</label>
                             </div>       
                              -->   
-                            <div>
+                            <div class="indicador">
                                 <mat-icon   class="fondoAcademico" aria-hidden="true">
                                     school
                                 </mat-icon>
                                 <label class="colorAcademico"> {{getCantidadEdSuperior(partido)}} Ed. Superior</label>
                             </div>
     
-                            <div >
+                            <div  class="indicador">
                                 <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
                                     account_balance
                                 </mat-icon>

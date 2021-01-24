@@ -30,40 +30,55 @@
                 </div>
             </div >
             <div class="content-secondary">
-                    <div *ngFor="let indicador of candidato.indicadores, let i = index" class="indicador">
-                        <div [ngSwitch]="indicador.indicador_id" class="indicador-detail">
-                            <div *ngSwitchCase= 2>
-                                <mat-icon   class="fondoPolitico" aria-hidden="true">
-                                    account_balance
-                                </mat-icon>
-                                <span>
-                                    EX - {{indicador.indicador_categoria}}
-                                </span>
+                            <span *ngIf="fnIndicadores(candidato,2) !=null" class="" >
+                                <div *ngFor="let indicador of fnIndicadores(candidato,2)" class="indicador">
+                                    <div class="indicador-detail">
+                                        <div>
+                                            <mat-icon   class="fondoPolitico" aria-hidden="true">
+                                                    account_balance
+                                            </mat-icon>
+                                            <span>
+                                                    EX - {{indicador.indicador_categoria}} 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+
+                            <div *ngIf=" getCantIndicador(candidato,8) !=null && getCantIndicador(candidato,8) > 0 " class="indicador">
+                                    <div class="indicador-detail">
+                                        <div>
+                                            <mat-icon class="fondoSentencias"  aria-hidden="true">
+                                                gavel
+                                            </mat-icon>
+                                            <span>
+                                                Con {{getCantIndicador(candidato,8)}} Sentencia(s) Civil 
+                                            </span>
+                                    </div>
+                                </div>
                             </div>
-                            <div *ngSwitchCase= 8>
-                                <mat-icon class="fondoSentencias"  aria-hidden="true">
-                                    gavel
-                                </mat-icon>
-                                <span>
-                                    CON {{indicador.cantidad}} Sentencia(s)  {{indicador.indicador}}
-                                </span>
+
+                            <div *ngIf=" getCantIndicador(candidato,9) !=null && getCantIndicador(candidato,9) > 0 " class="indicador">
+                                <div class="indicador-detail">
+                                    <div>
+                                    <mat-icon class="fondoSentencias"  aria-hidden="true">
+                                        gavel
+                                    </mat-icon>
+                                        Con {{getCantIndicador(candidato,9)}} Sentencia(s) Penal
+                                    </div>
+                                </div> 
                             </div>
-                            <div *ngSwitchCase= 9>
-                                <mat-icon class="fondoSentencias"  aria-hidden="true">
-                                    gavel
-                                </mat-icon>
-                                    CON {{indicador.cantidad}} Sentencia(s) {{indicador.indicador}}
-                            </div>
-                            <div *ngSwitchCase= 11>
-                                    • {{indicador.cantidad}}-{{indicador.indicador_categoria}}
-                            </div>
-                            <div *ngSwitchDefault>
-                                    • {{indicador.indicador_categoria}}
+
+                            <div *ngIf=" getCantIndicador(candidato,11) !=null && getCantIndicador(candidato,11) > 0 "  class="indicador">
+                                <div class="indicador-detail">
+                                    <div>
+                                    <span *ngFor="let indicador of fnIndicadores(candidato,11)">
+                                            • {{indicador.cantidad}} - {{indicador.indicador_categoria}}
+                                    </span>
+                                </div>
+                                </div>
                             </div> 
                         </div>
-                        <br>
-                    </div>
-            </div>
 
         </div>
     <mat-card-content *ngIf="!fromDetalle" class="container">
@@ -88,7 +103,7 @@
         <mat-card-actions>
             <div class="actions-ver-mas" *ngIf="!fromDetalle">
                 <button routerLink="/candidato/{{candidato.id}}" [state]="candidato" mat-button >
-                    <mat-icon>description</mat-icon> <span> Ver más</span>             
+                    <mat-icon>description</mat-icon> <span> Ver CV</span>             
                 </button>
             </div>
             <div class="actions-merepresenta" >

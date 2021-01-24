@@ -22,6 +22,35 @@ export class CardCandidatoComponent implements OnInit {
     // console.log(this.fromPartido);
     
   }
+  getCantIndicador(candidato,id){
+    try {
+      let cont = 0;
+      this.fnIndicadores(candidato,id).forEach(element => {
+        cont = element.cantidad + cont;
+      }); 
+      return cont;
+      
+    } catch (error) {
+      return null;
+      
+    }
+
+  } 
+
+  fnIndicadores(candidato,id){
+    try {
+      return candidato.indicadores.filter(elem =>{
+        if(elem != null){
+          return  elem.indicador_id==id
+        }
+      });
+    } catch (error) {
+      return null;
+      
+    }
+
+
+  }
 
   representa(number){
     if(number == 0){

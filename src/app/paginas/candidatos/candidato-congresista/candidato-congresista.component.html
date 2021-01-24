@@ -4,6 +4,7 @@
         <mat-form-field appearance="fill" class="filterRegion">
             <mat-label>Filtro: Región</mat-label>
             <mat-select  (selectionChange)="onFiltroRegion($event.value)">
+                <mat-option value="sinseleccion1" >SIN SELECCIÓN</mat-option>
                 <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
                     {{region.distrito_electoral}}
                 </mat-option>    
@@ -13,7 +14,7 @@
         <mat-form-field appearance="fill" class="filterOrg">
             <mat-label>Filtro: Partido</mat-label>
             <mat-select  (selectionChange)="onFiltroOrganizacion($event.value)">
-                <mat-option value="sinseleccion" >SIN SELECCIÓN</mat-option>
+                <mat-option value="sinseleccion2" >SIN SELECCIÓN</mat-option>
                 <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
                     {{partido.nombre}}
                 </mat-option>    

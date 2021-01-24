@@ -12,15 +12,19 @@ export class CardCandidatoComponent implements OnInit {
   @Input() fromDetalle;
   @Input() fromPresidente;
 
+  meRepresenta = [];
+  noMeRepresenta = [];
 
-  step;
+
+  status;
   // ids;
   constructor() { }
 
 
   ngOnInit(): void {
     // console.log(this.fromPartido);
-    
+    // console.log(this.meRepresentaStatus);
+    this.showLikesAndDislikes()
   }
   getCantIndicador(candidato,id){
     try {
@@ -48,58 +52,89 @@ export class CardCandidatoComponent implements OnInit {
       return null;
       
     }
+  }
 
+  showLikesAndDislikes(){
+    // get id 
+    if(localStorage.getItem('ids')){
+      let idsObj:any = JSON.parse(localStorage.getItem('ids'));
+      if(idsObj["meRepresenta"].length >0){
+        if(idsObj["meRepresenta"].includes(this.candidato.id)){
+          this.status= "status11";
+        }
+      }
+      if(idsObj["noMeRepresenta"].length >0){
+        if(idsObj["noMeRepresenta"].includes(this.candidato.id)){
+          this.status= "status01";
+        }
+      }
+
+    }
 
   }
 
   representa(number){
-    if(number == 0){
-      // no me representa
-
-      if(this.step == "step01"){
-        this.step= "step00";
-      }else{
-        this.step= "step01";
-      }
-    }else if (number == 1){
-      // me representa
-
-      if(this.step == "step11"){
-        // me representa INactivo 
-        this.step= "step10";
-        //remove item
-        // let ids  = localStorage.getItem('ids');
-        // let idsObj:any = JSON.parse(ids);
-        // idsObj["merepresenta"] = idsObj["merepresenta"].filter(item => item !== this.candidato.id)
-        // localStorage.setItem('ids',JSON.stringify(idsObj));
-
-        // idsArray = idsArray.filter(item => item !== this.candidato.id)
-        // localStorage.setItem('ids',stringify(idsArray));
-
-      }else{
-       // me representa activo 
-        this.step= "step11";
-
-        //save candidato id;
-        // get id;
-        let ids = localStorage.getItem('ids');
-        // let idsObj:any = JSON.parse(ids);
-        // if (!idsObj  ) { 
-        let  idsObj:Object = {nomerepresenta:[1,2,3,],merepresent:[1,2,3]};
-        //  }
-
-        console.log(idsObj);
-        // idsObj['nomerepresenta']= idsObj['nomerepresenta'].push(this.candidato.id);
-        // idsObj['merepresent']= idsObj['nomerepresenta'].push(this.candidato.id)
-
-        console.log(idsObj);
+    if(number == 0){      // no me representa
+      if(this.status == "status01"){// no me representa inactivo
+        this.status= "status00";
         
-        localStorage.setItem('ids',JSON.stringify(idsObj));
+        //remove if there are in merepresenta
+        // get and update candidato id;
+        let ids  = localStorage.getItem('ids');
+        let idsObj:any = JSON.parse(ids);
+        if( idsObj && idsObj["noMeRepresenta"].length > 0){
+          idsObj["noMeRepresenta"] = idsObj["noMeRepresenta"].filter(item => item !== this.candidato.id)
+          localStorage.setItem('ids',JSON.stringify(idsObj));
+        }
+      }else{// no me representa activo
+        this.status= "status01"; 
 
-        // let idsArray:any = JSON.parse(ids)
-        // if (!idsArray ) { idsArray= []; }
-        // idsArray.push(this.candidato.id)
-        // localStorage.setItem('ids',stringify(idsArray));
+        // activo
+        // get or create 
+        let ids = localStorage.getItem('ids');
+        let idsObj:any = JSON.parse(ids);
+        if (!idsObj) { 
+            idsObj  = {"meRepresenta":this.meRepresenta,"noMeRepresenta":this.noMeRepresenta};
+          }
+
+        //remove if there are in merepresenta;
+        if (idsObj["meRepresenta"].length > 0) {
+          idsObj["meRepresenta"] = idsObj["meRepresenta"].filter(item => item !== this.candidato.id)
+        }
+
+        //  and update candidato id;
+        idsObj['noMeRepresenta'].push(this.candidato.id)        
+        localStorage.setItem('ids',JSON.stringify(idsObj));
+      }
+    }else if (number == 1){      // me representa
+      if(this.status == "status11"){        // me representa INactivo 
+        this.status= "status10";
+
+        // get and update candidato id;
+        let ids  = localStorage.getItem('ids');
+        let idsObj:any = JSON.parse(ids);
+        if( idsObj && idsObj["meRepresenta"].length > 0){
+          idsObj["meRepresenta"] = idsObj["meRepresenta"].filter(item => item !== this.candidato.id)
+          localStorage.setItem('ids',JSON.stringify(idsObj));
+        }
+
+      }else{       // me representa activo 
+        this.status= "status11";
+        // get or create  candidato id;
+        let ids = localStorage.getItem('ids');
+        let idsObj:any = JSON.parse(ids);
+        if (!idsObj ) { 
+           idsObj  = {"meRepresenta":this.meRepresenta,"noMeRepresenta":this.noMeRepresenta};
+         }
+
+        //remove if there are in merepresenta;
+        if (idsObj["noMeRepresenta"].length > 0) {
+          idsObj["noMeRepresenta"] = idsObj["noMeRepresenta"].filter(item => item !== this.candidato.id)
+        }
+
+        //   update candidato id;
+        idsObj['meRepresenta'].push(this.candidato.id)        
+        localStorage.setItem('ids',JSON.stringify(idsObj));
 
       }
     }

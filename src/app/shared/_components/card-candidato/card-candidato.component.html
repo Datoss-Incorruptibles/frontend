@@ -109,7 +109,7 @@
             <div class="actions-merepresenta" >
                 <div>
                     <button mat-button (click)="representa(0)" 
-                    [ngClass]="{'deactivate': step === 'step00', 'thumb_down':step === 'step01' }"
+                    [ngClass]="{'deactivate': status === 'status00', 'thumb_down':status === 'status01' }"
                     >
                         <mat-icon class="material-icons material-icons-outlined">thumb_down_outline</mat-icon>             
                     </button>
@@ -121,7 +121,7 @@
                 </div>
                 <div>
                     <button mat-button (click)="representa(1)"
-                    [ngClass]="{'deactivate': step === 'step10', 'thumb_up':step === 'step11' }"
+                    [ngClass]="{'deactivate': status === 'status10', 'thumb_up':status === 'status11' }"
                     >
                         <mat-icon class="material-icons material-icons-outlined">thumb_up_outline</mat-icon>             
                     </button>

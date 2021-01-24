@@ -1,4 +1,3 @@
-<mat-progress-bar mode="indeterminate" *ngIf="!misCandidatos" ></mat-progress-bar>
 
 <div
 class="scrollA"
@@ -8,9 +7,24 @@ infiniteScroll
 [scrollWindow]="false"
 (scrolled)="onScroll()"
 >
-    <div *ngFor="let candidato of misCandidatos">
-        <app-card-candidato [candidato]="candidato"></app-card-candidato> 
-    </div>
+    <mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs class="navigator">
+        <mat-tab label="Me representa">
+            <div *ngFor="let candidato of misRepresentantes">
+                <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+            </div>
+            <div *ngIf="misRepresentantes">
+                Aun no seleccionaste a los que te representaran en las proximas elecciones!!
+            </div>
+        </mat-tab>
+        <mat-tab label="No me representa">
+            <div *ngFor="let candidato of misNoRepresentantes">
+                <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+            </div>
+            <div>
+                Aun no seleccionaste a los que te NO te representaran en las proximas elecciones!!
+            </div>
+        </mat-tab> 
+      </mat-tab-group>
     <div class="spinner">
         <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
     </div>

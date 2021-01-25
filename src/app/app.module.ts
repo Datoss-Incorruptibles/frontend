@@ -18,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatMenuModule} from '@angular/material/menu';
 
 //
 import { HttpClientModule } from '@angular/common/http';
@@ -105,6 +106,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     MatTabsModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatMenuModule,
     SharedModule,
     ScrollingModule,
     InfiniteScrollModule],

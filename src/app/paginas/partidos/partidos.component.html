@@ -2,19 +2,41 @@
 
 
  <div class="filtrado">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="filter">
             <mat-label>Ordenado por</mat-label>
             <mat-select (selectionChange)="onOrdernar($event.value)">
                 <mat-option value="nombre">Nombre</mat-option>
                 <mat-option value="fundacion_fecha">Antiguedad</mat-option>
                 <mat-option value="indicadorCantidadSentencias">Numero de Sentencias</mat-option>
-                
             </mat-select>
         </mat-form-field>
-        <span class="example-spacer"></span>
-        <button mat-icon-button>
-            <mat-icon>share</mat-icon>
-        </button>
+        <div class="share">
+            <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>share</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <a href="https://www.facebook.com/sharer.php?u=https://candidatosdev.web.app/#/partidos"  target="_blank" >
+                    <span class="material-icons">
+                        facebook
+                    </span>
+                    <span>
+                        Facebook
+                    </span>
+                </a>
+              </button>
+              <button mat-menu-item>
+                <a href="https://twitter.com/intent/tweet?url=https://candidatosdev.web.app&text=Conoce a tus candidatos en estas elecciones &hashtags=candidatos2021"  target="_blank" >
+                    <span class="material-icons">
+                        public
+                    </span>
+                    <span>
+                        Twitter
+                    </span>
+                </a>
+              </button>
+            </mat-menu>
+        </div>        
     </div>
     <mat-progress-bar mode="indeterminate" *ngIf="partidos.length==0" ></mat-progress-bar>
     <!-- <cdk-virtual-scroll-viewport 

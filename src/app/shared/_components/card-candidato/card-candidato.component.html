@@ -21,74 +21,71 @@
                         <p >{{candidato.profesion}} <br>                 
                         </p>
                     </div>
-                    <!-- <div class="number">
-                        {{candidato.jne_posicion}}
-                    </div> -->
                 </div>
                 <div class="number" *ngIf="!fromPresidente">
                     {{candidato.jne_posicion}}
                 </div>
             </div >
             <div class="content-secondary">
-                            <span *ngIf="fnIndicadores(candidato,2) !=null" class="" >
-                                <div *ngFor="let indicador of fnIndicadores(candidato,2)" class="indicador">
-                                    <div class="indicador-detail">
-                                        <div>
-                                            <mat-icon   class="fondoPolitico" aria-hidden="true">
-                                                    account_balance
-                                            </mat-icon>
-                                            <span>
-                                                    EX - {{indicador.indicador_categoria}} 
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </span>
-
-                            <div *ngIf=" getCantIndicador(candidato,8) !=null && getCantIndicador(candidato,8) > 0 " class="indicador">
-                                    <div class="indicador-detail">
-                                        <div>
-                                            <mat-icon class="fondoSentencias"  aria-hidden="true">
-                                                gavel
-                                            </mat-icon>
-                                            <span>
-                                                Con {{getCantIndicador(candidato,8)}} Sentencia(s) Civil 
-                                            </span>
-                                    </div>
-                                </div>
+                <span *ngIf="fnIndicadores(candidato,2) !=null" class="" >
+                    <div *ngFor="let indicador of fnIndicadores(candidato,2)" class="indicador">
+                        <div class="indicador-detail">
+                            <div>
+                                <mat-icon   class="fondoPolitico" aria-hidden="true">
+                                        account_balance
+                                </mat-icon>
+                                <span>
+                                        EX - {{indicador.indicador_categoria}} 
+                                </span>
                             </div>
-
-                            <div *ngIf=" getCantIndicador(candidato,9) !=null && getCantIndicador(candidato,9) > 0 " class="indicador">
-                                <div class="indicador-detail">
-                                    <div>
-                                    <mat-icon class="fondoSentencias"  aria-hidden="true">
-                                        gavel
-                                    </mat-icon>
-                                        Con {{getCantIndicador(candidato,9)}} Sentencia(s) Penal
-                                    </div>
-                                </div> 
-                            </div>
-
-                            <div *ngIf=" getCantIndicador(candidato,11) !=null && getCantIndicador(candidato,11) > 0 "  class="indicador">
-                                <div class="indicador-detail">
-                                    <div>
-                                    <span *ngFor="let indicador of fnIndicadores(candidato,11)">
-                                            • {{indicador.cantidad}} - {{indicador.indicador_categoria}}
-                                    </span>
-                                </div>
-                                </div>
-                            </div> 
                         </div>
+                    </div>
+                </span>
+
+                <div *ngIf=" getCantIndicador(candidato,8) !=null && getCantIndicador(candidato,8) > 0 " class="indicador">
+                        <div class="indicador-detail">
+                            <div>
+                                <mat-icon class="fondoSentencias"  aria-hidden="true">
+                                    gavel
+                                </mat-icon>
+                                <span>
+                                    Con {{getCantIndicador(candidato,8)}} Sentencia(s) Civil 
+                                </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf=" getCantIndicador(candidato,9) !=null && getCantIndicador(candidato,9) > 0 " class="indicador">
+                    <div class="indicador-detail">
+                        <div>
+                        <mat-icon class="fondoSentencias"  aria-hidden="true">
+                            gavel
+                        </mat-icon>
+                            Con {{getCantIndicador(candidato,9)}} Sentencia(s) Penal
+                        </div>
+                    </div> 
+                </div>
+
+                <div *ngIf=" getCantIndicador(candidato,11) !=null && getCantIndicador(candidato,11) > 0 "  class="indicador">
+                    <div class="indicador-detail">
+                        <div>
+                        <span *ngFor="let indicador of fnIndicadores(candidato,11)">
+                                • {{indicador.cantidad}} - {{indicador.indicador_categoria}}
+                        </span>
+                    </div>
+                    </div>
+                </div> 
+            </div>
 
         </div>
-    <mat-card-content *ngIf="!fromDetalle" class="container">
+    <!-- <mat-card-content *ngIf="!fromDetalle" class="container">
 
-        <!-- <div fxLayout="row" fxLayoutAlign="end center">
+        // para referencia de con la base de datos
+        <div fxLayout="row" fxLayoutAlign="end center">
             <p> DNI: {{candidato.documento_identidad}} - jne_idhojavida : {{candidato.jne_idhojavida}} </p>
-        </div> -->
+        </div>
         
     </mat-card-content>
-    <!--
     <mat-card-content *ngIf="fromDetalle" class="container">
         <p>
             <span *ngFor="let indicador of candidato.indicadores_categoria_candidato, let i = index">
@@ -98,7 +95,7 @@
         </p>
     </mat-card-content>
     -->
-    <div>
+    <div class="footer" [ngClass]="{'conAbsolute': !fromDetalle,'sinAbsolute':fromDetalle}">
         <hr>
         <mat-card-actions>
             <div class="actions-ver-mas" *ngIf="!fromDetalle">
@@ -111,7 +108,7 @@
                     <button mat-button (click)="representa(0)" 
                     [ngClass]="{'deactivate': status === 'status00', 'thumb_down':status === 'status01' }"
                     >
-                        <mat-icon class="material-icons material-icons-outlined">thumb_down_outline</mat-icon>             
+                        <mat-icon class="material-icons material-icons-outlined">thumb_down</mat-icon>             
                     </button>
                 </div>
                 <div class="text">
@@ -123,7 +120,7 @@
                     <button mat-button (click)="representa(1)"
                     [ngClass]="{'deactivate': status === 'status10', 'thumb_up':status === 'status11' }"
                     >
-                        <mat-icon class="material-icons material-icons-outlined">thumb_up_outline</mat-icon>             
+                        <mat-icon class="material-icons material-icons-outlined">thumb_up</mat-icon>             
                     </button>
                 </div>
             </div>

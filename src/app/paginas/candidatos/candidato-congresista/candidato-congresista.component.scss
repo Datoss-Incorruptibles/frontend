@@ -47,26 +47,32 @@
 
 
 .wrapper{
-    display: flex;
-    align-content: space-between;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  display: flex;
+  align-content: stretch;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   }
   
 .congresistas{
-    width: 450px ;
-  }
+    // width: 450px ;
+
+  width: 300px ;
+  margin: 20px 20px 40px 20px;
+
+}
+
+
   
-  @media only screen and (max-width: 400px) {
-    .congresistas{
-      max-width: 300px ;
-      min-width: 200px;
-    }
-  }
+  // @media only screen and (max-width: 400px) {
+  //   .congresistas{
+  //     max-width: 300px ;
+  //     min-width: 200px;
+  //   }
+  // }
   
-  @media only screen and (min-width: 1250px) {
-    .congresistas{
-      max-width: 600px ;
-      min-width: 500px;
-    }
-  }
+  // @media only screen and (min-width: 1250px) {
+  //   .congresistas{
+  //     max-width: 600px ;
+  //     min-width: 500px;
+  //   }
+  // }

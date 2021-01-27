@@ -27,6 +27,31 @@
                 </div>
             </div >
             <div class="content-secondary">
+      
+                <div *ngIf=" getCantIndicador(candidato,8) !=null && getCantIndicador(candidato,8) > 0 " class="indicador">
+                    <div class="indicador-detail">
+                        <div>
+                            <mat-icon class="fondoSentencias"  aria-hidden="true">
+                                gavel
+                            </mat-icon>
+                            <span style="text-transform: uppercase;">
+                                Con {{getCantIndicador(candidato,8)}} Sentencia(s) Civil 
+                            </span>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf=" getCantIndicador(candidato,9) !=null && getCantIndicador(candidato,9) > 0 " class="indicador">
+                <div class="indicador-detail">
+                    <div>
+                    <mat-icon class="fondoSentencias"  aria-hidden="true">
+                        gavel
+                    </mat-icon>
+                        <span style="text-transform: uppercase;"> Con {{getCantIndicador(candidato,9)}} Sentencia(s) Penal</span> 
+                    </div>
+                </div> 
+            </div>
+
                 <span *ngIf="fnIndicadores(candidato,2) !=null" class="" >
                     <div *ngFor="let indicador of fnIndicadores(candidato,2)" class="indicador">
                         <div class="indicador-detail">
@@ -42,38 +67,18 @@
                     </div>
                 </span>
 
-                <div *ngIf=" getCantIndicador(candidato,8) !=null && getCantIndicador(candidato,8) > 0 " class="indicador">
-                        <div class="indicador-detail">
-                            <div>
-                                <mat-icon class="fondoSentencias"  aria-hidden="true">
-                                    gavel
-                                </mat-icon>
-                                <span>
-                                    Con {{getCantIndicador(candidato,8)}} Sentencia(s) Civil 
-                                </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div *ngIf=" getCantIndicador(candidato,9) !=null && getCantIndicador(candidato,9) > 0 " class="indicador">
-                    <div class="indicador-detail">
-                        <div>
-                        <mat-icon class="fondoSentencias"  aria-hidden="true">
-                            gavel
-                        </mat-icon>
-                            Con {{getCantIndicador(candidato,9)}} Sentencia(s) Penal
-                        </div>
-                    </div> 
-                </div>
 
                 <div *ngIf=" getCantIndicador(candidato,11) !=null && getCantIndicador(candidato,11) > 0 "  class="indicador">
-                    <div class="indicador-detail">
-                        <div>
+                    
                         <span *ngFor="let indicador of fnIndicadores(candidato,11)">
-                                • {{indicador.cantidad}} - {{indicador.indicador_categoria}}
+                            <div class="indicador-detail">
+                            <mat-icon   class="fondoPolitico" aria-hidden="true">
+                                    work_outline
+                            </mat-icon>
+                            <span>{{indicador.cantidad}} {{indicador.indicador_categoria}}</span>
+                            </div>
                         </span>
-                    </div>
-                    </div>
+
                 </div> 
             </div>
 

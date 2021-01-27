@@ -23,12 +23,12 @@ export class PartidosComponent implements OnInit {
     console.log('scrolled!!');
     this.counter++;
     console.log(this.counter);
-    this.getPartidosPoliticos()
+    this.getPartidosPoliticos();
   }
 
   ngOnInit(): void {
 
-    this.getPartidosPoliticos()
+    this.getPartidosPoliticos();
 
   }
 
@@ -124,15 +124,5 @@ export class PartidosComponent implements OnInit {
     }); 
     return cont;
   }
-/*
-  //43 a favor, 41 en contra y 42 abstencion
-  fnIndicadorbycategoria(partido,id){
-    return partido.indicadorescategoriaorg.filter(elem =>{
-      if(elem != null){
-        return  elem.indicador==id
-      }
-    });
 
-  }
-*/
 }

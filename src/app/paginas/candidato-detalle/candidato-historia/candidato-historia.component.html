@@ -74,24 +74,21 @@
             <div *ngIf="estudio.estudio">
               {{estudio.estudio}} 
               <span *ngIf="estudio.grado">
-                - {{estudio.grado}}
+                - {{estudio.grado}} 
               </span>
             </div>
             <div *ngIf="estudio.institucion" class="institucion">
               {{estudio.institucion}}
             </div>
-            <div *ngIf="estudio" class="anio">
-              ANIO HERE
+            <div *ngIf="estudio.nivel_estudio_estado" class="anio">
+              {{estudio.nivel_estudio_estado}} 
+              <span  *ngIf="estudio.anio_bachiller">
+               - {{estudio.anio_bachiller}}
+              </span>
+              <span *ngIf="estudio.anio_titulo">
+               - {{estudio.anio_titulo}}
+              </span>
             </div>
-            <!-- <div *ngIf="estudio.grado">
-              {{estudio.grado}}
-            </div> 
-          <div *ngIf="estudio.anio_bachiller">
-              BACHILLER : {{estudio.anio_bachiller}}
-            </div>
-            <div *ngIf="estudio.anio_titulo">
-              TITULO : {{estudio.anio_titulo}}
-            </div> -->
         </div>
       </div>
       <div *ngIf="!candidato.estudios" class="vacio">
@@ -117,6 +114,12 @@
             </div>
             <div class="anio_trabajo_desde">
               {{experiencialaboral.anio_trabajo_desde}}-{{experiencialaboral.anio_trabajo_hasta}}
+              <!-- <span *ngIf="experiencialaboral.anio_trabajo_hasta != '0000'">
+                - {{experiencialaboral.anio_trabajo_hasta}}
+              </span>
+              <span *ngIf="experiencialaboral.anio_trabajo_hasta == '0000'">
+                - PRESENTE
+              </span> -->
             </div>
         </div>
       </div>
@@ -142,7 +145,13 @@
               {{experienciapolitica.centro_trabajo}}
             </div>
             <div class="anio_trabajo_desde">
-              {{experienciapolitica.anio_trabajo_desde}}-{{experienciapolitica.anio_trabajo_hasta}}
+              {{experienciapolitica.anio_trabajo_desde}}
+              <span *ngIf="experienciapolitica.anio_trabajo_hasta != '0000'">
+                - {{experienciapolitica.anio_trabajo_hasta}}
+              </span>
+              <span *ngIf="experienciapolitica.anio_trabajo_hasta == '0000'">
+                - PRESENTE
+              </span>
             </div>
         </div>
       </div>

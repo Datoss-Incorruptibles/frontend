@@ -68,7 +68,7 @@
                          <p>
                         <strong>
                         <span *ngFor="let indicador of fnIndicadores(partido,6); let i = index">
-                            <span *ngIf="i==0" class="afavor" > {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
+                            <span *ngIf="i==0"  >  <span class="afavor"> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span> | </span>
                             <span *ngIf="i==1"> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} | </span>
                             <span *ngIf="i==2 "> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
                             

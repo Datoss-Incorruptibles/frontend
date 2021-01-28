@@ -1,13 +1,16 @@
 .container{
     color: #2c4484;
     font-size: medium;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
 }
 
-.scroll{
-    height: 100vh;
-    overflow: scroll;
-    // background-color:red;
-  }
+// .scroll{
+//     // height: 100vh;
+//     // overflow: scroll;
+//     // background-color:red;
+//   }
 
 
 .wrapper{
@@ -20,6 +23,7 @@
         width: 400px ;
         margin: 20px 20px 60px 20px;
       }
+    min-height: 500px;
   }
   
  

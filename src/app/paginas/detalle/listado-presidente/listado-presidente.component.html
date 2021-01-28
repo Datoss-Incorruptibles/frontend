@@ -1,21 +1,21 @@
 <div *ngIf="presidente">
-    <div 
+    <!-- <div 
     class="scroll"
     infiniteScroll
     [infiniteScrollDistance]="2"
     [infiniteScrollThrottle]="50"
     [scrollWindow]="false"
     (scrolled)="onScroll()"
-    >
+    > -->
         <div class="wrapper">
             <div *ngFor="let candidato of presidente; let i = index" class="candidato">
                 <div class="container">
-                <mat-icon>people</mat-icon> <span class=""> <strong> {{onCargoPolitico(i)}} </strong></span>
-        
+                    <mat-icon>people</mat-icon>
+                    <div class=""> <strong>  &nbsp; {{onCargoPolitico(i)}} </strong></div>
                 </div>
                 <app-card-candidato [candidato]="candidato"[fromPresidente]="fromPresidente"></app-card-candidato> 
             </div>
         </div>
 
-    </div>
+    <!-- </div> -->
 </div>

@@ -23,19 +23,16 @@
 }
 
 .presidente{
-  // width: 450px ;
-  width: 325px ;
+  width: 400px ;
   margin: 20px 0px 40px 0px;
 }
 
-// @media only screen and (max-width: 400px) {
-//   .presidente{
-//     // max-width: 300px ;
-//     // min-width: 200px;
-//     width: 300px ;
+@media only screen and (max-width: 400px) {
+  .presidente{
+    width: 100% ;
 
-//   }
-// }
+  }
+}
 
 // @media only screen and (min-width: 1250px) {
 //   .presidente{

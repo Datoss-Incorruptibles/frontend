@@ -54,20 +54,18 @@
   }
   
 .congresistas{
-  // width: 450px ;
-  width: 325px ;
+  width: 400px ;
   margin: 20px 0px 40px 0px;
 
 }
 
 
   
-  // @media only screen and (max-width: 400px) {
-  //   .congresistas{
-  //     max-width: 300px ;
-  //     min-width: 200px;
-  //   }
-  // }
+@media only screen and (max-width: 400px) {
+  .congresistas{
+    width: 100% ;
+  }
+}
   
   // @media only screen and (min-width: 1250px) {
   //   .congresistas{

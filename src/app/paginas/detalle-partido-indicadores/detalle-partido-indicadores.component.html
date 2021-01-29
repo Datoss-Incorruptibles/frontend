@@ -5,7 +5,7 @@
             <mat-icon class="fondoSentencias"  aria-hidden="true">
                 gavel
             </mat-icon>
-            <label class="colorSentencias"> {{getCantIndicador(8)+getCantIndicador(9) }} Sentencias</label>
+            <label class="colorSentencias">&nbsp;{{getCantIndicador(8)+getCantIndicador(9) }} Sentencias</label>
             </div>
             <div class="container" >
                 <p>
@@ -45,7 +45,7 @@
             <mat-icon   class="fondoAcademico" aria-hidden="true">
                 school
             </mat-icon>
-            <label class="colorAcademico"> {{getCantidadEdSuperior()}} Ed. Superior</label>
+            <label class="colorAcademico">&nbsp;{{getCantidadEdSuperior()}} Ed. Superior</label>
             </div>
 
             <div class="container">
@@ -63,9 +63,9 @@
         <div class="trayectoria_politica">
             <div style="margin-left:10px; margin-bottom: 20px; align-items: center;display: flex;" >
                 <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
-                    account_balance
+                    work_outline
                 </mat-icon>
-                <label class="colorPolitico"> {{getCantIndicador(5)}} En Cargos Anteriores</label>
+                <label class="colorPolitico">&nbsp;{{getCantIndicador(5)}} En Cargos Anteriores</label>
                 
             </div>
                 <div class="container">
@@ -75,6 +75,7 @@
                         <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}} <br>
                             
                     </span>
+                    <!--
                 </p>
                     <span *ngFor="let indicador of fnIndicadores(11); let i = index">
                         <p>
@@ -83,7 +84,7 @@
                     </span>
 
                 </div>
-                    <!--
+                
                     <div fxLayout="column" fxLayoutAlign="center center" >
                         <div>
                             <p class="colorPolitico">- Votaciones en el congreso</p>
@@ -91,6 +92,14 @@
                     </div>
                     -->
         </div>
+        <div class="trayectoria_politica">
+            <div style="margin-left:10px; margin-bottom: 20px; align-items: center;display: flex;" >
+                <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
+                    account_balance
+                </mat-icon>
+                <label class="colorPolitico">&nbsp;{{getCantIndicador(11)}} En Partidos Anteriores</label>
+                
+            </div>
 
 
     </div>

@@ -42,7 +42,7 @@ export class CandidatoAndinoComponent implements OnInit {
         this.restApiService.getParlamento().subscribe((res:any) =>{
           this.listParAndino=res.results;   
           this.nextPageUrl = res.next ;
-          console.log(this.listParAndino);
+          // console.log(this.listParAndino);
           //this.onOrdernar();
           // this.onFiltroRegion("LIMA");
         }, error => {  });
@@ -56,7 +56,7 @@ export class CandidatoAndinoComponent implements OnInit {
 
           this.listParAndino = this.listParAndino.concat(this.listParlAndinoPageX)
           // this.onFiltroRegion("LIMA");
-          console.log(this.listParAndino);
+          // console.log(this.listParAndino);
           //this.onOrdernar();
         }, error => {  });
       }
@@ -73,7 +73,7 @@ export class CandidatoAndinoComponent implements OnInit {
         this.restApiService.getParlamentoByOrganization(organizacionId).subscribe((res:any) =>{
           this.listParAndino=res.results;   
           this.nextPageUrl = res.next ;
-          console.log(this.listParAndino);
+          // console.log(this.listParAndino);
           //this.onOrdernar();
           // this.onFiltroRegion("LIMA");
         }, error => {  });
@@ -87,7 +87,7 @@ export class CandidatoAndinoComponent implements OnInit {
 
           this.listParAndino = this.listParAndino.concat(this.listParlAndinoPageX)
           // this.onFiltroRegion("LIMA");
-          console.log(this.listParAndino);
+          // console.log(this.listParAndino);
           //this.onOrdernar();
         }, error => {  });
       }
@@ -97,7 +97,7 @@ export class CandidatoAndinoComponent implements OnInit {
   getOrganizaciones(){
     this.restApiService.getOrganizacionesNames().subscribe((res:any) =>{
       this.ORGANIZACIONES=res.results;   
-      console.log(this.ORGANIZACIONES);
+      // console.log(this.ORGANIZACIONES);
     }, error => {  });;
   }
 
@@ -116,8 +116,8 @@ export class CandidatoAndinoComponent implements OnInit {
         return ;
       }
     });
-    console.log(this.orgIdSelect);
-    console.log(this.orgSelect);
+    // console.log(this.orgIdSelect);
+    // console.log(this.orgSelect);
     
     this.getParlamentoByOrganization( String(this.orgIdSelect));
 
@@ -127,7 +127,7 @@ export class CandidatoAndinoComponent implements OnInit {
   }
 
   onScroll(){
-    console.log("on scrool Parlemnto andino");
+    // console.log("on scrool Parlemnto andino");
     if(this.sinSelect== true){
       this.getParlamento();
     }else{

@@ -43,8 +43,8 @@ export class ListadoCongresistaComponent implements OnInit {
         return ;
       }
     });
-    console.log(this.unigeoIdSelect);
-    console.log(this.regSelect);
+    // console.log(this.unigeoIdSelect);
+    // console.log(this.regSelect);
     this.nextPageUrl = "start";
     this.getCongresistasByOrganizacionAndRegion(this.unigeoIdSelect);
 
@@ -60,7 +60,7 @@ export class ListadoCongresistaComponent implements OnInit {
         this.restApiService.getCongresistasByOrganizacionAndRegion(this.politicParty.id,unigeoId).subscribe((res:any) =>{
           this.congresistas=res.results;   
           this.nextPageUrl = res.next ;
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
           //this.onOrdernar();
           // this.onFiltroRegion("LIMA");
         }, error => {  });
@@ -74,7 +74,7 @@ export class ListadoCongresistaComponent implements OnInit {
 
           this.congresistas = this.congresistas.concat(this.candidatoPageX)
           // this.onFiltroRegion("LIMA");
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
           //this.onOrdernar();
         }, error => {  });
       }
@@ -105,14 +105,14 @@ export class ListadoCongresistaComponent implements OnInit {
   getRegiones(){
     this.restApiService.getRegiones().subscribe((res:any) =>{
       this.REGIONES=res.results;   
-      console.log(this.REGIONES);
+      // console.log(this.REGIONES);
       // this.onFiltroRegion("LIMA");
     }, error => {  });;
 
   }
 
   onScroll(){
-    console.log("on scrool detallle congresistas  ");
+    // console.log("on scrool detallle congresistas  ");
     this.getCongresistasByOrganizacionAndRegion(this.unigeoIdSelect);
   }
 

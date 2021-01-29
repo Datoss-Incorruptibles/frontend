@@ -55,7 +55,7 @@ export class CandidatoPresidenteComponent implements OnInit {
   }
 
   onScrollA(){
-    console.log("on scrool PRESINDENTES");
+    // console.log("on scrool PRESINDENTES");
     this.getPresidentes();
   }
 

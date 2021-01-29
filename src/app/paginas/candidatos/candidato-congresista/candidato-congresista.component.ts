@@ -51,8 +51,8 @@ export class CandidatoCongresistaComponent implements OnInit {
     }else if(this.sinSelectPartido==false  && this.sinSelectRegion == true){
       this.getCongresistasByOrganizacion(String(this.orgIdSelect));
     }else{
-    console.log(this.unigeoIdSelect);
-    console.log(this.regSelect);
+    // console.log(this.unigeoIdSelect);
+    // console.log(this.regSelect);
     this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect);
     }
   }
@@ -69,8 +69,8 @@ export class CandidatoCongresistaComponent implements OnInit {
           return ;
         }
       });
-      console.log(this.orgIdSelect);
-      console.log(this.orgSelect);
+      // console.log(this.orgIdSelect);
+      // console.log(this.orgSelect);
       this.onFiltrar();
     }
   }
@@ -88,8 +88,8 @@ export class CandidatoCongresistaComponent implements OnInit {
           return ;
         }
       });
-      console.log(this.orgIdSelect);
-      console.log(this.orgSelect);
+      // console.log(this.orgIdSelect);
+      // console.log(this.orgSelect);
       this.onFiltrar();
     }
   }
@@ -104,7 +104,7 @@ export class CandidatoCongresistaComponent implements OnInit {
         this.restApiService.getCongresistasByRegion(unigeoIdSelect).subscribe((res:any) =>{
           this.congresistas=res.results;   
           this.nextPageUrl = res.next ;
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
         }, error => {  });
       }else if(this.nextPageUrl){
         this.showLoader= true;
@@ -115,7 +115,7 @@ export class CandidatoCongresistaComponent implements OnInit {
           this.showLoader= false;
 
           this.congresistas = this.congresistas.concat(this.candidatoPageX)
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
         }, error => {  });
       }
     }
@@ -131,7 +131,7 @@ export class CandidatoCongresistaComponent implements OnInit {
         this.restApiService.getCongresistasByOrganization(orgIdSelect).subscribe((res:any) =>{
           this.congresistas=res.results;   
           this.nextPageUrl = res.next ;
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
         }, error => {  });
       }else if(this.nextPageUrl){
         this.showLoader= true;
@@ -142,7 +142,7 @@ export class CandidatoCongresistaComponent implements OnInit {
           this.showLoader= false;
 
           this.congresistas = this.congresistas.concat(this.candidatoPageX)
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
         }, error => {  });
       }
     }
@@ -157,14 +157,14 @@ export class CandidatoCongresistaComponent implements OnInit {
         this.restApiService.getCongresistasByOrganizacionAndRegion(organizacionId,unigeoId).subscribe((res:any) =>{
           this.congresistas=res.results;   
           this.nextPageUrl = res.next ;
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
         }, error => {  });
       }else if(this.nextPageUrl){
         this.restApiService.getCongresistasByOrganizacionAndRegion(organizacionId,unigeoId,this.nextPageUrl).subscribe((res :any)=>{
           this.candidatoPageX=<Candidato[]>res.results;            
           this.nextPageUrl = res.next 
           this.congresistas = this.congresistas.concat(this.candidatoPageX)
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
         }, error => {  });
       }
     }
@@ -180,7 +180,7 @@ export class CandidatoCongresistaComponent implements OnInit {
         this.restApiService.getCongresistas().subscribe((res:any) =>{
           this.congresistas=res.results;   
           this.nextPageUrl = res.next ;
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
         }, error => {  });
       }else if(this.nextPageUrl){
         this.showLoader= true;
@@ -191,7 +191,7 @@ export class CandidatoCongresistaComponent implements OnInit {
           this.showLoader= false;
 
           this.congresistas = this.congresistas.concat(this.candidatoPageX)
-          console.log(this.congresistas);
+          // console.log(this.congresistas);
         }, error => {  });
       }
     }
@@ -201,7 +201,7 @@ export class CandidatoCongresistaComponent implements OnInit {
   getRegiones(){
     this.restApiService.getRegiones().subscribe((res:any) =>{
       this.REGIONES=res.results;   
-      console.log(this.REGIONES);
+      // console.log(this.REGIONES);
     }, error => {  });;
 
   }
@@ -209,13 +209,13 @@ export class CandidatoCongresistaComponent implements OnInit {
   getOrganizaciones(){
     this.restApiService.getOrganizacionesNames().subscribe((res:any) =>{
       this.ORGANIZACIONES=res.results;   
-      console.log(this.ORGANIZACIONES);
+      // console.log(this.ORGANIZACIONES);
     }, error => {  });;
 
   }
 
   onScrollB(){
-    console.log("on scrool CONGRESISTAS");
+    // console.log("on scrool CONGRESISTAS");
     if(this.sinSelectPartido==true  && this.sinSelectRegion == false){
       this.getCongresistasByRegion(this.unigeoIdSelect);
     }else if(this.sinSelectPartido==true  && this.sinSelectRegion == true){

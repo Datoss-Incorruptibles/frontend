@@ -20,7 +20,7 @@ export class ListadoPresidenteComponent implements OnInit {
     ngOnInit(): void {
       this.restApiService.getPresidenteByOrganization(this.politicParty.id).subscribe((res :any) =>{
         this.presidente=<Candidato[]>res.results;            
-        console.log(this.presidente);
+        // console.log(this.presidente);
         //this.onOrdernar();
       }, error => {  });
     }
@@ -37,7 +37,7 @@ export class ListadoPresidenteComponent implements OnInit {
 
 
   onScroll(){
-    console.log("on scrool detallle LISTADO PRESIDNETE ");
+    // console.log("on scrool detallle LISTADO PRESIDNETE ");
     // this.getParlAndino()
   }
 }

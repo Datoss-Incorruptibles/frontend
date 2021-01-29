@@ -24,9 +24,7 @@ export class RestApiService {
     let id_cargos = CHARGE.PRESIDENTE;
 
     let limit = "5";
-    let width = window.innerWidth;
-    console.log(width);
-    
+    let width = window.innerWidth;    
     if(width > 900 ){
       limit = "10"
     }
@@ -42,6 +40,12 @@ export class RestApiService {
 
     let _url = this.domain + URL_API.organizacionpolitica;
     let limit = "5";
+
+    let width = window.innerWidth;
+    if(width > 900 ){
+      limit = "10"
+    }
+
     let params = new HttpParams().set("limit",limit);
     if(nextUrl){
       return this.http.get(`${nextUrl}`);
@@ -75,7 +79,6 @@ export class RestApiService {
 
     let limit = "5";
     let width = window.innerWidth;
-    console.log(width);
     
     if(width > 900 ){
       limit = "14"
@@ -95,7 +98,6 @@ export class RestApiService {
 
     let limit = "5";
     let width = window.innerWidth;
-    console.log(width);
     
     if(width > 900 ){
       limit = "14"
@@ -225,7 +227,7 @@ export class RestApiService {
 
 
   onOrdernar(data){
-    console.log(data);
+    // console.log(data);
   }
 
   getCandidato(id){

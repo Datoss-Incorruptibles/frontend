@@ -20,9 +20,9 @@ export class PartidosComponent implements OnInit {
   listOfDiferrentPages = []
 
   onScroll() {
-    console.log('scrolled!!');
+    // console.log('scrolled!!');
     this.counter++;
-    console.log(this.counter);
+    // console.log(this.counter);
     this.getPartidosPoliticos();
   }
 

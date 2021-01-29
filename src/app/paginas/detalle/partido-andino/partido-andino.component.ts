@@ -40,7 +40,7 @@ export class PartidoAndinoComponent implements OnInit {
         this.restApiService.getParlamentoByOrganization(this.politicParty.id).subscribe((res:any) =>{
           this.listParlamentoAndino=res.results;   
           this.nextPageUrl = res.next ;
-          console.log(this.listParlamentoAndino);
+          // console.log(this.listParlamentoAndino);
           //this.onOrdernar();
 
         }, error => {  });
@@ -54,7 +54,7 @@ export class PartidoAndinoComponent implements OnInit {
           this.showLoader= false;
 
           this.listParlamentoAndino = this.listParlamentoAndino.concat(this.candidatoPageX)
-          console.log(this.listParlamentoAndino);
+          // console.log(this.listParlamentoAndino);
           //this.onOrdernar();
 
         }, error => {  });
@@ -77,7 +77,7 @@ export class PartidoAndinoComponent implements OnInit {
   }
 */
   onScroll(){
-    console.log("on scrool detallle LISTADO ANDINO ");
+    // console.log("on scrool detallle LISTADO ANDINO ");
     this.getParlamentoByOrganization();
 
   }

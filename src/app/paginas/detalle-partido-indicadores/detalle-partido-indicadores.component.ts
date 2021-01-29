@@ -13,7 +13,7 @@ export class DetallePartidoIndicadoresComponent implements OnInit {
 
   ngOnInit(): void {
     this.indicadores=this.partido.indicadorescategoriaorg;
-    console.log(this.indicadores);
+    // console.log(this.indicadores);
   }
   getCantIndicador(id){
     let cont = 0;

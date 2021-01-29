@@ -25,7 +25,7 @@ export class CandidatoDetalleComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.restApi.getCandidato(id).subscribe(candidato => {
       this.candidato = candidato
-      console.log(this.candidato);
+      // console.log(this.candidato);
     })
   }
 

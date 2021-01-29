@@ -52,7 +52,7 @@ export class MilistaComponent implements OnInit {
   }
 
   onScroll(){
-    console.log("mi lista scrool");
+    // console.log("mi lista scrool");
     
   }
 

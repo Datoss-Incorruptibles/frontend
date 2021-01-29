@@ -5,9 +5,12 @@
         <mat-form-field appearance="fill" class="filter">
             <mat-label>Ordenado por</mat-label>
             <mat-select (selectionChange)="onOrdernar($event.value)">
-                <mat-option value="nombre">Nombre</mat-option>
-                <mat-option value="fundacion_fecha">Antiguedad</mat-option>
-                <mat-option value="indicadorCantidadSentencias">Numero de Sentencias</mat-option>
+                <mat-option value="nombre">NombreA</mat-option>
+                <mat-option value="-nombre">NombreD</mat-option>
+                <mat-option value="fundacion_fecha">AntiguedadA</mat-option>
+                <mat-option value="-fundacion_fecha">AntiguedadD</mat-option>
+                <mat-option value="sentencias">Numero de SentenciasA</mat-option>
+                <mat-option value="-sentencias">Numero de SentenciasD</mat-option>
             </mat-select>
         </mat-form-field>
         <div class="share">

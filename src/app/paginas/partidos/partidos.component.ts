@@ -44,7 +44,7 @@ export class PartidosComponent implements OnInit {
           this.partidos=res.results;
           this.nextPageUrl = res.next;
 
-          this.groupPartidosByIndicador()
+          //this.groupPartidosByIndicador()
           // console.log(this.partidos);
           // this.onOrdernar("nombre");
         }, error => {  });
@@ -57,7 +57,7 @@ export class PartidosComponent implements OnInit {
           this.nextPageUrl = res.next;
           this.showLoader= false;
           this.partidos = this.partidos.concat(this.partidosPageX)
-          this.groupPartidosByIndicador();
+          //this.groupPartidosByIndicador();
 
           // console.log(this.partidos);
           // this.onOrdernar("nombre");
@@ -68,7 +68,50 @@ export class PartidosComponent implements OnInit {
       // console.log("hay duplicado en array amigo");
     }
   }
+  getOrganizacionesbyOrdering(ordering:string){
+    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
+      // console.log("NO HAY duplicado en array amigo");
+      this.listOfDiferrentPages.push(this.nextPageUrl)
 
+      if(this.nextPageUrl == null)  {
+        //do nothing
+      }else if(this.nextPageUrl == "start"){
+        this.restApi.getOrganizacionesbyOrdering(ordering).subscribe((res:any) =>{
+          this.partidos=res.results;
+          this.nextPageUrl = res.next;
+
+          //this.groupPartidosByIndicador()
+          // console.log(this.partidos);
+          // this.onOrdernar("nombre");
+        }, error => {  });
+
+      }else if(this.nextPageUrl){
+        this.showLoader= true;
+
+        this.restApi.getOrganizacionesbyOrdering(ordering,this.nextPageUrl).subscribe((res:any) =>{
+          this.partidosPageX=res.results;
+          this.nextPageUrl = res.next;
+          this.showLoader= false;
+          this.partidos = this.partidos.concat(this.partidosPageX)
+          //this.groupPartidosByIndicador();
+
+          // console.log(this.partidos);
+          // this.onOrdernar("nombre");
+        }, error => {  });
+      }
+
+    }else{
+      // console.log("hay duplicado en array amigo");
+    }
+  }
+  onOrdernar(parametro){
+    this.listOfDiferrentPages = [];
+    this.nextPageUrl = "start";
+    this.getOrganizacionesbyOrdering(parametro);
+  }
+
+
+ /*
   groupPartidosByIndicador(){
     this.partidos.forEach(partido => {
       partido.indicadorCantidadEstudio=0;
@@ -86,6 +129,7 @@ export class PartidosComponent implements OnInit {
     }, error => {  });
   }
 
+ 
   onOrdernar(parametro){
     //console.log(parametro);
     this.partidos=this.partidos.sort(function(a,b){
@@ -95,7 +139,7 @@ export class PartidosComponent implements OnInit {
       return 0;
     });
   }
-
+*/
   fnAnios(anio){
     return (new Date()).getFullYear() - parseInt(anio);
   }

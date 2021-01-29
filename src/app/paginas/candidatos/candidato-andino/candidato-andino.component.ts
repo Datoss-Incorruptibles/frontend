@@ -108,7 +108,6 @@ export class CandidatoAndinoComponent implements OnInit {
     if(value=="sinseleccion"){
       this.getParlamento();
     }else {
-      
     this.orgIdSelect = value;
     this.ORGANIZACIONES.forEach(element => {
       if(element.id==value){

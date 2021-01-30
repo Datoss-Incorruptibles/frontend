@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from "src/app/servicios/global.service";
 import { RestApiService } from "src/app/servicios/restapi.service";
 
 @Component({
@@ -12,7 +13,12 @@ export class MilistaComponent implements OnInit {
   misRepresentantes :any= [];
   misNoRepresentantes :any= [];
   showLoader;
-  constructor(private restApi:RestApiService) { }
+  constructor(private restApi:RestApiService,
+    private global:GlobalService) { 
+    if(window.location.hash.includes("milista")){
+      this.global.messageSource.next("candidato")
+    }
+  }
 
   ngOnInit(): void {
     // get id from local storage

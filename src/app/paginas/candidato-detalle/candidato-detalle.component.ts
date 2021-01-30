@@ -10,6 +10,7 @@ import { GlobalService } from "src/app/servicios/global.service";
   styleUrls: ['./candidato-detalle.component.scss']
 })
 export class CandidatoDetalleComponent implements OnInit {
+  showLoader = false;
 
   fromDetalle = true;
   candidato;
@@ -27,10 +28,13 @@ export class CandidatoDetalleComponent implements OnInit {
 
   getCandidato(){
     // get param id 
+    this.showLoader = true;
+
     const id = +this.route.snapshot.paramMap.get('id');
     this.restApi.getCandidato(id).subscribe(candidato => {
       this.candidato = candidato;
-      
+      this.showLoader = false;
+
       // console.log(this.candidato);
     })
   }

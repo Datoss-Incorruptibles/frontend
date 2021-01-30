@@ -1,5 +1,5 @@
-<div>
-  <div *ngIf="candidato">
+<div *ngIf="candidato">
+  <div >
     <app-card-candidato [candidato]="candidato" [fromDetalle]="fromDetalle"></app-card-candidato> 
   </div>
   <mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs class="navigator">
@@ -16,4 +16,8 @@
   <div class="goBack">
     <button (click)="goBack()" mat-raised-button color="primary">Volver</button>
   </div>
+</div>
+
+<div class="spinner">
+  <mat-spinner *ngIf="showLoader"  diameter=100></mat-spinner>
 </div>

@@ -31,9 +31,9 @@
                     <mat-icon>cancel</mat-icon>
                 </button>
             </div>    
-            <a mat-list-item routerLink="/" routerLinkActive='active' (click)="sidenav.close()">
+            <!-- <a mat-list-item routerLink="/" routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon> <span class="nav-caption">Porqué elegir bien?</span>
-            </a>
+            </a> -->
 
             <hr />
             <a mat-list-item routerLink="/partidos" routerLinkActive='active' (click)="sidenav.close()">
@@ -42,9 +42,9 @@
             <a mat-list-item routerLink="/candidatos" routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon> <span class="nav-caption">Candidatos</span>   
             </a>
-            <a mat-list-item routerLink="/" routerLinkActive='active' (click)="sidenav.close()">
+            <!-- <a mat-list-item routerLink="/" routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon> <span class="nav-caption">Indicadores Generales</span>   
-            </a>
+            </a> -->
             	
             <hr/>
             <a mat-list-item routerLink="/milista" routerLinkActive='active' (click)="sidenav.close()">
@@ -54,13 +54,19 @@
             <hr/>
             <div  id="acercade" > 
                 <hr/>
-                <a mat-list-item routerLink="/" routerLinkActive='active' (click)="sidenav.close()">
+                <!-- <a mat-list-item routerLink="/" routerLinkActive='active' (click)="sidenav.close()">
                     <mat-icon></mat-icon><span class="nav-caption">Acerca de</span>
-                </a>
+                </a> -->
                 <a mat-list-item href="https://forms.gle/nyAvUJrKixH5tcyz7" target="_blank" routerLinkActive='active' (click)="sidenav.close()" >
                     <mat-icon></mat-icon><span class="nav-caption">Dejanos tu feedback</span>
                 </a>
+                <div class="version">
+                    <p>
+                        v1.0.0
+                    </p>
+                </div>
             </div>
+            
           </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content >
@@ -71,9 +77,9 @@
                 </button>
                 <span>¿Qué partido buscas?</span>
                 <span class="example-spacer"></span>    
-                <button mat-icon-button >
+                <!-- <button mat-icon-button >
                     <mat-icon>search</mat-icon>
-                </button>
+                </button> -->
             </mat-toolbar>
         </div>
         <main>

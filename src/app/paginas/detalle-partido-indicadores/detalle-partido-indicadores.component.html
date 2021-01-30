@@ -1,11 +1,11 @@
 <div class="ComponenteIndicadores" *ngIf="partido">
     <div class="indicadores">
         <div class="sentencias">
-            <div style="margin-left:10px; align-items: center;display: flex;" >
-            <mat-icon class="fondoSentencias"  aria-hidden="true">
-                gavel
-            </mat-icon>
-            <label class="colorSentencias">&nbsp;{{getCantIndicador(8)+getCantIndicador(9) }} Sentencias</label>
+            <div class="wraper-title">
+                <mat-icon class="fondoSentencias"  aria-hidden="true">
+                    gavel
+                </mat-icon>
+                <label class="colorSentencias">&nbsp;{{getCantIndicador(8)+getCantIndicador(9) }} Sentencias</label>
             </div>
             <div class="container" >
                 <p>
@@ -41,11 +41,11 @@
         -->
 
         <div class="academico">
-            <div style="margin-left:10px; align-items: center;display: flex; " >
-            <mat-icon   class="fondoAcademico" aria-hidden="true">
-                school
-            </mat-icon>
-            <label class="colorAcademico">&nbsp;{{getCantidadEdSuperior()}} Ed. Superior</label>
+            <div class="wraper-title">
+                <mat-icon   class="fondoAcademico" aria-hidden="true">
+                    school
+                </mat-icon>
+                <label class="colorAcademico">&nbsp;{{getCantidadEdSuperior()}} Ed. Superior</label>
             </div>
 
             <div class="container">
@@ -60,8 +60,8 @@
         </div>
 
    
-        <div class="trayectoria_politica">
-            <div style="margin-left:10px; margin-bottom: 20px; align-items: center;display: flex;" >
+        <div class="cargos-anteriores">
+            <div  class="wraper-title">
                 <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
                     work
                 </mat-icon>
@@ -75,6 +75,7 @@
                         <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}} <br>
                             
                     </span>
+                </div>
                     <!--
                 </p>
                     <span *ngFor="let indicador of fnIndicadores(11); let i = index">
@@ -91,17 +92,15 @@
                         </div>
                     </div>
                     -->
+       
         </div>
-        <div class="trayectoria_politica">
-            <div style="margin-left:10px; margin-bottom: 20px; align-items: center;display: flex;" >
+        <div class="cargos-anteriores">
+            <div class="wraper-title" >
                 <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
                     account_balance
                 </mat-icon>
                 <label class="colorPolitico">&nbsp;{{getCantIndicador(11)}} En Partidos Anteriores</label>
-                
             </div>
-
-
-    </div>
+        </div>
 
 </div>

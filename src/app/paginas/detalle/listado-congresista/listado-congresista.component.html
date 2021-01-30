@@ -2,7 +2,7 @@
     <div class="filtrado">
         <mat-form-field appearance="fill" class="filterRegion">
             <mat-label>Filtro: Región</mat-label>
-            <mat-select  (selectionChange)="onFiltroRegion($event.value)">
+            <mat-select [(value)]="unigeoIdSelect" (selectionChange)="onFiltroRegion($event.value)">
                 <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
                     {{region.distrito_electoral}}
                 </mat-option>    

@@ -1,4 +1,5 @@
 import { Component, OnInit,Input,ViewChild} from '@angular/core';
+import { GlobalService } from "src/app/servicios/global.service";
 import { RestApiService } from '../../servicios/restapi.service';
 // import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 
@@ -8,22 +9,29 @@ import { RestApiService } from '../../servicios/restapi.service';
   styleUrls: ['partidos.component.scss']
 })
 export class PartidosComponent implements OnInit {
-  constructor(private restApi:RestApiService) { }
+  constructor(private restApi:RestApiService,private global:GlobalService) { 
+    if(window.location.hash.includes("partido")){
+      this.global.messageSource.next("partido")
+    }
+
+  }
   counter = 0;
   // @ViewChild(CdkVirtualScrollViewport)
   // viewport: CdkVirtualScrollViewport;
-
   showLoader = false;
   partidos:any=[];
   nextPageUrl = "start";
   partidosPageX
   listOfDiferrentPages = []
 
+
   onScroll() {
     // console.log('scrolled!!');
     this.counter++;
     // console.log(this.counter);
     this.getPartidosPoliticos();
+
+
   }
 
   ngOnInit(): void {

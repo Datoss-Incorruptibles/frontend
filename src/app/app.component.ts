@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { GlobalService } from "./servicios/global.service";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,14 @@ export class AppComponent implements OnInit  {
   title = 'Elecciones2021';
   showFiller=false;
 
+  message;
+
+  constructor(private global:GlobalService) { }
+
   ngOnInit(): void {
+    this.global.currentMessage.subscribe(message =>this.message = message);
+
+    
     // temporal , only to prevent crash with olds values saved in localStorage
     try {
       if(localStorage.getItem("ids")){
@@ -26,5 +34,14 @@ export class AppComponent implements OnInit  {
       // console.log("algo bad sucedio amigo");
     }
 
+  }
+
+  changeText(){
+    
+    console.log(window.location.pathname);
+    
+    // if (window.location.pathname){
+
+    // }
   }
 }

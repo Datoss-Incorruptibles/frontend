@@ -1,11 +1,12 @@
-<mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs>
+
+<mat-tab-group [(selectedIndex)]="tabIndex" [backgroundColor]="'primary'" mat-stretch-tabs >
     <mat-tab label="Presidente">
-        <app-candidato-presidente></app-candidato-presidente>
+        <app-candidato-presidente ></app-candidato-presidente>
     </mat-tab>
     <mat-tab label="Congresistas">
-        <app-candidato-congresista></app-candidato-congresista>
+        <app-candidato-congresista ></app-candidato-congresista>
     </mat-tab>
     <mat-tab label="P. Andino">
-        <app-candidato-andino></app-candidato-andino>
+        <app-candidato-andino ></app-candidato-andino>
     </mat-tab>  
 </mat-tab-group>

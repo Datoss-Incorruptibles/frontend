@@ -36,12 +36,4 @@ export class AppComponent implements OnInit  {
 
   }
 
-  changeText(){
-    
-    console.log(window.location.pathname);
-    
-    // if (window.location.pathname){
-
-    // }
-  }
 }

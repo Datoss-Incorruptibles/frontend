@@ -1,4 +1,4 @@
-<div class="paginaPartido">
+<div class="paginaPartido" *ngIf="partido">
     
     <div class="cabecera">
         <div class="partido_info">
@@ -51,7 +51,7 @@
             </div> -->
         </div>
       </div>
-    <mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs>
+    <mat-tab-group [(selectedIndex)]="tabIndex" [backgroundColor]="'primary'" mat-stretch-tabs>
         <mat-tab label="Resumen">
             <app-detalle-partido-indicadores [partido]="partido"></app-detalle-partido-indicadores>
         </mat-tab>

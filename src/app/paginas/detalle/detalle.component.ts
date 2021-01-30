@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GlobalService } from "src/app/servicios/global.service";
 
 @Component({
   selector: 'app-detalle',
@@ -7,8 +8,20 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['detalle.component.scss']
 })
 export class DetalleComponent implements OnInit {
+  public tabIndex = 0; // detllae partido  
+
   partido=null;
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router,private global:GlobalService) {
+    this.global.tabIndexCurrent.subscribe(message =>{
+        if(message == 0){
+          this.tabIndex = message
+        }else {
+          this.tabIndex = message + 1 ; // + 1 porque aqui hay 4 tabs y en el otro solo 3
+        }
+       }
+      ); 
+
+  }
 
   ngOnInit(): void {
 

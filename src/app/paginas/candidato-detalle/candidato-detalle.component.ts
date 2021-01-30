@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RestApiService } from "src/app/servicios/restapi.service";
 import { Location } from '@angular/common';
+import { GlobalService } from "src/app/servicios/global.service";
 
 @Component({
   selector: 'app-candidato-detalle',
@@ -12,7 +13,11 @@ export class CandidatoDetalleComponent implements OnInit {
 
   fromDetalle = true;
   candidato;
-  constructor(private route: ActivatedRoute,private restApi:RestApiService,private location: Location) { }
+  constructor(
+    private route: ActivatedRoute,
+    private restApi:RestApiService,
+    private location: Location,
+    private global:GlobalService) { }
 
   ngOnInit(): void {
     this.getCandidato()
@@ -24,13 +29,28 @@ export class CandidatoDetalleComponent implements OnInit {
     // get param id 
     const id = +this.route.snapshot.paramMap.get('id');
     this.restApi.getCandidato(id).subscribe(candidato => {
-      this.candidato = candidato
+      this.candidato = candidato;
+      
       // console.log(this.candidato);
     })
   }
 
 
   goBack(): void {
+    let index = 0;
+    // console.log(this.candidato.cargo_id );
+    if( this.candidato.cargo_id  == 1 || this.candidato.cargo_id  == 2 || this.candidato.cargo_id  == 3  ){
+      index = 0;
+      // console.log(index);
+    }else if( this.candidato.cargo_id == 4){
+      index = 1;
+      // console.log(index);
+    }else if( this.candidato.cargo_id == 5){
+      index = 2;
+      // console.log(index);
+    }
+    
+    this.global.tabIndexCandidatosSource.next(index);
     this.location.back();
   }
 

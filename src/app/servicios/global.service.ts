@@ -5,16 +5,20 @@ import { BehaviorSubject } from "rxjs";
 })
 export class GlobalService {
 
+  tabIndexCandidatosSource = new BehaviorSubject(0)
+  tabIndexCurrent = this.tabIndexCandidatosSource.asObservable();
+
   messageSource = new BehaviorSubject('')
   currentMessage = this.messageSource.asObservable();
-  path = '';
 
   constructor() { }
 
+  setTabIndex(number:any){
+    this.tabIndexCandidatosSource.next(number)
+  }
 
   changeText(text){
     this.messageSource.next(text)
-
   }
   
 

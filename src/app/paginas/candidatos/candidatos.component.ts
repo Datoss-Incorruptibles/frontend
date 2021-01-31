@@ -25,4 +25,10 @@ export class CandidatosComponent implements OnInit {
 
   }
 
+  setearTab(){
+    this.global.tabIndexCandidatosSource.next(this.tabIndex);
+    this.global.tabIndexPCSource.next(this.tabIndex + 1); // porque este tiene 4 tabs 
+
+  }
+
 }

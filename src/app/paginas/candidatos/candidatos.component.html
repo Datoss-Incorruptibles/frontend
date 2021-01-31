@@ -1,5 +1,5 @@
 
-<mat-tab-group [(selectedIndex)]="tabIndex" [backgroundColor]="'primary'" mat-stretch-tabs >
+<mat-tab-group (click)="setearTab()" [(selectedIndex)]="tabIndex" [backgroundColor]="'primary'" mat-stretch-tabs >
     <mat-tab label="Presidente">
         <app-candidato-presidente ></app-candidato-presidente>
     </mat-tab>

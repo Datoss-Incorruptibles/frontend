@@ -19,20 +19,20 @@ export class AppComponent implements OnInit  {
 
     
     // temporal , only to prevent crash with olds values saved in localStorage
-    try {
-      if(localStorage.getItem("ids")){
-        let ids = localStorage.getItem("ids")
-        let idsObj:any = JSON.parse(ids);
-        if( idsObj && idsObj["nomerepresenta"]){
-          localStorage.removeItem("ids")
-        } 
-        if( idsObj &&  idsObj["merepresent"]){
-          localStorage.removeItem("ids")
-        } 
-      }
-    } catch (error) {
-      // console.log("algo bad sucedio amigo");
-    }
+    // try {
+    //   if(localStorage.getItem("ids")){
+    //     let ids = localStorage.getItem("ids")
+    //     let idsObj:any = JSON.parse(ids);
+    //     if( idsObj && idsObj["nomerepresenta"]){
+    //       localStorage.removeItem("ids")
+    //     } 
+    //     if( idsObj &&  idsObj["merepresent"]){
+    //       localStorage.removeItem("ids")
+    //     } 
+    //   }
+    // } catch (error) {
+    //   // console.log("algo bad sucedio amigo");
+    // }
 
   }
 

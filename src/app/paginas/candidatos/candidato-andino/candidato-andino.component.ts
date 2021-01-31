@@ -3,6 +3,7 @@ import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 import { Partido } from '../../../shared/_interfaces/partido.interface';
+import { GlobalService } from "src/app/servicios/global.service";
 @Component({
   selector: 'app-candidato-andino',
   templateUrl: './candidato-andino.component.html',
@@ -16,7 +17,8 @@ export class CandidatoAndinoComponent implements OnInit {
   ORGANIZACIONES: Partido[];
   listParAndino: Candidato[];
   orgSelect: string;
-  orgIdSelect : number;//Accion popular
+
+  orgIdSelect : any;//Sin seleccion  desde el servicio
   sinSelect= true;
   
   nextPageUrl = "start";
@@ -24,12 +26,18 @@ export class CandidatoAndinoComponent implements OnInit {
 
 
   constructor(private restApiService: RestApiService,
-    private activeRoute: ActivatedRoute) {
-
+    private activeRoute: ActivatedRoute, 
+    private global:GlobalService
+    ) {
+      this.global.filterPartidoPAIndexCurrent.subscribe(message =>this.orgIdSelect = message);
    }
 
   ngOnInit(): void { 
-    this.getParlamento();
+    if (this.orgIdSelect) {
+      this.getParlamentoByOrganization( String(this.orgIdSelect));
+    }else{
+      this.getParlamento();
+    }
     this.getOrganizaciones();
   }
   getParlamento(){
@@ -86,9 +94,6 @@ export class CandidatoAndinoComponent implements OnInit {
           this.showLoader= false;
 
           this.listParAndino = this.listParAndino.concat(this.listParlAndinoPageX)
-          // this.onFiltroRegion("LIMA");
-          // console.log(this.listParAndino);
-          //this.onOrdernar();
         }, error => {  });
       }
     }
@@ -109,6 +114,8 @@ export class CandidatoAndinoComponent implements OnInit {
       this.getParlamento();
     }else {
     this.orgIdSelect = value;
+    this.global.filterPartidoPASource.next(value);
+
     this.ORGANIZACIONES.forEach(element => {
       if(element.id==value){
         this.orgSelect=element.nombre;

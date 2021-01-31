@@ -12,12 +12,8 @@ export class DetalleComponent implements OnInit {
 
   partido=null;
   constructor(private route: ActivatedRoute, private router: Router,private global:GlobalService) {
-    this.global.tabIndexCurrent.subscribe(message =>{
-        if(message == 0){
-          this.tabIndex = message
-        }else {
-          this.tabIndex = message + 1 ; // + 1 porque aqui hay 4 tabs y en el otro solo 3
-        }
+    this.global.tabIndexPCCurrent.subscribe(message =>{
+          this.tabIndex = message;
        }
       ); 
 
@@ -54,5 +50,13 @@ export class DetalleComponent implements OnInit {
   } 
 
 
+  setearTab(){
+    if(this.tabIndex == 0){
+      this.global.tabIndexCandidatosSource.next(0);
+    }else{
+      this.global.tabIndexCandidatosSource.next(this.tabIndex - 1);
+    }
+    this.global.tabIndexPCSource.next(this.tabIndex);
 
+  }
 }

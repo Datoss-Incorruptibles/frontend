@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 import { Region } from '../../../shared/_interfaces/region';
 import { Partido } from '../../../shared/_interfaces/partido.interface';
+import { GlobalService } from "src/app/servicios/global.service";
 
 @Component({
   selector: 'app-candidato-congresista',
@@ -20,8 +21,10 @@ export class CandidatoCongresistaComponent implements OnInit {
   ORGANIZACIONES: Partido[];
   regSelect: string;
   orgSelect: string;
-  unigeoIdSelect= "140100"; //Lima
-  orgIdSelect :number;
+
+  unigeoIdSelect= ""; // Inicializado desde el servicio
+  orgIdSelect :any;
+  
   sinSelectRegion= true;
   sinSelectPartido = true;
 
@@ -29,11 +32,37 @@ export class CandidatoCongresistaComponent implements OnInit {
   nextPageUrl = "start";
   candidatoPageX;
 
-  constructor(private restApiService: RestApiService,
-    private activeRoute: ActivatedRoute) { }
+  constructor(
+    private restApiService: RestApiService,
+    private activeRoute: ActivatedRoute, 
+    private global:GlobalService
+    ) {
+      this.global.filterRegionIndexCurrent.subscribe(message =>
+        {
+          this.unigeoIdSelect = message; 
+          if(this.unigeoIdSelect) this.sinSelectRegion = false
+
+        });
+      this.global.filterPartidoIndexCurrent.subscribe(message =>
+        {
+          this.orgIdSelect = message;
+          if(this.orgIdSelect) this.sinSelectPartido = false
+        }
+        );
+
+     }
 
   ngOnInit(): void {
-    this.getCongresistasByRegion(this.unigeoIdSelect);//todos los partidos de Lima
+    if(this.sinSelectPartido== true  && this.sinSelectRegion == false){
+      this.getCongresistasByRegion(this.unigeoIdSelect);
+    }else if(this.sinSelectPartido==true  && this.sinSelectRegion == true){
+      this.getCongresistas();
+    }else if(this.sinSelectPartido==false  && this.sinSelectRegion == true){
+      this.getCongresistasByOrganizacion(String(this.orgIdSelect));
+    }else{
+    this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect);
+    }
+    // this.getCongresistasByRegion(this.unigeoIdSelect);//todos los partidos de Lima
     this.getRegiones();
     this.getOrganizaciones();
   }
@@ -43,17 +72,19 @@ export class CandidatoCongresistaComponent implements OnInit {
     //reset list
     this.listOfDiferrentPages = [];
     this.nextPageUrl = "start";
+    // console.log(this.unigeoIdSelect); 
+    // console.log(this.orgIdSelect);
     if(this.sinSelectPartido==true  && this.sinSelectRegion == false){
       this.getCongresistasByRegion(this.unigeoIdSelect);
     }else if(this.sinSelectPartido==true  && this.sinSelectRegion == true){
-
       this.getCongresistas();
     }else if(this.sinSelectPartido==false  && this.sinSelectRegion == true){
       this.getCongresistasByOrganizacion(String(this.orgIdSelect));
     }else{
+
     // console.log(this.unigeoIdSelect);
     // console.log(this.regSelect);
-    this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect);
+    this.getCongresistasByOrganizacionAndRegion(String(this.orgIdSelect),this.unigeoIdSelect);
     }
   }
   onFiltroRegion(value: any ){
@@ -62,7 +93,9 @@ export class CandidatoCongresistaComponent implements OnInit {
       this.onFiltrar();
     }else{
       this.sinSelectRegion=false;
-      this.unigeoIdSelect = value;
+      // this.unigeoIdSelect = value;
+      this.global.filterRegionSource.next(value);
+
       this.REGIONES.forEach(element => {
         if(element.id==value){
           this.regSelect=element.distrito_electoral;
@@ -81,7 +114,9 @@ export class CandidatoCongresistaComponent implements OnInit {
       this.onFiltrar();
     }else{
       this.sinSelectPartido=false;
-      this.orgIdSelect = value;
+      // this.orgIdSelect = value;
+      this.global.filterPartidoSource.next(value);
+
       this.ORGANIZACIONES.forEach(element => {
         if(element.id==value){
           this.orgSelect=element.nombre;

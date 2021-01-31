@@ -3,6 +3,7 @@ import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 import { Region } from '../../../shared/_interfaces/region';
+import { GlobalService } from "src/app/servicios/global.service";
 
 @Component({
   selector: 'app-listado-congresista',
@@ -20,23 +21,33 @@ export class ListadoCongresistaComponent implements OnInit {
   congresistas: Candidato[];
   REGIONES : Region[];
   regSelect: string;
-  unigeoIdSelect= "140100";
+  unigeoIdSelect = "";
 
   nextPageUrl ="start";
   candidatoPageX;
 
   constructor(private restApiService: RestApiService,
-    private activeRoute: ActivatedRoute) { }
+    private activeRoute: ActivatedRoute, 
+    private global:GlobalService
+    ) {
+      this.global.filterRegionIndexCurrent.subscribe(message =>this.unigeoIdSelect = message);
+
+     }
 
   ngOnInit(): void {
     this.getCongresistasByOrganizacionAndRegion(this.unigeoIdSelect);
     this.getRegiones();
+
+    // console.log("here in congresistas ");
+    
     
   }
   onFiltroRegion(value: string){
     //reset list
     this.listOfDiferrentPages = [];
-    this.unigeoIdSelect = value;
+    // this.unigeoIdSelect = value;
+    this.global.filterRegionSource.next(value);
+
     this.REGIONES.forEach(element => {
       if(element.id==value){
         this.regSelect=element.distrito_electoral;

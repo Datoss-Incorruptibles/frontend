@@ -55,6 +55,8 @@ export class CandidatoDetalleComponent implements OnInit {
     }
     
     this.global.tabIndexCandidatosSource.next(index);
+    this.global.tabIndexPCSource.next(index + 1); // porque este tiene 4 tabs 
+
     this.location.back();
   }
 

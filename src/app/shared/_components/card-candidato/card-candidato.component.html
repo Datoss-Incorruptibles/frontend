@@ -37,51 +37,57 @@
                             <span style="text-transform: uppercase;">
                                 Con {{getCantIndicador(candidato,8)}} Sentencia(s) Civil 
                             </span>
-                    </div>
-                </div>
-            </div>
-
-            <div *ngIf=" getCantIndicador(candidato,9) !=null && getCantIndicador(candidato,9) > 0 " class="indicador">
-                <div class="indicador-detail">
-                    <div>
-                    <mat-icon class="fondoSentencias"  aria-hidden="true">
-                        gavel
-                    </mat-icon>
-                        <span style="text-transform: uppercase;"> Con {{getCantIndicador(candidato,9)}} Sentencia(s) Penal</span> 
-                    </div>
-                </div> 
-            </div>
-
-                <span *ngIf="fnIndicadores(candidato,2) !=null" class="" >
-                    <div *ngFor="let indicador of fnIndicadores(candidato,2)" class="indicador">
-                        <div class="indicador-detail">
-                            <div>
-                                <mat-icon   class="fondoPolitico" aria-hidden="true">
-                                        work
-                                </mat-icon>
-                                <span>
-                                        EX - {{indicador.indicador_categoria}} 
-                                </span>
-                            </div>
                         </div>
                     </div>
-                </span>
+                </div>
 
+                <div *ngIf=" getCantIndicador(candidato,9) !=null && getCantIndicador(candidato,9) > 0 " class="indicador">
+                    <div class="indicador-detail">
+                        <div>
+                        <mat-icon class="fondoSentencias"  aria-hidden="true">
+                            gavel
+                        </mat-icon>
+                            <span style="text-transform: uppercase;"> Con {{getCantIndicador(candidato,9)}} Sentencia(s) Penal</span> 
+                        </div>
+                    </div> 
+                </div>
 
-                <div *ngIf=" getCantIndicador(candidato,11) !=null && getCantIndicador(candidato,11) > 0 "  class="indicador">
-                    
-                        <span *ngFor="let indicador of fnIndicadores(candidato,11)">
+                    <span *ngIf="fnIndicadores(candidato,2) !=null" class="" >
+                        <div *ngFor="let indicador of fnIndicadores(candidato,2)" class="indicador">
                             <div class="indicador-detail">
-                            <mat-icon   class="fondoPolitico" aria-hidden="true">
-                                account_balance
-                            </mat-icon>
-                            <span>{{indicador.cantidad}} {{indicador.indicador_categoria}}</span>
+                                <div>
+                                    <mat-icon   class="fondoPolitico" aria-hidden="true">
+                                            work
+                                    </mat-icon>
+                                    <span>
+                                            EX - {{indicador.indicador_categoria}} 
+                                    </span>
+                                </div>
                             </div>
-                        </span>
+                        </div>
+                    </span>
 
-                </div> 
+
+                    <div *ngIf=" getCantIndicador(candidato,11) !=null && getCantIndicador(candidato,11) > 0 "  class="indicador">
+                        
+                            <span *ngFor="let indicador of fnIndicadores(candidato,11)">
+                                <div class="indicador-detail">
+                                <mat-icon   class="fondoPolitico" aria-hidden="true">
+                                    account_balance
+                                </mat-icon>
+                                <span>{{indicador.cantidad}} {{indicador.indicador_categoria}}</span>
+                                </div>
+                            </span>
+
+                    </div> 
             </div>
 
+            <div class="me-representa" *ngIf="status == 'status01'">
+                <img src="assets/images/iconos/bitmap2.png" alt="">
+            </div>
+            <div class="me-representa" *ngIf="status == 'status11'">
+                <img src="assets/images/iconos/bitmap.png" alt="">
+            </div>
         </div>
     <!-- <mat-card-content *ngIf="!fromDetalle" class="container">
 

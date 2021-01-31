@@ -70,6 +70,8 @@
             }
         }
         .content-secondary{
+            position: relative;
+
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
@@ -95,9 +97,18 @@
                         //justify-content: center; 
                     }
                 }
-
             }
         }
+        .me-representa{
+            position: absolute;
+            right: 10px;
+            bottom: 50px;
+            img{
+                width: 125px;
+                height: 125px;
+            }
+        }
+        
     }
     .footer{
         // position: absolute;
@@ -135,6 +146,7 @@
     }
 
 }
+
 
 .sinAbsolute{
     position: relative;

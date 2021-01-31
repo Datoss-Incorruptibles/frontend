@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  backend: "https://api-dev.candidatos.pe/v1/"
+
 };

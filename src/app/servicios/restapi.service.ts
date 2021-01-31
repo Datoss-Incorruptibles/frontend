@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { URL_API, PARAMS_OPTION, CHARGE } from '../shared/_constants/constant.commons';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestApiService {
-  private domain: string = "https://api-dev.candidatos.pe/v1/";
+  private domain: string = environment.backend;
   // private domain: string = "http://127.0.0.1:8000/v1/";
 
   private httpOptions = {

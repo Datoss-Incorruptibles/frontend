@@ -5,14 +5,14 @@
   mat-card{
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
 
 
   }
   mat-card  > div{
     margin-bottom:20px;
-    width: 500px;
+    width: 400px;
 
   }
 

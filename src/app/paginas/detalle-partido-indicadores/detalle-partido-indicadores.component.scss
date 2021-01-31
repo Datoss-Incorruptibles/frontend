@@ -1,4 +1,29 @@
+.ComponenteIndicadores{
+    margin-bottom: 10px;
+    .card{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 20px;
+    
+    
+      }
+      .card  > div{
+        margin-bottom:20px;
+        width: 400px;
+    
+      }
 
+}
+.indicador-detail{
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:5px;
+    margin-left:30px;
+  
+  }
+/*
 .indicadores{
     background-color:#fafafa;
     padding:0;
@@ -12,8 +37,11 @@
     min-height: 450px;
 
     div{
-        min-width: 280px;
-        max-width: 500px;
+        //min-width: 280px;
+        //max-width: 500px;
+            margin-bottom:20px;
+          width: 400px;
+
         .wraper-title{
             margin-left:10px; 
             align-items: flex-start;
@@ -30,7 +58,7 @@
 
     // }
 }
-
+*/
 
 .colorSentencias{
     color: #DF2854;
@@ -64,6 +92,6 @@
     margin-top: 10px;
     margin-left: 40px;
     margin-right: 40px;
-    font-size: 14;
+    font-size: 15px;
    // font-family:'cabin';
 }

@@ -164,6 +164,45 @@
     <div class="candidato-experienciapolitica-wrapper">
       <div class="tile-wrapper">
         <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+          attach_money
+        </mat-icon>
+        <span class="title">
+          <label>Ingresos</label>
+        </span>
+      </div>
+      <div *ngIf="candidato.ingresos">
+        <div *ngFor="let ingreso of candidato.ingresos" class="indicador-detail">
+            <div>
+             INGRESO PRIVADO: {{ingreso.otros_ingresos_privado}} 
+            </div>
+            <div class="centro_trabajo">
+              INGRESO PUBLICO: {{ingreso.otros_ingresos_publico}} 
+            </div>
+            <div  class="anio_trabajo_desde">
+             RENTA BRUTA PRIVADA: {{ingreso.valor}}
+            </div>
+            <div   class="anio_trabajo_desde">
+              RENTA BRUTA PUBLICA: {{ingreso.valor}}
+             </div>
+             <div class="centro_trabajo">
+              RENTA INDIVIDUAL PRIVADA: {{ingreso.renta_individual_privado}} 
+             </div>
+             <div class="centro_trabajo">
+              RENTA INDIVIDUAL PUBLICA: {{ingreso.renta_individual_publico}} 
+             </div>
+             <div class="centro_trabajo">
+               AÑO {{ingreso.anio_ingresos}}
+             </div>
+        </div>
+      </div>
+      <div *ngIf="!candidato.inmuebles" class="vacio">
+        No se encontraron datos  
+      </div>
+    </div>
+
+    <div class="candidato-experienciapolitica-wrapper">
+      <div class="tile-wrapper">
+        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
           house
         </mat-icon>
         <span class="title">

@@ -11,14 +11,14 @@
                 <p>
                     <span *ngFor="let indicador of fnIndicadores(8); let i = index">
             
-                        <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                        <span *ngIf="i==0"> </span> {{indicador.cantidad }} <span >{{onInitial(indicador.indicador_categoria_nombre)}}</span>
                         <br>
     
                     </span>
                     
                     <span *ngFor="let indicador of fnIndicadores(9); let i = index">
      
-                        <span *ngIf="i==0"> </span> {{indicador.cantidad + " " + indicador.indicador_categoria_nombre}}
+                        <span *ngIf="i==0"> </span> {{indicador.cantidad}} <span >{{onInitial(indicador.indicador_categoria_nombre)}}</span>
                         <br>
                     </span>
                  </p>
@@ -101,6 +101,23 @@
                 </mat-icon>
                 <label class="colorPolitico">&nbsp;{{getCantIndicador(11)}} En Partidos Anteriores</label>
             </div>
+        </div>
+
+        <div class="cargos-anteriores">
+            <div class="wraper-title" >
+                <span class="material-icons fondoPolitico" >payments</span>
+                <label class="colorPolitico">&nbsp;Bienes Promedio Anual</label>
+            </div>
+
+            <div class="container">
+                <p>
+                <span *ngFor="let indicador of fnIndicadores(10); let i = index">
+                    
+                    <span *ngIf="i==0"> </span> {{indicador.cantidad|currency:'S/.':'symbol':'4.0-0'}}&nbsp;{{indicador.indicador_categoria_nombre}} <br>
+                        
+                </span>
+            </div>
+    
         </div>
 
 </div>

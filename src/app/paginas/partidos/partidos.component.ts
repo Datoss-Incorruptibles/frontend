@@ -150,7 +150,7 @@ export class PartidosComponent implements OnInit {
   getCantidadIngresoProm(partido){
     let cont = 0;
     this.fnIndicadores(partido,10).forEach(element => {
-      if(element.indicador_categoria_nombre == "Ingresos Prom. Anual"){
+      if(element.indicador_categoria_nombre == "Ingresos"){
         cont = element.cantidad + cont;
       }
     }); 

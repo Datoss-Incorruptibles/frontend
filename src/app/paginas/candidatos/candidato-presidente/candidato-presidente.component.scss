@@ -14,8 +14,24 @@
 }
 
 
-
 .wrapper{
+  position: relative;
+}
+.search{
+  margin-top: 10px;
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  .example-form{
+    mat-form-field{
+      width:350px;
+
+    }
+  }
+}
+
+.wrapper-candidatos{
   display: flex;
   align-content: space-between;
   justify-content: space-evenly;

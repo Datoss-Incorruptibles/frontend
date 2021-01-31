@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 /* Material */
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -19,6 +21,8 @@ import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatInputModule} from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 //
 import { HttpClientModule } from '@angular/common/http';
@@ -94,6 +98,9 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     BrowserAnimationsModule,
     FlexLayoutModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    /*Material */
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,
@@ -107,6 +114,8 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     MatListModule,
     MatProgressSpinnerModule,
     MatMenuModule,
+    MatInputModule,
+    MatAutocompleteModule,
     SharedModule,
     ScrollingModule,
     InfiniteScrollModule],

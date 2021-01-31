@@ -2,13 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { Candidato } from '../../../shared/_interfaces/candidato.interface';
+import { FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-candidato-presidente',
   templateUrl: './candidato-presidente.component.html',
   styleUrls: ['./candidato-presidente.component.scss']
 })
 export class CandidatoPresidenteComponent implements OnInit {
-  selector: string = '.main-panel';
+
+  myControl = new FormControl();
+  results: string[] = [];
+  searchStr;
+  
   fromPresidente = true;
 
   listOfDiferrentPages = []
@@ -57,6 +63,19 @@ export class CandidatoPresidenteComponent implements OnInit {
   onScrollA(){
     // console.log("on scrool PRESINDENTES");
     this.getPresidentes();
+  }
+  
+  search(value){
+    console.log(value);
+    this.restApiService.searchCandidato(value).subscribe((res :any)=>{
+      let listNames = [];
+      let candidatos =  res.results 
+      candidatos.forEach(candidato => {
+        let completeName = `${candidato.nombres} ${candidato.apellido_paterno} ${candidato.apellido_materno}`;
+        listNames.push(completeName)
+      });
+      this.results = listNames
+    })
   }
 
 }

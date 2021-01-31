@@ -1,20 +1,45 @@
-<mat-progress-bar mode="indeterminate" *ngIf="!presidentes" ></mat-progress-bar>
-
-<div
-class="scrollA"
-infiniteScroll
-[infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="50"
-[scrollWindow]="false"
-(scrolled)="onScrollA()"
->
 <div class="wrapper">
-    <div *ngFor="let candidato of presidentes" class="presidente">
-        <app-card-candidato [candidato]="candidato" [fromPresidente]="fromPresidente"></app-card-candidato> 
+    <mat-progress-bar mode="indeterminate" *ngIf="!presidentes" ></mat-progress-bar>
+    <div class="search">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Candidato</mat-label>
+                <input type="text"
+                        placeholder="Buscar"
+                        matInput
+                        [formControl]="myControl"
+                        [matAutocomplete]="auto"
+                        (keyup)="search($event.target.value)"
+
+                        >
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of results" [value]="option">
+                    {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+         <button mat-icon-button >
+            <mat-icon>search</mat-icon>
+        </button>  
     </div>
-    <div class="spinner">
-        <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+    <div
+    class="scrollA"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    [scrollWindow]="false"
+    (scrolled)="onScrollA()"
+    >
+    <div class="wrapper-candidatos">
+        <div *ngFor="let candidato of presidentes" class="presidente">
+            <app-card-candidato [candidato]="candidato" [fromPresidente]="fromPresidente"></app-card-candidato> 
+        </div>
+        <div class="spinner">
+            <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+        </div>
     </div>
-</div>
+
+    </div>
 
 </div>

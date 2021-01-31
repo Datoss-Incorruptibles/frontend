@@ -6,8 +6,10 @@ import { URL_API, PARAMS_OPTION, CHARGE } from '../shared/_constants/constant.co
   providedIn: 'root'
 })
 export class RestApiService {
-  private domain: string = "https://api-dev.candidatos.pe/v1/";
-  // private domain: string = "http://127.0.0.1:8000/v1/";
+  private domain: string = "https://api-dev.candidatos.pe/v1/";  //DESA
+
+  // private domain: string = https://api.candidatos.pe/v1/    //PROD
+  // private domain: string = "http://127.0.0.1:8000/v1/";    //LOCAL
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -222,6 +224,17 @@ export class RestApiService {
     }
   }
 
+
+  // https://api-dev.candidatos.pe/v1/candidato/?search=veronica
+  searchCandidato(value){
+    let search = value;
+    let _url = this.domain + URL_API.candidato;
+    let limit = "5";
+    let params = new HttpParams().set("search",search).set("limit",limit);
+
+    return this.http.get(_url,{ headers: this.httpOptions.headers, params: params}); 
+
+  }
 
 
 

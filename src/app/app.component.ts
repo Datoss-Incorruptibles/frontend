@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { GlobalService } from "./servicios/global.service";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ export class AppComponent implements OnInit  {
 
   message;
 
-  constructor(private global:GlobalService) { }
+  constructor(
+    private global:GlobalService,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.global.currentMessage.subscribe(message =>this.message = message);
@@ -34,6 +37,26 @@ export class AppComponent implements OnInit  {
     //   // console.log("algo bad sucedio amigo");
     // }
 
+  }
+
+  goBack(): void {
+    // let index = 0;
+    // // console.log(this.candidato.cargo_id );
+    // if( this.candidato.cargo_id  == 1 || this.candidato.cargo_id  == 2 || this.candidato.cargo_id  == 3  ){
+    //   index = 0;
+    //   // console.log(index);
+    // }else if( this.candidato.cargo_id == 4){
+    //   index = 1;
+    //   // console.log(index);
+    // }else if( this.candidato.cargo_id == 5){
+    //   index = 2;
+    //   // console.log(index);
+    // }
+    
+    // this.global.tabIndexCandidatosSource.next(index);
+    // this.global.tabIndexPCSource.next(index + 1); // porque este tiene 4 tabs 
+
+    this.location.back();
   }
 
 }

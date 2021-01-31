@@ -8,18 +8,24 @@ infiniteScroll
 (scrolled)="onScroll()"
 >
     <mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs class="navigator">
-        <mat-tab label="Me representa" class="wrapper">
-            <div *ngFor="let candidato of misRepresentantes" class="candidato">
-                <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+        <mat-tab label="Me representa" >
+            <div class="wrapper">
+                <div *ngFor="let candidato of misRepresentantes" class="candidato">
+                    <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+                </div>
             </div>
+
             <div *ngIf="!misRepresentantes">
                 Aun no seleccionaste a los que te representaran en las proximas elecciones!!
             </div>
         </mat-tab>
-        <mat-tab label="No me representa"  class="wrapper">
-            <div *ngFor="let candidato of misNoRepresentantes"  class="candidato">
-                <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+        <mat-tab label="No me representa" >
+            <div  class="wrapper">
+                <div *ngFor="let candidato of misNoRepresentantes"  class="candidato">
+                    <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+                </div>
             </div>
+
             <div *ngIf="!misNoRepresentantes">
                 Aun no seleccionaste a los que te NO te representaran en las proximas elecciones!!
             </div>

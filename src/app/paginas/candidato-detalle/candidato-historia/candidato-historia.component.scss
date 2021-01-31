@@ -1,22 +1,23 @@
 .candidato{
   margin-bottom: 10px;
 
-    // .indicador-penal-wrapper{
-    //   .indicador-detail{
-    //     margin-bottom:10px;
-    //   }
-    // }
-    // .indicador-civil-wrapper{
-    //   .indicador-detail{
-    //     margin-bottom:10px;
 
-    //   }
-    // }
+  mat-card{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
-}
+
+  }
   mat-card  > div{
     margin-bottom:20px;
+    width: 500px;
+
   }
+
+}
+
 
   mat-icon{
     color: #274482;

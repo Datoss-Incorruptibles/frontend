@@ -160,5 +160,67 @@
         No se encontraron datos  
       </div>
     </div>
+
+    <div class="candidato-experienciapolitica-wrapper">
+      <div class="tile-wrapper">
+        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+          house
+        </mat-icon>
+        <span class="title">
+          <label>Bienes Inmuebles</label>
+        </span>
+      </div>
+      <div *ngIf="candidato.inmuebles">
+        <div *ngFor="let inmueble of candidato.inmuebles" class="indicador-detail">
+            <div>
+              {{inmueble.direccion}} 
+            </div>
+            <div class="centro_trabajo">
+              {{inmueble.tipo}} - SUNARP {{inmueble.partida_sunarp}}
+            </div>
+            <div  *ngIf="inmueble.valor" class="anio_trabajo_desde">
+             S/. {{inmueble.valor}}
+            </div>
+        </div>
+      </div>
+      <div *ngIf="!candidato.inmuebles" class="vacio">
+        No se encontraron datos  
+      </div>
+    </div>
+
+    <div class="candidato-experienciapolitica-wrapper">
+      <div class="tile-wrapper">
+        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+          directions_car
+        </mat-icon>
+        <span class="title">
+          <label>Bienes Muebles</label>
+        </span>
+      </div>
+      <div *ngIf="candidato.muebles">
+        <div *ngFor="let mueble of candidato.muebles" class="indicador-detail">
+          <div>
+            {{mueble.caracteristica}} 
+          </div>
+          <div class="centro_trabajo">
+            {{mueble.vehiculo}} - {{mueble.placa}}
+          </div>
+          <div class="centro_trabajo">
+            <span  *ngIf="mueble.marca">
+              {{mueble.marca}}
+            </span>
+            <span  *ngIf="mueble.modelo">
+              - {{mueble.modelo}}
+            </span>
+          </div>
+          <div *ngIf="mueble.valor" class="centro_trabajo">
+            S/.  {{mueble.valor}} 
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!candidato.muebles" class="vacio">
+        No se encontraron datos  
+      </div>
+    </div>
   </mat-card>
 </div>

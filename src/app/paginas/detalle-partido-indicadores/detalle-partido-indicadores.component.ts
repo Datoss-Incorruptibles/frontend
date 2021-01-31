@@ -40,5 +40,9 @@ export class DetallePartidoIndicadoresComponent implements OnInit {
       }
     });
   }
+  onInitial(text){
+    let tem = text.toLowerCase( )
+    return tem[0].toUpperCase() + tem.slice(1);
+  }
   
 }

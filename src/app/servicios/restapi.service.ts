@@ -214,6 +214,12 @@ export class RestApiService {
   getOrganizacionesbyOrdering(ordering:string, nextUrl?){
     let _url = this.domain + URL_API.organizacionpolitica;
     let limit = "5";
+
+    let width = window.innerWidth;
+    if(width > 900 ){
+      limit = "10"
+    }
+
     let params = new HttpParams().set("ordering",ordering).set("limit",limit);
     if(nextUrl){
       return this.http.get(`${nextUrl}`);

@@ -118,36 +118,6 @@ export class PartidosComponent implements OnInit {
     this.getOrganizacionesbyOrdering(parametro);
   }
 
-
- /*
-  groupPartidosByIndicador(){
-    this.partidos.forEach(partido => {
-      partido.indicadorCantidadEstudio=0;
-      partido.indicadorCantidadSentencias=0;
-      partido.indicadorCantidadTrayectoria=0;
-      partido.indicadorescategoriaorg.forEach(indicador => {
-        if(indicador != null){
-        if(indicador.indicador==1 ) partido.indicadorCantidadEstudio+=indicador.cantidad;
-        if(indicador.indicador==3) partido.indicadorCantidadSentencias+=indicador.cantidad;
-        if(indicador.indicador==5) partido.indicadorCantidadTrayectoria+=indicador.cantidad;
-        }
-      });
-      //console.log(this.partidos);
-      this.onOrdernar("nombre");
-    }, error => {  });
-  }
-
- 
-  onOrdernar(parametro){
-    //console.log(parametro);
-    this.partidos=this.partidos.sort(function(a,b){
-      //console.log(a[parametro] < b[parametro]);
-        if(a[parametro] < b[parametro]) { return -1; }
-        if(a[parametro] > b[parametro]) { return 1; }
-      return 0;
-    });
-  }
-*/
   fnAnios(anio){
     return (new Date()).getFullYear() - parseInt(anio);
   }
@@ -171,6 +141,16 @@ export class PartidosComponent implements OnInit {
     let cont = 0;
     this.fnIndicadores(partido,1).forEach(element => {
       if(element.indicador_categoria!=4){
+        cont = element.cantidad + cont;
+      }
+    }); 
+    return cont;
+  }
+
+  getCantidadIngresoProm(partido){
+    let cont = 0;
+    this.fnIndicadores(partido,10).forEach(element => {
+      if(element.indicador_categoria_nombre == "Ingresos"){
         cont = element.cantidad + cont;
       }
     }); 

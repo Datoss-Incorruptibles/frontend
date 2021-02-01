@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { URL_API, PARAMS_OPTION, CHARGE } from '../shared/_constants/constant.commons';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestApiService {
-  private domain: string = "https://api-dev.candidatos.pe/v1/";  //DESA
-
-  // private domain: string = https://api.candidatos.pe/v1/    //PROD
-  // private domain: string = "http://127.0.0.1:8000/v1/";    //LOCAL
+  private domain: string = environment.backend;
+  // private domain: string = "http://127.0.0.1:8000/v1/";
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -216,6 +215,12 @@ export class RestApiService {
   getOrganizacionesbyOrdering(ordering:string, nextUrl?){
     let _url = this.domain + URL_API.organizacionpolitica;
     let limit = "5";
+
+    let width = window.innerWidth;
+    if(width > 900 ){
+      limit = "10"
+    }
+
     let params = new HttpParams().set("ordering",ordering).set("limit",limit);
     if(nextUrl){
       return this.http.get(`${nextUrl}`);

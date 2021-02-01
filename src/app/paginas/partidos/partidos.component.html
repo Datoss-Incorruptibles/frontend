@@ -104,18 +104,17 @@
                             </div>
     
                             <div class="indicador">
-                                <mat-icon   class="fondoSentencias" aria-hidden="true">
-                                    school
-                                </mat-icon>
-                                <label class="colorSentencias">&nbsp;{{getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Basica</label>
-                            </div>
-                    
-                            <div class="indicador">
                                 <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
                                     work
                                 </mat-icon>
                                 <label class="colorPolitico">&nbsp;{{getCantIndicador(partido,5)}} En Cargos Anteriores</label>
                                 
+                            </div>
+                            <div  class="indicador">
+                                <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
+                                    account_balance
+                                </mat-icon>
+                                <label class="colorPolitico">&nbsp;{{getCantIndicador(partido,11)}} De otros partidos</label>  
                             </div>
                             <!--
                             <div>
@@ -137,28 +136,23 @@
                                 <label class="colorSentencias"> - sin licencia Sunedu</label>
                             </div>       
                              -->   
+                             <div class="indicador">
+                                <mat-icon   class="fondoSentencias" aria-hidden="true">
+                                    school
+                                </mat-icon>
+                                <label class="colorSentencias">&nbsp;{{getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Basica</label>
+                            </div>
                             <div class="indicador">
                                 <mat-icon   class="fondoAcademico" aria-hidden="true">
                                     school
                                 </mat-icon>
                                 <label class="colorAcademico">&nbsp;{{getCantidadEdSuperior(partido)}} Ed. Superior</label>
                             </div>
-    
-                            <div  class="indicador">
-                                <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
-                                    account_balance
-                                </mat-icon>
-                                <label class="colorPolitico">&nbsp;{{getCantIndicador(partido,11)}} De otros partidos</label>  
-                            </div>
-                            <!--
-                            <div >
-                                <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
-                                    attach_money
-                                </mat-icon>
-                                <label class="colorPolitico"> S/. - Ingresos Promedio</label>  
-                            </div>
-                            -->
-    
+              
+                            <div class="indicador" >
+                                <span class="material-icons fondoPolitico" >payments</span>
+                                <label class="colorPolitico">&nbsp;{{getCantidadIngresoProm(partido)|currency:'S/.':'symbol':'4.0-0'}} Ingreso P. Anual</label>  
+                            </div>                
     
                         </div>
                     <!-- CON TABLAS SE VE MEJOR EN MOVIL

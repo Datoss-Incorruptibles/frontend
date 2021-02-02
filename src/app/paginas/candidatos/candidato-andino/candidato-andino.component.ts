@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,OnDestroy } from '@angular/core';
 import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 import { Partido } from '../../../shared/_interfaces/partido.interface';
 import { GlobalService } from "src/app/servicios/global.service";
+import { Subject, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { CHARGE } from 'src/app/shared/_constants/constant.commons';
+
 @Component({
   selector: 'app-candidato-andino',
   templateUrl: './candidato-andino.component.html',
   styleUrls: ['./candidato-andino.component.scss']
 })
 export class CandidatoAndinoComponent implements OnInit {
+  public notesText: string;
+  private notesModelChanged: Subject<string> = new Subject<string>();
+  private notesModelChangeSubscription: Subscription;
+  value = '';
+
+
 
   listOfDiferrentPages = []
   showLoader = false;
@@ -30,16 +40,27 @@ export class CandidatoAndinoComponent implements OnInit {
     private global:GlobalService
     ) {
       this.global.filterPartidoPAIndexCurrent.subscribe(message =>this.orgIdSelect = message);
+      
    }
 
+
   ngOnInit(): void { 
+    this.listenChangesOnText();
+
+    this.getParlAndiOnFilters();
+    this.getOrganizaciones();
+  }
+
+
+  getParlAndiOnFilters(){
     if (this.orgIdSelect) {
       this.getParlamentoByOrganization( String(this.orgIdSelect));
     }else{
       this.getParlamento();
     }
-    this.getOrganizaciones();
+
   }
+
   getParlamento(){
     if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
       this.listOfDiferrentPages.push(this.nextPageUrl);
@@ -134,10 +155,51 @@ export class CandidatoAndinoComponent implements OnInit {
 
   onScroll(){
     // console.log("on scrool Parlemnto andino");
-    if(this.sinSelect== true){
-      this.getParlamento();
-    }else{
-      this.getParlamentoByOrganization(String(this.orgIdSelect));
-    }
+    this.getParlAndiOnFilters();
+  }
+
+
+
+  listenChangesOnText(){
+    this.notesModelChangeSubscription = this.notesModelChanged
+    .pipe(
+      debounceTime(300),
+      distinctUntilChanged()
+    )
+    .subscribe(newText => {
+      this.notesText = newText;
+
+      if(this.notesText == ''){
+        this.reset()
+        this.getParlAndiOnFilters();
+        // console.log(this.notesText, "entre");
+      }else{
+        this.restApiService.searchCandidato(this.notesText,CHARGE.PARLAMENTO_ANDINO).subscribe((res :any)=>{
+          this.listParAndino = res.results;
+          // console.log(this.listParAndino);
+
+        })
+      }
+      // console.log(newText);
+    });
+  }
+
+  search(value){
+    this.notesModelChanged.next(value);
+  }
+
+  ngOnDestroy() {
+    this.notesModelChangeSubscription.unsubscribe();
+  }
+
+  reset(){
+    this.listParAndino = [];
+
+    this.orgIdSelect = "";
+    this.sinSelect = true;
+    this.listOfDiferrentPages = []
+
+    this.nextPageUrl = "start";
+    this.listParlAndinoPageX;
   }
 }

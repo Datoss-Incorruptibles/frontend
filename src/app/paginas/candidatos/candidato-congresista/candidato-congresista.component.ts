@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , OnDestroy  } from '@angular/core';
 import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 import { Region } from '../../../shared/_interfaces/region';
 import { Partido } from '../../../shared/_interfaces/partido.interface';
 import { GlobalService } from "src/app/servicios/global.service";
+import { Subject, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { CHARGE } from 'src/app/shared/_constants/constant.commons';
 
 @Component({
   selector: 'app-candidato-congresista',
@@ -12,6 +15,11 @@ import { GlobalService } from "src/app/servicios/global.service";
   styleUrls: ['./candidato-congresista.component.scss']
 })
 export class CandidatoCongresistaComponent implements OnInit {
+
+  public notesText: string;
+  private notesModelChanged: Subject<string> = new Subject<string>();
+  private notesModelChangeSubscription: Subscription;
+  value = '';
 
 
   listOfDiferrentPages = []
@@ -22,7 +30,7 @@ export class CandidatoCongresistaComponent implements OnInit {
   regSelect: string;
   orgSelect: string;
 
-  unigeoIdSelect= ""; // Inicializado desde el servicio
+  unigeoIdSelect = ""; // Inicializado desde el servicio
   orgIdSelect :any;
   
   sinSelectRegion= true;
@@ -40,19 +48,34 @@ export class CandidatoCongresistaComponent implements OnInit {
       this.global.filterRegionIndexCurrent.subscribe(message =>
         {
           this.unigeoIdSelect = message; 
+          // console.log( this.unigeoIdSelect);
+          
           if(this.unigeoIdSelect) this.sinSelectRegion = false
 
         });
       this.global.filterPartidoIndexCurrent.subscribe(message =>
         {
           this.orgIdSelect = message;
+          // console.log( this.orgIdSelect);
+
           if(this.orgIdSelect) this.sinSelectPartido = false
         }
         );
 
      }
 
+
   ngOnInit(): void {
+    this.getCongresistasOnFilters();
+    // this.getCongresistasByRegion(this.unigeoIdSelect);//todos los partidos de Lima
+    this.getRegiones();
+    this.getOrganizaciones();
+
+    this.listenChangesOnText()
+
+  }
+
+  getCongresistasOnFilters(){
     if(this.sinSelectPartido== true  && this.sinSelectRegion == false){
       this.getCongresistasByRegion(this.unigeoIdSelect);
     }else if(this.sinSelectPartido==true  && this.sinSelectRegion == true){
@@ -60,13 +83,9 @@ export class CandidatoCongresistaComponent implements OnInit {
     }else if(this.sinSelectPartido==false  && this.sinSelectRegion == true){
       this.getCongresistasByOrganizacion(String(this.orgIdSelect));
     }else{
-    this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect);
+    this.getCongresistasByOrganizacionAndRegion(String(this.orgIdSelect),this.unigeoIdSelect);
     }
-    // this.getCongresistasByRegion(this.unigeoIdSelect);//todos los partidos de Lima
-    this.getRegiones();
-    this.getOrganizaciones();
   }
-
 
   onFiltrar(){
     //reset list
@@ -74,18 +93,7 @@ export class CandidatoCongresistaComponent implements OnInit {
     this.nextPageUrl = "start";
     // console.log(this.unigeoIdSelect); 
     // console.log(this.orgIdSelect);
-    if(this.sinSelectPartido==true  && this.sinSelectRegion == false){
-      this.getCongresistasByRegion(this.unigeoIdSelect);
-    }else if(this.sinSelectPartido==true  && this.sinSelectRegion == true){
-      this.getCongresistas();
-    }else if(this.sinSelectPartido==false  && this.sinSelectRegion == true){
-      this.getCongresistasByOrganizacion(String(this.orgIdSelect));
-    }else{
-
-    // console.log(this.unigeoIdSelect);
-    // console.log(this.regSelect);
-    this.getCongresistasByOrganizacionAndRegion(String(this.orgIdSelect),this.unigeoIdSelect);
-    }
+    this.getCongresistasOnFilters()
   }
   onFiltroRegion(value: any ){
     if(value=="sinseleccion1"){
@@ -183,7 +191,9 @@ export class CandidatoCongresistaComponent implements OnInit {
     }
   }
   getCongresistasByOrganizacionAndRegion( organizacionId: string,unigeoId: string){
+
     if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
+
       this.listOfDiferrentPages.push(this.nextPageUrl);
     
       if(this.nextPageUrl == null)  {
@@ -251,15 +261,53 @@ export class CandidatoCongresistaComponent implements OnInit {
 
   onScrollB(){
     // console.log("on scrool CONGRESISTAS");
-    if(this.sinSelectPartido==true  && this.sinSelectRegion == false){
-      this.getCongresistasByRegion(this.unigeoIdSelect);
-    }else if(this.sinSelectPartido==true  && this.sinSelectRegion == true){
-      this.getCongresistas();
-    }else if(this.sinSelectPartido==false  && this.sinSelectRegion == true){
-      this.getCongresistasByOrganizacion(String(this.orgIdSelect));
-    }else{
-    this.getCongresistasByOrganizacionAndRegion( String(this.orgIdSelect),this.unigeoIdSelect);
-    }
+    this.getCongresistasOnFilters()
     
+    
+  }
+
+  listenChangesOnText(){
+    this.notesModelChangeSubscription = this.notesModelChanged
+    .pipe(
+      debounceTime(300),
+      distinctUntilChanged()
+    )
+    .subscribe(newText => {
+      this.notesText = newText;
+
+      if(this.notesText == ''){
+        this.reset()
+        this.getCongresistasOnFilters();
+        // console.log(this.notesText, "entre");
+        
+      }else{
+        this.restApiService.searchCandidato(this.notesText,CHARGE.CONGRESISTA).subscribe((res :any)=>{
+          this.congresistas = res.results;
+        })
+      }
+    });
+  }
+
+  search(value){
+    this.notesModelChanged.next(value);
+  }
+
+  ngOnDestroy() {
+    this.notesModelChangeSubscription.unsubscribe();
+  }
+
+  reset(){
+    this.congresistas = [];
+
+    this.unigeoIdSelect = "140100"; // Inicializado desde el servicio
+    this.orgIdSelect = "";
+    
+    this.sinSelectRegion= false;
+    this.sinSelectPartido = true;
+  
+    this.listOfDiferrentPages = []
+
+    this.nextPageUrl = "start";
+    this.candidatoPageX;
   }
 }

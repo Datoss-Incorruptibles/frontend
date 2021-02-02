@@ -231,11 +231,16 @@ export class RestApiService {
 
 
   // https://api-dev.candidatos.pe/v1/candidato/?search=veronica
-  searchCandidato(value){
+  searchCandidato(value,cargo_id){
     let search = value;
     let _url = this.domain + URL_API.candidato;
-    let limit = "5";
-    let params = new HttpParams().set("search",search).set("limit",limit);
+    let limit = "10";
+    let id_cargos = cargo_id;
+    
+    let params = new HttpParams()
+    .set("search",search)
+    .set("limit",limit)
+    .set("cargo_ids", id_cargos);
 
     return this.http.get(_url,{ headers: this.httpOptions.headers, params: params}); 
 

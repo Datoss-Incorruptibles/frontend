@@ -1,29 +1,44 @@
 
 <div *ngIf="congresistas">
-    <div class="filtrado">
-        <mat-form-field appearance="fill" class="filterRegion">
-            <mat-label>Filtro: Región</mat-label>
-            <mat-select [(value)]="unigeoIdSelect"  (selectionChange)="onFiltroRegion($event.value)">
-                <mat-option value="sinseleccion1" >SIN SELECCIÓN</mat-option>
-                <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
-                    {{region.distrito_electoral}}
-                </mat-option>    
-            </mat-select>
-        </mat-form-field>
-    
-        <mat-form-field appearance="fill" class="filterOrg">
-            <mat-label>Filtro: Partido</mat-label>
-            <mat-select  [(value)]="orgIdSelect" (selectionChange)="onFiltroOrganizacion($event.value)">
-                <mat-option value="sinseleccion2" >SIN SELECCIÓN</mat-option>
-                <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
-                    {{partido.nombre}}
-                </mat-option>    
-            </mat-select>
-        </mat-form-field>
+    <div class="wraper-filtrado-search">
+        <div class="filtrado" *ngIf="!notesText">
+            <mat-form-field appearance="fill" class="filterRegion">
+                <mat-label>Filtro: Región</mat-label>
+                <mat-select [(value)]="unigeoIdSelect"  (selectionChange)="onFiltroRegion($event.value)">
+                    <mat-option value="sinseleccion1" >SIN SELECCIÓN</mat-option>
+                    <mat-option *ngFor="let region of REGIONES" [value] = "region.id">
+                        {{region.distrito_electoral}}
+                    </mat-option>    
+                </mat-select>
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill" class="filterOrg">
+                <mat-label>Filtro: Partido</mat-label>
+                <mat-select  [(value)]="orgIdSelect" (selectionChange)="onFiltroOrganizacion($event.value)">
+                    <mat-option value="sinseleccion2" >SIN SELECCIÓN</mat-option>
+                    <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
+                        {{partido.nombre}}
+                    </mat-option>    
+                </mat-select>
+            </mat-form-field>
+        </div>
 
+        <div class="search" *ngIf="(unigeoIdSelect == '' || unigeoIdSelect == 'sinseleccion1' || unigeoIdSelect == '140100') && (orgIdSelect == 'sinseleccion2' || orgIdSelect == '') ">
+            <mat-form-field class="example-form-field">
+                <mat-label>
+                    Buscar congresistas
+                </mat-label>
+                <input 
+                matInput 
+                placeholder="Donald trump"
+                type="text" 
+                (keyup)="search($event.target.value)"
+                >
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </div>
+        
     </div>
-    
-    
     <div
         class="scrollB"
         infiniteScroll
@@ -31,13 +46,16 @@
         [infiniteScrollThrottle]="50"
         (scrolled)="onScrollB()"
         [scrollWindow]="false"
-    
+        [infiniteScrollDisabled] = "notesText"
+
         >
         <span [ngSwitch]="congresistas.length">
             <span *ngSwitchCase = 0 >
               <div class="container2">
                 <span >
-                    <strong> Sin Candidatos en la region </strong>        
+                    <strong>                    
+                         No se encontraron candidatos...
+                    </strong>        
                 </span>
               </div>
         

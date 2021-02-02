@@ -1,20 +1,47 @@
-<mat-progress-bar mode="indeterminate" *ngIf="!presidentes" ></mat-progress-bar>
 
-<div
-class="scrollA"
-infiniteScroll
-[infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="50"
-[scrollWindow]="false"
-(scrolled)="onScrollA()"
->
 <div class="wrapper">
-    <div *ngFor="let candidato of presidentes" class="presidente">
-        <app-card-candidato [candidato]="candidato" [fromPresidente]="fromPresidente"></app-card-candidato> 
+
+    <mat-progress-bar mode="indeterminate" *ngIf="!presidentes" ></mat-progress-bar>
+    <div class="search">
+        <mat-form-field class="example-form-field">
+            <mat-label>
+                Buscar presidente
+            </mat-label>
+            <input 
+            matInput 
+            placeholder="Donald trump"
+            type="text" 
+            (keyup)="search($event.target.value)"
+            >
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
     </div>
-    <div class="spinner">
-        <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+    <!-- [attr.infiniteScrollDisabled]="notesText ? 'true' : 'false'" -->
+
+    <div
+    class="scrollA"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    [scrollWindow]="false"
+    (scrolled)="onScrollA()"
+    [infiniteScrollDisabled] = "notesText"
+    >
+        <div class="wrapper-candidatos">
+            <div *ngFor="let candidato of presidentes" class="presidente">
+                <app-card-candidato [candidato]="candidato" [fromPresidente]="fromPresidente"></app-card-candidato> 
+            </div>
+            <div class="spinner">
+                <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+            </div>
+        </div>
+        <div class="nofound" *ngIf="presidentes && presidentes.length == 0">
+            <p>
+                <strong>
+                    No se encontraron candidatos...
+                </strong>
+            </p>
+        </div>
     </div>
-</div>
 
 </div>

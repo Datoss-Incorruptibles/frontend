@@ -6,7 +6,7 @@ import { BehaviorSubject } from "rxjs";
 export class GlobalService {
 
   // filtros por region 
-  filterRegionSource = new BehaviorSubject('140100')
+  filterRegionSource = new BehaviorSubject('140100') //seteado lima por defecto
   filterRegionIndexCurrent = this.filterRegionSource.asObservable();
 
 
@@ -14,11 +14,11 @@ export class GlobalService {
   filterPartidoSource = new BehaviorSubject('')
   filterPartidoIndexCurrent = this.filterPartidoSource.asObservable();
 
-   // filtro candidatos por partido y solo P.Andino
-   filterPartidoPASource = new BehaviorSubject('')
-   filterPartidoPAIndexCurrent = this.filterPartidoPASource.asObservable();
- 
- 
+  // filtro candidatos por partido y solo P.Andino
+  filterPartidoPASource = new BehaviorSubject('')
+  filterPartidoPAIndexCurrent = this.filterPartidoPASource.asObservable();
+
+
 
 
   // tab navigator 1 : CAndidatos

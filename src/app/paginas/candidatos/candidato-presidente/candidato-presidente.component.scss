@@ -14,8 +14,28 @@
 }
 
 
-
 .wrapper{
+  position: relative;
+}
+.search{
+  margin-top: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+    mat-form-field{
+      max-width:300px;
+      min-width: 150px;
+    }
+
+  input {
+    caret-color: rgb(0, 0, 0);
+  }
+}
+
+.wrapper-candidatos{
   display: flex;
   align-content: space-between;
   justify-content: space-evenly;
@@ -34,11 +54,8 @@
   }
 }
 
-// @media only screen and (min-width: 1250px) {
-//   .presidente{
-//     // max-width: 600px ;
-//     // min-width: 500px;
-//     width: 300px ;
-
-//   }
-// }
+.nofound{
+  color: #2c4484;
+  font-size: medium;
+  margin: 10px;
+}

@@ -173,22 +173,28 @@
       <div *ngIf="candidato.ingresos">
         <div *ngFor="let ingreso of candidato.ingresos" class="indicador-detail">
             <div>
-             INGRESO PRIVADO: {{ingreso.otros_ingresos_privado}} 
+              <span *ngIf="ingreso.otros_ingresos_privado == 0">INGRESO PRIVADO: S/. 0.0 </span>
+              <span *ngIf="ingreso.otros_ingresos_privado != 0">INGRESO PRIVADO: {{ingreso.otros_ingresos_privado|currency:'S/.':'symbol':'4.0-0'}}</span>
             </div>
-            <div class="centro_trabajo">
-              INGRESO PUBLICO: {{ingreso.otros_ingresos_publico}} 
+            <div >
+              <span *ngIf="ingreso.otros_ingresos_publico == 0">INGRESO PUBLICOS: S/. 0.0 </span>
+              <span *ngIf="ingreso.otros_ingresos_publico != 0">INGRESO PUBLICOS: {{ingreso.otros_ingresos_publico|currency:'S/.':'symbol':'4.0-0'}}</span>
             </div>
-            <div  class="anio_trabajo_desde">
-             RENTA BRUTA PRIVADA: {{ingreso.renta_bruta_privado}}
+            <div >
+              <span *ngIf="ingreso.renta_bruta_privado == 0">RENTA BRUTA PRIVADA: S/. 0.0 </span>
+              <span *ngIf="ingreso.renta_bruta_privado != 0">RENTA BRUTA PRIVADA: {{ingreso.renta_bruta_privado|currency:'S/.':'symbol':'4.0-0'}}</span>
             </div>
-            <div   class="anio_trabajo_desde">
-              RENTA BRUTA PUBLICA: {{ingreso.renta_bruta_publico}}
+            <div  >
+              <span *ngIf="ingreso.renta_bruta_publico == 0">RENTA BRUTA PUBLICA: S/. 0.0 </span>
+              <span *ngIf="ingreso.renta_bruta_publico != 0">RENTA BRUTA PUBLICA: {{ingreso.renta_bruta_publico|currency:'S/.':'symbol':'4.0-0'}}</span>
              </div>
-             <div class="centro_trabajo">
-              RENTA INDIVIDUAL PRIVADA: {{ingreso.renta_individual_privado}} 
+             <div >
+              <span *ngIf="ingreso.renta_individual_privado == 0">RENTA INDIVIDUAL PRIVADA: S/. 0.0 </span>
+              <span *ngIf="ingreso.renta_individual_privado!= 0">RENTA INDIVIDUAL PRIVADA: {{ingreso.renta_individual_privado|currency:'S/.':'symbol':'4.0-0'}}</span>
              </div>
-             <div class="centro_trabajo">
-              RENTA INDIVIDUAL PUBLICA: {{ingreso.renta_individual_publico}} 
+             <div >
+              <span *ngIf="ingreso.renta_individual_publico == 0">RENTA INDIVIDUAL PUBLICA: S/. 0.0 </span>
+              <span *ngIf="ingreso.renta_individual_publico!= 0">RENTA INDIVIDUAL PUBLICA: {{ingreso.renta_individual_publico|currency:'S/.':'symbol':'4.0-0'}} </span>
              </div>
              <div class="centro_trabajo">
                AÑO {{ingreso.anio_ingresos}}
@@ -218,7 +224,7 @@
               {{inmueble.tipo}} - SUNARP {{inmueble.partida_sunarp}}
             </div>
             <div  *ngIf="inmueble.valor" class="anio_trabajo_desde">
-             S/. {{inmueble.valor}}
+            {{inmueble.valor|currency:'S/.':'symbol':'4.0-0'}}
             </div>
         </div>
       </div>
@@ -253,7 +259,7 @@
             </span>
           </div>
           <div *ngIf="mueble.valor" class="centro_trabajo">
-            S/.  {{mueble.valor}} 
+            {{mueble.valor|currency:'S/.':'symbol':'4.0-0'}} 
           </div>
         </div>
       </div>

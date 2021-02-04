@@ -25,11 +25,14 @@ export class AppComponent implements OnInit  {
     try {
       if(localStorage.getItem("ids")){
         let ids = localStorage.getItem("ids")
+        // console.log(ids);
         let idsObj:any = JSON.parse(ids);
-        if( idsObj && idsObj["nomerepresenta"]){
+        if( idsObj && idsObj["noMeRepresenta"]){
+          // console.log("entre a nomerepresenta");
           localStorage.removeItem("ids")
         } 
-        if( idsObj &&  idsObj["merepresent"]){
+        if( idsObj &&  idsObj["meRepresenta"]){
+          // console.log("entre a merepresent");
           localStorage.removeItem("ids")
         } 
       }

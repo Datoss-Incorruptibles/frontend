@@ -27,7 +27,7 @@ export class MilistaComponent implements OnInit {
   }
 
   getMisCandidatos(){
-    let ids  = localStorage.getItem('ids');
+    let ids  = localStorage.getItem('ids_v1');
     let idsObj:any = JSON.parse(ids);
     // console.log(idsObj);
     

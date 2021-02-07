@@ -46,6 +46,7 @@ export class CandidatoCongresistaComponent implements OnInit {
 
   txtselecEdu:string;
   txtselecSentencias:string;
+  panelOpenState = false;
 
   constructor(
     private restApiService: RestApiService,

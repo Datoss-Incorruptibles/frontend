@@ -41,7 +41,7 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .filterRegion ,.filterOrg{
+  .filterRegion ,.filterOrg,.filterEdu,.filterSentencias{
     font-size:10px ;
     width: 120px !important;
     }
@@ -63,7 +63,7 @@
     overflow: scroll;
     // background-color:red;
   }
-  mat-form-field{
+  mat-form-field,mat-accordion{
       margin-left: 10px;
   }
 
@@ -90,8 +90,6 @@
   margin: 20px 5px 40px 5px;
 
 }
-
-
   
 @media only screen and (max-width: 400px) {
   .congresistas{

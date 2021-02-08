@@ -19,24 +19,7 @@ export class RestApiService {
   constructor(private http: HttpClient) { }
 
 
-  //ORGANIZACION POLITICA
-  getPresidente(nextUrl?) {
-    let _url = this.domain + URL_API.candidato;
-    let id_cargos = CHARGE.PRESIDENTE;
-
-    let limit = "5";
-    let width = window.innerWidth;    
-    if(width > 900 ){
-      limit = "10"
-    }
-    let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", limit);//Create new HttpParams
-    if(nextUrl){
-      return this.http.get(`${nextUrl}`);
-    }else{
-      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
-    }
-  }
-
+//ORGANIZACION POLITICA
   getOrganizacionPolitica(nextUrl?) {
 
     let _url = this.domain + URL_API.organizacionpolitica;
@@ -56,6 +39,22 @@ export class RestApiService {
 
   }
   //PRESIDENTES
+  getPresidente(nextUrl?) {
+    let _url = this.domain + URL_API.candidato;
+    let id_cargos = CHARGE.PRESIDENTE;
+
+    let limit = "5";
+    let width = window.innerWidth;    
+    if(width > 900 ){
+      limit = "10"
+    }
+    let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", limit);//Create new HttpParams
+    if(nextUrl){
+      return this.http.get(`${nextUrl}`);
+    }else{
+      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
+    }
+  }
 
   getPresidenteByOrganization(idOrganization: string,nextUrl?) {
     let _url = this.domain + URL_API.candidato;
@@ -229,12 +228,16 @@ export class RestApiService {
     }
   }
 
-
   // https://api-dev.candidatos.pe/v1/candidato/?search=veronica
   searchCandidato(value,cargo_id){
     let search = value;
     let _url = this.domain + URL_API.candidato;
-    let limit = "10";
+    let limit = "5";
+
+    let width = window.innerWidth;
+    if(width > 900 ){
+      limit = "14"
+    }
     let id_cargos = cargo_id;
     
     let params = new HttpParams()
@@ -245,7 +248,51 @@ export class RestApiService {
     return this.http.get(_url,{ headers: this.httpOptions.headers, params: params}); 
 
   }
+//https://api-dev.candidatos.pe/v1/candidato/?indicador_ids=8,9&max_estudios_ids=4,5&ubigeo_postula=010000&organizacion_politica_id=1&cargo_ids=1
+  getCandidatobyAllCriterios(cargo_ids,organizacion_politica_id,ubigeo_postula,max_estudios_ids,indicador_ids,nextUrl?){
+    console.log( "valores:"+cargo_ids+","+organizacion_politica_id+","+ubigeo_postula+","+max_estudios_ids+","+indicador_ids)
+    let _url = this.domain + URL_API.candidato;
+    let limit = "5";
 
+    let width = window.innerWidth;
+    if(width > 900 ){
+      limit = "14"
+    }
+
+    let params = new HttpParams()
+    .set("cargo_ids",cargo_ids)
+    .set("limit",limit)
+    .set("organizacion_politica_id",organizacion_politica_id)
+    .set("ubigeo_postula",ubigeo_postula)
+    .set("max_estudios_ids",max_estudios_ids)
+    .set("inidicadorids",indicador_ids);
+   /* if(organizacion_politica_id!=null && organizacion_politica_id!=""){
+      console.log("entro")
+      params.set("organizacion_politica_id",organizacion_politica_id);
+      console.log(params);
+    }
+    if(ubigeo_postula!=null && ubigeo_postula!=""){
+      console.log("entro1")
+      params.set("ubigeo_postula",ubigeo_postula);
+      console.log(params);
+    }
+    if (max_estudios_ids!=null && max_estudios_ids!=null){
+      console.log("entro2")
+      params.set("max_estudios_ids",max_estudios_ids);
+      console.log(params);
+    }
+    if (indicador_ids!=null && indicador_ids!="" ){
+      console.log("entro3")
+      params.set("inidicadorids",indicador_ids);
+      console.log(params);
+    }*/
+    console.log(params);
+    if(nextUrl){
+      return this.http.get(`${nextUrl}`);
+    }else{
+      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params}); 
+    }
+  }
 
 
 

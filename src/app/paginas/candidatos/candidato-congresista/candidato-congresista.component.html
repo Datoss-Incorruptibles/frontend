@@ -21,7 +21,36 @@
                     </mat-option>    
                 </mat-select>
             </mat-form-field>
-        </div>
+            <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{panelOpenState ? 'Menos' : 'Más'}} Filtros
+                </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field appearance="fill" class="filterEdu">
+                    <mat-label>Filtro: Max. Educación</mat-label>
+                    <mat-select [formControl]="selecEdu"(selectionChange)="onFiltroEdu()" multiple>
+                        <mat-option value="1">Educación primaria</mat-option>
+                        <mat-option value="2">Educación secundaria</mat-option>
+                        <mat-option value="3">Estudios técnicos</mat-option>
+                        <mat-option value="4">Estudios no universitarios</mat-option>
+                        <mat-option value="5">Universitario</mat-option>
+                        <mat-option value="6">Post grado</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill" class="filterSentencias">
+                    <mat-label>Filtro: Sentencias</mat-label>
+                    <mat-select [formControl]="selecSentencias" (selectionChange)="onFiltroSentencias()"multiple>
+                        <mat-option value="1">Sentencias Civiles</mat-option>
+                        <mat-option value="2">Sentencias Penales</mat-option>
+                    </mat-select>
+                </mat-form-field>
+             </mat-expansion-panel>
+            </mat-accordion>
+            <div>
 
         <div class="search" *ngIf="(unigeoIdSelect == '' || unigeoIdSelect == 'sinseleccion1' || unigeoIdSelect == '140100') && (orgIdSelect == 'sinseleccion2' || orgIdSelect == '') ">
             <mat-form-field class="example-form-field">

@@ -23,7 +23,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 //
 import { HttpClientModule } from '@angular/common/http';
 
@@ -118,6 +118,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     MatAutocompleteModule,
     SharedModule,
     ScrollingModule,
+    MatExpansionModule,
     InfiniteScrollModule],
   providers: [],
   bootstrap: [AppComponent]

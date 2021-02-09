@@ -18,13 +18,13 @@
                                 <p>Fuente: {{ medio.medio }} </p>
                             </mat-card-content>
                             <div *ngIf="medio.tipo == 'video'">
-                                <p>{{ videoEmbed }}</p>
                                 
+                                
+                                
+                                <iframe width="360" height="200" [src]=youtubeEmbed(medio.url) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <!--
-                                <iframe width="360" height="200" [src]=youtubeEmbed({{medio.url}}) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                -->
                                 <iframe width="360" height="200" [src]=videoEmbedSanitized  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+                                -->
                                 <!--<iframe width="360" height="200" src="https://www.youtube.com/embed/JaqDOOrRYog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
                                 
                                 <!--

@@ -1,6 +1,7 @@
 import { importExpr } from "@angular/compiler/src/output/output_ast";
 
 import { IndicadorCandidato } from './indicador-candidato';
+import { MedioCandidato } from './medio-candidato';
 
 export interface Candidato{
     id: number;
@@ -28,4 +29,5 @@ export interface Candidato{
     fecha_registro: string;
     fecha_modificacion: null;
     indicadores: IndicadorCandidato[];
+    medios: MedioCandidato[];
 }

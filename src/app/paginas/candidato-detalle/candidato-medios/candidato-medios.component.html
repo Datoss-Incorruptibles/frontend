@@ -1,0 +1,79 @@
+<div class="wrapper">
+
+    <!--<mat-progress-bar mode="indeterminate" *ngIf="!candidato" ></mat-progress-bar>-->
+    <div class="wrapper-noticias">
+
+        <div *ngIf="candidato" class="candidato">
+            <mat-card class="mat-card mat-focus-indicator">
+                <div *ngIf="candidato.medios">
+                    <div *ngFor="let medio of candidato.medios" class="medio">
+                        <mat-card class="card-politico">
+                            <a href="{{ medio.url }}">
+                            <mat-card-title class="medio-titulo">{{ medio.titulo }}</mat-card-title>
+                            </a>
+                            <mat-card-content>
+                                <p> {{ medio.url }}</p>
+                                <p> {{ medio.tipo }} </p>
+                                <p> {{ medio.fecha }} </p>
+                                <p> {{ medio.medio }} </p>
+                            </mat-card-content>
+                            <div *ngIf="medio.tipo == 'video'">
+                                <p>{{ videoEmbed }}</p>
+                                
+                                <iframe width="360" height="200" src="{{ getVideoId(medio.url) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                
+                                <!--<iframe width="360" height="200" src="https://www.youtube.com/embed/JaqDOOrRYog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                                
+                                <!--
+                                <div class="youtube-player" data-id="JaqDOOrRYog"></div>
+                                -->
+
+                                <!-- https://www.youtube.com/embed/S0BGItjA7YE -->
+                            </div>
+                        </mat-card>
+                    </div> 
+                </div>
+                
+                <div *ngIf="candidato.medios==null" class="nofound">
+                    <h1><strong>Noticias próximamente</strong></h1>
+                </div>
+
+            </mat-card>
+        </div>
+
+    </div>
+    
+</div>
+<!--
+<script>
+ document.addEventListener("DOMContentLoaded",
+    function() {
+    var div, n,
+    v = document.getElementsByClassName("youtube-player");
+    for (n = 0; n < v.length; n++) {
+    div = document.createElement("div");
+    div.setAttribute("data-id", v[n].dataset.id);
+    div.innerHTML = labnolThumb(v[n].dataset.id);
+    div.onclick = labnolIframe;
+    v[n].appendChild(div);
+    }
+    });
+    
+    function labnolThumb(id) {
+    var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+    play = '<div class="play"></div>';
+    return thumb.replace("ID", id) + play;
+    }
+    
+    function labnolIframe() {
+    var iframe = document.createElement("iframe");
+    var embed = "https://www.youtube.com/embed/ID";
+    iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allowfullscreen", "1");
+    this.parentNode.replaceChild(iframe, this);
+    }
+    
+   </script>
+
+-->

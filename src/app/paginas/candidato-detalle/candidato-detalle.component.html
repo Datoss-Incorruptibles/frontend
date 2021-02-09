@@ -9,9 +9,10 @@
     <!-- <mat-tab label="Propuestas">
     </mat-tab>
     <mat-tab label="Equipo">
-    </mat-tab>  
+    </mat-tab>  -->
     <mat-tab label="Medios">
-    </mat-tab>   -->
+        <app-candidato-medios [candidato]="candidato"></app-candidato-medios>
+    </mat-tab>
   </mat-tab-group>
   <div class="goBack">
     <button (click)="goBack()" mat-raised-button color="primary">Volver</button>

@@ -68,6 +68,7 @@ mat-sidenav {
 main {
    width: 100%;
    background-color: #D5E4FF;
+   height: 100%;
 }
 .content{
     padding: 20px 12px;
@@ -80,4 +81,12 @@ main {
         position: absolute;
         right:10px;
     }
+}
+
+mat-sidenav-container {
+    height: 100%;
+    background-color: #D5E4FF;
+}
+mat-sidenav-content {
+    /*height: 100%;*/
 }

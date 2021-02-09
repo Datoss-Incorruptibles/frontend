@@ -1,0 +1,159 @@
+.wrapper{
+  position: relative;
+}
+
+.wrapper-candidatos{
+  display: flex;
+  align-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.medio {
+  width: 400px ;
+  margin: 20px 5px 40px 5px;
+}
+
+@media only screen and (max-width: 400px) {
+  .medio{
+    width: 100% ;
+
+  }
+}
+.nofound{
+  color: #2c4484;
+  font-size: medium;
+  margin: 10px;
+  text-align: center;
+}
+.medio-titulo {
+  color: #2c4484;
+}
+
+/*
+.candidato{
+    
+    margin-right: 5px;
+    margin-bottom: 5px;
+  
+  
+  
+    mat-card{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  
+  
+    }
+    mat-card  > div{
+      margin-bottom:20px;
+      width: 450px;
+  
+    }
+    
+  
+    /*
+  
+  }
+  
+  .card-politico{
+    height: 250px;
+    width: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #999;
+    
+    .mat-card-header{
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    }
+    .mat-card-content{
+        min-height: 150px;
+        padding-top: 5px;
+    }
+    .mat-card-actions{
+        position: absolute;
+        bottom:10px;
+        left: 0;
+        width: 100%;
+
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        .line{
+            width: 90%;
+        }
+        .texto{
+            display: flex;
+            align-items: center;
+        }
+        
+    }
+}
+*/
+.card-politico {
+  a {
+    text-decoration: none;
+  }
+}
+
+
+.youtube-player {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  margin: 5px;
+}
+
+.youtube-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: transparent;
+}
+
+.youtube-player img {
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    -webkit-transition: .4s all;
+    -moz-transition: .4s all;
+    transition: .4s all;
+}
+
+.youtube-player img:hover {
+    -webkit-filter: brightness(75%);
+}
+
+.youtube-player .play {
+    height: 72px;
+    width: 72px;
+    left: 50%;
+    top: 50%;
+    margin-left: -36px;
+    margin-top: -36px;
+    position: absolute;
+    background: url("//i.imgur.com/TxzC70f.png") no-repeat;
+    cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-candidato-medios',
@@ -8,14 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CandidatoMediosComponent implements OnInit {
   @Input() candidato;
   videoEmbed = "";
-  constructor() {}
+  videoEmbedSanitized:any;
+
+  constructor(private _sanitizer: DomSanitizer) {}
   /*
   ngOnInit(): void {
   }
   */
   ngOnInit(): void {
-    /*
-    this.youtubeEmbed();*/
+
+    this.youtubeEmbed()
   }
   
   youtubeEmbed(): void {
@@ -34,8 +37,18 @@ export class CandidatoMediosComponent implements OnInit {
           let videoURL = medios[i].url
           let videoId = videoURL.substr(32)
           console.log(videoId)
-          this.videoEmbed = "https://www.youtube.com/embed/"+videoId
 
+          // el problema era un tema de seguridad de angular para prevenir XSS :
+          // https://stackoverflow.com/questions/38037760/how-to-set-iframe-src-without-causing-unsafe-value-exception
+          
+          // lo otro es que la  url esta llegando mal del back : p=desktop&v=2G_NYFJq1ps
+          // this.videoEmbed = "https://www.youtube.com/embed/"+videoId  
+
+
+          this.videoEmbed = "https://www.youtube.com/embed/"+"2G_NYFJq1ps"
+          this.videoEmbedSanitized = this._sanitizer.bypassSecurityTrustResourceUrl(this.videoEmbed)
+          console.log(this.videoEmbedSanitized);
+          
           console.log(this.videoEmbed)
           console.log("")
 
@@ -45,11 +58,10 @@ export class CandidatoMediosComponent implements OnInit {
     }
   }
 
-  getVideoId(url: string): string {
-    let video = url.substr(32)
-    let videoEmbed = "https://www.youtube.com/embed/"+video
-    return videoEmbed
-  } 
+  // getVideoId(url: string): string {
+  //   let video = url.substr(32)
+  //   let videoEmbed = "https://www.youtube.com/embed/"+video
+  //   return videoEmbed
+  // } 
 
-    
 }

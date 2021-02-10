@@ -35,6 +35,7 @@
 }
 .medio-titulo {
   color: #2c4484;
+  font-size: large;
 }
 
 /*
@@ -74,7 +75,7 @@
     box-shadow: 2px 2px 5px #999;
 
     .mat-card-title{
-      min-height: 90px;
+      min-height: 75px;
     }
     .mat-card-content{
         min-height: 5px;
@@ -105,6 +106,11 @@ mat-card-footer {
   color: #999;
   padding-right: 5px;
   padding-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+  p {
+    margin: 5px 15px;
+  }
 }
 
 

@@ -28,6 +28,10 @@ mat-nav-list {
     br{
         color:#ced4e2
     }
+    h2 {
+        color: white;
+        text-align: center;
+    }
 
 }
 
@@ -55,6 +59,9 @@ mat-nav-list {
         bottom: 0px;
         left:10px;
         font-size:12px
+    }
+    p {
+        margin: 0px 5px;
     }
 }
 
@@ -86,7 +93,4 @@ main {
 mat-sidenav-container {
     height: 100%;
     background-color: #D5E4FF;
-}
-mat-sidenav-content {
-    /*height: 100%;*/
 }

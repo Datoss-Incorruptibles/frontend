@@ -265,7 +265,7 @@ export class RestApiService {
     .set("organizacion_politica_id",organizacion_politica_id)
     .set("ubigeo_postula",ubigeo_postula)
     .set("max_estudios_ids",max_estudios_ids)
-    .set("inidicadorids",indicador_ids);
+    .set("indicador_ids",indicador_ids);
    /* if(organizacion_politica_id!=null && organizacion_politica_id!=""){
       console.log("entro")
       params.set("organizacion_politica_id",organizacion_politica_id);

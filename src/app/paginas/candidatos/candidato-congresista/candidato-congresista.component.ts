@@ -156,7 +156,7 @@ export class CandidatoCongresistaComponent implements OnInit {
       
       this.global.filterEducacionSource.next(this.selecEdu.value.toString());
       this.onFiltrar();
-      console.log((this.selecEdu.value).toString())
+      //console.log((this.selecEdu.value).toString())
     }
   }
 
@@ -168,7 +168,7 @@ export class CandidatoCongresistaComponent implements OnInit {
     }else{
       //this.SinSelecSentencias==false;
       this.global.filterSentenciasSource.next((this.selecSentencias.value).toString());
-      console.log((this.selecSentencias.value).toString());
+      //console.log((this.selecSentencias.value).toString());
       this.onFiltrar();
       
     }

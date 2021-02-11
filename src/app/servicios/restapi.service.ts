@@ -250,7 +250,7 @@ export class RestApiService {
   }
 //https://api-dev.candidatos.pe/v1/candidato/?indicador_ids=8,9&max_estudios_ids=4,5&ubigeo_postula=010000&organizacion_politica_id=1&cargo_ids=1
   getCandidatobyAllCriterios(cargo_ids,organizacion_politica_id,ubigeo_postula,max_estudios_ids,indicador_ids,nextUrl?){
-    console.log( "valores:"+cargo_ids+","+organizacion_politica_id+","+ubigeo_postula+","+max_estudios_ids+","+indicador_ids)
+    //console.log( "valores:"+cargo_ids+","+organizacion_politica_id+","+ubigeo_postula+","+max_estudios_ids+","+indicador_ids)
     let _url = this.domain + URL_API.candidato;
     let limit = "5";
 
@@ -266,27 +266,8 @@ export class RestApiService {
     .set("ubigeo_postula",ubigeo_postula)
     .set("max_estudios_ids",max_estudios_ids)
     .set("indicador_ids",indicador_ids);
-   /* if(organizacion_politica_id!=null && organizacion_politica_id!=""){
-      console.log("entro")
-      params.set("organizacion_politica_id",organizacion_politica_id);
-      console.log(params);
-    }
-    if(ubigeo_postula!=null && ubigeo_postula!=""){
-      console.log("entro1")
-      params.set("ubigeo_postula",ubigeo_postula);
-      console.log(params);
-    }
-    if (max_estudios_ids!=null && max_estudios_ids!=null){
-      console.log("entro2")
-      params.set("max_estudios_ids",max_estudios_ids);
-      console.log(params);
-    }
-    if (indicador_ids!=null && indicador_ids!="" ){
-      console.log("entro3")
-      params.set("inidicadorids",indicador_ids);
-      console.log(params);
-    }*/
-    console.log(params);
+
+   // console.log(params);
     if(nextUrl){
       return this.http.get(`${nextUrl}`);
     }else{

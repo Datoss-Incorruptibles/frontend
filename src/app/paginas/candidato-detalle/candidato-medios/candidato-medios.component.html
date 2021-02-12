@@ -30,19 +30,22 @@
                                 -->
                             </div>
                             <div *ngIf="medio.tipo == 'web'">
-                                <p> {{ medio.tipo }} </p>
-                                <!--
+                                <!--<p> {{ medio.tipo }} </p>
+                                
                                 <img [src]=getMetaImg(medio.url) alt="Imagen de la noticia">
                                 -->
+                                <div class="youtube-player">
+                                    <img src="https://d26lpennugtm8s.cloudfront.net/stores/674/875/products/proximamente1-32cdb1f75408df18c315669116627896-1024-1024.png" alt="Imagen Temporal">
+                                </div>
                             </div>
                         </mat-card>
                     </div> 
                 </div>
-                <!--
+                
                 <div *ngIf="candidato.medios==null" class="nofound">
                     <h1><strong>Noticias próximamente</strong></h1>
                 </div>
-                -->
+                
             </mat-card>
         </div>
 

@@ -18,7 +18,7 @@ export class CandidatoMediosComponent implements OnInit {
 
   ngOnInit(): void {
     /*this.youtubeEmbed()*/
-    console.log(this.getMetaImg("https://elcomercio.pe/politica/elecciones/keiko-fujimori-hago-llamado-a-candidatos-a-no-caer-en-el-juego-de-querer-ganar-votos-a-costa-de-la-vida-elecciones-2021-11-de-abril-nndc-noticia/"))
+    //console.log(this.getMetaImg("https://elcomercio.pe/politica/elecciones/keiko-fujimori-hago-llamado-a-candidatos-a-no-caer-en-el-juego-de-querer-ganar-votos-a-costa-de-la-vida-elecciones-2021-11-de-abril-nndc-noticia/"))
     
   }
   

@@ -104,21 +104,7 @@ export class CandidatoCongresistaComponent implements OnInit {
 
   }
 
-  getCongresistasOnFilters(){/*
-    console.log("entro");
-    if(this.sinSelectPartido== true  && this.sinSelectRegion == false && this.sinSelectEdu == true && this.SinSelecSentencias == true){
-      console.log("entro1");
-      this.getCongresistasByRegion(this.unigeoIdSelect);
-    }else if(this.sinSelectPartido==true  && this.sinSelectRegion == true && this.sinSelectEdu == true && this.SinSelecSentencias == true){
-      console.log("entro2");
-      this.getCongresistas();
-    }else if(this.sinSelectPartido==false  && this.sinSelectRegion == true && this.sinSelectEdu == true && this.SinSelecSentencias == true){
-      console.log("entro3");
-      this.getCongresistasByOrganizacion(String(this.orgIdSelect));
-    }else if(this.sinSelectPartido==false  && this.sinSelectRegion == false && this.sinSelectEdu == true && this.SinSelecSentencias == true){
-      console.log("entro4");
-      this.getCongresistasByOrganizacionAndRegion(String(this.orgIdSelect),this.unigeoIdSelect);
-    }*/
+  getCongresistasOnFilters(){
     this.getCongresistasByOrAllCriterios(this.orgIdSelect,this.unigeoIdSelect,this.txtselecEdu,this.txtselecSentencias);
   }
 
@@ -170,7 +156,7 @@ export class CandidatoCongresistaComponent implements OnInit {
       
       this.global.filterEducacionSource.next(this.selecEdu.value.toString());
       this.onFiltrar();
-      console.log((this.selecEdu.value).toString())
+      //console.log((this.selecEdu.value).toString())
     }
   }
 
@@ -182,117 +168,12 @@ export class CandidatoCongresistaComponent implements OnInit {
     }else{
       //this.SinSelecSentencias==false;
       this.global.filterSentenciasSource.next((this.selecSentencias.value).toString());
-      console.log((this.selecSentencias.value).toString());
+      //console.log((this.selecSentencias.value).toString());
       this.onFiltrar();
       
     }
   }
-/*
-  getCongresistasByRegion(unigeoIdSelect: string){
-    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
-      this.listOfDiferrentPages.push(this.nextPageUrl);
-
-      if(this.nextPageUrl == null)  {
-        //do nothing
-      }else if(this.nextPageUrl == "start"){
-        this.restApiService.getCongresistasByRegion(unigeoIdSelect).subscribe((res:any) =>{
-          this.congresistas=res.results;   
-          this.nextPageUrl = res.next ;
-          // console.log(this.congresistas);
-        }, error => {  });
-      }else if(this.nextPageUrl){
-        this.showLoader= true;
-
-        this.restApiService.getCongresistasByRegion(unigeoIdSelect,this.nextPageUrl).subscribe((res :any)=>{
-          this.candidatoPageX=<Candidato[]>res.results;            
-          this.nextPageUrl = res.next;
-          this.showLoader= false;
-
-          this.congresistas = this.congresistas.concat(this.candidatoPageX)
-          // console.log(this.congresistas);
-        }, error => {  });
-      }
-    }
-  }
-
-  getCongresistasByOrganizacion(orgIdSelect: string){
-    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
-      this.listOfDiferrentPages.push(this.nextPageUrl);
-
-      if(this.nextPageUrl == null)  {
-        //do nothing
-      }else if(this.nextPageUrl == "start"){
-        this.restApiService.getCongresistasByOrganization(orgIdSelect).subscribe((res:any) =>{
-          this.congresistas=res.results;   
-          this.nextPageUrl = res.next ;
-          // console.log(this.congresistas);
-        }, error => {  });
-      }else if(this.nextPageUrl){
-        this.showLoader= true;
-
-        this.restApiService.getCongresistasByOrganization(orgIdSelect,this.nextPageUrl).subscribe((res :any)=>{
-          this.candidatoPageX=<Candidato[]>res.results;            
-          this.nextPageUrl = res.next;
-          this.showLoader= false;
-
-          this.congresistas = this.congresistas.concat(this.candidatoPageX)
-          // console.log(this.congresistas);
-        }, error => {  });
-      }
-    }
-  }
-  getCongresistasByOrganizacionAndRegion( organizacionId: string,unigeoId: string){
-
-    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
-
-      this.listOfDiferrentPages.push(this.nextPageUrl);
-    
-      if(this.nextPageUrl == null)  {
-        //do nothing
-      }else if(this.nextPageUrl == "start"){
-        this.restApiService.getCongresistasByOrganizacionAndRegion(organizacionId,unigeoId).subscribe((res:any) =>{
-          this.congresistas=res.results;   
-          this.nextPageUrl = res.next ;
-          // console.log(this.congresistas);
-        }, error => {  });
-      }else if(this.nextPageUrl){
-        this.restApiService.getCongresistasByOrganizacionAndRegion(organizacionId,unigeoId,this.nextPageUrl).subscribe((res :any)=>{
-          this.candidatoPageX=<Candidato[]>res.results;            
-          this.nextPageUrl = res.next 
-          this.congresistas = this.congresistas.concat(this.candidatoPageX)
-          // console.log(this.congresistas);
-        }, error => {  });
-      }
-    }
-  }
-
-  getCongresistas(){
-    if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){
-      this.listOfDiferrentPages.push(this.nextPageUrl);
-
-      if(this.nextPageUrl == null)  {
-        //do nothing
-      }else if(this.nextPageUrl == "start"){
-        this.restApiService.getCongresistas().subscribe((res:any) =>{
-          this.congresistas=res.results;   
-          this.nextPageUrl = res.next ;
-          // console.log(this.congresistas);
-        }, error => {  });
-      }else if(this.nextPageUrl){
-        this.showLoader= true;
-
-        this.restApiService.getCongresistas(this.nextPageUrl).subscribe((res :any)=>{
-          this.candidatoPageX=<Candidato[]>res.results;            
-          this.nextPageUrl = res.next;
-          this.showLoader= false;
-
-          this.congresistas = this.congresistas.concat(this.candidatoPageX)
-          // console.log(this.congresistas);
-        }, error => {  });
-      }
-    }
-  }
-  */
+  
   getCongresistasByOrAllCriterios( organizacion_politica_id:string,ubigeo_postula:string,max_estudios_ids:string,indicador_ids:string){
 
     if(!this.listOfDiferrentPages.includes(this.nextPageUrl)){

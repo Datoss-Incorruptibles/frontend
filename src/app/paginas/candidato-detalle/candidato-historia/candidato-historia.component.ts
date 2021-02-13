@@ -19,11 +19,10 @@ export class CandidatoHistoriaComponent implements OnInit {
 
   filterbySentencia(){
     var sentencias =this.candidato.sentencias;
-
-    this.civil =  sentencias.filter(element => element.tipo_proceso == "civil");
-    this.penal =  sentencias.filter(element => element.tipo_proceso == "penal");
-
-
+    if(sentencias !=null){
+      this.civil =  sentencias.filter(element => element.tipo_proceso == "civil");
+      this.penal =  sentencias.filter(element => element.tipo_proceso == "penal");
+    }
   }
   
 

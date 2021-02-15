@@ -1,7 +1,12 @@
-<h2>Presidencial | Parlamento Andino</h2>
+<div class="planes">
+    <a href="#">Presidencial</a> | <a href="#">Parlamento Andino</a>
+</div>
 
+<div class="dimension">
+    <mat-icon>assignment</mat-icon>
+    <div>&nbsp; Dimensión Social</div>
+</div>
 
-<h3>Dimensión Social</h3>
 <div *ngIf="plan" class="">
     <div *ngFor="let p of plan.plan_detalles" class="">
         <div *ngIf="p.dimension_id==1" class="problem">
@@ -15,6 +20,13 @@
                         </mat-panel-description>
                         -->
                     </mat-expansion-panel-header>
+                    <!--
+                    <div *ngFor="let item of p.problema">
+                        <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
+                        <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
+                        <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
+                    </div>
+                    -->
                     <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
                     <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
                     <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
@@ -24,7 +36,12 @@
     </div>
 </div>
 <br>
-<h3>Dimensión institucional</h3>
+
+<div class="dimension">
+    <mat-icon>assignment</mat-icon>
+    <div>&nbsp; Dimensión institucional</div>
+</div>
+
 <div *ngIf="plan" class="">
     <div *ngFor="let p of plan.plan_detalles" class="">
         <div *ngIf="p.dimension_id==2" class="problem">
@@ -47,7 +64,12 @@
     </div>
 </div>
 <br>
-<h3>Dimensión económica</h3>
+
+<div class="dimension">
+    <mat-icon>assignment</mat-icon>
+    <div>&nbsp; Dimensión económica</div>
+</div>
+
 <div *ngIf="plan" class="">
     <div *ngFor="let p of plan.plan_detalles" class="">
         <div *ngIf="p.dimension_id==3" class="problem">
@@ -70,7 +92,12 @@
     </div>
 </div>
 <br>
-<h3>Dimensión territorial - ambiental</h3>
+
+<div class="dimension">
+    <mat-icon>assignment</mat-icon>
+    <div>&nbsp; Dimensión territorial - ambiental</div>
+</div>
+
 <div *ngIf="plan" class="">
     <div *ngFor="let p of plan.plan_detalles" class="">
         <div *ngIf="p.dimension_id==4" class="problem">

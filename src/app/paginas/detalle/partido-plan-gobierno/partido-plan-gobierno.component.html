@@ -1,0 +1,95 @@
+<h2>Presidencial | Parlamento Andino</h2>
+
+
+<h3>Dimensión Social</h3>
+<div *ngIf="plan" class="">
+    <div *ngFor="let p of plan.plan_detalles" class="">
+        <div *ngIf="p.dimension_id==1" class="problem">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
+                        <!--
+                        <mat-panel-description>
+                            {{panelOpenState ? 'Menos' : 'Más'}} información
+                        </mat-panel-description>
+                        -->
+                    </mat-expansion-panel-header>
+                    <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
+                    <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
+                    <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>
+<br>
+<h3>Dimensión institucional</h3>
+<div *ngIf="plan" class="">
+    <div *ngFor="let p of plan.plan_detalles" class="">
+        <div *ngIf="p.dimension_id==2" class="problem">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
+                        <!--
+                        <mat-panel-description>
+                            {{panelOpenState ? 'Menos' : 'Más'}} información
+                        </mat-panel-description>
+                        -->
+                    </mat-expansion-panel-header>
+                    <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
+                    <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
+                    <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>
+<br>
+<h3>Dimensión económica</h3>
+<div *ngIf="plan" class="">
+    <div *ngFor="let p of plan.plan_detalles" class="">
+        <div *ngIf="p.dimension_id==3" class="problem">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
+                        <!--
+                        <mat-panel-description>
+                            {{panelOpenState ? 'Menos' : 'Más'}} información
+                        </mat-panel-description>
+                        -->
+                    </mat-expansion-panel-header>
+                    <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
+                    <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
+                    <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>
+<br>
+<h3>Dimensión territorial - ambiental</h3>
+<div *ngIf="plan" class="">
+    <div *ngFor="let p of plan.plan_detalles" class="">
+        <div *ngIf="p.dimension_id==4" class="problem">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
+                        <!--
+                        <mat-panel-description>
+                            {{panelOpenState ? 'Menos' : 'Más'}} información
+                        </mat-panel-description>
+                        -->
+                    </mat-expansion-panel-header>
+                    <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
+                    <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
+                    <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>
+<br>

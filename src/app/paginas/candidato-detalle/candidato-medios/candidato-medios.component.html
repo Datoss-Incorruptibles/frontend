@@ -8,35 +8,33 @@
                 <div *ngIf="candidato.medios" class="medios">
                     <div *ngFor="let medio of candidato.medios" class="medio">
                         <mat-card class="card-politico">
+                            <mat-card-content>
+                                <div *ngIf="medio.tipo == 'video'">
+                                    <div class="youtube-player">
+                                        <iframe width="360" height="200" [src]=youtubeEmbed(medio.url) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <!--
+                                    <iframe width="360" height="200" [src]=videoEmbedSanitized  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    -->
+                                </div>
+                                <div *ngIf="medio.tipo == 'web'">
+                                    <div class="youtube-player">
+                                        <img src="{{ medio.imagen }}" alt="Imagen de la noticia"> 
+                                        <!--
+                                        <img src="https://d26lpennugtm8s.cloudfront.net/stores/674/875/products/proximamente1-32cdb1f75408df18c315669116627896-1024-1024.png" alt="Imagen Temporal">
+                                        -->
+                                    </div>
+                                </div>
+                            </mat-card-content>
+
                             <a target="_blank" href="{{ medio.url }}">
                             <mat-card-title class="medio-titulo">{{ medio.titulo }}</mat-card-title>
                             </a>
-                            <mat-card-content>
-                                <p>Más información haciendo click en el título</p>
-                                <!--<p> {{ medio.url }}</p>-->
-                                
+
                             <mat-card-footer>
-                                <p>Fecha: {{ medio.fecha }} </p>
+                                <p>{{ medio.fecha }} </p>
                                 <p>Fuente: {{ medio.medio }} </p>
                             </mat-card-footer>
-                                
-                            </mat-card-content>
-                            <div *ngIf="medio.tipo == 'video'">
-                                <div class="youtube-player">
-                                    <iframe width="360" height="200" [src]=youtubeEmbed(medio.url) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <!--
-                                <iframe width="360" height="200" [src]=videoEmbedSanitized  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                -->
-                            </div>
-                            <div *ngIf="medio.tipo == 'web'">
-                                <div class="youtube-player">
-                                    <img src="{{ medio.imagen }}" alt="Imagen de la noticia"> 
-                                    <!--
-                                    <img src="https://d26lpennugtm8s.cloudfront.net/stores/674/875/products/proximamente1-32cdb1f75408df18c315669116627896-1024-1024.png" alt="Imagen Temporal">
-                                    -->
-                                </div>
-                            </div>
                         </mat-card>
                     </div> 
                 </div>

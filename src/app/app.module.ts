@@ -37,6 +37,7 @@ import { ListadoPresidenteComponent } from './paginas/detalle/listado-presidente
 import { ListadoCongresistaComponent } from './paginas/detalle/listado-congresista/listado-congresista.component';
 import { SharedModule } from './shared/shared.module';
 import { HistoriaPartidoComponent } from './paginas/detalle/historia-partido/historia-partido.component';
+import { PartidoPlanGobiernoComponent } from '../app/paginas/detalle/partido-plan-gobierno/partido-plan-gobierno.component';
 
 /*Componentes Candidato */
 import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.component';
@@ -65,6 +66,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     ListadoPresidenteComponent,
     ListadoCongresistaComponent,
     HistoriaPartidoComponent,
+    PartidoPlanGobiernoComponent,
 
 /*Componentes Candidato */
     CandidatosComponent,
@@ -84,6 +86,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     ListadoPresidenteComponent,
     ListadoCongresistaComponent,
     HistoriaPartidoComponent,
+    PartidoPlanGobiernoComponent,
 
     /*Componentes Candidato */
     CandidatosComponent,

@@ -284,5 +284,9 @@ export class RestApiService {
   getCandidato(id){
     return this.http.get(this.domain+`candidato/${id}/?format=json`,this.httpOptions);
   }
+  //recupera el plan de gobierno
+  getPlanGobByPartidoId(id,tipo){
+    return this.http.get(this.domain+`plan/${id}/${tipo}/?format=json`,this.httpOptions);
+  }
 
 }

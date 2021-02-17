@@ -162,10 +162,12 @@
                             </span>
                             </p> 
                     </div>
+                    
                 </mat-card-content>
-                <mat-card-actions>
+                
+                <mat-card-actions fxLayout="column"  fxLayoutAlign="center center" >
                     <hr class="line">
-                    <button style="color: #65676B;" routerLink="/partido/{{partido.id}}" [state]="partido" mat-button>
+                    <button  class="boton_personalizado" routerLink="/partido/{{partido.id}}" [state]="partido" mat-button>
                         <mat-icon class="material-icons material-icons-outlined">description</mat-icon> <span> Ver más</span>             
                     </button>
                     

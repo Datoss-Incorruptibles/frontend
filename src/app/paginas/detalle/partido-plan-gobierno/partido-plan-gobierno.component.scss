@@ -3,13 +3,13 @@
 }
 mat-expansion-panel {
     margin: 0px 15px;
+    /*height: auto;*/
+    /*min-height: auto;*/
 }
 mat-expansion-panel-header {
-    /*max-width: 1150px;*/
     text-align: justify;
     padding: 10px 40px;
-    /*min-height: 100px;*/
-    height: auto;
+    height: auto !important;
     background-color: #D5E4FF;
 }
 
@@ -23,20 +23,28 @@ mat-panel-title {
     padding: 0px 30px;
 }
 .indicador {
-    padding: 0px 30px 0px 50px;
+    padding: 0px 30px;
 }
 .meta {
-    padding: 0px 30px 0px 70px;
+    padding: 0px 30px;
+}
+.planGobierno{
+    margin: 20px 20px 20px 20px;
+    max-width: 1000px;
 }
 .planes {
     padding-left: 15px;
     font-weight: bold;
     font-size: large;
     a {
+        color: black;
         text-decoration: none;    
-    }
-    
+    }   
 }
+a:hover{
+    color: #274482 !important;
+}
+
 .dimension {
     display: flex;
     align-items: center;

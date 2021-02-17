@@ -23,8 +23,8 @@
   }
 }
 .medio {
-  max-width: 450px;
-  margin: 5px 20px;
+  max-width: 500px;
+  margin: 5px 10px;
 }
 
 .nofound{
@@ -73,6 +73,7 @@
     position: relative;
     border-radius: 20px;
     box-shadow: 2px 2px 5px #999;
+    display: flex;
 
     .mat-card-title{
       min-height: 75px;
@@ -100,6 +101,13 @@
   a {
     text-decoration: none;
   }
+}
+.multimedia {
+  flex: 1;
+}
+.texto {
+  flex: 1;
+  padding-right: 10px;
 }
 mat-card-footer {
   text-align: end;

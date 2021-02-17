@@ -6,32 +6,35 @@
                 <div *ngIf="candidato.medios" class="medios">
                     <div *ngFor="let medio of candidato.medios" class="medio">
                         <mat-card class="card-politico">
-                            <div class="texto">
-                                <a target="_blank" href="{{ medio.url }}">
-                                <mat-card-title class="medio-titulo">{{ medio.titulo }}</mat-card-title>
-                                </a>
+                            <div class="noticia">
+                                <div class="texto">
+                                    <a target="_blank" href="{{ medio.url }}">
+                                    <mat-card-title class="medio-titulo">{{ medio.titulo }}</mat-card-title>
+                                    </a>   
+                                </div>
 
+                                <mat-card-content class="multimedia">
+                                    <div *ngIf="medio.tipo == 'video'">
+                                        <div class="youtube-player">
+                                            <iframe width="360" height="200" [src]=youtubeEmbed(medio.url) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        <!--
+                                        <iframe width="360" height="200" [src]=videoEmbedSanitized  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        -->
+                                    </div>
+                                    <div *ngIf="medio.tipo == 'web'">
+                                        <div class="youtube-player">
+                                            <img src="{{ medio.imagen }}" alt="Imagen de la noticia"> 
+                                        </div>
+                                    </div>
+                                </mat-card-content>
+                            </div>
+                            <div>
                                 <mat-card-footer>
                                     <p>{{ medio.fecha }} </p>
                                     <p>Fuente: {{ medio.medio }} </p>
                                 </mat-card-footer>
                             </div>
-
-                            <mat-card-content class="multimedia">
-                                <div *ngIf="medio.tipo == 'video'">
-                                    <div class="youtube-player">
-                                        <iframe width="360" height="200" [src]=youtubeEmbed(medio.url) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <!--
-                                    <iframe width="360" height="200" [src]=videoEmbedSanitized  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    -->
-                                </div>
-                                <div *ngIf="medio.tipo == 'web'">
-                                    <div class="youtube-player">
-                                        <img src="{{ medio.imagen }}" alt="Imagen de la noticia"> 
-                                    </div>
-                                </div>
-                            </mat-card-content>
                         </mat-card>
                     </div> 
                 </div>

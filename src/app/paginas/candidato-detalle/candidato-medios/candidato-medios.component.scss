@@ -23,8 +23,8 @@
   }
 }
 .medio {
-  max-width: 500px;
-  margin: 5px 10px;
+  max-width: 450px;
+  
 }
 
 .nofound{
@@ -64,16 +64,21 @@
 
   
   }*/
-  
+  .noticia {
+    display: flex;
+  }
   .card-politico{
     max-height: 400px;
-    max-width: 500px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    max-width: 450px;
+    margin: 10px 10px;
     position: relative;
     border-radius: 20px;
     box-shadow: 2px 2px 5px #999;
     display: flex;
+    flex-direction: column;
+    a {
+      text-decoration: none;
+    }
 
     .mat-card-title{
       min-height: 75px;
@@ -96,24 +101,21 @@
         
     }*/
 }
-
-.card-politico {
-  a {
-    text-decoration: none;
-  }
-}
 .multimedia {
   flex: 1;
 }
 .texto {
-  flex: 1;
+  flex: 2;
   padding-right: 10px;
 }
+
+mat-card {
+  padding: 8px;
+}
 mat-card-footer {
-  text-align: end;
   color: #999;
-  padding-right: 5px;
-  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
   p {

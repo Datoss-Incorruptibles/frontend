@@ -35,8 +35,12 @@ export class PartidoPlanGobiernoComponent implements OnInit {
     })
   }
   onInitial(text){
-    let tem = text.toLowerCase( )
-    return tem[0].toUpperCase() + tem.slice(1);
+    let tem = ""
+    if (text != "") {
+      tem = text.toLowerCase()
+      tem = tem[0].toUpperCase() + tem.slice(1);
+    }
+    return tem
   }
 
 }

@@ -24,7 +24,7 @@ export class CandidatoPlanGobiernoComponent implements OnInit {
       this.getPlanGob("1")
     } else if (this.candidato.cargo_id==5){
       console.log("CARGO_ID: "+this.candidato.cargo_id)
-      this.getPlanGob("5")
+      this.getPlanGob("3")
     } else {
       console.log("ERROR")
     }
@@ -45,8 +45,12 @@ export class CandidatoPlanGobiernoComponent implements OnInit {
     })
   }
   onInitial(text){
-    let tem = text.toLowerCase( )
-    return tem[0].toUpperCase() + tem.slice(1);
+    let tem = ""
+    if (text != "") {
+      tem = text.toLowerCase()
+      tem = tem[0].toUpperCase() + tem.slice(1);
+    }
+    return tem
   }
 
 }

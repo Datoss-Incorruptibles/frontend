@@ -3,11 +3,12 @@ import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-partido-plan-gobierno',
-  templateUrl: './partido-plan-gobierno.component.html',
-  styleUrls: ['./partido-plan-gobierno.component.scss']
+  selector: 'app-candidato-plan-gobierno',
+  templateUrl: './candidato-plan-gobierno.component.html',
+  styleUrls: ['./candidato-plan-gobierno.component.scss']
 })
-export class PartidoPlanGobiernoComponent implements OnInit {
+export class CandidatoPlanGobiernoComponent implements OnInit {
+  @Input() candidato;
   @Input() partido;
   panelOpenState = false;
   plan:any;
@@ -19,19 +20,28 @@ export class PartidoPlanGobiernoComponent implements OnInit {
   ngOnInit(): void {
     //this.plan = this.restApiService.getPlanGobByPartidoId("1","1")
     //console.log(this.plan)
-    this.getPlanGob("1")
+    if (this.candidato.cargo_id==1){
+      this.getPlanGob("1")
+    } else if (this.candidato.cargo_id==5){
+      console.log("CARGO_ID: "+this.candidato.cargo_id)
+      this.getPlanGob("5")
+    } else {
+      console.log("ERROR")
+    }
+    
   }
   getPlanGob(tipo){
     // get param id 
     this.showLoader = true;
 
-    const id = +this.route.snapshot.paramMap.get('id');
+    //const id = +this.route.snapshot.paramMap.get('id');
+    const id =+this.candidato.organizacion_politica_id; 
     console.log(id)
     this.restApiService.getPlanGobByPartidoId(id,tipo).subscribe(plan => {
     this.plan = plan;
     this.showLoader = false;
 
-    //console.log(this.plan);
+    console.log(this.plan);
     })
   }
   onInitial(text){

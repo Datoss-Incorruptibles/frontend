@@ -13,6 +13,9 @@
     <mat-tab label="Medios">
         <app-candidato-medios [candidato]="candidato"></app-candidato-medios>
     </mat-tab>
+    <mat-tab label="Plan de Gobierno" *ngIf="candidato.cargo_id==1 || candidato.cargo_id==5">
+      <app-candidato-plan-gobierno [candidato]="candidato"></app-candidato-plan-gobierno>
+  </mat-tab>
   </mat-tab-group>
   <div class="goBack">
     <button (click)="goBack()" mat-raised-button color="primary">Volver</button>

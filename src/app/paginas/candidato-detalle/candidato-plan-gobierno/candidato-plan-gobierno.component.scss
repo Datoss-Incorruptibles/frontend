@@ -1,0 +1,60 @@
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+mat-expansion-panel {
+    margin: 0px 15px;
+    /*height: auto;*/
+    /*min-height: auto;*/
+}
+mat-expansion-panel-header {
+    text-align: justify;
+    padding: 10px 40px;
+    height: auto !important;
+    background-color: #D5E4FF;
+}
+
+mat-panel-title {
+    text-align: justify;
+    max-width: 1100px;
+    color: #274482;
+    font-weight: 400;
+}
+.objetivo {
+    padding: 0px 20px;
+}
+.indicador {
+    padding: 0px 20px;
+}
+.meta {
+    padding: 0px 20px;
+}
+.planGobierno{
+    margin: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.planes {
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: large;
+    a {
+        color: black;
+        text-decoration: none;    
+    }   
+}
+a:hover{
+    color: #274482 !important;
+}
+
+.dimension {
+    display: flex;
+    align-items: center;
+    color: #274482;
+    font-size: medium;
+    font-weight: 500;
+    padding: 10px 15px
+}
+mat-card {
+    padding: 8px;
+}

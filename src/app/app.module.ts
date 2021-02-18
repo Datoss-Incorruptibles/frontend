@@ -44,6 +44,7 @@ import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.compon
 import { CandidatoDetalleComponent } from '../app/paginas/candidato-detalle/candidato-detalle.component';
 import { CandidatoHistoriaComponent } from '../app/paginas/candidato-detalle/candidato-historia/candidato-historia.component';
 import { CandidatoMediosComponent } from '../app/paginas/candidato-detalle/candidato-medios/candidato-medios.component';
+import { CandidatoPlanGobiernoComponent } from '../app/paginas/candidato-detalle/candidato-plan-gobierno/candidato-plan-gobierno.component';
 
 /*Mi lista  */
 import { MilistaComponent } from '../app/paginas/milista/milista.component';
@@ -76,6 +77,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     CandidatoDetalleComponent,
     CandidatoHistoriaComponent,
     CandidatoMediosComponent,
+    CandidatoPlanGobiernoComponent,
     MilistaComponent
   ],
   exports:[
@@ -95,6 +97,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     CandidatoAndinoComponent,
     CandidatoDetalleComponent,
     CandidatoMediosComponent,
+    CandidatoPlanGobiernoComponent,
     MilistaComponent
 
   ],

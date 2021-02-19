@@ -14,14 +14,6 @@ export class GlobalService {
   filterPartidoSource = new BehaviorSubject('')
   filterPartidoIndexCurrent = this.filterPartidoSource.asObservable();
 
-  //Filtro educacion
-  filterEducacionSource = new BehaviorSubject('')
-  filterEducacionIndexCurrent = this.filterEducacionSource.asObservable();
-
-  //filtro Sentencias
-  filterSentenciasSource = new BehaviorSubject('')
-  filterSentenciasIndexCurrent = this.filterSentenciasSource.asObservable();
-
   // filtro candidatos por partido y solo P.Andino
   filterPartidoPASource = new BehaviorSubject('')
   filterPartidoPAIndexCurrent = this.filterPartidoPASource.asObservable();

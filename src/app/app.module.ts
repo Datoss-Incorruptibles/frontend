@@ -23,7 +23,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatExpansionModule} from '@angular/material/expansion';
+
 //
 import { HttpClientModule } from '@angular/common/http';
 
@@ -37,13 +37,11 @@ import { ListadoPresidenteComponent } from './paginas/detalle/listado-presidente
 import { ListadoCongresistaComponent } from './paginas/detalle/listado-congresista/listado-congresista.component';
 import { SharedModule } from './shared/shared.module';
 import { HistoriaPartidoComponent } from './paginas/detalle/historia-partido/historia-partido.component';
-import { PartidoPlanGobiernoComponent } from '../app/paginas/detalle/partido-plan-gobierno/partido-plan-gobierno.component';
 
 /*Componentes Candidato */
 import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.component';
 import { CandidatoDetalleComponent } from '../app/paginas/candidato-detalle/candidato-detalle.component';
-import { CandidatoHistoriaComponent } from '../app/paginas/candidato-detalle/candidato-historia/candidato-historia.component';
-import { CandidatoMediosComponent } from '../app/paginas/candidato-detalle/candidato-medios/candidato-medios.component';
+import { CandidatoHistoriaComponent } from '../app/paginas/candidato-detalle/candidato-historia/candidato-historia.component'
 
 /*Mi lista  */
 import { MilistaComponent } from '../app/paginas/milista/milista.component';
@@ -66,7 +64,6 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     ListadoPresidenteComponent,
     ListadoCongresistaComponent,
     HistoriaPartidoComponent,
-    PartidoPlanGobiernoComponent,
 
 /*Componentes Candidato */
     CandidatosComponent,
@@ -75,7 +72,6 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     CandidatoAndinoComponent,
     CandidatoDetalleComponent,
     CandidatoHistoriaComponent,
-    CandidatoMediosComponent,
     MilistaComponent
   ],
   exports:[
@@ -86,7 +82,6 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     ListadoPresidenteComponent,
     ListadoCongresistaComponent,
     HistoriaPartidoComponent,
-    PartidoPlanGobiernoComponent,
 
     /*Componentes Candidato */
     CandidatosComponent,
@@ -94,7 +89,6 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     CandidatoCongresistaComponent,
     CandidatoAndinoComponent,
     CandidatoDetalleComponent,
-    CandidatoMediosComponent,
     MilistaComponent
 
   ],
@@ -124,7 +118,6 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     MatAutocompleteModule,
     SharedModule,
     ScrollingModule,
-    MatExpansionModule,
     InfiniteScrollModule],
   providers: [],
   bootstrap: [AppComponent]

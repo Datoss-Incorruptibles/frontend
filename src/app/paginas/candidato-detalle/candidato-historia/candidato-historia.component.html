@@ -11,12 +11,12 @@
           </span>
         </div>
         <div *ngIf="candidato.sentencias">
-        <div *ngIf="penal.length > 0">
           <div  class="title-penales">
             Sentencias Penales:
           </div>
-          <div *ngFor="let sentencia of penal" class="indicador-penal-wrapper">
-              <div class="indicador-detail">
+          <div *ngFor="let sentencia of candidato.sentencias" class="indicador-penal-wrapper">
+            <div [ngSwitch]="sentencia.tipo_proceso" >
+              <div *ngSwitchCase="'penal'" class="indicador-detail">
                 <div class="sentencia">
                   {{sentencia.sentencia}}
                 </div>
@@ -27,14 +27,17 @@
                   {{sentencia.fallo}} - {{sentencia.cumple_fallo}}
                 </div>
               </div>
-          </div>
-        </div> 
-        <div *ngIf="civil.length > 0" >
-            <div class="title-civiles">
-              Sentencias Civiles:
+              <span *ngSwitchDefault class="vacio" >
+                -----
+              </span>
             </div>
-          <div *ngFor="let sentencia of civil" class="indicador-civil-wrapper">
-              <div class="indicador-detail">
+          </div>
+          <div *ngIf="candidato.sentencias" class="title-civiles">
+            Sentencias Civiles:
+          </div>
+          <div *ngFor="let sentencia of candidato.sentencias" class="indicador-civil-wrapper">
+            <div [ngSwitch]="sentencia.tipo_proceso" >
+              <div *ngSwitchCase="'civil'" class="indicador-detail">
                 <div  class="sentencia">
                   {{sentencia.sentencia}}
                 </div>
@@ -42,19 +45,22 @@
                   AQUI VA EL ANIO :P
                 </div> -->
                 <div class="fallo">
-                  {{sentencia.fallo}}  <span *ngIf="sentencia.cumple_fallo">- {{sentencia.cumple_fallo}}</span>  
+                  {{sentencia.fallo}} - {{sentencia.cumple_fallo}}
                 </div>
               </div>
+              <span *ngSwitchDefault class="vacio" >
+                -----
+              </span>
+            </div>
           </div>
-        </div>
-      </div>
+
+        </div> 
         <div *ngIf="!candidato.sentencias" class="vacio">
          <!-- No tiene sentencias -->
          No se encontraron datos  
         </div>
       </div>
     </div>
-
     <div class="candidato-estudios-wrapper">
       <div class="tile-wrapper">
         <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
@@ -151,39 +157,6 @@
         </div>
       </div>
       <div *ngIf="!candidato.experienciapolitica" class="vacio">
-        No se encontraron datos  
-      </div>
-    </div>
-
-    <div   class="candidato-experienciapartido-wrapper">
-      <div class="tile-wrapper">
-        <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-          account_balance
-        </mat-icon>
-        <span class="title">
-          <label>Cargos Partidiarios</label>
-        </span>
-      </div>
-      <div *ngIf="candidato.experienciapartido">
-        <div *ngFor="let experienciapartido of candidato.experienciapartido" class="indicador-detail">
-            <div>
-              {{experienciapartido.ocupacion_profesion| uppercase}} 
-            </div>
-            <div class="centro_trabajo">
-              {{experienciapartido.centro_trabajo}}
-            </div>
-            <div class="anio_trabajo_desde">
-              {{experienciapartido.anio_trabajo_desde}}
-              <span *ngIf="experienciapartido.anio_trabajo_hasta != '0000'">
-                - {{experienciapartido.anio_trabajo_hasta}}
-              </span>
-              <span *ngIf="experienciapartido.anio_trabajo_hasta == '0000'">
-                - PRESENTE
-              </span>
-            </div>
-        </div>
-      </div>
-      <div *ngIf="!candidato.experienciapartido" class="vacio">
         No se encontraron datos  
       </div>
     </div>
@@ -293,9 +266,6 @@
       <div *ngIf="!candidato.muebles" class="vacio">
         No se encontraron datos  
       </div>
-    </div>
-    <div class="candidato-experienciapolitica-wrapper">
-     
     </div>
   </mat-card>
 </div>

@@ -32,7 +32,7 @@ export class ListadoCongresistaComponent implements OnInit {
     ) {
       this.global.filterRegionIndexCurrent.subscribe(message =>this.unigeoIdSelect = message);
 
-    }
+     }
 
   ngOnInit(): void {
     this.getCongresistasByOrganizacionAndRegion(this.unigeoIdSelect);

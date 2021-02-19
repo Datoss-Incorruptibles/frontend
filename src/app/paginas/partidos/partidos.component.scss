@@ -36,7 +36,6 @@ a{
             img{
                 width: 100%;
                 height: 100%;
-                border-radius: 10px;
             }
         }
         .mat-card-content{
@@ -147,43 +146,11 @@ mat-card-actions{
     margin-bottom: 10px;
 
 }
-/*
-.btnVermas{
-    height: 40px;
-    width: 200px;
-    color: white;
-    border-radius: 30px;
-    
-}
-.btnVermas :hover{
-    background-color: #FF005C;
-}*/
-.boton_personalizado{
-    text-decoration: none;
-    padding: 10px;
-    height: 40px;
-    width: 200px;
-    color: #ffffff;
-    border-color: none;
-    background-color: #3D94FC;
-    border-radius: 30px;
-    border: 0px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-  .boton_personalizado:hover{
-    background-color: #FF005C;
-  }
-
   
   @media only screen and (max-width: 400px) {
     .card-politico{
       max-width: 300px ;
       min-width: 200px;
-    }
-    .boton_personalizado{
-        height: 24px;
     }
   }
   
@@ -191,8 +158,5 @@ mat-card-actions{
     .card-politico{
       max-width: 600px ;
       min-width: 500px;
-    }
-    .boton_personalizado{
-        height: 35px;
     }
   }

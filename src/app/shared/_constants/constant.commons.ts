@@ -12,6 +12,5 @@ export const URL_API = {
     candidato: "candidato",
     ubigeo:"ubigeo",
     orgpolcombo:"orgpolcombo",
-    organizacionpolitica:"organizacionpolitica",
-    plan:"plan"
+    organizacionpolitica:"organizacionpolitica"
 }

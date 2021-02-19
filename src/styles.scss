@@ -94,7 +94,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
             .mat-form-field-flex{
                 background-color: white;
                 border-style: solid;
-                border-color: #2c4484;
+                border-color: #687CA7;
                 border-width: 1px;
                 border-radius: 6px;
         }
@@ -103,14 +103,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         }
      }
  }
-
- .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: #2c4484 !important;
-  }
-
-  .mat-primary .mat-pseudo-checkbox-checked, .mat-primary .mat-pseudo-checkbox-indeterminate {
-    background: #2c4484 !important;
-}
 mat-drawer-content{
     background-color: #D5E4FF;
 }

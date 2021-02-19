@@ -28,13 +28,6 @@
 
 
 }
-.filtroAcordeon{
-  background-color: white;
-  border-style: solid;
-  border-color: #687CA7;
-  border-width: 1px;
-  border-radius: 6px;
-}
 
 @media only screen and (max-width: 700px) {
   .search{
@@ -48,7 +41,7 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .filterRegion ,.filterOrg,.filterEdu,.filterSentencias{
+  .filterRegion ,.filterOrg{
     font-size:10px ;
     width: 120px !important;
     }
@@ -70,7 +63,7 @@
     overflow: scroll;
     // background-color:red;
   }
-  mat-form-field,mat-accordion{
+  mat-form-field{
       margin-left: 10px;
   }
 
@@ -97,6 +90,8 @@
   margin: 20px 5px 40px 5px;
 
 }
+
+
   
 @media only screen and (max-width: 400px) {
   .congresistas{

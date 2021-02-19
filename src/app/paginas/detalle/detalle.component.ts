@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalService } from "src/app/servicios/global.service";
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detalle',
@@ -11,7 +12,11 @@ export class DetalleComponent implements OnInit {
   public tabIndex = 0; // detllae partido  
 
   partido=null;
-  constructor(private route: ActivatedRoute, private router: Router,private global:GlobalService) {
+  constructor(private route: ActivatedRoute, 
+    private router: Router,
+    private global:GlobalService,
+    private title: Title,
+    private meta: Meta) {
     this.global.tabIndexPCCurrent.subscribe(message =>{
           this.tabIndex = message;
        }
@@ -27,6 +32,12 @@ export class DetalleComponent implements OnInit {
       this.router.navigate(['/partidos']);
     }
     
+    /* SEO Stuff */
+    this.title.setTitle(`${this.partido.nombre}`);
+    let description = `${this.partido.nombre}`
+    this.meta.updateTag({name: "description", content:description});
+  
+        
   }
   ngOnDestroy() {
     //this.sub.unsubscribe();

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { RestApiService } from "src/app/servicios/restapi.service";
 import { Location } from '@angular/common';
 import { GlobalService } from "src/app/servicios/global.service";
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-candidato-detalle',
@@ -18,10 +19,15 @@ export class CandidatoDetalleComponent implements OnInit {
     private route: ActivatedRoute,
     private restApi:RestApiService,
     private location: Location,
-    private global:GlobalService) { }
+    private global:GlobalService,
+    private title: Title,
+    private meta: Meta) { }
 
   ngOnInit(): void {
     this.getCandidato()
+    // title
+
+    // {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}
 
     
   }
@@ -34,8 +40,13 @@ export class CandidatoDetalleComponent implements OnInit {
     this.restApi.getCandidato(id).subscribe(candidato => {
       this.candidato = candidato;
       this.showLoader = false;
-
       // console.log(this.candidato);
+
+      /* SEO Stuff */
+      this.title.setTitle(`${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}`);
+      let description = `NOMBRES:${this.candidato.documento_identidad} DNI:${this.candidato.documento_identidad}`
+      this.meta.updateTag({name: "description", content:description});
+
     })
   }
 

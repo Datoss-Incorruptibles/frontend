@@ -57,6 +57,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CandidatoPresidenteComponent } from '../app/paginas/candidatos/candidato-presidente/candidato-presidente.component';
 import { CandidatoCongresistaComponent } from '../app/paginas/candidatos/candidato-congresista/candidato-congresista.component';
 import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-andino/candidato-andino.component';
+import { HeaderComponent } from '../app/shared/_components/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     ListadoCongresistaComponent,
     HistoriaPartidoComponent,
     PartidoPlanGobiernoComponent,
+    HeaderComponent,
 
 /*Componentes Candidato */
     CandidatosComponent,
@@ -89,6 +91,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     ListadoCongresistaComponent,
     HistoriaPartidoComponent,
     PartidoPlanGobiernoComponent,
+    HeaderComponent,
 
     /*Componentes Candidato */
     CandidatosComponent,

@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+    </div>
+    <div>
+        <span><img class="imgLogo" src="/assets/images/logo/HorizontalCandidatos_sf.png" ></span>
+    </div>
+    <div fxFlex class="options" fxLayout fxLayoutAlign="end center" fxLayoutGap="15px" fxHide.xs class=".navigation-items">
+        <div>
+            <a routerLink="/partidos" routerLinkActive='active'> Partidos</a>
+        </div>
+
+        <div>
+            <a routerLink="/candidatos" routerLinkActive='active'> Candidatos</a>
+        </div>
+
+        <div>
+            <a routerLink="/milista" routerLinkActive='active'> Mi lista</a>
+        </div>
+        <div></div>
+        <div></div>
+    </div>
+</mat-toolbar>

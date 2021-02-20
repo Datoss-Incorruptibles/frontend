@@ -11,6 +11,13 @@
                                     <a target="_blank" href="{{ medio.url }}">
                                     <mat-card-title class="medio-titulo">{{ medio.titulo }}</mat-card-title>
                                     </a>   
+                                    <mat-card-footer>
+                                        <p>{{ medio.fecha }} - {{ medio.medio }}</p>
+                                        <!--
+                                        <p>{{ medio.fecha }} </p>
+                                        <p>{{ medio.medio }} </p>
+                                        -->
+                                    </mat-card-footer>
                                 </div>
 
                                 <mat-card-content class="multimedia">
@@ -22,19 +29,14 @@
                                         <iframe width="360" height="200" [src]=videoEmbedSanitized  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         -->
                                     </div>
-                                    <div *ngIf="medio.tipo == 'web'">
+                                    <div *ngIf="medio.tipo == 'web' || medio.tipo == 'articulo'">
                                         <div class="youtube-player">
                                             <img src="{{ medio.imagen }}" alt="Imagen de la noticia"> 
                                         </div>
                                     </div>
                                 </mat-card-content>
                             </div>
-                            <div>
-                                <mat-card-footer>
-                                    <p>{{ medio.fecha }} </p>
-                                    <p>Fuente: {{ medio.medio }} </p>
-                                </mat-card-footer>
-                            </div>
+                            
                         </mat-card>
                     </div> 
                 </div>

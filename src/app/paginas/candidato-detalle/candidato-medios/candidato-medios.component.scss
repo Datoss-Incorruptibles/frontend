@@ -1,3 +1,6 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 .wrapper{
   position: relative;
 }
@@ -24,7 +27,6 @@
 }
 .medio {
   max-width: 450px;
-  
 }
 
 .nofound{
@@ -35,7 +37,9 @@
 }
 .medio-titulo {
   color: #2c4484;
-  font-size: large;
+  color: #001A59;
+  //font-size: medium;
+  font-size: 13px;
 }
 
 /*
@@ -68,8 +72,8 @@
     display: flex;
   }
   .card-politico{
-    max-height: 400px;
-    max-width: 450px;
+    max-height: 180px;
+    max-width: 400px;
     margin: 10px 10px;
     position: relative;
     border-radius: 20px;
@@ -102,11 +106,13 @@
     }*/
 }
 .multimedia {
-  flex: 1;
+  //flex: 1;
+  flex: 4;
 }
 .texto {
-  flex: 2;
-  padding-right: 10px;
+  flex: 6;
+  //flex: 2;
+  padding-right: 8px;
 }
 
 mat-card {
@@ -114,12 +120,15 @@ mat-card {
 }
 mat-card-footer {
   color: #999;
+  color: #001A59;
   padding-left: 5px;
   padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
   p {
     margin: 5px 15px;
+    /*font-size: small;*/
+    font-size: 10px;
   }
 }
 
@@ -132,6 +141,7 @@ mat-card-footer {
   max-width: 100%;
   background: #000;
   margin: 5px;
+  border-radius: 10px;
 }
 
 .youtube-player iframe {

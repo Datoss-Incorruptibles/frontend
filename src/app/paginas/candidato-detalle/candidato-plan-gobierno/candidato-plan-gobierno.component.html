@@ -18,24 +18,20 @@
 
                 <div *ngFor="let p of plan.plan_detalles" class="">
                     <div *ngIf="p.dimension_id==5" class="problem">
+                        <p>{{ onInitial(p.problema) }}</p>
+                        <!--
                         <mat-accordion>
                             <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                                 <mat-expansion-panel-header>
                                     <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
                                 </mat-expansion-panel-header>
                                 
-                                <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
-                                <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
-                                <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
-                                <!--
-                                <div *ngFor="let item of p.problema">
-                                    <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
-                                    <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
-                                    <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
-                                </div>
-                                -->
+                                <div class="objetivo"><p><b>Objetivo:</b>{{ onInitial(p.objetivo) }}</p></div>
+                                <div class="indicador"><p><b>Indicador:</b>{{ onInitial(p.indicador) }}</p></div>
+                                <div class="meta"><p><b>Meta:</b>{{ onInitial(p.meta) }}</p></div>
+                                    
                             </mat-expansion-panel>
-                        </mat-accordion>
+                        </mat-accordion>-->
                     </div>
                 </div>
             </div>

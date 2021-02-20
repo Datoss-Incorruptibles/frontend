@@ -110,7 +110,7 @@
         <hr>
         <mat-card-actions>
             <div class="actions-ver-mas" *ngIf="!fromDetalle">
-                <button routerLink="/candidato/{{candidato.jne_idhojavida}}" [state]="candidato" mat-button >
+                <button class="boton_personalizado" boton_personalizado routerLink="/candidato/{{candidato.jne_idhojavida}}" [state]="candidato" mat-button >
                     <mat-icon class="material-icons material-icons-outlined">description</mat-icon> <span> Ver CV</span>             
                 </button>
             </div>
@@ -122,11 +122,12 @@
                         <mat-icon class="material-icons material-icons-outlined">thumb_down</mat-icon>             
                     </button>
                 </div>
+                <!--
                 <div class="text">
                     <p>
                         Me representa
                     </p>
-                </div>
+                </div>-->
                 <div>
                     <button mat-button (click)="representa(1)"
                     [ngClass]="{'deactivate': status === 'status10', 'thumb_up':status === 'status11' }"

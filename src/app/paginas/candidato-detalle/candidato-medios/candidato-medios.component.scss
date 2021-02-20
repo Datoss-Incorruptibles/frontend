@@ -27,6 +27,7 @@
 }
 .medio {
   max-width: 450px;
+  min-width: 350px;
 }
 
 .nofound{
@@ -74,6 +75,7 @@
   .card-politico{
     max-height: 180px;
     max-width: 400px;
+    
     margin: 10px 10px;
     position: relative;
     border-radius: 20px;
@@ -85,7 +87,7 @@
     }
 
     .mat-card-title{
-      min-height: 75px;
+      min-height: 70px;
     }
     .mat-card-content{
         min-height: 5px;
@@ -121,8 +123,8 @@ mat-card {
 mat-card-footer {
   color: #999;
   color: #001A59;
-  padding-left: 5px;
-  padding-bottom: 5px;
+  //padding-left: 5px;
+  //padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
   p {

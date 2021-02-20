@@ -30,14 +30,14 @@ import { HttpClientModule } from '@angular/common/http';
  
 /*Componnetes */
 import { PartidosComponent } from '../app/paginas/partidos/partidos.component';
-import { DetalleComponent } from '../app/paginas/detalle/detalle.component';
-import { DetallePartidoIndicadoresComponent } from './paginas/detalle-partido-indicadores/detalle-partido-indicadores.component';
-import { PartidoAndinoComponent } from './paginas/detalle/partido-andino/partido-andino.component';
-import { ListadoPresidenteComponent } from './paginas/detalle/listado-presidente/listado-presidente.component';
-import { ListadoCongresistaComponent } from './paginas/detalle/listado-congresista/listado-congresista.component';
+import { DetalleComponent } from './paginas/partido-detalle/detalle.component';
+import { DetallePartidoIndicadoresComponent } from './paginas/partido-detalle/detalle-partido-indicadores/detalle-partido-indicadores.component';
+import { PartidoAndinoComponent } from './paginas/partido-detalle/partido-andino/partido-andino.component';
+import { ListadoPresidenteComponent } from './paginas/partido-detalle/listado-presidente/listado-presidente.component';
+import { ListadoCongresistaComponent } from './paginas/partido-detalle/listado-congresista/listado-congresista.component';
 import { SharedModule } from './shared/shared.module';
-import { HistoriaPartidoComponent } from './paginas/detalle/historia-partido/historia-partido.component';
-import { PartidoPlanGobiernoComponent } from '../app/paginas/detalle/partido-plan-gobierno/partido-plan-gobierno.component';
+import { HistoriaPartidoComponent } from './paginas/partido-detalle/historia-partido/historia-partido.component';
+import { PartidoPlanGobiernoComponent } from './paginas/partido-detalle/partido-plan-gobierno/partido-plan-gobierno.component';
 
 /*Componentes Candidato */
 import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.component';
@@ -57,6 +57,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CandidatoPresidenteComponent } from '../app/paginas/candidatos/candidato-presidente/candidato-presidente.component';
 import { CandidatoCongresistaComponent } from '../app/paginas/candidatos/candidato-congresista/candidato-congresista.component';
 import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-andino/candidato-andino.component';
+import { HeaderComponent } from '../app/shared/_components/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     ListadoCongresistaComponent,
     HistoriaPartidoComponent,
     PartidoPlanGobiernoComponent,
+    HeaderComponent,
 
 /*Componentes Candidato */
     CandidatosComponent,
@@ -89,6 +91,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
     ListadoCongresistaComponent,
     HistoriaPartidoComponent,
     PartidoPlanGobiernoComponent,
+    HeaderComponent,
 
     /*Componentes Candidato */
     CandidatosComponent,

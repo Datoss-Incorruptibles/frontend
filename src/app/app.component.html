@@ -76,6 +76,8 @@
           </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content >
+          <app-header (sidenavToggle)="sidenav.toggle()"  class="toolbar"></app-header>
+        <!--
         <div (sidenavToggle)="sidenav.toggle()" >
             <mat-toolbar color="primary"  class="toolbar">
                 <button mat-icon-button (click)="sidenav.toggle()">
@@ -83,16 +85,16 @@
                 </button>
                <span>¿Qué {{message}} buscas?</span>
                 <span class="example-spacer"></span>    
-                 <!-- <button mat-icon-button >
+                  <button mat-icon-button >
                     <mat-icon>search</mat-icon>
-                </button>   -->
+                </button>   
                 <div class="goBack">
                     <button mat-icon-button (click)="goBack()">
                         <mat-icon>arrow_back_ios</mat-icon>
                       </button>
                 </div>
             </mat-toolbar>
-        </div>
+        </div-->
         <main>
             <div class="content">
                 <router-outlet ></router-outlet>

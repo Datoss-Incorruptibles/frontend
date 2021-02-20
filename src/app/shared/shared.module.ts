@@ -33,7 +33,7 @@ import { AppRoutingModule } from './../app-routing.module';
     MatSidenavModule,
     MatSelectModule,
     MatCardModule,
-    MatProgressBarModule   ,
+    MatProgressBarModule,
     MatTabsModule,
     MatListModule,
     FlexLayoutModule

@@ -43,7 +43,7 @@ mat-nav-list {
     height: 150px;
     
     .version{
-        color:#ced4e2;
+        color:white;
         // height:100%;
         position: absolute;
         bottom: 0;
@@ -52,7 +52,7 @@ mat-nav-list {
     }
 
     .colab{
-        color:#ced4e2;
+        color:white;
         // height:100%;
         position: absolute;
         // bottom: 20px;
@@ -74,7 +74,7 @@ mat-sidenav {
 
 main {
    width: 100%;
-   background-color: #D5E4FF;
+   background-color: white;
    height: 100%;
 }
 .content{
@@ -84,13 +84,12 @@ main {
 .toolbar{
     position: relative;
 
-    .goBack{
-        position: absolute;
-        right:10px;
-    }
+    box-shadow: 2px 2px 5px #999;
 }
+
+
 
 mat-sidenav-container {
     height: 100%;
-    background-color: #D5E4FF;
+    background-color: white;
 }

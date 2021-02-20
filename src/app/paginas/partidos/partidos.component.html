@@ -1,7 +1,7 @@
  <div *ngIf="partidos">
 
 
- <div class="filtrado">
+ <div class="filtrado" fxLayoutAlign="center center">
         <mat-form-field appearance="fill" class="filter">
             <mat-label>Ordenado por</mat-label>
             <mat-select (selectionChange)="onOrdernar($event.value)">
@@ -58,16 +58,26 @@
         <div class="wrapper">
             <mat-card *ngFor="let partido of partidos" class="card-politico">
                 <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"><img src="{{partido.ruta_archivo}}" />
+                    <div mat-card-avatar class="imgPartido"><img src="{{partido.ruta_archivo}}" />
                     </div>
-                    <mat-card-title mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
+                    <mat-card-title class="titulo" mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
                         {{partido.nombre}}
                     </mat-card-title>
-                    <mat-card-subtitle>Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años 
+                    <mat-card-subtitle class="titulo">Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años 
     
                     </mat-card-subtitle>
                 </mat-card-header>
-               
+                <div class="CantCandidatos" *ngIf="getCantIndicador(partido,3)!=0">
+                         <p>
+
+                        <span *ngFor="let indicador of fnIndicadores(partido,3); let i = index">
+                            <span *ngIf="i==0"  > {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }},</span>
+                            <span *ngIf="i==1"> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}, </span>
+                            <span *ngIf="i==2 "> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
+                            
+                        </span>
+                        <br>
+                </div>
 
                
                 <!--            
@@ -86,7 +96,7 @@
                                 <mat-icon class="fondoSentencias"  aria-hidden="true">
                                     gavel
                                 </mat-icon>
-                                <label class="colorSentencias">&nbsp;{{getCantIndicador(partido,8)+getCantIndicador(partido,9)}} Con Sentencias</label>
+                                <label class="colorSentencias">&nbsp;{{getCantIndicador(partido,8)+getCantIndicador(partido,9)}} Sentencias</label>
                             </div>
     
                             <div class="indicador">
@@ -126,7 +136,7 @@
                                 <mat-icon   class="fondoSentencias" aria-hidden="true">
                                     school
                                 </mat-icon>
-                                <label class="colorSentencias">&nbsp;{{getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Basica</label>
+                                <label class="colorSentencias">&nbsp;{{getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Básica</label>
                             </div>
                             <div class="indicador">
                                 <mat-icon   class="fondoAcademico" aria-hidden="true">
@@ -166,9 +176,9 @@
                 </mat-card-content>
                 
                 <mat-card-actions fxLayout="column"  fxLayoutAlign="center center" >
-                    <hr class="line">
+                    <!--hr class="line"-->
                     <button  class="boton_personalizado" routerLink="/partido/{{partido.id}}" [state]="partido" mat-button>
-                        <mat-icon class="material-icons material-icons-outlined">description</mat-icon> <span> Ver más</span>             
+                     <span> Ver más</span>             
                     </button>
                     
                 </mat-card-actions> 

@@ -1,7 +1,5 @@
  <div *ngIf="partidos">
-
-
- <div class="filtrado" fxLayoutAlign="center center">
+    <div class="filtrado" fxLayoutAlign="center center">
         <mat-form-field appearance="fill" class="filter">
             <mat-label>Ordenado por</mat-label>
             <mat-select (selectionChange)="onOrdernar($event.value)">
@@ -43,16 +41,13 @@
         </div>         -->
     </div>
     <mat-progress-bar mode="indeterminate" *ngIf="partidos.length==0" ></mat-progress-bar>
-    <!-- <cdk-virtual-scroll-viewport 
-    class="listado" 
-    itemSize="50" > -->
     <div 
-    class="listado"
+    class="listado scrollA"
     infiniteScroll
     [infiniteScrollDistance]="2"
-    [infiniteScrollThrottle]="150"
-
-    (scrolled)="onScroll()"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScrollA()"
+    [scrollWindow]="false"
     >
         
         <div class="wrapper">

@@ -25,7 +25,7 @@ export class PartidosComponent implements OnInit {
   listOfDiferrentPages = []
 
 
-  onScroll() {
+  onScrollA() {
     // console.log('scrolled!!');
     this.counter++;
     // console.log(this.counter);

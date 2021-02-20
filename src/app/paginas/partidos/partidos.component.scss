@@ -29,6 +29,10 @@ a{
     }
 }
 
+.scrollA{
+    height: 100vh;
+    overflow: scroll;
+}
 
 .listado{
     .card-politico{
@@ -77,6 +81,9 @@ a{
     align-items: center;
     justify-content: center;
 }
+.spinner ::ng-deep .mat-spinner circle {
+    stroke: #4456df;
+  }
 
 .colorSentencias{
     color: #132158;

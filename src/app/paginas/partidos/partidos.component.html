@@ -88,9 +88,9 @@
     
                 -->
     
-                <mat-card-content class="container" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-around stretch">                
-                        <div >
-    
+                <mat-card-content class="container" >                
+                    <div fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="space-around stretch">    
+                        <div>
                             <div class="indicador">
                                 <mat-icon class="fondoSentencias"  aria-hidden="true">
                                     gavel
@@ -150,66 +150,15 @@
                             </div>                
     
                         </div>
-                    <!-- CON TABLAS SE VE MEJOR EN MOVIL
-                    <table>
-                          <tr>
-                            <td> 
-                            <div>
-                                <mat-icon class="fondoSentencias"  aria-hidden="true">
-                                    gavel
-                                </mat-icon>
-                                <label class="colorSentencias"> {{getCantIndicador(partido,8)+getCantIndicador(partido,9)}} Con Sentencias</label>
-                            </div>
-                          </td>
-                            <td>
-                             <div >
-                                <mat-icon   class="fondoSentencias" aria-hidden="true">
-                                    school
-                                </mat-icon>
-                                <label class="colorSentencias"> - sin licencia Sunedu</label>
-                            </div>
-                        </td>
-                          </tr>
-                          <tr>
-                            <td>                           
-                                <div >
-                                    <mat-icon   class="fondoSentencias" aria-hidden="true">
-                                        school
-                                    </mat-icon>
-                                    <label class="colorSentencias"> {{ getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Basica</label>
-                                </div>
-                            </td>
-                            <td>                            
-                                <div>
-                                    <mat-icon   class="fondoAcademico" aria-hidden="true">
-                                        school
-                                    </mat-icon>
-                                    <label class="colorAcademico"> {{getCantidadEdSuperior(partido)}} Ed. Superior</label>
-                                </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                                <div>
-                                    <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
-                                        account_balance
-                                    </mat-icon>
-                                    <label class="colorPolitico"> X% Nuevos en politica</label>
-                                    
-                                </div>
-                            </td>
-                            <td>
-                                <div >
-                                    <mat-icon  role="img" class="fondoPolitico" aria-hidden="true">
-                                        attach_money
-                                    </mat-icon>
-                                    <label class="colorPolitico"> S/. - Ingresos Promedio</label>  
-                                </div>
-                            </td>
-                          </tr>
-    
-                    </table>
-                    -->
+                    </div>   
+                        <div class="vacancia" *ngIf="getCantIndicador(partido,6)!=0">
+                            <p>
+                        <span  class="porcentaje" *ngFor="let indicador of fnIndicadores(partido,4); let i = index">
+                            <span *ngIf="i==0"></span> {{indicador.cantidad + "% de " + indicador.indicador_categoria_nombre}}
+                        </span>
+                        </p> 
+                         </div>
+
                 </mat-card-content>
                 
                 <mat-card-actions fxLayout="column"  fxLayoutAlign="center center" >

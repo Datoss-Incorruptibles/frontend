@@ -1,12 +1,14 @@
-<mat-toolbar color="primary">
+<mat-toolbar >
     <div fxHide.gt-xs>
         <button mat-icon-button (click)="onToggleSidenav()">
             <mat-icon>menu</mat-icon>
         </button>
 
     </div>
-    <div>
-        <span><img class="imgLogo" src="/assets/images/logo/HorizontalCandidatos_sf.png" ></span>
+    <div class="conteinerLogo" fxLayoutAlign=" center">
+        <div class="contenedorImg">
+                <img class="imgLogo">
+        </div>
     </div>
     <div fxFlex class="options" fxLayout fxLayoutAlign="end center" fxLayoutGap="15px" fxHide.xs class=".navigation-items">
         <div>

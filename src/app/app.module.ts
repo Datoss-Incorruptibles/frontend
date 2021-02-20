@@ -24,6 +24,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatExpansionModule} from '@angular/material/expansion';
+
 //
 import { HttpClientModule } from '@angular/common/http';
 
@@ -128,9 +129,9 @@ import { HeaderComponent } from '../app/shared/_components/header/header.compone
     MatMenuModule,
     MatInputModule,
     MatAutocompleteModule,
+    MatExpansionModule,
     SharedModule,
     ScrollingModule,
-    MatExpansionModule,
     InfiniteScrollModule],
   providers: [],
   bootstrap: [AppComponent]

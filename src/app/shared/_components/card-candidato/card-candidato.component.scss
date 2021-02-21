@@ -63,7 +63,8 @@
                     width: 81px;
                     height: 108px;
                     border: 1px solid;
-                     border-color: #C4C4C4;
+                    //border-color: #C4C4C4;
+                    border-color: #1b1b1b;
                     //border-color: rgb(232, 6, 6);
                 }
                 .imgPartido{
@@ -236,16 +237,28 @@ hr{
     padding: 10px;
     height: 35px;*/
     width: 150px;
+    /*
     color: #ffffff;
     border-color: none;
-    background-color: #3D94FC;
+    background-color: #3D94FC;*/
     border-radius: 30px;
-    border: 0px;
+    //border: 0px;
+
+
+    //color: #3D94FC;
+    //border-color: #3D94FC;
+    color: #132158;
+    border-color: #132158;
+
+    border-style: solid;
     /*align-items: center;
     display: flex;
     justify-content: center;*/
     font-weight: normal;
 }
 .boton_personalizado:hover{
-background-color: #FF005C;
+    //background-color: #FF005C;
+    color: #FF005C;
+    border-color: #FF005C;
+
 }

@@ -237,18 +237,18 @@ hr{
     padding: 10px;
     height: 35px;*/
     width: 150px;
-    /*
+    border-radius: 30px;
     color: #ffffff;
     border-color: none;
-    background-color: #3D94FC;*/
-    border-radius: 30px;
+    background-color: #3D94FC;
+    
     //border: 0px;
 
 
     //color: #3D94FC;
     //border-color: #3D94FC;
-    color: #132158;
-    border-color: #132158;
+    //color: #132158;
+    //border-color: #132158;
 
     border-style: solid;
     /*align-items: center;
@@ -257,8 +257,8 @@ hr{
     font-weight: normal;
 }
 .boton_personalizado:hover{
-    //background-color: #FF005C;
-    color: #FF005C;
-    border-color: #FF005C;
+    background-color: #FF005C;
+    //color: #FF005C;
+    //border-color: #FF005C;
 
 }

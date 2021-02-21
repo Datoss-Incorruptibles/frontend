@@ -7,9 +7,6 @@ a,span,div{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .filter{
-
-    }
     .share{
 
         button{
@@ -187,7 +184,7 @@ mat-card-actions{
   }
 
   
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 425px) {
     .card-politico{
       max-width: 300px ;
       min-width: 200px;

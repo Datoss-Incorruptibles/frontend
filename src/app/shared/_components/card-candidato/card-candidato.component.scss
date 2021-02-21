@@ -29,12 +29,12 @@
                     //color: #938D8D;
                     font-size: 13px;
                     color: #FF005C;
-                    font-weight: 500;
+                    font-weight: 400;
                 }
                 .card-name{
                     font-size:18px;
                     color: #132158;
-                    font-weight: 600;
+                    font-weight: 500;
                     margin-bottom: 4px;
                     p{
                         margin: 0;
@@ -238,15 +238,16 @@ hr{
     height: 35px;*/
     width: 150px;
     border-radius: 30px;
-    color: #ffffff;
+    /*color: #ffffff;
     border-color: none;
     background-color: #3D94FC;
-    
-    //border: 0px;
+    */
+    border: 0px;
 
 
-    //color: #3D94FC;
-    //border-color: #3D94FC;
+    color: #63AAFF;
+    //color: #828282;
+    border-color: #63AAFF;
     //color: #132158;
     //border-color: #132158;
 
@@ -257,8 +258,8 @@ hr{
     font-weight: normal;
 }
 .boton_personalizado:hover{
-    background-color: #FF005C;
-    //color: #FF005C;
+    //background-color: #FF005C;
+    color: #63AAFF;
     //border-color: #FF005C;
 
 }

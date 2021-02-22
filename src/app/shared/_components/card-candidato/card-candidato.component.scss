@@ -1,6 +1,6 @@
 .card-politico{
-    //margin-bottom: 20px;
-    //margin-top: 10px;
+    //margin-bottom: 25px;
+    //margin-top: 25px;
     border-radius: 20px;
     box-shadow: 2px 2px 5px #999;
     position: relative;
@@ -11,6 +11,7 @@
     flex-direction: column ;
 
     .header{
+        max-height: 120px;
         .header-image-title{
             display: flex;
             justify-content:flex-start;
@@ -19,31 +20,33 @@
                 position: relative;
                 margin-left: 10px;
                 overflow: auto;
-
                 .partido-name{
                     margin-bottom: 5px;
                     p{
                         margin: 0;
                     }
                     //font-size:  11px;
-                    //color: #938D8D;
+                    color: #938D8D;
+                    color: #63AAFF;
                     font-size: 13px;
-                    color: #FF005C;
-                    font-weight: 400;
+                    //color: #FF005C;
+                    //font-weight: 400;
                 }
                 .card-name{
-                    font-size:18px;
+                    font-weight: 500 !important;
+                    font-style: normal;
+                    font-size: 18px;
                     color: #132158;
-                    font-weight: 500;
+                    //font-weight: 500;
                     margin-bottom: 4px;
                     p{
                         margin: 0;
                     }
                 }
                 .profesion{
-                    font-size: 12px;
-                    //font-size:13px;
-                    //color: #938D8D;
+                    //font-size: 12px;
+                    font-size:13px;
+                    color: #938D8D;
                     color: #132158;
                 }
             } 
@@ -92,7 +95,7 @@
 
             .indicador{
                 font-size:12px;
-                //color:#515151;
+                color:#515151;
                 color: #132158;
                 display: flex;
                 align-items: center;
@@ -245,13 +248,13 @@ hr{
     border: 0px;
 
 
-    color: #63AAFF;
+    //color: #63AAFF;
     //color: #828282;
-    border-color: #63AAFF;
+    //border-color: #63AAFF;
     //color: #132158;
     //border-color: #132158;
 
-    border-style: solid;
+    //border-style: solid;
     /*align-items: center;
     display: flex;
     justify-content: center;*/

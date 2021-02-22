@@ -15,9 +15,9 @@ export class MilistaComponent implements OnInit {
   showLoader;
   constructor(private restApi:RestApiService,
     private global:GlobalService) { 
-    if(window.location.hash.includes("milista")){
-      this.global.messageSource.next("candidato")
-    }
+    // if(window.location.hash.includes("milista")){
+    //   this.global.messageSource.next("candidato")
+    // }
   }
 
   ngOnInit(): void {

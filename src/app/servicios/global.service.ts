@@ -51,8 +51,8 @@ export class GlobalService {
 
 
   // buscar candidato o partidos 
-  messageSource = new BehaviorSubject('')
-  currentMessage = this.messageSource.asObservable();
+  // messageSource = new BehaviorSubject('')
+  // currentMessage = this.messageSource.asObservable();
 
   constructor() { }
 

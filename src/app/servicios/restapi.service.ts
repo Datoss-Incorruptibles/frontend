@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment';
 export class RestApiService {
   private domain: string = environment.backend;
   // private domain: string = "http://127.0.0.1:8000/v1/";
+  widthScreen;    
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -16,18 +17,26 @@ export class RestApiService {
     })
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.getSizeScreen();
+  }
 
+  getSizeScreen(){
+    try {
+      this.widthScreen = window.innerWidth;    
+    } catch (error) {
+      this.widthScreen = 1800;
+    }
+  }
 
 //ORGANIZACION POLITICA
   getOrganizacionPolitica(nextUrl?) {
 
     let _url = this.domain + URL_API.organizacionpolitica;
-    let limit = "5";
+    let limit = "10";
 
-    let width = window.innerWidth;
-    if(width > 900 ){
-      limit = "10"
+    if(this.widthScreen < 900 ){
+      limit = "5"
     }
 
     let params = new HttpParams().set("limit",limit);
@@ -43,10 +52,9 @@ export class RestApiService {
     let _url = this.domain + URL_API.candidato;
     let id_cargos = CHARGE.PRESIDENTE;
 
-    let limit = "5";
-    let width = window.innerWidth;    
-    if(width > 900 ){
-      limit = "10"
+    let limit = "10";
+    if(this.widthScreen < 900 ){
+      limit = "5"
     }
     let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", limit);//Create new HttpParams
     if(nextUrl){
@@ -77,11 +85,10 @@ export class RestApiService {
     let _url = this.domain + URL_API.candidato;
     let id_cargos = CHARGE.CONGRESISTA;
 
-    let limit = "5";
-    let width = window.innerWidth;
+    let limit = "14";
     
-    if(width > 900 ){
-      limit = "14"
+    if(this.widthScreen  < 900 ){
+      limit = "5"
     }
 
     let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", limit);//Create new HttpParams
@@ -96,11 +103,10 @@ export class RestApiService {
   getCongresistasByOrganization(idOrganization: string, nextUrl?) {
     let _url = this.domain + URL_API.candidato;
 
-    let limit = "5";
-    let width = window.innerWidth;
+    let limit = "14";
     
-    if(width > 900 ){
-      limit = "14"
+    if(this.widthScreen < 900 ){
+      limit = "5"
     }
 
     let params = new HttpParams()
@@ -117,10 +123,9 @@ export class RestApiService {
   getCongresistasByRegion(idUbigeos: string, nextUrl?) {
       let _url = this.domain + URL_API.candidato;
 
-      let limit = "5";
-      let width = window.innerWidth;
-      if(width > 900 ){
-        limit = "14"
+      let limit = "14";
+      if(this.widthScreen < 900 ){
+        limit = "5"
       }
       
       let params = new HttpParams()
@@ -137,10 +142,9 @@ export class RestApiService {
   getCongresistasByOrganizacionAndRegion(idOrganization: string,idUbigeos: string,nextUrl?) {
       let _url = this.domain + URL_API.candidato;
 
-      let limit = "5";
-      let width = window.innerWidth;
-      if(width > 900 ){
-        limit = "14"
+      let limit = "14";
+      if(this.widthScreen < 900 ){
+        limit = "5"
       }
 
       let id_cargos = CHARGE.CONGRESISTA;
@@ -161,10 +165,9 @@ export class RestApiService {
   getParlamento(nextUrl?) {
     let _url = this.domain + URL_API.candidato;
 
-    let limit = "5";
-    let width = window.innerWidth;
-    if(width > 900 ){
-      limit = "14"
+    let limit = "14";
+    if(this.widthScreen < 900 ){
+      limit = "5"
     }
 
     let params = new HttpParams().set("cargo_ids", CHARGE.PARLAMENTO_ANDINO).set("limit", limit); //Create new HttpParams
@@ -178,10 +181,9 @@ export class RestApiService {
   getParlamentoByOrganization(idOrganization: string, nextUrl?) {
     let _url = this.domain + URL_API.candidato;
 
-    let limit = "5";
-    let width = window.innerWidth;
-    if(width > 900 ){
-      limit = "14"
+    let limit = "14";
+    if(this.widthScreen < 900 ){
+      limit = "5"
     }
 
     let params = new HttpParams()
@@ -213,11 +215,10 @@ export class RestApiService {
   //FILTROS PARTIDOS
   getOrganizacionesbyOrdering(ordering:string, nextUrl?){
     let _url = this.domain + URL_API.organizacionpolitica;
-    let limit = "5";
+    let limit = "10";
 
-    let width = window.innerWidth;
-    if(width > 900 ){
-      limit = "10"
+    if(this.widthScreen < 900 ){
+      limit = "5"
     }
 
     let params = new HttpParams().set("ordering",ordering).set("limit",limit);
@@ -232,11 +233,10 @@ export class RestApiService {
   searchCandidato(value,cargo_id){
     let search = value;
     let _url = this.domain + URL_API.candidato;
-    let limit = "5";
+    let limit = "14";
 
-    let width = window.innerWidth;
-    if(width > 900 ){
-      limit = "14"
+    if(this.widthScreen < 900 ){
+      limit = "5"
     }
     let id_cargos = cargo_id;
     
@@ -252,11 +252,10 @@ export class RestApiService {
   getCandidatobyAllCriterios(cargo_ids,organizacion_politica_id,ubigeo_postula,max_estudios_ids,indicador_ids,nextUrl?){
     //console.log( "valores:"+cargo_ids+","+organizacion_politica_id+","+ubigeo_postula+","+max_estudios_ids+","+indicador_ids)
     let _url = this.domain + URL_API.candidato;
-    let limit = "5";
+    let limit = "14";
 
-    let width = window.innerWidth;
-    if(width > 900 ){
-      limit = "14"
+    if(this.widthScreen < 900 ){
+      limit = "5"
     }
 
     let params = new HttpParams()

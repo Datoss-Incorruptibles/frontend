@@ -11,14 +11,15 @@ export class AppComponent implements OnInit  {
   title = 'Elecciones2021';
   showFiller=false;
 
-  message;
+  // message;
 
   constructor(
     private global:GlobalService,
     private location: Location) { }
 
   ngOnInit(): void {
-    this.global.currentMessage.subscribe(message =>this.message = message);
+    // canditato o partido stuff
+    // this.global.currentMessage.subscribe(message =>this.message = message);
 
     
     // temporal , only to prevent crash with olds values saved in localStorage

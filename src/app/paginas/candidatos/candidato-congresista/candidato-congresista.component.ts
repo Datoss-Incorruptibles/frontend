@@ -21,6 +21,7 @@ export class CandidatoCongresistaComponent implements OnInit {
   private notesModelChangeSubscription: Subscription;
   value = '';
 
+  masFiltros= true;
 
   listOfDiferrentPages = []
   showLoader = false;
@@ -46,7 +47,7 @@ export class CandidatoCongresistaComponent implements OnInit {
 
   txtselecEdu:string;
   txtselecSentencias:string;
-  panelOpenState = false;
+  //panelOpenState = false;
 
   constructor(
     private restApiService: RestApiService,
@@ -268,5 +269,15 @@ export class CandidatoCongresistaComponent implements OnInit {
 
     this.nextPageUrl = "start";
     this.candidatoPageX;
+  }
+
+  onVerMas(){
+    if(this.masFiltros==false){
+      this.masFiltros=true;
+      console.log(this.masFiltros);
+    }else{
+      this.masFiltros=false;
+      console.log(this.masFiltros);
+    }
   }
 }

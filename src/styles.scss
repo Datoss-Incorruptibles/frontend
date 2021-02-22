@@ -96,6 +96,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
    /* width: 100%;
     padding: 40px 22px;
     background-color: #D5E4FF;*/
+/*
  mat-form-field{
         &.mat-form-field-type-mat-select{
             .mat-form-field-flex{
@@ -109,26 +110,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         }
      }
  }
+ 
  .mat-form-field-label,.mat-select-arrow,.mat-select-value-text{
     color:#0048B1 !important;
 }
-
-
-
-
- 
+ */
 
  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: #2c4484 !important;
+    color: #3D94FC !important;
   }
 
   .mat-primary .mat-pseudo-checkbox-checked, .mat-primary .mat-pseudo-checkbox-indeterminate {
-    background: #2c4484 !important;
+    background: #3D94FC !important;
 }
 mat-drawer-content{
     background-color: #D5E4FF;
 }
 
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: transparent;
+}
 
 .mat-card-header-text{
     width: 100%;

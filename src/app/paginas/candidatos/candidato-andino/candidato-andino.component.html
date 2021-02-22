@@ -1,18 +1,50 @@
-<div >
-    <div class="wraper-filtrado-search"> 
-        <div class="filtrado" *ngIf="!notesText">
-            <mat-form-field appearance="fill" class="filterRegion">
-                <mat-label>Filtro: Partido</mat-label>
-                <mat-select [(value)]="orgIdSelect" (selectionChange)="onFiltroOrganizacion($event.value)">
-                    <mat-option value="sinseleccion" >SIN SELECCIÓN</mat-option>
-                    <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
-                        {{partido.nombre}}
-                    </mat-option>    
-                </mat-select>
-            </mat-form-field>
+<div *ngIf="listParAndino">
+    <div class="wraper-filtrado-search">
+        <div class="filtrado"  fxLayout="row" fxLayoutAlign="space-around stretch" fxLayoutGap="5px"  *ngIf="!notesText">
+            <div fxLayoutAlign="center center">      
+                <mat-form-field appearance="fill" class="filterOrg">
+                    <mat-label>Partido</mat-label>
+                    <mat-select  [(value)]="orgIdSelect" (selectionChange)="onFiltroOrganizacion($event.value)">
+                        <mat-option value="sinseleccion2" >SIN SELECCIÓN</mat-option>
+                        <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
+                            {{partido.nombre}}
+                        </mat-option>    
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="center center">
+                <div class="masfiltros" [hidden]="masFiltros">
+                    <mat-form-field  appearance="fill" class="filterEdu">
+                        <mat-label>Max. Educación</mat-label>
+                        <mat-select [formControl]="selecEdu"(selectionChange)="onFiltroEdu()" multiple>
+                            <mat-option value="1">Educación primaria</mat-option>
+                            <mat-option value="2">Educación secundaria</mat-option>
+                            <mat-option value="3">Estudios técnicos</mat-option>
+                            <mat-option value="4">Estudios no universitarios</mat-option>
+                            <mat-option value="5">Universitario</mat-option>
+                            <mat-option value="6">Post grado</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="filterSentencias">
+                        <mat-label>Sentencias</mat-label>
+                        <mat-select [formControl]="selecSentencias" (selectionChange)="onFiltroSentencias()"multiple>
+                            <mat-option value="8">Sentencias Civiles</mat-option>
+                            <mat-option value="9">Sentencias Penales</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+
+            <div fxLayoutAlign="center center"  >
+                <button  mat-button  class="btnmasFiltro" (click)="onVerMas()">{{masFiltros ? 'Más' : 'Menos'}} Filtros</button>
+            </div>
         </div>
+
         <div class="search" *ngIf="orgIdSelect == 'sinseleccion' || orgIdSelect == ''">
-            <mat-form-field class="example-form-field">
+            <mat-form-field class="busqueda">
                 <mat-label>
                     Buscar candidato
                 </mat-label>
@@ -25,8 +57,8 @@
                 <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
         </div>
-    
     </div>
+
 
         <div>
             <div
@@ -39,23 +71,23 @@
             [infiniteScrollDisabled] = "notesText"
 
             >
-                <div class="wrapper">
+        <div class="wrapper">
                     <div *ngFor="let candidato of listParAndino" class="listParAndino">
                         <app-card-candidato [candidato]="candidato"></app-card-candidato> 
                     </div>  
                     <div class="spinner">
                         <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
                     </div>
-                </div>
-                <div class="nofound" *ngIf="listParAndino && listParAndino.length == 0">
+            </div>
+            <div class="nofound" *ngIf="listParAndino && listParAndino.length == 0">
                     <p>
                         <strong>
                             No se encontraron candidatos...
                         </strong>
                     </p>
-                </div>
-
             </div>
+
         </div>
+    </div>
 
 </div>

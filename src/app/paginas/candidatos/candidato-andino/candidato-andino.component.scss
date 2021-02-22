@@ -33,6 +33,9 @@
   
   }
 }
+mat-form-field,mat-accordion{
+  margin-left: 10px;
+}
 
 @media only screen and (max-width: 700px) {
   .search{
@@ -45,11 +48,16 @@
 
 }
 
+
 @media only screen and (max-width: 480px) {
-  .filterRegion {
-    font-size:10px ;
-    width: 120px !important;
-    }
+    .filterRegion ,.filterOrg,.filterEdu,.filterSentencias{
+      font-size:10px ;
+      width: 120px !important;
+      }
+      .busqueda{
+        font-size:10px ;
+        width: 200px !important;
+      }
 }
 
 .spinner{
@@ -87,4 +95,7 @@
   color: #2c4484;
   font-size: medium;
   margin: 10px;
+}
+.btnmasFiltro{
+  color:#3D94FC;
 }

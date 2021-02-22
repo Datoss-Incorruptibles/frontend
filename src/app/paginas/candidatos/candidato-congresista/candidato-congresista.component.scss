@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     position: relative;
     min-height: 30px;
+    //align-items: center;
     .filtrado{
       display: flex;
       align-items: flex-start;
@@ -51,6 +52,10 @@
   .filterRegion ,.filterOrg,.filterEdu,.filterSentencias{
     font-size:10px ;
     width: 120px !important;
+    }
+    .busqueda{
+      font-size:10px ;
+      width: 200px !important;
     }
 }
 
@@ -102,6 +107,9 @@
   .congresistas{
     width: 100% ;
   }
+}
+.btnmasFiltro{
+  color:#3D94FC;
 }
   
   // @media only screen and (min-width: 1250px) {

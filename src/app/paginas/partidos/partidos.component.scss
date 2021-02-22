@@ -39,8 +39,8 @@ a{
         box-shadow: 2px 2px 5px #999;
         .mat-card-header{
             img{
-                width: 50px;
-                height: 50px;
+                width: 70px;
+                height: 70px;
                 border-radius: 10px;
             }
         }
@@ -101,11 +101,13 @@ a{
 }
 
 .fondoAcademico{
-    color: #1CBAD9;
+    //color: #1CBAD9;
+    color: #ffae1d75;
 }
 
 .fondoPolitico{
-    color: #DBA837;
+    //color: #DBA837;
+    color: #ffae1d75;
 }
 mat-card-actions{
     padding-top: 0;
@@ -119,7 +121,8 @@ mat-card-actions{
 .CantCandidatos{
     //background-color: #FFE7ED;
     text-align: center;
-    color: #132158;
+    color: #132158ba;
+    //color: #132158;
 }
 .porcentaje{
 
@@ -164,23 +167,31 @@ mat-card-actions{
 .titulo{
     color: #132158;
 }
+.titulo.funda {
+    color: #132158ba;
+}
 .boton_personalizado{
     text-decoration: none;
     padding: 10px;
     height: 35px;
     width: 200px;
-    color: #ffffff;
+    //color: #ffffff;
+    color: #63AAFF;
     border-color: none;
-    background-color: #3D94FC;
+    //background-color: #3D94FC;
     border-radius: 30px;
-    border: 0px;
+    //border: 0px;
+    border: #63AAFF 2px;
+    border-style: solid;
     align-items: center;
     display: flex;
     justify-content: center;
     font-weight: normal;
   }
   .boton_personalizado:hover{
-    background-color: #FF005C;
+    color: #DF2854;
+    border-color: #DF2854;
+    //background-color: #FF005C;
   }
 
   

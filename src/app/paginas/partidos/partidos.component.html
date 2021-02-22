@@ -58,7 +58,7 @@
                     <mat-card-title class="titulo" mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
                         {{partido.nombre}}
                     </mat-card-title>
-                    <mat-card-subtitle class="titulo">Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años 
+                    <mat-card-subtitle class="titulo funda">Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años 
     
                     </mat-card-subtitle>
                 </mat-card-header>
@@ -127,7 +127,7 @@
                             </div>       
                              -->   
                              <div class="indicador">
-                                <mat-icon   class="fondoSentencias" aria-hidden="true">
+                                <mat-icon   class="fondoPolitico" aria-hidden="true">
                                     school
                                 </mat-icon>
                                 <label class="colorSentencias">&nbsp;{{getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}} Ed.Básica</label>
@@ -140,7 +140,7 @@
                             </div>
               
                             <div class="indicador" >
-                                <span class="material-icons fondoPolitico" >payment</span>
+                                <span class="material-icons fondoAcademico" >payment</span>
                                 <label class="colorPolitico">&nbsp;{{getCantidadIngresoProm(partido)|currency:'S/.':'symbol':'4.0-0'}} Ingreso P. Anual</label>  
                             </div>                
     

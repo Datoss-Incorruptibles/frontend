@@ -23,22 +23,7 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-
             <!--*ngIf="(unigeoIdSelect == '' || unigeoIdSelect == 'sinseleccion1' || unigeoIdSelect == '140100') && (orgIdSelect == 'sinseleccion2' || orgIdSelect == '') "   -->
-            <div  fxLayoutAlign="center center" >
-                <mat-form-field class="busqueda">
-                    <mat-label>
-                        Nombre
-                    </mat-label>
-                    <input 
-                    matInput 
-                    placeholder="Escriba su nombre"
-                    type="text" 
-                    (keyup)="search($event.target.value)"
-                    >
-                    <mat-icon matSuffix>search</mat-icon>
-                </mat-form-field>
-            </div>
             <div fxLayoutAlign="center center">
                 <div class="masfiltros" [hidden]="masFiltros">
                     <mat-form-field  appearance="fill" class="filterEdu">
@@ -69,7 +54,27 @@
                 <button  mat-button  class="btnmasFiltro" (click)="onVerMas()">{{masFiltros ? 'Más' : 'Menos'}} Filtros</button>
             </div>
         </div>
-
+        <!-- (unigeoIdSelect == '' || unigeoIdSelect == 'sinseleccion1' || unigeoIdSelect == '140100') && (orgIdSelect == 'sinseleccion2' || orgIdSelect == '')  -->
+        <div fxLayoutAlign="center center" class="search" *ngIf="unigeoIdSelect == '' || 
+        (unigeoIdSelect == 'sinseleccion1' || 
+        unigeoIdSelect == '140100') &&
+        (orgIdSelect == 'sinseleccion2' || 
+        orgIdSelect == '' ) &&
+        txtselecSentencias == '' && 
+        txtselecEdu == '' ">
+            <mat-form-field class="busqueda">
+                <mat-label>
+                    Nombre
+                </mat-label>
+                <input 
+                matInput 
+                placeholder="Escriba su nombre"
+                type="text" 
+                (keyup)="search($event.target.value)"
+                >
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </div>
 
 
         

@@ -5,38 +5,31 @@
             <mat-card class="mat-card mat-focus-indicator">
                 <div *ngIf="candidato.medios" class="medios">
                     <div *ngFor="let medio of candidato.medios" class="medio">
-                        <mat-card class="card-politico">
-                            <div class="noticia">
-                                <div class="texto">
-                                    <a target="_blank" href="{{ medio.url }}">
-                                    <mat-card-title class="medio-titulo">{{ medio.titulo }}</mat-card-title>
-                                    </a>   
-                                    <mat-card-footer>
-                                        <p>{{ medio.fecha }} - {{ medio.medio }}</p>
-                                        <!--
-                                        <p>{{ medio.fecha }} </p>
-                                        <p>{{ medio.medio }} </p>
-                                        -->
-                                    </mat-card-footer>
-                                </div>
-
-                                <mat-card-content class="multimedia">
-                                    <div *ngIf="medio.tipo == 'video'">
-                                        <div class="youtube-player">
-                                            <iframe width="360" height="200" [src]=youtubeEmbed(medio.url) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <!--
-                                        <iframe width="360" height="200" [src]=videoEmbedSanitized  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        -->
-                                    </div>
-                                    <div *ngIf="medio.tipo == 'web' || medio.tipo == 'articulo'">
-                                        <div class="youtube-player">
-                                            <img src="{{ medio.imagen }}" alt="Imagen de la noticia"> 
-                                        </div>
-                                    </div>
-                                </mat-card-content>
+                        <mat-card class="card-politico" fxLayoutAlign="space-around stretch">
+                            <div class="texto">
+                                <a target="_blank" href="{{ medio.url }}">
+                                <mat-card-title class="medio-titulo">{{ medio.titulo }}</mat-card-title>
+                                </a>   
+                                <mat-card-footer>
+                                    <p>{{ medio.fecha }} - {{ medio.medio }}</p>
+                                    <!--
+                                    <p>{{ medio.fecha }} </p>
+                                    <p>{{ medio.medio }} </p>
+                                    -->
+                                </mat-card-footer>
                             </div>
-                            
+
+                            <mat-card-content class="multimedia">
+                                <div *ngIf="medio.tipo == 'video'" class="youtube-player">
+                                    <iframe width="360" height="200" [src]=youtubeEmbed(medio.url) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <!--
+                                    <iframe width="360" height="200" [src]=videoEmbedSanitized  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    -->
+                                </div>
+                                <div *ngIf="medio.tipo == 'web' || medio.tipo == 'articulo'" class="imgNoticia">
+                                    <img src="{{ medio.imagen }}" alt="Imagen de la noticia"> 
+                                </div>
+                            </mat-card-content> 
                         </mat-card>
                     </div> 
                 </div>

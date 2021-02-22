@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from "src/app/servicios/global.service";
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-candidatos',
@@ -10,7 +11,9 @@ export class CandidatosComponent implements OnInit {
   public tabIndex = 0; //presidentes 
 
   
-  constructor(private global:GlobalService) {
+  constructor(private global:GlobalService,
+    private title: Title,
+    private meta: Meta) {
     if(window.location.hash.includes("candidato")){
       this.global.messageSource.next("candidato")
     }
@@ -22,6 +25,10 @@ export class CandidatosComponent implements OnInit {
 
   ngOnInit(): void {
 
+      /* SEO Stuff */
+      this.title.setTitle(`candidatos.pe`);
+      let description = `Lista de todos los candidatos para las elecciones del 2021`
+      this.meta.updateTag({name: "description", content:description});
 
   }
 

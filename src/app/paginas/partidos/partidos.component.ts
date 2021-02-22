@@ -2,6 +2,7 @@ import { Component, OnInit,Input,ViewChild} from '@angular/core';
 import { GlobalService } from "src/app/servicios/global.service";
 import { RestApiService } from '../../servicios/restapi.service';
 // import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-partidos',
@@ -9,7 +10,9 @@ import { RestApiService } from '../../servicios/restapi.service';
   styleUrls: ['partidos.component.scss']
 })
 export class PartidosComponent implements OnInit {
-  constructor(private restApi:RestApiService,private global:GlobalService) { 
+  constructor(private restApi:RestApiService,private global:GlobalService,
+    private title: Title,
+    private meta: Meta) { 
     if(window.location.hash.includes("partido")){
       this.global.messageSource.next("partido")
     }
@@ -38,6 +41,10 @@ export class PartidosComponent implements OnInit {
 
     this.getPartidosPoliticos();
 
+    /* SEO Stuff */
+    this.title.setTitle(`candidatos.pe`);
+    let description = `Lista de todos los partidos politicos para las elecciones del 2021`
+    this.meta.updateTag({name: "description", content:description});
   }
 
   getPartidosPoliticos(){

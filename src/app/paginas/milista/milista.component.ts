@@ -27,22 +27,28 @@ export class MilistaComponent implements OnInit {
   }
 
   getMisCandidatos(){
-    let ids  = localStorage.getItem('ids_v1');
-    let idsObj:any = JSON.parse(ids);
-    // console.log(idsObj);
-    
-    if( idsObj && idsObj["noMeRepresenta"].length > 0){
-      for (let i = 0; i < idsObj["noMeRepresenta"].length; i++) {
-        // console.log(idsObj["noMeRepresenta"][i]);
-        this.getMisNoCandidatos(idsObj["noMeRepresenta"][i])
+    try {
+      let ids  = localStorage.getItem('ids_v1');
+      let idsObj:any = JSON.parse(ids);
+      // console.log(idsObj);
+      
+      if( idsObj && idsObj["noMeRepresenta"].length > 0){
+        for (let i = 0; i < idsObj["noMeRepresenta"].length; i++) {
+          // console.log(idsObj["noMeRepresenta"][i]);
+          this.getMisNoCandidatos(idsObj["noMeRepresenta"][i])
+        }
       }
-    }
-    if( idsObj && idsObj["meRepresenta"].length > 0){
-      for (let i = 0; i < idsObj["meRepresenta"].length; i++) {
-        // console.log(idsObj["meRepresenta"][i]);
-        this.getMisCandidato(idsObj["meRepresenta"][i])
+      if( idsObj && idsObj["meRepresenta"].length > 0){
+        for (let i = 0; i < idsObj["meRepresenta"].length; i++) {
+          // console.log(idsObj["meRepresenta"][i]);
+          this.getMisCandidato(idsObj["meRepresenta"][i])
+        }
       }
+    } catch (error) {
+      console.log("algo paso con el localStorage amigo");
+
     }
+
   }
 
   getMisCandidato(id){

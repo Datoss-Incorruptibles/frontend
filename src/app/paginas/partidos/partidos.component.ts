@@ -55,7 +55,7 @@ export class PartidosComponent implements OnInit {
       if(this.nextPageUrl == null)  {
         //do nothing
       }else if(this.nextPageUrl == "start"){
-        this.restApi.getOrganizacionPolitica().subscribe((res:any) =>{
+        this.restApi.getOrganizacionesPolitica().subscribe((res:any) =>{
           this.partidos=res.results;
           this.nextPageUrl = res.next;
 
@@ -67,7 +67,7 @@ export class PartidosComponent implements OnInit {
       }else if(this.nextPageUrl){
         this.showLoader= true;
 
-        this.restApi.getOrganizacionPolitica(this.nextPageUrl).subscribe((res:any) =>{
+        this.restApi.getOrganizacionesPolitica(this.nextPageUrl).subscribe((res:any) =>{
           this.partidosPageX=res.results;
           this.nextPageUrl = res.next;
           this.showLoader= false;

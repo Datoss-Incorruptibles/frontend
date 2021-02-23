@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalService } from "src/app/servicios/global.service";
 import {Meta, Title} from '@angular/platform-browser';
+import { RestApiService } from "src/app/servicios/restapi.service";
 
 @Component({
   selector: 'app-detalle',
@@ -15,6 +16,7 @@ export class DetalleComponent implements OnInit {
   constructor(private route: ActivatedRoute, 
     private router: Router,
     private global:GlobalService,
+    private restApi:RestApiService,
     private title: Title,
     private meta: Meta) {
     this.global.tabIndexPCCurrent.subscribe(message =>{
@@ -26,21 +28,33 @@ export class DetalleComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if(history.state.id){
-      this.partido=history.state; 
-    }else{
-      this.router.navigate(['/partidos']);
-    }
+    // if(history.state.id){
+    //   this.partido=history.state; 
+    // }else{
+    //   this.router.navigate(['/partidos']);
+    // }
+    this.getOrganizacionPolitica()
 
-    /* SEO Stuff */
-    this.title.setTitle(`${this.partido.nombre}`);
-    let description = `${this.partido.nombre}`
-    this.meta.updateTag({name: "description", content:description});
-  
     
   }
   ngOnDestroy() {
     //this.sub.unsubscribe();
+  }
+  getOrganizacionPolitica(){
+    // this.showLoader = true;
+
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.restApi.getOrganizacionPolitica(id).subscribe(partido => {
+      this.partido = partido;
+      // this.showLoader = false;
+      // console.log(this.candidato);
+
+      /* SEO Stuff */
+      this.title.setTitle(`${this.partido.nombre}`);
+      let description = `${this.partido.nombre}`
+      this.meta.updateTag({name: "description", content:description});
+
+    })
   }
   fnAnios(anio){
     return (new Date()).getFullYear() - parseInt(anio);

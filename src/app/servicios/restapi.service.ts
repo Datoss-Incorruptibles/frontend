@@ -30,7 +30,7 @@ export class RestApiService {
   }
 
 //ORGANIZACION POLITICA
-  getOrganizacionPolitica(nextUrl?) {
+  getOrganizacionesPolitica(nextUrl?) {
 
     let _url = this.domain + URL_API.organizacionpolitica;
     let limit = "10";
@@ -47,6 +47,12 @@ export class RestApiService {
     }
 
   }
+  //Partido by id 
+  getOrganizacionPolitica(id){
+    return this.http.get(this.domain+`organizacionpolitica/${id}/?format=json`,this.httpOptions);
+
+  }
+
   //PRESIDENTES
   getPresidente(nextUrl?) {
     let _url = this.domain + URL_API.candidato;

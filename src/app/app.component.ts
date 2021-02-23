@@ -38,7 +38,7 @@ export class AppComponent implements OnInit  {
         } 
       }
     } catch (error) {
-      // console.log("algo bad sucedio amigo");
+      console.log("algo paso con el localStorage amigo");
     }
 
   }

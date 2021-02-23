@@ -274,10 +274,10 @@ export class CandidatoCongresistaComponent implements OnInit {
   onVerMas(){
     if(this.masFiltros==false){
       this.masFiltros=true;
-      console.log(this.masFiltros);
+      //console.log(this.masFiltros);
     }else{
       this.masFiltros=false;
-      console.log(this.masFiltros);
+      //console.log(this.masFiltros);
     }
   }
 }

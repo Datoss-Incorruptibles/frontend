@@ -77,7 +77,9 @@
       </mat-sidenav>
       <mat-sidenav-content >
           <app-header (sidenavToggle)="sidenav.toggle()"  class="toolbar"></app-header>
-        <!--
+           
+            
+          <!--
         <div (sidenavToggle)="sidenav.toggle()" >
             <mat-toolbar color="primary"  class="toolbar">
                 <button mat-icon-button (click)="sidenav.toggle()">
@@ -99,7 +101,9 @@
             <div class="content">
                 <router-outlet ></router-outlet>
             </div>
+            <app-footer></app-footer>
         </main>
+        
       </mat-sidenav-content>
     </mat-sidenav-container>
 

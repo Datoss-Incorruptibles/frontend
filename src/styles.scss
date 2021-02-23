@@ -164,3 +164,16 @@ mat-drawer-content{
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
   }
+  
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #ffffff;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3D94FC;
+}

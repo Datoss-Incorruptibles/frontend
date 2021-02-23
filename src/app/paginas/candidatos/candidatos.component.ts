@@ -14,9 +14,6 @@ export class CandidatosComponent implements OnInit {
   constructor(private global:GlobalService,
     private title: Title,
     private meta: Meta) {
-    // if(window.location.hash.includes("candidato")){
-    //   this.global.messageSource.next("candidato")
-    // }
 
     this.global.tabIndexCurrent.subscribe(message =>this.tabIndex = message);
 

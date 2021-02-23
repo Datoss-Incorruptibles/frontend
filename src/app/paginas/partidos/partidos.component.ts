@@ -13,9 +13,6 @@ export class PartidosComponent implements OnInit {
   constructor(private restApi:RestApiService,private global:GlobalService,
     private title: Title,
     private meta: Meta) { 
-    // if(window.location.hash.includes("partido")){
-    //   this.global.messageSource.next("partido")
-    // }
 
   }
   counter = 0;

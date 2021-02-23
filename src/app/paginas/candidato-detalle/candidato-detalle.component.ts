@@ -44,7 +44,7 @@ export class CandidatoDetalleComponent implements OnInit {
 
       /* SEO Stuff */
       this.title.setTitle(`${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}`);
-      let description = `NOMBRES:${this.candidato.documento_identidad} DNI:${this.candidato.documento_identidad}`
+      let description = `NOMBRES:${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno} DNI:${this.candidato.documento_identidad}`
       this.meta.updateTag({name: "description", content:description});
 
     })

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,ViewChild} from '@angular/core';
+import { Component,Input,ViewChild} from '@angular/core';
 import { GlobalService } from "src/app/servicios/global.service";
 import { RestApiService } from '../../servicios/restapi.service';
 // import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
@@ -9,7 +9,7 @@ import {Meta, Title} from '@angular/platform-browser';
   templateUrl: 'partidos.component.html',
   styleUrls: ['partidos.component.scss']
 })
-export class PartidosComponent implements OnInit {
+export class PartidosComponent  {
   constructor(private restApi:RestApiService,private global:GlobalService,
     private title: Title,
     private meta: Meta) { 

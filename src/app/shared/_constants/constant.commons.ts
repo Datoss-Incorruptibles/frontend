@@ -9,9 +9,9 @@ export const CHARGE = {
 export const PARAMS_OPTION = '/?';
 
 export const URL_API = {
-    candidato: "candidato",
-    ubigeo:"ubigeo",
-    orgpolcombo:"orgpolcombo",
-    organizacionpolitica:"organizacionpolitica",
-    plan:"plan"
+    candidato: "candidato/",
+    ubigeo:"ubigeo/",
+    orgpolcombo:"orgpolcombo/",
+    organizacionpolitica:"organizacionpolitica/",
+    plan:"plan/"
 }

@@ -27,6 +27,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
 //
 import { HttpClientModule } from '@angular/common/http';
+import {TransferHttpCacheModule} from '@nguniversal/common';
 
  
 /*Componnetes */
@@ -106,7 +107,8 @@ import { HeaderComponent } from '../app/shared/_components/header/header.compone
 
   ],
   imports: [
-    BrowserModule,    
+    BrowserModule.withServerTransition({ appId: 'serverApp' }), 
+    TransferHttpCacheModule,   
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,

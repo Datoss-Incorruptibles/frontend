@@ -6,7 +6,10 @@
                 <img _ngcontent-jxr-c95="" src={{partido.ruta_archivo}} class="imagn">
             </div>
             <div class="texto_partido">
-                <div id="nombrepartido">{{partido.nombre}}</div>
+                <div id="nombrepartido">{{partido.nombre}}
+                    <span *ngIf="partido.jne_idorganizacionpolitica == 22 ">ex-Solidaridad</span>
+                    <span *ngIf="partido.jne_idorganizacionpolitica == 21 ">ex-Restauraciòn </span>
+                </div>
                 <div id="fundacionpartido">Fundación {{partido.fundacion_fecha | date: 'd MMM y'}}{{" - "}} {{fnAnios(partido.fundacion_fecha) }} años </div>
                 
                 <div class="vacancia" *ngIf="getCantIndicador(partido,6)!=0">

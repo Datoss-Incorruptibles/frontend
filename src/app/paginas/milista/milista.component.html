@@ -1,30 +1,40 @@
 
-<div
-class="scrollA"
-infiniteScroll
-[infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="50"
-[scrollWindow]="false"
-(scrolled)="onScroll()"
->
+
     <mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs class="navigator">
         <mat-tab label="Me representa" >
-            <div class="wrapper">
-                <div *ngFor="let candidato of misRepresentantes" class="candidato">
-                    <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+            <div
+                class="scrollA"
+                infiniteScroll
+                [infiniteScrollDistance]="2"
+                [infiniteScrollThrottle]="50"
+                [scrollWindow]="false"
+                (scrolled)="onScrollMeReprenta()"
+                >
+                <div class="wrapper">
+                    <div *ngFor="let candidato of misRepresentantes" class="candidato">
+                        <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+                    </div>
                 </div>
             </div>
-
             <div *ngIf="!misRepresentantes">
                 Aun no seleccionaste a los que te representaran en las proximas elecciones!!
             </div>
         </mat-tab>
         <mat-tab label="No me representa" >
-            <div  class="wrapper">
-                <div *ngFor="let candidato of misNoRepresentantes"  class="candidato">
-                    <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+            <div
+            class="scrollA"
+            infiniteScroll
+            [infiniteScrollDistance]="2"
+            [infiniteScrollThrottle]="50"
+            [scrollWindow]="false"
+            (scrolled)="onScrollNoMeReprenta()">
+                <div  class="wrapper">
+                    <div *ngFor="let candidato of misNoRepresentantes"  class="candidato">
+                        <app-card-candidato [candidato]="candidato"></app-card-candidato> 
+                    </div>
                 </div>
             </div>
+
 
             <div *ngIf="!misNoRepresentantes">
                 Aun no seleccionaste a los que te NO te representaran en las proximas elecciones!!
@@ -34,4 +44,3 @@ infiniteScroll
     <div class="spinner">
         <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
     </div>
-</div>

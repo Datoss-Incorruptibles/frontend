@@ -24,6 +24,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 //
 import { HttpClientModule } from '@angular/common/http';
@@ -60,6 +61,8 @@ import { CandidatoPresidenteComponent } from '../app/paginas/candidatos/candidat
 import { CandidatoCongresistaComponent } from '../app/paginas/candidatos/candidato-congresista/candidato-congresista.component';
 import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-andino/candidato-andino.component';
 import { HeaderComponent } from '../app/shared/_components/header/header.component';
+import { FooterComponent } from '../app/shared/_components/footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +75,7 @@ import { HeaderComponent } from '../app/shared/_components/header/header.compone
     HistoriaPartidoComponent,
     PartidoPlanGobiernoComponent,
     HeaderComponent,
+    FooterComponent,
 
 /*Componentes Candidato */
     CandidatosComponent,
@@ -94,6 +98,7 @@ import { HeaderComponent } from '../app/shared/_components/header/header.compone
     HistoriaPartidoComponent,
     PartidoPlanGobiernoComponent,
     HeaderComponent,
+    FooterComponent,
 
     /*Componentes Candidato */
     CandidatosComponent,
@@ -132,6 +137,7 @@ import { HeaderComponent } from '../app/shared/_components/header/header.compone
     MatInputModule,
     MatAutocompleteModule,
     MatExpansionModule,
+    MatTooltipModule,
     SharedModule,
     ScrollingModule,
     InfiniteScrollModule],

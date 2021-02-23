@@ -82,10 +82,10 @@
             </div>
 
             <div class="me-representa" *ngIf="status == 'status01'">
-                <img src="assets/images/iconos/selloBueno2.svg" style="transform:rotate(-25deg);" alt="">
+                <img src="assets/images/iconos/selloMalo2.svg" style="transform:rotate(-25deg);" alt="">
             </div>
             <div class="me-representa" *ngIf="status == 'status11'">
-                <img src="assets/images/iconos/selloMalo2.svg" style="transform:rotate(-25deg);" alt="">
+                <img src="assets/images/iconos/selloBueno2.svg" style="transform:rotate(-25deg);" alt="">
             </div>
         </div>
     <!-- <mat-card-content *ngIf="!fromDetalle" class="container">
@@ -118,20 +118,18 @@
                     <button mat-button (click)="representa(0)" 
                     [ngClass]="{'deactivate': status === 'status00', 'thumb_down':status === 'status01' }"
                     >
-                        <mat-icon class="material-icons material-icons-outlined">thumb_down</mat-icon>             
+                        <mat-icon *ngIf="status != 'status01'" class="deactivate material-icons material-icons-outlined">thumb_down</mat-icon>  
+                        <mat-icon *ngIf="status === 'status01'" class="thumb_down material-icons material-icons">thumb_down</mat-icon>             
+
                     </button>
                 </div>
-                <!--
-                <div class="text">
-                    <p>
-                        Me representa
-                    </p>
-                </div>-->
                 <div>
                     <button mat-button (click)="representa(1)"
                     [ngClass]="{'deactivate': status === 'status10', 'thumb_up':status === 'status11' }"
                     >
-                        <mat-icon class="material-icons material-icons-outlined">thumb_up</mat-icon>             
+                        <mat-icon *ngIf="status != 'status11'" class="deactivate material-icons material-icons-outlined">thumb_up</mat-icon>      
+                        <mat-icon *ngIf="status === 'status11'" class="thumb_up material-icons material-icons">thumb_up</mat-icon>             
+       
                     </button>
                 </div>
             </div>

@@ -33,10 +33,11 @@ export class RestApiService {
   getOrganizacionesPolitica(nextUrl?) {
 
     let _url = this.domain + URL_API.organizacionpolitica;
-    let limit = "10";
+    // change order , first mobile
+    let limit = "5";
 
     if(this.widthScreen < 900 ){
-      limit = "5"
+      limit = "10"
     }
 
     let params = new HttpParams().set("limit",limit);

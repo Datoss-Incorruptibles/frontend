@@ -8,12 +8,12 @@ import { MilistaComponent } from "./paginas/milista/milista.component";
 import { PageNotFoundComponent } from "./paginas/page-not-found/page-not-found.component";
 
 const routes: Routes = [
-  { path: '',   redirectTo: '/partidos', pathMatch: 'full' }, 
-  { path: 'partidos', component: PartidosComponent },
-  { path: 'partido/:id', component: DetalleComponent},
-  { path: 'candidatos', component: CandidatosComponent },
-  { path: 'candidato/:id', component: CandidatoDetalleComponent },
-  { path: 'milista', component: MilistaComponent },
+  { path: '',   redirectTo: 'partidos/.', pathMatch: 'full' }, 
+  { path: 'partidos/.', component: PartidosComponent },
+  { path: 'partido/:id/.', component: DetalleComponent},
+  { path: 'candidatos/.', component: CandidatosComponent },
+  { path: 'candidato/:id/.', component: CandidatoDetalleComponent },
+  { path: 'milista/.', component: MilistaComponent },
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
 
 ];

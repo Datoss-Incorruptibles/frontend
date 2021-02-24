@@ -55,7 +55,7 @@
                 <mat-card-header>
                     <div mat-card-avatar class="imgPartido"><img src="{{partido.ruta_archivo}}" />
                     </div>
-                    <mat-card-title class="titulo" mat-button routerLink="/partido/{{partido.id}}" [state]="partido" >
+                    <mat-card-title class="titulo" mat-button routerLink="/partido/{{partido.id}}/." [state]="partido" >
                         {{partido.nombre}} 
                         <span *ngIf="partido.jne_idorganizacionpolitica == 22 ">ex-Solidaridad</span>
                         <span *ngIf="partido.jne_idorganizacionpolitica == 21 ">ex-Restauracion </span>
@@ -166,7 +166,7 @@
                 
                 <mat-card-actions fxLayout="column"  fxLayoutAlign="center center" >
                     <!--hr class="line"-->
-                    <button  class="boton_personalizado" routerLink="/partido/{{partido.id}}" [state]="partido" mat-button>
+                    <button  class="boton_personalizado" routerLink="/partido/{{partido.id}}/." [state]="partido" mat-button>
                      <span> Ver más</span>             
                     </button>
                     

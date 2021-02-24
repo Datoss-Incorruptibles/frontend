@@ -1,163 +1,198 @@
 <div class="planGobierno">
     <div class="planes">
-        <a href="#">Presidencial</a> | <a href="#">Parlamento Andino</a>
+        <div class="pres">
+            <button onclick="getPlanPres()">Presidencial</button>
+        </div>
+        <!--
+        <div class="parl">
+            <button onclick="getPlanParl()">Parlamento Andino</button>
+        </div> -->
+        <!--<a href="#">Presidencial</a> | <a href="#">Parlamento Andino</a>-->
+    </div>
+    <div class="planPres" *ngIf="plan">
+        <div class="planPres" *ngIf="plan.tipo_plan == 'Plan presidencial'">
+            <div class="dimension">
+                <mat-icon>assignment</mat-icon>
+                <div>&nbsp; Dimensión Social</div>
+            </div>
+
+            <div *ngIf="plan" class="">
+                <div *ngFor="let p of plan.plan_detalles" class="">
+                    <div *ngIf="p.dimension_id==1" class="problem">
+                        <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
+                                    <!--
+                                    <mat-panel-description>
+                                        {{panelOpenState ? 'Menos' : 'Más'}} información
+                                    </mat-panel-description>
+                                    -->
+                                </mat-expansion-panel-header>
+                                
+                                <div class="objetivo">
+                                    <p><b>Objetivo Estratégico (Solución al problema)</b></p>
+                                    <p>{{ onInitial(p.objetivo) }}</p>
+                                </div>
+                                <div class="indicador">
+                                    <p><b>Indicador</b></p>
+                                    <p>{{ onInitial(p.indicador) }}</p>
+                                </div>
+                                <div class="meta">
+                                    <p><b>Meta (2021-2026) (Valor)</b></p>
+                                    <p>{{ onInitial(p.meta) }}</p>
+                                </div>
+                                
+                                <!--
+                                <div *ngFor="let item of p.problema">
+                                    <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
+                                    <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
+                                    <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
+                                </div>
+                                -->
+                                
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="dimension">
+                <mat-icon>assignment</mat-icon>
+                <div>&nbsp; Dimensión institucional</div>
+            </div>
+
+            <div *ngIf="plan" class="">
+                <div *ngFor="let p of plan.plan_detalles" class="">
+                    <div *ngIf="p.dimension_id==2" class="problem">
+                        <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
+                                    <!--
+                                    <mat-panel-description>
+                                        {{panelOpenState ? 'Menos' : 'Más'}} información
+                                    </mat-panel-description>
+                                    -->
+                                </mat-expansion-panel-header>
+                                <div class="objetivo">
+                                    <p><b>Objetivo Estratégico (Solución al problema)</b></p>
+                                    <p>{{ onInitial(p.objetivo) }}</p>
+                                </div>
+                                <div class="indicador">
+                                    <p><b>Indicador</b></p>
+                                    <p>{{ onInitial(p.indicador) }}</p>
+                                </div>
+                                <div class="meta">
+                                    <p><b>Meta (2021-2026) (Valor)</b></p>
+                                    <p>{{ onInitial(p.meta) }}</p>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="dimension">
+                <mat-icon>assignment</mat-icon>
+                <div>&nbsp; Dimensión económica</div>
+            </div>
+
+            <div *ngIf="plan" class="">
+                <div *ngFor="let p of plan.plan_detalles" class="">
+                    <div *ngIf="p.dimension_id==3" class="problem">
+                        <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
+                                    <!--
+                                    <mat-panel-description>
+                                        {{panelOpenState ? 'Menos' : 'Más'}} información
+                                    </mat-panel-description>
+                                    -->
+                                </mat-expansion-panel-header>
+                                <div class="objetivo">
+                                    <p><b>Objetivo Estratégico (Solución al problema)</b></p>
+                                    <p>{{ onInitial(p.objetivo) }}</p>
+                                </div>
+                                <div class="indicador">
+                                    <p><b>Indicador</b></p>
+                                    <p>{{ onInitial(p.indicador) }}</p>
+                                </div>
+                                <div class="meta">
+                                    <p><b>Meta (2021-2026) (Valor)</b></p>
+                                    <p>{{ onInitial(p.meta) }}</p>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="dimension">
+                <mat-icon>assignment</mat-icon>
+                <div>&nbsp; Dimensión territorial - ambiental</div>
+            </div>
+
+            <div *ngIf="plan" class="">
+                <div *ngFor="let p of plan.plan_detalles" class="">
+                    <div *ngIf="p.dimension_id==4" class="problem">
+                        <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
+                                    <!--
+                                    <mat-panel-description>
+                                        {{panelOpenState ? 'Menos' : 'Más'}} información
+                                    </mat-panel-description>
+                                    -->
+                                </mat-expansion-panel-header>
+                                <div class="objetivo">
+                                    <p><b>Objetivo Estratégico (Solución al problema)</b></p>
+                                    <p>{{ onInitial(p.objetivo) }}</p>
+                                </div>
+                                <div class="indicador">
+                                    <p><b>Indicador</b></p>
+                                    <p>{{ onInitial(p.indicador) }}</p>
+                                </div>
+                                <div class="meta">
+                                    <p><b>Meta (2021-2026) (Valor)</b></p>
+                                    <p>{{ onInitial(p.meta) }}</p>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
     </div>
 
-    <div class="dimension">
-        <mat-icon>assignment</mat-icon>
-        <div>&nbsp; Dimensión Social</div>
+    <div class="planes">
+        <div class="parl">
+            <button onclick="getPlanParl()">Parlamento Andino</button>
+        </div>
     </div>
+    <div class="planPar" *ngIf="plan2">
+        <div *ngIf="plan2.tipo_plan == 'Plan parlamento andino'">
+            <div class="dimension">
+                <mat-icon>assignment</mat-icon>
+                <div>&nbsp; Propuestas </div>
+            </div>
 
-    <div *ngIf="plan" class="">
-        <div *ngFor="let p of plan.plan_detalles" class="">
-            <div *ngIf="p.dimension_id==1" class="problem">
-                <mat-accordion>
-                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
-                            <!--
-                            <mat-panel-description>
-                                {{panelOpenState ? 'Menos' : 'Más'}} información
-                            </mat-panel-description>
-                            -->
-                        </mat-expansion-panel-header>
-                        
-                        <div class="objetivo">
-                            <p><b>Objetivo Estratégico (Solución al problema)</b></p>
-                            <p>{{ onInitial(p.objetivo) }}</p>
-                        </div>
-                        <div class="indicador">
-                            <p><b>Indicador</b></p>
-                            <p>{{ onInitial(p.indicador) }}</p>
-                        </div>
-                        <div class="meta">
-                            <p><b>Meta (2021-2026) (Valor)</b></p>
-                            <p>{{ onInitial(p.meta) }}</p>
-                        </div>
-                        
-                        <!--
-                        <div *ngFor="let item of p.problema">
-                            <div class="objetivo"><p><b>OB:</b>{{ onInitial(p.objetivo) }}</p></div>
-                            <div class="indicador"><p><b>IN:</b>{{ onInitial(p.indicador) }}</p></div>
-                            <div class="meta"><p><b>META:</b>{{ onInitial(p.meta) }}</p></div>
-                        </div>
-                        -->
-                        
-                    </mat-expansion-panel>
-                </mat-accordion>
+            <div *ngFor="let p of plan2.plan_detalles" class="">
+                <div *ngIf="p.dimension_id==5" class="problem">
+                    <ul>
+                        <li>{{ onInitial(p.problema) }}</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-    <br>
-
-    <div class="dimension">
-        <mat-icon>assignment</mat-icon>
-        <div>&nbsp; Dimensión institucional</div>
+    <div *ngIf="plan2==null" class="nofound">
+        <h1><strong>No se encontró información</strong></h1>
     </div>
-
-    <div *ngIf="plan" class="">
-        <div *ngFor="let p of plan.plan_detalles" class="">
-            <div *ngIf="p.dimension_id==2" class="problem">
-                <mat-accordion>
-                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
-                            <!--
-                            <mat-panel-description>
-                                {{panelOpenState ? 'Menos' : 'Más'}} información
-                            </mat-panel-description>
-                            -->
-                        </mat-expansion-panel-header>
-                        <div class="objetivo">
-                            <p><b>Objetivo Estratégico (Solución al problema)</b></p>
-                            <p>{{ onInitial(p.objetivo) }}</p>
-                        </div>
-                        <div class="indicador">
-                            <p><b>Indicador</b></p>
-                            <p>{{ onInitial(p.indicador) }}</p>
-                        </div>
-                        <div class="meta">
-                            <p><b>Meta (2021-2026) (Valor)</b></p>
-                            <p>{{ onInitial(p.meta) }}</p>
-                        </div>
-                    </mat-expansion-panel>
-                </mat-accordion>
-            </div>
-        </div>
-    </div>
-    <br>
-
-    <div class="dimension">
-        <mat-icon>assignment</mat-icon>
-        <div>&nbsp; Dimensión económica</div>
-    </div>
-
-    <div *ngIf="plan" class="">
-        <div *ngFor="let p of plan.plan_detalles" class="">
-            <div *ngIf="p.dimension_id==3" class="problem">
-                <mat-accordion>
-                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
-                            <!--
-                            <mat-panel-description>
-                                {{panelOpenState ? 'Menos' : 'Más'}} información
-                            </mat-panel-description>
-                            -->
-                        </mat-expansion-panel-header>
-                        <div class="objetivo">
-                            <p><b>Objetivo Estratégico (Solución al problema)</b></p>
-                            <p>{{ onInitial(p.objetivo) }}</p>
-                        </div>
-                        <div class="indicador">
-                            <p><b>Indicador</b></p>
-                            <p>{{ onInitial(p.indicador) }}</p>
-                        </div>
-                        <div class="meta">
-                            <p><b>Meta (2021-2026) (Valor)</b></p>
-                            <p>{{ onInitial(p.meta) }}</p>
-                        </div>
-                    </mat-expansion-panel>
-                </mat-accordion>
-            </div>
-        </div>
-    </div>
-    <br>
-
-    <div class="dimension">
-        <mat-icon>assignment</mat-icon>
-        <div>&nbsp; Dimensión territorial - ambiental</div>
-    </div>
-
-    <div *ngIf="plan" class="">
-        <div *ngFor="let p of plan.plan_detalles" class="">
-            <div *ngIf="p.dimension_id==4" class="problem">
-                <mat-accordion>
-                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>{{ onInitial(p.problema) }}</mat-panel-title>
-                            <!--
-                            <mat-panel-description>
-                                {{panelOpenState ? 'Menos' : 'Más'}} información
-                            </mat-panel-description>
-                            -->
-                        </mat-expansion-panel-header>
-                        <div class="objetivo">
-                            <p><b>Objetivo Estratégico (Solución al problema)</b></p>
-                            <p>{{ onInitial(p.objetivo) }}</p>
-                        </div>
-                        <div class="indicador">
-                            <p><b>Indicador</b></p>
-                            <p>{{ onInitial(p.indicador) }}</p>
-                        </div>
-                        <div class="meta">
-                            <p><b>Meta (2021-2026) (Valor)</b></p>
-                            <p>{{ onInitial(p.meta) }}</p>
-                        </div>
-                    </mat-expansion-panel>
-                </mat-accordion>
-            </div>
-        </div>
-    </div>
-    <br>
 </div>

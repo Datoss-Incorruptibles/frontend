@@ -34,11 +34,11 @@ export class RestApiService {
 
     let _url = this.domain + URL_API.organizacionpolitica;
     // change order , first mobile
-    let limit = "5";
+    let limit = "10";
 
-    if(this.widthScreen < 900 ){
-      limit = "10"
-    }
+    // if(this.widthScreen < 900 ){
+    //   limit = "10"
+    // }
 
     let params = new HttpParams().set("limit",limit);
     if(nextUrl){

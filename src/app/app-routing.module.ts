@@ -6,6 +6,7 @@ import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.compon
 import { CandidatoDetalleComponent } from '../app/paginas/candidato-detalle/candidato-detalle.component';
 import { MilistaComponent } from "./paginas/milista/milista.component";
 import { PageNotFoundComponent } from "./paginas/page-not-found/page-not-found.component";
+import { PlanesGobiernoComponent } from "./paginas/planes-gobierno/planes-gobierno.component";
 
 const routes: Routes = [
   { path: '',   redirectTo: 'partidos/.', pathMatch: 'full' }, 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'candidatos/.', component: CandidatosComponent },
   { path: 'candidato/:id/.', component: CandidatoDetalleComponent },
   { path: 'milista/.', component: MilistaComponent },
+  { path: 'planesdegobierno/.', component: PlanesGobiernoComponent },
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
 
 ];

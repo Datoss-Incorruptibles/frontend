@@ -55,7 +55,8 @@
             </div> -->
         </div>
       </div>
-    <mat-tab-group (click)="setearTab()" [(selectedIndex)]="tabIndex" [backgroundColor]="'primary'" mat-stretch-tabs>
+    <mat-tab-group (click)="setearTab()" [(selectedIndex)]="tabIndex" mat-stretch-tabs>
+    <!--<mat-tab-group (click)="setearTab()" [(selectedIndex)]="tabIndex" [backgroundColor]="'primary'" mat-stretch-tabs>-->
         <mat-tab label="Resumen">
             <app-detalle-partido-indicadores [partido]="partido"></app-detalle-partido-indicadores>
         </mat-tab>

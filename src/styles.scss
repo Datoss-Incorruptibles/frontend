@@ -177,11 +177,12 @@ mat-drawer-content{
 ::-webkit-scrollbar-thumb {
     background: #3D94FC;
 }
+
 .mat-tab-label-content {
     padding: 3px 10px;
     color: #FF005C;
-    //background-color: white;
-    background-color: #ececec;
+    background-color: white;
+    //background-color: #ececec;
     border-radius: 15px;
     box-shadow: 2px 2px 5px #999;
 }
@@ -191,4 +192,9 @@ mat-drawer-content{
         color: white;
         background-color: #FF005C;
     }
+}
+.mat-tab-list {
+    background-color: white;
+    display: flex;
+    justify-content: center;
 }

@@ -2,7 +2,8 @@
   <div >
     <app-card-candidato [candidato]="candidato" [fromDetalle]="fromDetalle"></app-card-candidato> 
   </div>
-  <mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs class="navigator">
+  <mat-tab-group mat-stretch-tabs class="navigator">
+  <!--<mat-tab-group [backgroundColor]="'primary'" mat-stretch-tabs class="navigator">-->
     <mat-tab label="Historia">
         <app-candidato-historia [candidato]="candidato"></app-candidato-historia>
     </mat-tab>

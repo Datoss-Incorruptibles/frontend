@@ -45,16 +45,34 @@
                         <span *ngIf="i==0"> </span> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}
                     </span>
                     </p>
-                </div>
+                    </div>
+                 </div>
+                        -->
+                        <!-- <div class="iconoshare">
+                            <mat-icon _ngcontent-jxr-c95="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                share
+                            </mat-icon>
+                        </div> -->
             </div>
-            -->
-            <!-- <div class="iconoshare">
-                <mat-icon _ngcontent-jxr-c95="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
-                    share
-                </mat-icon>
-            </div> -->
+            <div class="share">
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>share</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" class="custom-menu">
+                  <button mat-menu-item>
+                    <a href="https://www.facebook.com/sharer.php?u=https://www.candidatos.pe"  target="_blank" >
+                        <img src="assets/images/iconos/facebook.svg">
+                    </a>
+                  </button>
+                  <button mat-menu-item>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.candidatos.pe&text=Conoce a tus candidatos en estas elecciones &hashtags=candidatos2021"  target="_blank" >
+                        <img src="assets/images/iconos/twitter.svg">
+                    </a>
+                  </button>
+                </mat-menu>
+            </div>  
         </div>
-      </div>
+    </div>
     <mat-tab-group (click)="setearTab()" [(selectedIndex)]="tabIndex" mat-stretch-tabs>
     <!--<mat-tab-group (click)="setearTab()" [(selectedIndex)]="tabIndex" [backgroundColor]="'primary'" mat-stretch-tabs>-->
         <mat-tab label="Resumen">

@@ -7,6 +7,12 @@
 
 .container1{
     height: 50px;
+    position: relative;
+    .share{
+        position: absolute;
+        left:0;
+        bottom:0;
+    }
 
 }
 .container2{

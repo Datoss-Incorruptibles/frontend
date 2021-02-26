@@ -14,6 +14,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatMenuModule} from '@angular/material/menu';
 
 import { CardCandidatoComponent } from './_components/card-candidato/card-candidato.component';
 import { AppRoutingModule } from './../app-routing.module';
@@ -36,6 +37,7 @@ import { AppRoutingModule } from './../app-routing.module';
     MatProgressBarModule,
     MatTabsModule,
     MatListModule,
+    MatMenuModule,
     FlexLayoutModule
   ]
 })

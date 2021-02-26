@@ -9,7 +9,22 @@
 .partido_info{
     flex-direction: row;
     display: flex;
+    position: relative;
+    .share{
+        position: absolute;
+        right: 0;
+        top: 0;
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
+
+::ng-deep .custom-menu{
+    min-width: 20px !important;
+}
+
 .imagen_partido{
     height: 75px;
     width: 70px;
@@ -41,10 +56,7 @@
     margin-top: 3px;
     color: #dc8e1a;
 }
-.iconoshare{
-    position: relative;
-    text-align: right;
-}
+
 mat-tab-group{
     background-color:#F9F9F9;
     
@@ -55,3 +67,5 @@ mat-tab-group{
 .afavor{
     color: red;
 }
+
+

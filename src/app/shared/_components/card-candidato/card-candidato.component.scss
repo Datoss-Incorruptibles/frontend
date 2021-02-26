@@ -10,6 +10,16 @@
     justify-content: flex-start;
     flex-direction: column ;
 
+    .share{
+        position: absolute;
+        right: 0;
+        top: 0;
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    
     .header{
         //max-height: 120px;
         .header-image-title{
@@ -162,6 +172,10 @@
 
 }
 
+
+::ng-deep .custom-menu{
+    min-width: 20px !important;
+}
 
 .sinAbsolute{
     position: relative;

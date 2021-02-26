@@ -10,15 +10,7 @@
     justify-content: flex-start;
     flex-direction: column ;
 
-    .share{
-        position: absolute;
-        right: 0;
-        top: 0;
-        img{
-            width: 20px;
-            height: 20px;
-        }
-    }
+
     
     .header{
         //max-height: 120px;
@@ -49,6 +41,7 @@
                     color: #132158;
                     //font-weight: 500;
                     margin-bottom: 4px;
+                    padding-right: 10px;
                     p{
                         margin: 0;
                     }
@@ -141,14 +134,13 @@
         width:100%;
         .mat-card-actions{
             // width:100%;
-
             font-size: 12px;
             display: flex;
             flex-direction: row ;
             justify-content:space-between ;
             margin-bottom: 0;
             width:100%;
-
+            // position: relative;
             .actions-ver-mas{
                 width: 100%;
                 display: flex;
@@ -165,6 +157,17 @@
                 .text{
                     // cursor: crosshair;
                     text-align:center;
+                }
+            }
+            .share{
+                // position: absolute;
+                // right: 0;
+                // top: 35px;
+                // bottom:0;
+                padding:0;
+                img{
+                    width: 20px;
+                    height: 20px;
                 }
             }
         }

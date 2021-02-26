@@ -92,24 +92,6 @@
        
         
 
-        <div class="share">
-            <button mat-button [matMenuTriggerFor]="menu">
-                <mat-icon>share</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" class="custom-menu">
-              <button mat-menu-item>
-                <a href="https://www.facebook.com/sharer.php?u=https://www.candidatos.pe"  target="_blank" >
-                    <img src="assets/images/iconos/facebook.svg">
-                </a>
-              </button>
-              <button mat-menu-item>
-                <a href="https://twitter.com/intent/tweet?url=https://www.candidatos.pe&text=Conoce a tus candidatos en estas elecciones &hashtags=candidatos2021"  target="_blank" >
-                    <img src="assets/images/iconos/twitter.svg">
-                </a>
-              </button>
-            </mat-menu>
-        </div> 
-
 
     <!-- <mat-card-content *ngIf="!fromDetalle" class="container">
 
@@ -157,6 +139,24 @@
                 </div>
             </div>
 
+            <div class="share">
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>share</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" class="custom-menu">
+                  <button mat-menu-item>
+                    <a href="https://www.facebook.com/sharer.php?u=https://www.candidatos.pe"  target="_blank" >
+                        <img src="assets/images/iconos/facebook.svg">
+                    </a>
+                  </button>
+                  <button mat-menu-item>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.candidatos.pe&text=Conoce a tus candidatos en estas elecciones &hashtags=candidatos2021"  target="_blank" >
+                        <img src="assets/images/iconos/twitter.svg">
+                    </a>
+                  </button>
+                </mat-menu>
+            </div> 
+    
         </mat-card-actions>      
     </div>
 </mat-card>

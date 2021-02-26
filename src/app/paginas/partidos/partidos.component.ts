@@ -141,10 +141,11 @@ export class PartidosComponent  {
     }); 
     return cont;
   } 
+    
   getCantidadEdSuperior(partido){
     let cont = 0;
     this.fnIndicadores(partido,1).forEach(element => {
-      if(element.indicador_categoria!=4){
+      if(element.indicador_categoria_nombre=="Técnicos"||element.indicador_categoria_nombre=="No univ."||element.indicador_categoria_nombre=="Universitario"||element.indicador_categoria_nombre=="Postgrado"){
         cont = element.cantidad + cont;
       }
     }); 

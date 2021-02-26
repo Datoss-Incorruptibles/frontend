@@ -63,6 +63,7 @@ import { CandidatoAndinoComponent } from '../app/paginas/candidatos/candidato-an
 import { HeaderComponent } from '../app/shared/_components/header/header.component';
 import { FooterComponent } from '../app/shared/_components/footer/footer.component';
 
+import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -141,7 +142,7 @@ import { FooterComponent } from '../app/shared/_components/footer/footer.compone
     SharedModule,
     ScrollingModule,
     InfiniteScrollModule],
-  providers: [],
+  providers: [ProcessHTTPMsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

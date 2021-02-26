@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { URL_API, PARAMS_OPTION, CHARGE } from '../shared/_constants/constant.commons';
 import { environment } from '../../environments/environment';
+import { ProcessHTTPMsgService } from './process-httpmsg.service';
+import { map, catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +20,7 @@ export class RestApiService {
     })
   };
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private processHTTPMsgService: ProcessHTTPMsgService) { 
     this.getSizeScreen();
   }
 
@@ -291,8 +294,9 @@ export class RestApiService {
     return this.http.get(this.domain+`candidato/${id}/?format=json`,this.httpOptions);
   }
   //recupera el plan de gobierno
-  getPlanGobByPartidoId(id,tipo){
-    return this.http.get(this.domain+`plan/${id}/${tipo}/?format=json`,this.httpOptions);
+  getPlanGobByPartidoId(id,tipo):Observable<any>{
+    return this.http.get(this.domain+`plan/${id}/${tipo}/?format=json`,this.httpOptions)
+    .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
 }

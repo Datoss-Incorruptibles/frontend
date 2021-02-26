@@ -36,26 +36,29 @@ export class PartidoPlanGobiernoComponent implements OnInit {
     this.showLoader = true;
 
     const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id)
+    //console.log(id)
     this.restApiService.getPlanGobByPartidoId(id,tipo).subscribe(plan => {
     this.plan = plan;
     this.showLoader = false;
 
     //console.log(this.plan);
-    })
+    }, err => {
+      console.log(err)
+  })
   }
   getPlanGob2(tipo){
     // get param id 
     this.showLoader = true;
 
     const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id)
+    //console.log(id)
     this.restApiService.getPlanGobByPartidoId(id,tipo).subscribe(plan2 => {
     this.plan2 = plan2;
     this.showLoader = false;
 
-    //console.log(this.plan);
-    })
+    }, err => {
+      console.log(err)
+  })
   }
   onInitial(text){
     let tem = ""

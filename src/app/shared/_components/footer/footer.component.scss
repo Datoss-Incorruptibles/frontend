@@ -16,10 +16,11 @@
 
 }
 .container2{
-    height: 100px;
+    
+    //height: 100px;
     background: #3D94FC 0% 0% no-repeat padding-box;
-    align-items: center;
-    text-align: center;
+    //align-items: center;
+    //text-align: center;
     color: white;
 
 }
@@ -43,4 +44,18 @@
 p{
     margin: 0;
     padding:0;
+}
+.indicador{
+    display: flex;
+    align-items: center;
+
+    //margin-bottom: 10px;
+
+}
+.btnAcercade{
+    height: 20px;
+}
+.mat-button{
+    line-height: normal;
+    padding: 0px 5px;
 }

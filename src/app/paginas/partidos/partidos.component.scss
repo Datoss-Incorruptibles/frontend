@@ -187,8 +187,12 @@ mat-card-actions{
     //background-color: #FF005C;
   }
 
+  mat-card-header {
+
+    min-height: 80px;
+}
   
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 426px) {
     .card-politico{
       max-width: 300px ;
       min-width: 200px;

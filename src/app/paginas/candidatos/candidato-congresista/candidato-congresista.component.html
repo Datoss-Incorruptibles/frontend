@@ -39,6 +39,7 @@
                     <mat-form-field appearance="fill" class="filterSentencias">
                         <mat-label>Sentencias</mat-label>
                         <mat-select [formControl]="selecSentencias" (selectionChange)="onFiltroSentencias()"multiple>
+                            <mat-option value="11">Sin Sentencias</mat-option>
                             <mat-option value="8">Sentencias Civiles</mat-option>
                             <mat-option value="9">Sentencias Penales</mat-option>
                         </mat-select>

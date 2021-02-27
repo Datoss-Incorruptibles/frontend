@@ -179,8 +179,9 @@ mat-drawer-content{
 }
 
 .mat-tab-label-content {
-    padding: 3px 10px;
+    padding: 3px 20px;
     color: #FF005C;
+    color: #63AAFF;
     background-color: white;
     //background-color: #ececec;
     border-radius: 15px;
@@ -191,10 +192,22 @@ mat-drawer-content{
     .mat-tab-label-content {
         color: white;
         background-color: #FF005C;
+        background-color: #63AAFF;
     }
 }
 .mat-tab-list {
     background-color: white;
     display: flex;
     justify-content: center;
+}
+.mat-tab-label {
+    opacity:1 !important;
+}
+.mat-tab-header-pagination {
+    //visibility: hidden;
+    max-width: 1px;
+}
+.mat-tab-body-content {
+    min-height: calc(95vh - 111px - 300px);
+    overflow: auto;
 }

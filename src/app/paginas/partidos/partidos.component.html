@@ -41,9 +41,9 @@
                          <p>
 
                         <span *ngFor="let indicador of fnIndicadores(partido,3); let i = index">
-                            <span *ngIf="i==0"  > {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }},</span>
-                            <span *ngIf="i==1"> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}, </span>
-                            <span *ngIf="i==2 "> {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
+                            <span *ngIf="i==0"  >{{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}, </span>
+                            <span *ngIf="i==1">{{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
+                            <span *ngIf="i==2 ">, {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
                             
                         </span>
                         <br>

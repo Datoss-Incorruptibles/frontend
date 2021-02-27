@@ -207,3 +207,7 @@ mat-drawer-content{
     //visibility: hidden;
     max-width: 1px;
 }
+.mat-tab-body-content {
+    min-height: calc(95vh - 111px - 300px);
+    overflow: auto;
+}

@@ -46,7 +46,7 @@ export class ListadoCongresistaComponent implements OnInit {
     private global:GlobalService,
     private route: ActivatedRoute
     ) {
-      this.global.filterRegionIndexCurrent.subscribe(message =>
+      this.global.filterRegionDPIndexCurrent.subscribe(message =>
         {
           this.unigeoIdSelect = message; 
          // console.log( this.unigeoIdSelect);
@@ -54,7 +54,7 @@ export class ListadoCongresistaComponent implements OnInit {
           //if(this.unigeoIdSelect) this.sinSelectRegion = false
   
         });
-        this.global.filterEducacionIndexCurrent.subscribe(message =>
+        this.global.filterEducacionDPIndexCurrent.subscribe(message =>
           {
             this.txtselecEdu = message;
            // console.log( this.txtselecEdu);
@@ -62,7 +62,7 @@ export class ListadoCongresistaComponent implements OnInit {
            // if(this.txtselecEdu) this.sinSelectEdu = false
           }
           );
-        this.global.filterSentenciasIndexCurrent.subscribe(message =>
+        this.global.filterSentenciasDPIndexCurrent.subscribe(message =>
             {
               this.txtselecSentencias = message;
              // console.log( this.txtselecSentencias);
@@ -84,12 +84,12 @@ export class ListadoCongresistaComponent implements OnInit {
   onFiltroRegion(value: any ){
     if(value=="sinseleccion1"){
      // this.sinSelectRegion=true;
-      this.global.filterRegionSource.next("");
+      this.global.filterRegionDPSource.next("");
       this.onFiltrar();
     }else{
       //this.sinSelectRegion=false;
       // this.unigeoIdSelect = value;
-      this.global.filterRegionSource.next(value);
+      this.global.filterRegionDPSource.next(value);
       // console.log(this.orgIdSelect);
       // console.log(this.orgSelect);
       this.onFiltrar();
@@ -98,12 +98,12 @@ export class ListadoCongresistaComponent implements OnInit {
   onFiltroEdu(){
     if(this.selecEdu.value.length == 0 ){
      // this.sinSelectEdu==true;
-     this.global.filterEducacionSource.next("");
+     this.global.filterEducacionDPSource.next("");
       this.onFiltrar();
     }else{
      // this.sinSelectEdu==false;
       
-      this.global.filterEducacionSource.next(this.selecEdu.value.toString());
+      this.global.filterEducacionDPSource.next(this.selecEdu.value.toString());
       this.onFiltrar();
       //console.log((this.selecEdu.value).toString())
     }
@@ -111,11 +111,11 @@ export class ListadoCongresistaComponent implements OnInit {
   onFiltroSentencias(){
     if(this.selecSentencias.value.length == 0 ){
    // this.SinSelecSentencias==true;
-   this.global.filterSentenciasSource.next("");
+   this.global.filterSentenciasDPSource.next("");
     this.onFiltrar();
   }else{
     //this.SinSelecSentencias==false;
-    this.global.filterSentenciasSource.next((this.selecSentencias.value).toString());
+    this.global.filterSentenciasDPSource.next((this.selecSentencias.value).toString());
     //console.log((this.selecSentencias.value).toString());
     this.onFiltrar();
     

@@ -22,8 +22,20 @@ export class GlobalService {
   filterSentenciasSource = new BehaviorSubject('')
   filterSentenciasIndexCurrent = this.filterSentenciasSource.asObservable();
 
+  //FILTROS CONGRESISTAS - DETALLE PARTIDO 
+  filterRegionDPSource = new BehaviorSubject('140100') //seteado lima por defecto
+  filterRegionDPIndexCurrent = this.filterRegionDPSource.asObservable();
 
-  
+  //Filtro educacion- DETALLE PARTIDO
+  filterEducacionDPSource = new BehaviorSubject('')
+  filterEducacionDPIndexCurrent = this.filterEducacionDPSource.asObservable();
+
+  //filtro Sentencias- DETALLE PARTIDO
+  filterSentenciasDPSource = new BehaviorSubject('')
+  filterSentenciasDPIndexCurrent = this.filterSentenciasDPSource.asObservable();
+
+
+
   // filtro candidatos por partido y solo P.Andino
   filterPartidoPASource = new BehaviorSubject('')
   filterPartidoPAIndexCurrent = this.filterPartidoPASource.asObservable();

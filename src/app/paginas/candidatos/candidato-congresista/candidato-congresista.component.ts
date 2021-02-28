@@ -23,7 +23,7 @@ export class CandidatoCongresistaComponent implements OnInit {
 
   masFiltros= true;
 
-  listOfDiferrentPages = []
+  listOfDiferrentPages = [];
   showLoader = false;
 
   REGIONES: Region[];
@@ -265,7 +265,7 @@ export class CandidatoCongresistaComponent implements OnInit {
     this.sinSelectPartido = true;
     this.sinSelectEdu = true;
     this.SinSelecSentencias= true;*/
-    this.listOfDiferrentPages = []
+    this.listOfDiferrentPages = [];
 
     this.nextPageUrl = "start";
     this.candidatoPageX;

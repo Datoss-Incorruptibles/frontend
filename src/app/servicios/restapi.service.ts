@@ -258,6 +258,26 @@ export class RestApiService {
     return this.http.get(_url,{ headers: this.httpOptions.headers, params: params}); 
 
   }
+  searchCandidatobyPartido(value,cargo_id,idPartido){
+    let search = value;
+    let _url = this.domain + URL_API.candidato;
+    let limit = "14";
+
+    if(this.widthScreen < 900 ){
+      limit = "5"
+    }
+    let id_cargos = cargo_id;
+    
+    let params = new HttpParams()
+    .set("search",search)
+    .set("limit",limit)
+    .set("cargo_ids", id_cargos)
+    .set("organizacion_politica_id", idPartido);
+
+    return this.http.get(_url,{ headers: this.httpOptions.headers, params: params}); 
+
+  }
+
 //https://api-dev.candidatos.pe/v1/candidato/?indicador_ids=8,9&max_estudios_ids=4,5&ubigeo_postula=010000&organizacion_politica_id=1&cargo_ids=1
   getCandidatobyAllCriterios(cargo_ids,organizacion_politica_id,ubigeo_postula,max_estudios_ids,indicador_ids,nextUrl?){
     //console.log( "valores:"+cargo_ids+","+organizacion_politica_id+","+ubigeo_postula+","+max_estudios_ids+","+indicador_ids)

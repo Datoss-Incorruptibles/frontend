@@ -1,13 +1,8 @@
-.filtrado{
-    margin: 20px;
-    // width: 100%;
-}
-
-@media only screen and (max-width: 480px) {
+/*@media only screen and (max-width: 480px) {
   .filterRegion {
     font-size:10px !important;
     }
-}
+}*/
 
 
 .container{
@@ -39,11 +34,6 @@
     stroke: #000000;
 }
 
-
-.filterRegion{
-    font-size:12px;;
-}
-
 .wrapper{
     display: flex;
     align-content: space-between;
@@ -64,7 +54,64 @@
 
     }
   }
+  .btnmasFiltro{
+    color:#3D94FC;
+  }
+
+.wraper-filtrado-search{
+    margin: 10px 10px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 30px;
+    //align-items: center;
+    .filtrado{
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+    .search{
+      position: absolute;
+      right: 10px;
+      margin-top: 10px;
+
+      mat-form-field{
+        max-width:300px;
+        min-width: 150px;
+      }
+      input {
+        caret-color: rgb(0, 0, 0);
+      }
+
+    }
+}
+
+  mat-form-field,mat-accordion{
+    margin-left: 10px;
+}
+  @media only screen and (max-width: 700px) {
+    .search{
+      width: 100%;
+      position: relative !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;    
+    }
   
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .filterRegion ,.filterOrg,.filterEdu,.filterSentencias{
+      font-size:10px ;
+      width: 120px !important;
+      }
+      .busqueda{
+        font-size:10px ;
+        width: 200px !important;
+      }
+  }
   // @media only screen and (min-width: 1250px) {
   //   .candidato{
   //     max-width: 600px ;

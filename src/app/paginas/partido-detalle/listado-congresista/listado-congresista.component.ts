@@ -1,9 +1,8 @@
-import { Component, OnInit, OnDestroy  } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { RestApiService } from '../../../servicios/restapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { Candidato } from '../../../shared/_interfaces/candidato.interface';
 import { Region } from '../../../shared/_interfaces/region';
-import { Partido } from '../../../shared/_interfaces/partido.interface';
 import { GlobalService } from "src/app/servicios/global.service";
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';

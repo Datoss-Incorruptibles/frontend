@@ -1,22 +1,78 @@
 <div *ngIf="listParlamentoAndino">
-
-     <div
-     class="scroll"
-     infiniteScroll
-     [infiniteScrollDistance]="2"
-     [infiniteScrollThrottle]="50"
-     [scrollWindow]="false"
-     (scrolled)="onScroll()"
-     >
-     <div class="wrapper">
-          <div *ngFor="let candidato of listParlamentoAndino" class="candidato">
-               <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
+     <div class="wraper-filtrado-search">
+          <div class="filtrado"  fxLayout="row" fxLayoutAlign="space-around stretch" fxLayoutGap="5px"  *ngIf="!notesText">
+              <div fxLayoutAlign="center center">
+               <mat-form-field  appearance="fill" class="filterEdu">
+                    <mat-label>Max. Educación</mat-label>
+                    <mat-select [formControl]="selecEdu"(selectionChange)="onFiltroEdu()" multiple>
+                        <mat-option value="1">Educación primaria</mat-option>
+                        <mat-option value="2">Educación secundaria</mat-option>
+                        <mat-option value="3">Estudios técnicos</mat-option>
+                        <mat-option value="4">Estudios no universitarios</mat-option>
+                        <mat-option value="5">Universitario</mat-option>
+                        <mat-option value="6">Post grado</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill" class="filterSentencias">
+                    <mat-label>Sentencias</mat-label>
+                    <mat-select [formControl]="selecSentencias" (selectionChange)="onFiltroSentencias()"multiple>
+                        <mat-option value="11">Sin Sentencias</mat-option>
+                        <mat-option value="8">Sentencias Civiles</mat-option>
+                        <mat-option value="9">Sentencias Penales</mat-option>
+                    </mat-select>
+                </mat-form-field>
+              </div>
           </div>
-     </div>
-         
-     </div>
-     
-     <div class="spinner">
-          <mat-spinner *ngIf="showLoader"  diameter=40></mat-spinner>
+          <!-- (unigeoIdSelect == '' || unigeoIdSelect == 'sinseleccion1' || unigeoIdSelect == '140100') && (orgIdSelect == 'sinseleccion2' || orgIdSelect == '')  -->
+          <div fxLayoutAlign="center center" class="search" *ngIf="
+          txtselecSentencias == '' && 
+          txtselecEdu == '' ">
+              <mat-form-field class="busqueda">
+                  <mat-label>
+                      Nombre
+                  </mat-label>
+                  <input 
+                  matInput 
+                  placeholder="Escriba su nombre"
+                  type="text" 
+                  (keyup)="search($event.target.value)"
+                  >
+                  <mat-icon matSuffix>search</mat-icon>
+              </mat-form-field>
+          </div>
+        
       </div>
+        <div
+        class="scroll"
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="150"
+        [scrollWindow]="false"
+        (scrolled)="onScroll()"
+        
+        >
+        <div [ngSwitch]="listParlamentoAndino.length">
+            <div *ngSwitchCase = 0 >
+              <div class="container2">
+                  
+                <span >
+                    <strong> No se encontraron candidatos </strong>        
+                </span>
+              </div>
+        
+            </div>
+            <div *ngSwitchDefault>
+                <div class="wrapper">
+                    <div *ngFor="let candidato of listParlamentoAndino" class="candidato">
+                        <app-card-candidato [candidato]="candidato" [fromPartido]="fromPartido"></app-card-candidato> 
+                    </div>
+                </div>
+                <div class="spinner">
+                    <mat-spinner *ngIf="showLoader"  diameter=40 ></mat-spinner>
+                </div>
+            </div>
+        </div>
+        
+     </div>  
 </div>

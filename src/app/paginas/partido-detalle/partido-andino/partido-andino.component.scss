@@ -1,32 +1,117 @@
+/*@media only screen and (max-width: 480px) {
+  .filterRegion {
+    font-size:10px !important;
+    }
+}*/
+
+
+.container{
+  color: #2c4484;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+}
+.container2{
+  color: #2c4484;
+  font-size: medium;
+  margin: 10px;
+}
+
+
 .scroll{
   height: 100vh;
   overflow: scroll;
   // background-color:red;
 }
 
+.spinner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.spinner ::ng-deep .mat-spinner circle {
+  stroke: #000000;
+}
 
 .wrapper{
   display: flex;
   align-content: space-between;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  .candidato{
+      // width: 450px ;
+      width: 400px ;
+      margin: 20px 0px 40px 0px;
+      
+    }
 }
 
-.candidato{
-  // width: 450px ;
-  width: 400px ;
-  margin: 20px 5px 40px 5px;
-  
-}
 
 @media only screen and (max-width: 400px) {
   .candidato{
-    width: 100% ;
+      width: 100% ;
+
+  }
+}
+.btnmasFiltro{
+  color:#3D94FC;
+}
+
+.wraper-filtrado-search{
+  margin: 10px 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: 30px;
+  //align-items: center;
+  .filtrado{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .search{
+    position: absolute;
+    right: 10px;
+    margin-top: 10px;
+
+    mat-form-field{
+      max-width:300px;
+      min-width: 150px;
+    }
+    input {
+      caret-color: rgb(0, 0, 0);
+    }
 
   }
 }
 
+mat-form-field,mat-accordion{
+  margin-left: 10px;
+}
+@media only screen and (max-width: 700px) {
+  .search{
+    width: 100%;
+    position: relative !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+  .filterRegion ,.filterOrg,.filterEdu,.filterSentencias{
+    font-size:10px ;
+    width: 120px !important;
+    }
+    .busqueda{
+      font-size:10px ;
+      width: 200px !important;
+    }
+}
 // @media only screen and (min-width: 1250px) {
 //   .candidato{
 //     max-width: 600px ;

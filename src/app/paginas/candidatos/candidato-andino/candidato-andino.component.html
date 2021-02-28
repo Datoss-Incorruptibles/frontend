@@ -44,10 +44,14 @@
             </div>
         </div>
 
-        <div class="search" *ngIf="orgIdSelect == 'sinseleccion' || orgIdSelect == ''">
+        <div fxLayoutAlign="center center" class="search" *ngIf="
+        (orgIdSelect == 'sinseleccion2' || 
+        orgIdSelect == '' ) &&
+        txtselecSentencias == '' && 
+        txtselecEdu == '' ">
             <mat-form-field class="busqueda">
                 <mat-label>
-                    Buscar candidato
+                    Nombre
                 </mat-label>
                 <input 
                 matInput 

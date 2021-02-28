@@ -49,6 +49,15 @@ export class GlobalService {
     filterSentenciasPASource = new BehaviorSubject('')
     filterSentenciasPAIndexCurrent = this.filterSentenciasPASource.asObservable();
 
+// PARLAMENTO ANDINO DETALLE PARTIDO
+    //Filtro educacion
+    filterEducacionPADPSource = new BehaviorSubject('')
+    filterEducacionPADPIndexCurrent = this.filterEducacionPADPSource.asObservable();
+  
+    //filtro Sentencias
+    filterSentenciasPADPSource = new BehaviorSubject('')
+    filterSentenciasPADPIndexCurrent = this.filterSentenciasPADPSource.asObservable();
+
 
 
 

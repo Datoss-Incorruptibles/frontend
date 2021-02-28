@@ -24,7 +24,7 @@
             </a> -->
             	
             <!--<hr />-->
-            <a mat-list-item routerLink="/milista/." routerLinkActive='active' (click)="sidenav.close()">
+            <a mat-list-item  style="align-items: center;" routerLink="/milista/." routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon><span class="nav-caption">Mi lista</span>
             </a>
 
@@ -34,18 +34,22 @@
                 <!-- <a mat-list-item routerLink="/" routerLinkActive='active' (click)="sidenav.close()">
                     <mat-icon></mat-icon><span class="nav-caption">Acerca de</span>
                 </a> -->
-                <a mat-list-item href="https://forms.gle/nyAvUJrKixH5tcyz7" target="_blank" routerLinkActive='active' (click)="sidenav.close()" >
-                    <mat-icon></mat-icon><span class="nav-caption">Dejanos tu feedback</span>
+                <a mat-list-item  style="align-items: center;" href="https://forms.gle/nyAvUJrKixH5tcyz7" target="_blank" routerLinkActive='active' (click)="sidenav.close()" >
+                    <mat-icon></mat-icon><span class="nav-caption"><p>Dejanos tu feedback</p></span>
                 </a>
-                <div class="colab">
-                    <p>   Desarrollado por:</p>
-                    <p>   Grupo 1,2 Dsrp</p> <br>
-                    <p>   Colaboradores: </p>
-                    <p>   MDP, El Buho </p>
-                </div>
-                <div class="version">
+                
+                <!--a mat-list-item   fxLayoutAlign="center center" routerLink="/acercade/." routerLinkActive='active' routerLinkActive='active' (click)="sidenav.close()" >
+                   <span class="nav-caption" style="font-size:12px">Acerca de nosotros</span>
+                </a-->
+                <div style="width: 100%;"fxLayoutAlign="center center">
+                <button routerLink="/acercade/."  routerLinkActive='active' mat-button  class="btnAcercade" (click)="sidenav.close()" style="font-size:12px"> Acerca de nosotros</button>
+                </div>  
+                <!--div class="colab">
+                    <p>   Acerca de nosotros</p><br>
+                </div-->
+                <div class="" style="text-align: center; color: white;font-size:12px">
                     <p>
-                        v1.0 Beta
+                        Ultima actualización: <br> 26 febrero de 2021
                     </p>
                 </div>
             </div>

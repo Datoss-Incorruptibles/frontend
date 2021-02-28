@@ -20,3 +20,13 @@ span{
 .equipos{
     font-weight:700;
 }
+marquee{
+    height: calc(93vh - 111px - 150px);
+ }
+
+@media only screen and (max-width: 426px) {
+    marquee{
+        height: calc(92vh - 111px );
+     }
+
+  }

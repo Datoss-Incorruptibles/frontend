@@ -1,1 +1,1 @@
-Sitemap: https://www.candidatos.pe/sitemap_location.txt
+Sitemap: https://www.candidatos.pe/sitemap_v2.txt

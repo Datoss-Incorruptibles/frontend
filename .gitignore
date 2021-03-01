@@ -45,3 +45,7 @@ testem.log
 .DS_Store
 Thumbs.db
 docs
+
+/src/site2.txt
+/src/sitefail.txt
+sitemap_location.txt

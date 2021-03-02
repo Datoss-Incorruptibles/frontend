@@ -1,0 +1,76 @@
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+.comoVotar {
+    display: flex;
+    justify-content: center;
+    //align-items: center;
+    border: solid;
+    min-height: 100px;
+}
+/*
+.mat-expansion-panel-header {
+    //transform-origin: top left;
+    //transform: rotate(90deg);
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    //height: 200px;
+    //width: auto;
+    
+}
+mat-panel-title {
+    height: 100%;
+    transform-origin: top left;
+    transform: rotate(90deg); // rotate back 
+    margin-left: 100%;
+}
+
+.mat-accordion {
+    display: block;
+    transform-origin: top left;
+    transform: rotate(-90deg) translateX(-600px); // rotate and position it; translateX value corresponds to panel height 
+    width: 600px; // this will be the height of the accordion (inversed due to rotation)
+  }
+  
+  .mat-expansion-panel {
+    max-height: 500px; // this will be the width of the panel (inversed due to rotation)
+  }
+  
+  .panel-content {
+    transform-origin: top left;
+    transform: rotate(90deg); // rotate back 
+    margin-left: 100%; // position it 
+    height: 600px; // real height of the content 
+    width: 400px; // real width of the content 
+  }
+  */
+#fija {
+  height: 100px;
+  width: 90%;
+  table-layout: fixed;
+}
+#fija tr td {
+  border: solid;
+  border-radius: 20px;
+}
+.color {
+  background-color: chartreuse;
+  font-size: 0px;
+  width: 1px;
+  text-align: center;
+  overflow: hidden;
+
+  -webkit-transition: width 0.4s ease 0s, ease-out 0.4s, background-color 0.4s ease 0.4s, font-size 0.4s; //chrome
+  -moz-transition: width 0.4s ease 0s, ease-out 0.4s, background-color 0.4s ease 0.4s, font-size 0.4s; //mozilla
+  -o-transition: width 0.4s ease 0s, ease-out 0.4s, background-color 0.4s ease 0.4s, font-size 0.4s; //opera
+  transition: width 0.4s ease 0s, ease-out 0.4s, background-color 0.4s ease 0.4s, font-size 0.4s; //explorer
+}
+.color:hover {
+  width: 50%;
+  font-size: large;
+  background-color: green;
+}
+.color h3:hover{
+  font-size: 0px;
+}

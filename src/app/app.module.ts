@@ -51,6 +51,7 @@ import { CandidatoPlanGobiernoComponent } from '../app/paginas/candidato-detalle
 
 /*Mi lista  */
 import { MilistaComponent } from '../app/paginas/milista/milista.component';
+import { ComoVotarComponent } from '../app/paginas/como-votar/como-votar.component';
 
 /*Utils */
 import {ScrollingModule} from '@angular/cdk/scrolling';
@@ -77,6 +78,7 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     PartidoPlanGobiernoComponent,
     HeaderComponent,
     FooterComponent,
+    ComoVotarComponent,
 
 /*Componentes Candidato */
     CandidatosComponent,
@@ -100,6 +102,7 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     PartidoPlanGobiernoComponent,
     HeaderComponent,
     FooterComponent,
+    ComoVotarComponent,
 
     /*Componentes Candidato */
     CandidatosComponent,

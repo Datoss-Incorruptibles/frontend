@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
 //variables
 $purple: #28254C;
 $l-purple: #332F63;
@@ -6,10 +5,6 @@ $t-purple: #8C8AA7;
 $pink: #FF5E65;
 $white: #fff;
 
-html, body {
-  //background: $purple;
-  font-family: 'Ubuntu';
-}
 * {
   box-sizing: border-box;
 }
@@ -24,12 +19,12 @@ html, body {
   border-radius: 20px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 48%;
   transform: translate(-50%, -50%);
   padding: 30px 50px;
   
   .box__ghost {
-    padding: 15px 25px 25px;
+    padding: 25px;
     position: absolute;
     left: 50%;
     top: 30%;
@@ -155,8 +150,8 @@ html, body {
     .box__ghost-container {
       //background: $white;
       background-color: #3D94FC;
-      width: 100px;
-      height: 100px;
+      width: 85px;
+      height: 85px;
       border-radius: 100px 100px 0 0;
       position: relative;
       margin: 0 auto;
@@ -220,9 +215,9 @@ html, body {
     }
       
     .box__ghost-shadow {
-      height: 20px;
+      height: 8px;
       //box-shadow: 0 50px 15px 5px #3B3769;#3D94FC
-      box-shadow: 0 50px 15px 5px #599beb;
+      box-shadow: 0 50px 15px 5px #3d93fca6;
       border-radius: 50%;
       margin: 0 auto;
       animation: smallnbig 3s ease-in-out infinite;
@@ -230,10 +225,11 @@ html, body {
   }
   
   .box__description {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 115%;
+    //position: absolute;
+    //bottom: 100px;
+    //left: 50%;
+    //transform: translateX(-50%);
     
     .box__description-container {
       color: $white;
@@ -264,13 +260,13 @@ html, body {
       background-color: #ff005c;
       border: 1px solid transparent;
       border-radius: 50px;
-      height: 50px;
+      height: 40px;
       text-align: center;
       text-decoration: none;
       color: $white;
-      line-height: 50px;
+      line-height: 40px;
       font-size: 18px;
-      padding: 0 70px;
+      padding: 0 60px;
       white-space: nowrap;
       margin-top: 25px;
       transition: background-color .5s ease;

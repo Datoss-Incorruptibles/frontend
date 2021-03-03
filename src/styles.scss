@@ -204,8 +204,7 @@ mat-drawer-content{
     opacity:1 !important;
 }
 .mat-tab-header-pagination {
-    //visibility: hidden;
-    max-width: 1px;
+    background-color: white;
 }
 .mat-tab-body-content {
     min-height: calc(95vh - 111px - 276px);

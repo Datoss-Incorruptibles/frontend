@@ -80,17 +80,17 @@ main {
 }
 .content{
     padding: 20px 12px;
-    min-height: calc(94.5vh - 111px - 150px);
+    min-height: calc(94.5vh - 111px - 130px);
 }
 
 @media only screen and (width: 2560px) {
     .content{
-        min-height: calc(96.7vh - 111px - 150px);
+        min-height: calc(96.7vh - 111px - 130px);
     }
 }
 @media only screen and (min-width: 1024px)and(max-width: 1400px) {
     .content{
-        min-height: calc(93.9vh - 111px - 150px);
+        min-height: calc(93.9vh - 111px - 130px);
     }
 }
 

@@ -10,9 +10,6 @@
                                 <a target="_blank" href="{{ medio.url }}">
                                 <mat-card-title class="medio-titulo">{{ medio.titulo }}</mat-card-title>
                                 </a>   
-                                <!--<mat-card-footer>
-                                    <p>{{ medio.fecha }} - {{ medio.medio }}</p>
-                                </mat-card-footer>-->
                                 <p class="card__footer">{{ medio.fecha }} - {{ medio.medio }}</p>
                             </div>
 
@@ -24,7 +21,8 @@
                                     -->
                                 </div>
                                 <div *ngIf="medio.tipo == 'web' || medio.tipo == 'articulo'" class="imgNoticia">
-                                    <img src="{{ medio.imagen }}" alt="Imagen de la noticia"> 
+                                    <img *ngIf="medio.imagen!=''" src="{{ medio.imagen }}" alt="Imagen de la noticia">
+                                    <img *ngIf="medio.imagen==''" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2x25WRuS-zUko0mD1rHVdL-iiF66Vm--eKQ&usqp=CAU" alt="Imagen de la noticia">
                                 </div>
                             </mat-card-content> 
                         </mat-card>

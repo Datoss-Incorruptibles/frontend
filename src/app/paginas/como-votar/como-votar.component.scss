@@ -3,21 +3,14 @@
 }
 .container {
   width: 1100px;
-  margin: 50px auto 0;
+  margin: 0 auto 0;
 }
 
 .slider-containers {
   width: 100%;
-  margin-top: 60px;
+  //margin-top: 60px;
 }
 
-.slider-container {
-  margin-bottom: 60px;
-}
-
-.flexbox-slider {
-  margin-top: 50px;
-}
 
 .flexbox-slider {
   display: -webkit-box;
@@ -27,6 +20,29 @@
   width: 100%;
   height: 500px;
   visibility: hidden;
+}
+.section-title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  //color: black;
+  height: 50vh;
+  
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    //transform: rotate(-90deg);
+    //white-space: nowrap;
+    text-align: center;
+    //font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: 0.75px;
+    color: #132158;
+    opacity: 1;
+  }
 }
 
 .flexbox-slider .flexbox-slide {
@@ -52,11 +68,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  content: "";
+  //content: "";
   display: block;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.6);
+  //background-color: rgba(255, 255, 255, 0.6);
   z-index: 2;
   opacity: 0;
 }
@@ -65,10 +81,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  height: auto;
-  width: auto;
-  min-width: 100%;
-  min-height: 100%;
+  //height: auto;
+  //width: auto;
+  //min-width: 100%;
+  //min-height: 100%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -76,16 +92,22 @@
 
 .flexbox-slider .flexbox-slide .text-block {
   position: absolute;
-  left: 30px;
-  bottom: 30px;
-  max-width: 400px;
-  padding: 20px;
+  //left: 30px;
+  //bottom: 30px;
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 400px;
+  padding: 20px 20px 20px 20px;
+  //margin: 30px 30px 30px 30px;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color:#00000029;
   color: #fff;
-  z-index: 4;
+  //z-index: 4;
   visibility: hidden;
+  
 }
+
 
 .flexbox-slider .flexbox-slide .text-block h3 {
   font-size: 20px;
@@ -96,14 +118,12 @@
   -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 80%;
-  background-color:#f3f3f3;
-  background-color: chartreuse;
-}
-
-/* effect 1 styles */
-
-.flexbox-slider.flexbox-slider-1 .flexbox-slide .text-block {
-  bottom: 60px;
+  //background-color:#f3f3f3;
+  background-color:#F3F3F3 0% 0% no-repeat padding-box;
+  
+  .section-title{
+    visibility: hidden;
+  }
 }
 
 .flexbox-slider.flexbox-slider-1:hover .flexbox-slide:hover .text-block {
@@ -118,4 +138,121 @@
   bottom: 30px;
   opacity: 1;
   visibility: visible;
+
+
+}
+
+.text{
+  text-align: center;
+  font: normal normal medium 17px/26px Montserrat;
+  letter-spacing: 0px;
+  color: #3D94FC;
+  opacity: 1;
+}
+.text-title{
+  color: #132158;
+  text-align: center;
+}
+
+.contenedorImg{
+  width:100%;
+  max-width:917px;
+  height:100%;
+  max-height:300px;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.imgLogo{
+
+  width:100%;
+  height:100%;
+  opacity: 1;
+  content:url(/assets/images/como_votarimg/cedula.png);
+  background-size: 100%;   
+  background-repeat:no-repeat;
+  border: 1px solid #3D94FC;
+  border-radius: 19px;
+  
+}
+.conteinerLogo{
+  width:100%;
+  max-width:917px;
+  height:100%;
+  max-height:300px;
+}
+
+.text-prec{
+    text-align: justify;
+    font: normal normal medium 20px/28px Montserrat;
+    letter-spacing: 0.6px;
+    color: #132158;
+    opacity: 1;
+    strong{
+      color: #FF005C;
+    }
+}
+.text-dondeV{
+  text-align: center;
+  font: normal normal medium 20px/28px Montserrat;
+  letter-spacing: 0.6px;
+  color: #132158;
+  opacity: 1;
+  strong{
+    color: #FF005C;
+  }
+}
+
+
+
+
+.contenedorDVImg{
+  width:100%;
+  max-width:377px;
+  height:100%;
+  max-height:338px;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.imgDV{
+
+  width:100%;
+  height:100%;
+  opacity: 1;
+  content:url(/assets/images/como_votarimg/escalonado.png);
+  background-size: 100%;   
+  background-repeat:no-repeat;
+  //border: 1px solid #3D94FC;
+  //border-radius: 19px;
+  
+}
+.conteinerDondeV{
+  width:100%;
+  max-width:377px;
+  height:100%;
+  max-height:338px;
+ // border: 1px solid #3D94FC;
+}
+
+.boton_personalizado{
+  text-decoration: none;
+  padding: 10px;
+  height: 35px;
+  width: 200px;
+  color: #ffffff;
+  border-color: none;
+  background-color: #3D94FC;
+  border-radius: 30px;
+  border: 0px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.boton_personalizado:hover{
+  background-color: #FF005C;
 }

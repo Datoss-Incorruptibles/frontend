@@ -78,15 +78,20 @@ a{
 .colorSentencias{
     color: #132158;
     font-size: 15px;
+   text-align: center;
+  // margin-left:3px ;
 }
 .colorAcademico{
     color: #132158;
     font-size: 15px;
+    text-align: center;
 }
 
 .colorPolitico{
     color: #132158;
     font-size: 15px;
+    text-align: center;
+    //margin-left:3px ;
 }
 
 .fondoSentencias{
@@ -109,6 +114,7 @@ mat-card-actions{
     //background-color: #FFE7ED;
     text-align: center;
     color: red;
+    padding: 3px   ;
 }
 
 .CantCandidatos{

@@ -40,6 +40,14 @@ mat-toolbar{
     opacity: 1;
     height: 111px;
     //box-shadow: 2px 2px 5px #999;
+    position: relative;
+    .share{
+        position: absolute;
+        right:0;
+        bottom:-10px;
+        z-index: 10;
+    }
+
 }
 .active{
     color: #FF005C;
@@ -47,6 +55,8 @@ mat-toolbar{
 .options{
     height: 100%;
     width: 100%;
+    position: relative;
+
 }
 .conteinerLogo{
     height: 100%;

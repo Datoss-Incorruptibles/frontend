@@ -147,8 +147,12 @@
   text-align: center;
   font: normal normal medium 17px/26px Montserrat;
   letter-spacing: 0px;
-  color: #3D94FC;
+  color: #132158;
   opacity: 1;
+  b {
+    text-decoration: none;
+    color: #3D94FC;
+  }
 }
 .text-title{
   color: #132158;
@@ -193,7 +197,8 @@
     opacity: 1;
     margin-right: 100px;
     strong{
-      color: #FF005C;
+      //color: #FF005C;
+      color: #3D94FC;
     }
     p{
       line-height:1.38;

@@ -112,14 +112,15 @@
 .flexbox-slider .flexbox-slide .text-block h3 {
   font-size: 20px;
   font-weight: 700;
+  line-height: 1; 
 }
 
 .flexbox-slider:hover .flexbox-slide:hover {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 80%;
-  //background-color:#f3f3f3;
-  background-color:#F3F3F3 0% 0% no-repeat padding-box;
+  background-color:#f3f3f3;
+  //background-color:#F3F3F3 0% 0% no-repeat padding-box;
   
   .section-title{
     visibility: hidden;
@@ -190,8 +191,14 @@
     letter-spacing: 0.6px;
     color: #132158;
     opacity: 1;
+    margin-right: 100px;
     strong{
       color: #FF005C;
+    }
+    p{
+      line-height:1.38;
+      margin-top:0pt;
+      margin-bottom:0pt;
     }
 }
 .text-dondeV{
@@ -255,4 +262,36 @@
 }
 .boton_personalizado:hover{
   background-color: #FF005C;
+}
+
+.contenedorTabla{
+  width:100%;
+  max-width:377px;
+  height:100%;
+  max-height:338px;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  margin-left:50px;
+  
+}
+
+.imgTabla{
+
+  width:100%;
+  height:100%;
+  opacity: 1;
+  content:url(/assets/images/como_votarimg/cronograma.png);
+  background-size: 100%;   
+  background-repeat:no-repeat;
+  //border: 1px solid #3D94FC;
+  //border-radius: 19px;
+  
+}
+.conteinerTabla{
+  width:100%;
+  max-width:377px;
+  height:100%;
+  max-height:338px;
+ // border: 1px solid #3D94FC;
 }

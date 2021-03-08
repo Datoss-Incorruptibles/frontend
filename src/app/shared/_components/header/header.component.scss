@@ -44,11 +44,15 @@ mat-toolbar{
     .share{
         position: absolute;
         right:0;
-        bottom:-40px;
+        bottom:-35px;
         z-index: 100;
     }
 
 }
+// ::ng-deep .custom-menu{
+//     min-width: 20px !important;
+// }
+
 .active{
     color: #FF005C;
 }

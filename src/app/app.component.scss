@@ -133,3 +133,34 @@ mat-sidenav-container {
     width: 100%;
 
 }
+.popup-info{
+    position: fixed;
+    right: 1%;
+    bottom: 15%;
+    color: #FF005C;
+}
+.custom-menu-text {
+    text-align: center;
+    color: #132158;
+}
+.btn-yes-no {
+    display: flex;
+    justify-content: space-around;
+    .btn-yes{
+        background-color: #3D94FC;
+        color: white;
+        border-radius: 30px;
+        border-style: none;
+        padding: 5px 10px;
+        width: 55px;
+    }
+    .btn-no{
+        background-color: white;
+        color: #3D94FC;
+        border-radius: 30px;
+        border: #3D94FC 2px;
+        border-style: solid;
+        padding: 5px 10px;
+        width: 55px
+    }
+}

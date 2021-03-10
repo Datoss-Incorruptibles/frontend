@@ -2,6 +2,7 @@
     <div class="filtrado" fxLayoutAlign="center center">
         <mat-form-field appearance="fill" class="filter">
             <mat-label>Ordenado por</mat-label>
+            
             <mat-select (selectionChange)="onOrdernar($event.value)">
                 <mat-option value="nombre">Nombre A-Z</mat-option>
                 <mat-option value="-nombre">Nombre Z-A</mat-option>

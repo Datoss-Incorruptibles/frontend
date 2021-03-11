@@ -42,8 +42,8 @@
                          <p>
 
                         <span *ngFor="let indicador of fnIndicadores(partido,3); let i = index">
-                            <span *ngIf="i==0"  >{{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}, </span>
-                            <span *ngIf="i==1">{{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
+                            <span *ngIf="i==0"  >{{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }} </span>
+                            <span *ngIf="i==1">, {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
                             <span *ngIf="i==2 ">, {{indicador.indicador_categoria_nombre+ " " + indicador.cantidad }}</span>
                             
                         </span>
@@ -122,7 +122,7 @@
                                                 gavel
                                             </mat-icon>
                                             <label class="colorAcademico">&nbsp;{{getCantIndicador(partido,8)+getCantIndicador(partido,9)}}</label>
-                                            <label class="colorSentencias">&nbsp;Sentencias</label>
+                                            <label class="colorSentencias"><span class="soloMovil320">{{getCantIndicador(partido,8)+getCantIndicador(partido,9)}}<br></span>&nbsp;Sentencias</label>
                                         </div>
                                     </td>
                                     <td>
@@ -131,7 +131,7 @@
                                                 school
                                             </mat-icon>
                                             <label class="colorAcademico">&nbsp;{{getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}}</label>
-                                            <label class="colorSentencias">&nbsp;Ed.Básica</label>
+                                            <label class="colorSentencias"><span class="soloMovil320">{{getCantIndicador(partido,1)- getCantidadEdSuperior(partido)}}<br></span>&nbsp;Educación Básica</label>
                                         </div>
                                     </td>
                                   </tr>
@@ -142,7 +142,7 @@
                                                 work
                                             </mat-icon>
                                             <label class="colorAcademico">&nbsp;{{getCantIndicador(partido,5)}}</label>
-                                            <label class="colorPolitico" >&nbsp;En Cargos Anteriores</label>
+                                            <label class="colorPolitico" ><span class="soloMovil320">{{getCantIndicador(partido,5)}}<br></span>&nbsp;En Cargos Anteriores</label>
                                         </div>
                                     </td>
                                     <td>
@@ -151,7 +151,7 @@
                                                 school
                                             </mat-icon>
                                             <label class="colorAcademico">&nbsp;{{getCantidadEdSuperior(partido)}}</label>
-                                            <label class="colorPolitico">&nbsp;Ed. Superior</label>
+                                            <label class="colorPolitico"><span class="soloMovil320">{{getCantidadEdSuperior(partido)}}<br></span>&nbsp;Educación Superior</label>
                                         </div>
                                     </td>
                                   </tr>
@@ -162,13 +162,13 @@
                                                 account_balance
                                             </mat-icon>
                                             <label class="colorAcademico">&nbsp;{{getCantIndicador(partido,11)}}</label>
-                                            <label class="colorPolitico">&nbsp;De otros partidos</label>  
+                                            <label class="colorPolitico"><span class="soloMovil320">{{getCantIndicador(partido,11)}}<br></span>&nbsp;De otros partidos</label>  
                                         </div>
                                     </td>
                                     <td>
                                         <div class="indicador" >
                                             <span class="material-icons fondoAcademico" >payment</span>
-                                            <label class="colorPolitico">&nbsp;{{getCantidadIngresoProm(partido)|currency:'S/.':'symbol':'4.0-0'}} Ingreso P. Anual</label> 
+                                            <label class="colorPolitico" style="margin-left: 20px;">&nbsp;{{getCantidadIngresoProm(partido)|currency:'S/.':'symbol':'4.0-0'}} Ingreso P. Anual</label> 
                                             <span
                                                 mat-raised-button
                                                 matTooltip="Es el promedio de los ingresos anuales de todos los candidatos del partido politico">

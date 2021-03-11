@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from "./paginas/page-not-found/page-not-found.c
 import { PlanesGobiernoComponent } from "./paginas/planes-gobierno/planes-gobierno.component";
 import { AcercaDeComponent } from "./paginas/acerca-de/acerca-de.component";
 import { ComoVotarComponent } from './paginas/como-votar/como-votar.component';
+import { AyudaComponent } from './paginas/ayuda/ayuda.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: 'partidos/.', pathMatch: 'full' }, 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'milista/.', component: MilistaComponent },
   { path: 'acercade/.', component: AcercaDeComponent },
   { path: 'comovotar/.', component: ComoVotarComponent },
+  { path: 'ayuda/.', component: AyudaComponent },
   { path: 'planesdegobierno/.', component: PlanesGobiernoComponent },
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
 

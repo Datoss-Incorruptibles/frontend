@@ -1,0 +1,24 @@
+.container-ayuda {
+    display: flex;
+}
+#imagen-ayuda {
+    flex: 55;
+    //content:url(/assets/images/logo/Candidatos112.png);
+    //background-position: center center;
+    //background-size: cover;
+    img {
+        width: 100%;
+        height: 100%;
+        //object-fit: cover;
+    }
+}
+#texto-ayuda {
+    flex: 45;
+    margin: 5px 15px;
+}
+@media only screen and (max-width: 450px) {
+    .container-ayuda{
+        margin-top: 10px;
+        flex-direction: column;
+    }
+}

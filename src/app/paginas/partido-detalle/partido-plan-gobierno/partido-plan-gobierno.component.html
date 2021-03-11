@@ -3,7 +3,7 @@
 <div class="planGobierno">
     <div class="planes">
         <div class="pres">
-            <button (click)="getPlanPres()">Presidencial</button>
+            <button>Presidencial</button>
         </div>
         <!--
         <div class="parl">
@@ -175,7 +175,7 @@
 
     <div class="planes">
         <div class="parl">
-            <button (click)="getPlanParl()">Parlamento Andino</button>
+            <button >Parlamento Andino</button>
         </div>
     </div>
     <div class="planPar" *ngIf="plan2">
@@ -195,6 +195,6 @@
         </div>
     </div>
     <div *ngIf="plan2==null" class="nofound">
-        <h2><strong>No se encontró información</strong></h2>
+        <p><strong>No se encontró información</strong></p>
     </div>
 </div>

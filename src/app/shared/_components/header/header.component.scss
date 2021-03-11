@@ -130,7 +130,7 @@ mat-toolbar{
     }
 
   }
-  @media only screen and (min-width: 401px)and(max-width: 425px) {
+  @media only screen and (min-width: 401px)and(max-width: 426px) {
     .imgLogo{
         content:url(/assets/images/logo/Candidatos_sf.png);
         background-size: 100% 100%; 
@@ -141,6 +141,12 @@ mat-toolbar{
         height:100%;
         max-height:94px;
         margin-left: 17%;
+    }
+
+  }
+  @media only screen and (width: 768px) {
+    .contenedorImg{
+        max-height:38px;
     }
 
   }

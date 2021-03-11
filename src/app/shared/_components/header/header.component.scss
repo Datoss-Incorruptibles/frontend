@@ -47,6 +47,13 @@ mat-toolbar{
         bottom:-35px;
         z-index: 100;
     }
+    .popup-info{
+        position: absolute;
+        right:30px;
+        bottom:-35px;
+        z-index: 100;
+        color: #FF005C;
+    }
 
 }
 // ::ng-deep .custom-menu{
@@ -69,6 +76,32 @@ mat-toolbar{
 }
 .btn_menu {
     color: #3D94FC;
+}
+
+.custom-menu-text {
+    text-align: center;
+    color: #132158;
+}
+.btn-yes-no {
+    display: flex;
+    justify-content: space-around;
+    .btn-yes{
+        background-color: #3D94FC;
+        color: white;
+        border-radius: 30px;
+        border-style: none;
+        padding: 5px 10px;
+        width: 55px;
+    }
+    .btn-no{
+        background-color: white;
+        color: #3D94FC;
+        border-radius: 30px;
+        border: #3D94FC 2px;
+        border-style: solid;
+        padding: 5px 10px;
+        width: 55px
+    }
 }
 
 @media only screen and (max-width: 400px) {

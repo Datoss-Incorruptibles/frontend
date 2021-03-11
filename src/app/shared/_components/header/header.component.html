@@ -52,4 +52,17 @@
             </button>
         </mat-menu>
     </div> 
+    <div class="popup-info">
+        <button mat-icon-button [matMenuTriggerFor]="help">
+            <mat-icon>help</mat-icon>
+        </button>
+
+        <mat-menu #help="matMenu" class="help-menu">
+            <p class="custom-menu-text"> ¿Deseas más información de lo que puedes hacer en este sitio web? </p>
+            <div class="btn-yes-no">
+                <button class="btn-yes">Si</button>
+                <button class="btn-no">No</button>
+            </div>
+        </mat-menu>
+    </div>
 </mat-toolbar>

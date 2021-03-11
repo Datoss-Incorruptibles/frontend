@@ -230,6 +230,9 @@ mat-card-actions{
         font-size: 14.9px;
         width: 175px;
     }
+    .ingresoprom{
+        margin-left: 20px;
+    }
   }
   
   @media only screen and (min-width: 321px) and (max-width: 426px) {
@@ -249,6 +252,9 @@ mat-card-actions{
     }
     .boton_personalizado{
         height: 35px;
+    }
+    mat-form-field{
+        width: 230px;
     }
   }
 

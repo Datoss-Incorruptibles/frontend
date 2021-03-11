@@ -74,4 +74,19 @@ a:hover{
     color: #2c4484;
     margin: 10px;
     text-align: center;
+    font-size: 20px;
 }
+
+@media only screen and (max-width: 426px) {
+    .nofound{
+        font-size: 15px;
+    }
+    mat-expansion-panel-header{
+        padding: 10px ;
+    }
+
+  }
+
+  .mat-expansion-panel{
+    box-shadow:none;
+  }

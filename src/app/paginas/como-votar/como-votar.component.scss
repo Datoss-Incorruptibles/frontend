@@ -309,7 +309,12 @@
 #textoTabla {
   color: #999;
   text-align: end;
+  margin-bottom: 15px;
   b {
     color: #e6322a;
   }
+  p {
+    margin-bottom: 0px;
+  }
 }
+

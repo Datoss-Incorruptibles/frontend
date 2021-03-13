@@ -23,7 +23,7 @@ export class CandidatoPlanGobiernoComponent implements OnInit {
     if (this.candidato.cargo_id==1){
       this.getPlanGob("1")
     } else if (this.candidato.cargo_id==5){
-      console.log("CARGO_ID: "+this.candidato.cargo_id)
+      //console.log("CARGO_ID: "+this.candidato.cargo_id)
       this.getPlanGob("3")
     } else {
       console.log("ERROR")
@@ -36,12 +36,12 @@ export class CandidatoPlanGobiernoComponent implements OnInit {
 
     //const id = +this.route.snapshot.paramMap.get('id');
     const id =+this.candidato.organizacion_politica_id; 
-    console.log(id)
+    //console.log(id)
     this.restApiService.getPlanGobByPartidoId(id,tipo).subscribe(plan => {
     this.plan = plan;
     this.showLoader = false;
 
-    console.log(this.plan);
+    //console.log(this.plan);
     })
   }
   onInitial(text){

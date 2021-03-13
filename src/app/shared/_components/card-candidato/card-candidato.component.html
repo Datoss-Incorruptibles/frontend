@@ -142,23 +142,28 @@
                 </div>
             </div>
 
-            <!-- <div class="share">
+            <div class="share">
                 <button mat-icon-button [matMenuTriggerFor]="menu">
                     <mat-icon>share</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu" class="custom-menu">
                   <button mat-menu-item>
-                    <a href="https://www.facebook.com/sharer.php?u=https://www.candidatos.pe"  target="_blank" >
-                        <img src="assets/images/iconos/facebook.svg">
+                    <a href="https://www.facebook.com/sharer.php?u=https://www.candidatos.pe/candidato/{{candidato.jne_idhojavida}}/"  target="_blank" >
+                        <img src="assets/images/iconos/fb.svg">
                     </a>
                   </button>
                   <button mat-menu-item>
-                    <a href="https://twitter.com/intent/tweet?url=https://www.candidatos.pe&text=Conoce a tus candidatos en estas elecciones &hashtags=candidatos2021"  target="_blank" >
-                        <img src="assets/images/iconos/twitter.svg">
+                    <a href="https://twitter.com/intent/tweet?url=https://www.candidatos.pe/candidato/{{candidato.jne_idhojavida}}/ &text=Conoce a {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}} en estas elecciones &hashtags=candidatos2021"  target="_blank" >
+                        <img src="assets/images/iconos/twt.svg">
                     </a>
                   </button>
+                  <button mat-menu-item>
+                    <a href="https://api.whatsapp.com/send?text=Los invito a dar click y compartir https://www.candidatos.pe/candidato/{{candidato.jne_idhojavida}}/  |  {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}" target="_blank">
+                        <img src="assets/images/iconos/wtspp.svg">
+                    </a>
+                    </button>
                 </mat-menu>
-            </div>  -->
+            </div> 
     
         </mat-card-actions>      
     </div>

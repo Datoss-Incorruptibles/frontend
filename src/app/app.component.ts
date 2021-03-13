@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,EventEmitter,Output} from '@angular/core';
 import { GlobalService } from "./servicios/global.service";
 import { Location } from '@angular/common';
 
@@ -16,6 +16,7 @@ export class AppComponent implements OnInit  {
   constructor(
     private global:GlobalService,
     private location: Location) { }
+    @Output()public sidenavToggle = new EventEmitter();
 
   ngOnInit(): void {
     // canditato o partido stuff
@@ -61,6 +62,9 @@ export class AppComponent implements OnInit  {
     // this.global.tabIndexPCSource.next(index + 1); // porque este tiene 4 tabs 
 
     this.location.back();
+  }
+  public onToggleSidenav = () =>{
+    this.sidenavToggle.emit()
   }
 
 }

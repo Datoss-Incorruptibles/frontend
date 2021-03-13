@@ -5,6 +5,8 @@
                 <div mat-card-avatar  class="header-image">
                     <img class="imgCandidato" src="{{candidato.ruta_archivo}}" />
                     <img class="imgPartido" src="{{candidato.organizacion_politica_logo}}" />
+                    <p *ngIf="candidato.cargo_id==4" class="postulante">Candidato(a) al Congreso</p>
+                    <p *ngIf="candidato.cargo_id==5" class="postulante">Candidato(a) al Parlamento</p>
                 </div>  
                 <div class="content-primary">
                     <div class="partido-name" >
@@ -115,7 +117,8 @@
         <mat-card-actions>
             <div class="actions-ver-mas" *ngIf="!fromDetalle">
                 <button class="boton_personalizado" boton_personalizado routerLink="/candidato/{{candidato.jne_idhojavida}}/." [state]="candidato" mat-button >
-                    <mat-icon class="material-icons material-icons-outlined">description</mat-icon> <span> Ver CV</span>             
+                    <mat-icon class="material-icons material-icons-outlined">description</mat-icon> <span> Ver CV</span>
+                    <!--<img src="assets/images/iconos/description.svg"> <span> Ver CV</span>            -->
                 </button>
             </div>
             <div class="actions-merepresenta" >

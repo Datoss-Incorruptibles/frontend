@@ -5,11 +5,13 @@
         </button>
 
     </div>
+    <a routerLink="/partidos/.">
     <div class="conteinerLogo" fxLayoutAlign=" center">
         <div class="contenedorImg">
-                <img class="imgLogo">
+            <img routerLink="/partidos/." class="imgLogo">
         </div>
     </div>
+    </a>
     <div fxFlex class="options" fxLayout fxLayoutAlign="end center" fxLayoutGap="15px" fxHide.xs class=".navigation-items">
         <div>
             <a routerLink="/comovotar/." routerLinkActive='active'> ¿Cómo votar?</a>
@@ -52,4 +54,17 @@
             </button>
         </mat-menu>
     </div> 
+    <div class="popup-info">
+        <button mat-icon-button [matMenuTriggerFor]="help">
+            <mat-icon>help</mat-icon>
+        </button>
+
+        <mat-menu #help="matMenu" class="help-menu">
+            <p class="custom-menu-text"> ¿Deseas más información de lo que puedes hacer en candidatos.pe? </p>
+            <div class="btn-yes-no">
+                <button type="submit" routerLink="/ayuda/." class="btn-yes">Si</button>
+                <button class="btn-no">No</button>
+            </div>
+        </mat-menu>
+    </div>
 </mat-toolbar>

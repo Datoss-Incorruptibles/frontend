@@ -15,7 +15,7 @@ a{
 }
 @media only screen and (max-width: 480px) {
     .mat-form-field {
-    font-size:10px;
+    font-size:12px;
     }
 }
 
@@ -63,8 +63,6 @@ a{
         border: 1px solid #E5E5E5;
     }
 }
-
-
 
 .spinner{
     display: flex;
@@ -160,7 +158,7 @@ mat-card-actions{
     display: flex;
     align-items: center;
 
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
 }
 .titulo{
@@ -197,8 +195,47 @@ mat-card-actions{
 
     min-height: 80px;
 }
+.soloMovil320{
+    display: none;
+}
+@media only screen and (max-width: 320px) {
+    .card-politico{
+        max-width: 250px ;
+        min-width: 200px;
+      }
+
+    .colorSentencias,.colorPolitico{
+        font-size: 14px;
+    }
+    .colorAcademico{
+        display: none;
+    }
+    .soloMovil320{
+        display: block;
+    }
+    .boton_personalizado{
+        height: 24px;
+    }
+    .CantCandidatos{
+        font-size: 13.9px;
+    }
+    mat-card-subtitle{
+        font-size:12.44px;
+        width: 180px;
+    }
+    mat-card{
+        padding: 16px !important;
+    }
+    mat-card-title{
+        font-size: 14.9px;
+        width: 175px;
+    }
+    .ingresoprom{
+        margin-left: 20px;
+    }
+  }
   
-  @media only screen and (max-width: 426px) {
+  @media only screen and (min-width: 321px) and (max-width: 426px) {
     .card-politico{
       max-width: 300px ;
       min-width: 200px;
@@ -215,6 +252,9 @@ mat-card-actions{
     }
     .boton_personalizado{
         height: 35px;
+    }
+    mat-form-field{
+        width: 230px;
     }
   }
 

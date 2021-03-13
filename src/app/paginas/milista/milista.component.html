@@ -18,10 +18,11 @@
                     <app-card-candidato [candidato]="candidato"></app-card-candidato> 
                 </div>
             </div>
+            <div fxLayoutAlign="center center" *ngIf="counterSMR == 0">
+                Aun no seleccionaste a los que te representaran en las proximas elecciones!!
+            </div>
         </div>
-        <div *ngIf="!misRepresentantes">
-            Aun no seleccionaste a los que te representaran en las proximas elecciones!!
-        </div>
+
     </mat-tab>
     <mat-tab label="No me representa" >
         <mat-progress-bar mode="indeterminate" *ngIf="!misNoRepresentantes" ></mat-progress-bar>
@@ -38,12 +39,12 @@
                     <app-card-candidato [candidato]="candidato"></app-card-candidato> 
                 </div>
             </div>
+            <div fxLayoutAlign="center center"  *ngIf="counterNMR  == 0">
+                Aun no seleccionaste a los que te no te representaran en las proximas elecciones!!
+            </div>
         </div>
 
 
-        <div *ngIf="!misNoRepresentantes">
-            Aun no seleccionaste a los que te NO te representaran en las proximas elecciones!!
-        </div>
     </mat-tab> 
     </mat-tab-group>
 <div class="spinner">

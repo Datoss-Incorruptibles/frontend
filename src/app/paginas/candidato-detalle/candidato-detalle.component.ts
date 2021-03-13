@@ -43,10 +43,19 @@ export class CandidatoDetalleComponent implements OnInit {
       // console.log(this.candidato);
 
       /* SEO Stuff */
-      this.title.setTitle(`${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}`);
-      let description = `NOMBRES:${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno} DNI:${this.candidato.documento_identidad}`
-      this.meta.updateTag({name: "description", content:description});
+      let descriptionTag = `NOMBRES:${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno} DNI:${this.candidato.documento_identidad}`
+      let titleTag = `${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}`
+      let candidatoUrlTag = `https://www.candidatos.pe/candidato/136626/${this.candidato.jne_idhojavida}/`;
 
+      this.title.setTitle(titleTag);
+      this.meta.updateTag({name: "description", content:descriptionTag});
+
+      this.meta.updateTag({property: "og:title", content:titleTag});
+      this.meta.updateTag({property: "og:description", content:descriptionTag});
+      // this.meta.updateTag({property: "og:type", content:"website"});
+      this.meta.updateTag({property: "og:url", content:candidatoUrlTag});
+      
+      
     })
   }
 

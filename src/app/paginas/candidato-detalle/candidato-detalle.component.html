@@ -12,10 +12,10 @@
     <mat-tab label="Equipo">
     </mat-tab>   -->
     
-    <mat-tab label="Plan de Gobierno" *ngIf="candidato.cargo_id==1">
+    <mat-tab label="Plan Gobierno" *ngIf="candidato.cargo_id==1">
       <app-candidato-plan-gobierno [candidato]="candidato"></app-candidato-plan-gobierno>
     </mat-tab>
-    <mat-tab label="Plan de Parlamento" *ngIf="candidato.cargo_id==5">
+    <mat-tab label="Plan Parlamento" *ngIf="candidato.cargo_id==5">
       <app-candidato-plan-gobierno [candidato]="candidato"></app-candidato-plan-gobierno>
     </mat-tab>
     <mat-tab label="Noticias">

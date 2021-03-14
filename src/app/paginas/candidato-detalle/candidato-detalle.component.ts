@@ -43,7 +43,6 @@ export class CandidatoDetalleComponent implements OnInit {
       // console.log(this.candidato);
 
       /* SEO Stuff */
-      let descriptionTag = `${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}`
       
       let cargoCandidato = ""
       if (this.candidato.cargo_id==4){cargoCandidato = "al congreso"}
@@ -52,7 +51,8 @@ export class CandidatoDetalleComponent implements OnInit {
       else if (this.candidato.cargo_id==2){cargoCandidato = "a la primera vicepresidencia"}
       else if (this.candidato.cargo_id==3){cargoCandidato = "a la segunda vicepresidencia"}
       
-      let titleTag = `Candidato ${cargoCandidato} - Hoja de vida - Fuente JNE`
+      let descriptionTag =`Candidato ${cargoCandidato} - Hoja de vida - Fuente JNE`
+      let titleTag = `${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}` 
       
       let urlDesa = "https://candidatosdev.web.app";
       let urlProd = "https://www.candidatos.pe";

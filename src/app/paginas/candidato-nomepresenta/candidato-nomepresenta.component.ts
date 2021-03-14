@@ -24,8 +24,8 @@ export class CandidatoNomepresentaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCandidato()
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.router.navigate([`/candidato/${id}/.`])
+    // const id = +this.route.snapshot.paramMap.get('id');
+    // this.router.navigate([`/candidato/${id}/.`])
   }
 
   getCandidato(){
@@ -38,8 +38,7 @@ export class CandidatoNomepresentaComponent implements OnInit {
       // console.log(this.candidato);
 
       /* SEO Stuff */
-      let descriptionTag = `${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}`
-      
+
       let cargoCandidato = ""
       if (this.candidato.cargo_id==4){cargoCandidato = "al congreso"}
       else if (this.candidato.cargo_id==5){cargoCandidato = "al parlamento andino"}
@@ -47,8 +46,9 @@ export class CandidatoNomepresentaComponent implements OnInit {
       else if (this.candidato.cargo_id==2){cargoCandidato = "a la primera vicepresidencia"}
       else if (this.candidato.cargo_id==3){cargoCandidato = "a la segunda vicepresidencia"}
       
-      let titleTag = `Candidato ${cargoCandidato} - Hoja de vida - Fuente JNE`
-      
+      let descriptionTag =`Candidato ${cargoCandidato} - Hoja de vida - Fuente JNE`
+      let titleTag = `${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}` 
+
       let urlDesa = "https://candidatosdev.web.app";
       // let urlProd = "https://www.candidatos.pe";
       let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/nomerepresenta/`;

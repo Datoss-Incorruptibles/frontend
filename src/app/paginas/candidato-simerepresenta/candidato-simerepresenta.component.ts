@@ -4,17 +4,18 @@ import { ActivatedRoute , Router} from "@angular/router";
 import { RestApiService } from "src/app/servicios/restapi.service";
 
 @Component({
-  selector: 'app-candidato-nomepresenta',
-  templateUrl: './candidato-nomepresenta.component.html',
-  styleUrls: ['./candidato-nomepresenta.component.scss']
+  selector: 'app-candidato-simerepresenta',
+  templateUrl: './candidato-simerepresenta.component.html',
+  styleUrls: ['./candidato-simerepresenta.component.scss']
 })
-export class CandidatoNomepresentaComponent implements OnInit {
+export class CandidatoSimerepresentaComponent implements OnInit {
 
   showLoader = false;
 
   fromDetalle = true;
   candidato;
   candidatoImg;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -51,8 +52,8 @@ export class CandidatoNomepresentaComponent implements OnInit {
 
       let urlDesa = "https://candidatosdev.web.app";
       // let urlProd = "https://www.candidatos.pe";
-      let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/nomerepresenta/`;
-      this.candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV3/${this.candidato.jne_idhojavida}.jpg`
+      let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/simerepresenta/`;
+      this.candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoSMRImgV3/${this.candidato.jne_idhojavida}.jpg`
       this.title.setTitle(titleTag);
       this.meta.updateTag({name: "description", content:descriptionTag});
 
@@ -61,8 +62,8 @@ export class CandidatoNomepresentaComponent implements OnInit {
 
       this.meta.updateTag({property: "og:type", content:"website"});
       this.meta.updateTag({property: "og:image:type", content:"image/jpg"});
-      // this.meta.updateTag({property: "og:image:width", content:"1200"});
-      // this.meta.updateTag({property: "og:image:height", content:"635"});
+      this.meta.updateTag({property: "og:image:width", content:"1200"});
+      this.meta.updateTag({property: "og:image:height", content:"635"});
 
       this.meta.updateTag({property: "og:url", content:candidatoUrlTag});
       this.meta.updateTag({property: "og:image", content:this.candidatoImg});

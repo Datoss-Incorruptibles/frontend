@@ -51,6 +51,7 @@ import { CandidatoPlanGobiernoComponent } from '../app/paginas/candidato-detalle
 
 /*Componentes especiales para compartir */
 import { CandidatoNomepresentaComponent } from '../app/paginas/candidato-nomepresenta/candidato-nomepresenta.component';
+import { CandidatoSimerepresentaComponent } from '../app/paginas/candidato-simerepresenta/candidato-simerepresenta.component';
 
 
 /*Mi lista  */
@@ -86,7 +87,7 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     ComoVotarComponent,
     AyudaComponent,
     CandidatoNomepresentaComponent,
-
+    CandidatoSimerepresentaComponent,
 /*Componentes Candidato */
     CandidatosComponent,
     CandidatoPresidenteComponent,
@@ -112,6 +113,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     ComoVotarComponent,
     AyudaComponent,
     CandidatoNomepresentaComponent,
+    CandidatoSimerepresentaComponent,
+    
     /*Componentes Candidato */
     CandidatosComponent,
     CandidatoPresidenteComponent,

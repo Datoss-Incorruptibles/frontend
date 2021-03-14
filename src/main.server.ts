@@ -2,6 +2,7 @@ import { enableProdMode } from '@angular/core';
 
 import { environment } from './environments/environment';
 
+// console.log("is production??",environment.production);
 if (environment.production) {
   enableProdMode();
 }

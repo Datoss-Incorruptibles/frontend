@@ -20,6 +20,7 @@
 /partido/3/
 /partido/2/
 /partido/1/
+/candidato/136626/nomerepresenta/
 /candidato/135932/
 /candidato/134410/
 /candidato/134429/

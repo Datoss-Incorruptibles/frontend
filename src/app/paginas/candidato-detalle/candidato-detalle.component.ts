@@ -43,9 +43,20 @@ export class CandidatoDetalleComponent implements OnInit {
       // console.log(this.candidato);
 
       /* SEO Stuff */
-      let descriptionTag = `NOMBRE:${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno} DNI:${this.candidato.documento_identidad}`
-      let titleTag = `${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}`
-      let candidatoUrlTag = `https://www.candidatos.pe/candidato/${this.candidato.jne_idhojavida}/`;
+      let descriptionTag = `${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}`
+      
+      let cargoCandidato = ""
+      if (this.candidato.cargo_id==4){cargoCandidato = "al congreso"}
+      else if (this.candidato.cargo_id==5){cargoCandidato = "al parlamento andino"}
+      else if (this.candidato.cargo_id==1){cargoCandidato = "a la presidencia"}
+      else if (this.candidato.cargo_id==2){cargoCandidato = "a la primera vicepresidencia"}
+      else if (this.candidato.cargo_id==3){cargoCandidato = "a la segunda vicepresidencia"}
+      
+      let titleTag = `Candidato ${cargoCandidato} - Hoja de vida - Fuente JNE`
+      
+      let urlDesa = "https://candidatosdev.web.app";
+      let urlProd = "https://www.candidatos.pe";
+      let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/`;
       let candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoImgV2/${this.candidato.jne_idhojavida}.jpg`
       this.title.setTitle(titleTag);
       this.meta.updateTag({name: "description", content:descriptionTag});

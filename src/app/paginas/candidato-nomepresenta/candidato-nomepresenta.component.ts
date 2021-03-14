@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from "@angular/platform-browser";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute , Router} from "@angular/router";
 import { RestApiService } from "src/app/servicios/restapi.service";
 
 @Component({
@@ -16,6 +16,7 @@ export class CandidatoNomepresentaComponent implements OnInit {
   candidato;
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private restApi:RestApiService,
     private title: Title,
     private meta: Meta
@@ -23,7 +24,8 @@ export class CandidatoNomepresentaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCandidato()
-
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.router.navigate([`/candidato/${id}/.`])
   }
 
   getCandidato(){

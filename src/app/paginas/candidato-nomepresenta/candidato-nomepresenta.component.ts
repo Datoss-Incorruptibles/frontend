@@ -24,8 +24,7 @@ export class CandidatoNomepresentaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCandidato()
-    // const id = +this.route.snapshot.paramMap.get('id');
-    // this.router.navigate([`/candidato/${id}/.`])
+
   }
 
   getCandidato(){
@@ -68,10 +67,16 @@ export class CandidatoNomepresentaComponent implements OnInit {
       this.meta.updateTag({property: "og:url", content:candidatoUrlTag});
       this.meta.updateTag({property: "og:image", content:candidatoImg});
       
+
+      const id = +this.route.snapshot.paramMap.get('id');
+      this.router.navigate([`/candidato/${id}/.`])
     })
   }
 
-
+  goToCandidato(){
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.router.navigate([`/candidato/${id}/.`])
+  }
 
 
 

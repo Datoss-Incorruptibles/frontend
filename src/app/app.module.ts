@@ -49,6 +49,10 @@ import { CandidatoHistoriaComponent } from '../app/paginas/candidato-detalle/can
 import { CandidatoMediosComponent } from '../app/paginas/candidato-detalle/candidato-medios/candidato-medios.component';
 import { CandidatoPlanGobiernoComponent } from '../app/paginas/candidato-detalle/candidato-plan-gobierno/candidato-plan-gobierno.component';
 
+/*Componentes especiales para compartir */
+import { CandidatoNomepresentaComponent } from '../app/paginas/candidato-nomepresenta/candidato-nomepresenta.component';
+
+
 /*Mi lista  */
 import { MilistaComponent } from '../app/paginas/milista/milista.component';
 import { ComoVotarComponent } from '../app/paginas/como-votar/como-votar.component';
@@ -81,6 +85,7 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     FooterComponent,
     ComoVotarComponent,
     AyudaComponent,
+    CandidatoNomepresentaComponent,
 
 /*Componentes Candidato */
     CandidatosComponent,
@@ -106,7 +111,7 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     FooterComponent,
     ComoVotarComponent,
     AyudaComponent,
-
+    CandidatoNomepresentaComponent,
     /*Componentes Candidato */
     CandidatosComponent,
     CandidatoPresidenteComponent,

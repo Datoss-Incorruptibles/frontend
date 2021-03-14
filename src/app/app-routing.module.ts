@@ -10,6 +10,7 @@ import { PlanesGobiernoComponent } from "./paginas/planes-gobierno/planes-gobier
 import { AcercaDeComponent } from "./paginas/acerca-de/acerca-de.component";
 import { ComoVotarComponent } from './paginas/como-votar/como-votar.component';
 import { AyudaComponent } from './paginas/ayuda/ayuda.component';
+import { CandidatoNomepresentaComponent } from "./paginas/candidato-nomepresenta/candidato-nomepresenta.component";
 
 const routes: Routes = [
   { path: '',   redirectTo: 'partidos/.', pathMatch: 'full' }, 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'partido/:id/.', component: DetalleComponent},
   { path: 'candidatos/.', component: CandidatosComponent },
   { path: 'candidato/:id/.', component: CandidatoDetalleComponent },
+  { path: 'candidato/:id/nomerepresenta/.', component: CandidatoNomepresentaComponent },
   { path: 'milista/.', component: MilistaComponent },
   { path: 'acercade/.', component: AcercaDeComponent },
   { path: 'comovotar/.', component: ComoVotarComponent },

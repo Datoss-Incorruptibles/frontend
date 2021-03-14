@@ -46,6 +46,10 @@ testem.log
 Thumbs.db
 docs
 
+# SEO 
 /src/site2.txt
 /src/sitefail.txt
 sitemap_location.txt
+
+# PreRender 
+routest.txt

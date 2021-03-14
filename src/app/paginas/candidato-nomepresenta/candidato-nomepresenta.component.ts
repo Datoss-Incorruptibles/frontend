@@ -51,8 +51,7 @@ export class CandidatoNomepresentaComponent implements OnInit {
       let urlDesa = "https://candidatosdev.web.app";
       // let urlProd = "https://www.candidatos.pe";
       let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/nomerepresenta/`;
-      // let candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV3/${this.candidato.jne_idhojavida}.jpg`
-      let candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV3/136626.jpg`
+      let candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV3/${this.candidato.jne_idhojavida}.jpg`
       this.title.setTitle(titleTag);
       this.meta.updateTag({name: "description", content:descriptionTag});
 
@@ -68,8 +67,8 @@ export class CandidatoNomepresentaComponent implements OnInit {
       this.meta.updateTag({property: "og:image", content:candidatoImg});
       
 
-      const id = +this.route.snapshot.paramMap.get('id');
-      this.router.navigate([`/candidato/${id}/.`])
+      // const id = +this.route.snapshot.paramMap.get('id');
+      // this.router.navigate([`/candidato/${id}/.`])
     })
   }
 

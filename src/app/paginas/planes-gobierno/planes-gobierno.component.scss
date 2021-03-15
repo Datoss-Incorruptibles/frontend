@@ -4,7 +4,21 @@
   width: 100%;
   padding-top: 56.25%; 
 }
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;  
 
+}
+h1{
+  color: #63AAFF;
+  width: 60%;
+
+}
+p{
+  width: 70%;
+}
 .responsive-iframe {
   position: absolute;
   top: 0;

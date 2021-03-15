@@ -5,8 +5,17 @@
                 <div mat-card-avatar  class="header-image">
                     <img class="imgCandidato" src="{{candidato.ruta_archivo}}" />
                     <img class="imgPartido" src="{{candidato.organizacion_politica_logo}}" />
-                    <p *ngIf="candidato.cargo_id==4" class="postulante">Candidato(a) Congreso</p>
-                    <p *ngIf="candidato.cargo_id==5" class="postulante">Candidato(a) Parlamento</p>
+                    
+                    <!--<p class="postulante">Candidato(a)</p>-->
+                    <div *ngFor="let p of candidato.postula; let i = index" [attr.data-index]="i">
+                        <p *ngIf="i==0" class="postulante">Candidato(a)</p>
+                        <p *ngIf="p.cargo_id==1" class="postulante">Presidencia </p>
+                        <p *ngIf="p.cargo_id==2" class="postulante">1ra Vicepresidencia</p>
+                        <p *ngIf="p.cargo_id==3" class="postulante">2da Vicepresidencia</p>
+                        <p *ngIf="p.cargo_id==4" class="postulante">Congreso</p>
+                        <p *ngIf="p.cargo_id==5" class="postulante">Parlamento</p>
+                    </div>
+                    
                 </div>  
                 <div class="content-primary">
                     <div class="partido-name" >

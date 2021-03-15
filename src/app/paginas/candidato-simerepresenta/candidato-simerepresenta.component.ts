@@ -53,7 +53,7 @@ export class CandidatoSimerepresentaComponent implements OnInit {
       let urlDesa = "https://candidatosdev.web.app";
       // let urlProd = "https://www.candidatos.pe";
       let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/simerepresenta/`;
-      this.candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoSMRImgV3/${this.candidato.jne_idhojavida}.jpg`
+      this.candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV3/${this.candidato.jne_idhojavida}.jpg`
       this.title.setTitle(titleTag);
       this.meta.updateTag({name: "description", content:descriptionTag});
 

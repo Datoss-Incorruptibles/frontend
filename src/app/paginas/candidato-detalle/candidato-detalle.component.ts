@@ -57,7 +57,7 @@ export class CandidatoDetalleComponent implements OnInit {
       let urlDesa = "https://candidatosdev.web.app";
       let urlProd = "https://www.candidatos.pe";
       let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/`;
-      let candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoImgV2/${this.candidato.jne_idhojavida}.jpg`
+      let candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNeutroV3/${this.candidato.jne_idhojavida}.jpg`
       this.title.setTitle(titleTag);
       this.meta.updateTag({name: "description", content:descriptionTag});
 

@@ -20,6 +20,9 @@ a:hover, a:active{
     object-fit: contain;
     display: flex;
     flex-direction: column;
+    background-color: #FFFFFF;
+    border: 0px;
+    outline: none;
 }
 
 .imgLogo{
@@ -30,7 +33,9 @@ a:hover, a:active{
     content:url(/assets/images/logo/HorizontalCandidatos_sf.png);
     background-size: 100%;   
     background-repeat:no-repeat;
-    
+    background-color: #FFFFFF;
+    border: 0px;
+    outline: none;
 }
 
 
@@ -44,13 +49,14 @@ mat-toolbar{
     .share{
         position: absolute;
         right:0;
-        bottom:-35px;
+        bottom:-5px;
         z-index: 100;
+        color: #3D94FC;
     }
     .popup-info{
         position: absolute;
         right:30px;
-        bottom:-35px;
+        bottom:-5px;
         z-index: 100;
         color: #FF005C;
     }

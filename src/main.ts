@@ -17,6 +17,7 @@ const __stripTrailingSlash = (Location as any).stripTrailingSlash;
 
 // import main ng module
 // bootstrap on document ready
+
 // console.log("is production??",environment.production);
 if (environment.production) {
   enableProdMode();

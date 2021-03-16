@@ -14,7 +14,6 @@ export class CandidatoSimerepresentaComponent implements OnInit {
 
   fromDetalle = true;
   candidato;
-  candidatoImg;
 
   constructor(
     private route: ActivatedRoute,
@@ -53,7 +52,7 @@ export class CandidatoSimerepresentaComponent implements OnInit {
       let urlDesa = "https://candidatosdev.web.app";
       // let urlProd = "https://www.candidatos.pe";
       let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/simerepresenta/`;
-      this.candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV3/${this.candidato.jne_idhojavida}.jpg`
+      let candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoSMRImgV4_19/${this.candidato.jne_idhojavida}.jpg`
       this.title.setTitle(titleTag);
       this.meta.updateTag({name: "description", content:descriptionTag});
 
@@ -66,7 +65,14 @@ export class CandidatoSimerepresentaComponent implements OnInit {
       this.meta.updateTag({property: "og:image:height", content:"635"});
 
       this.meta.updateTag({property: "og:url", content:candidatoUrlTag});
-      this.meta.updateTag({property: "og:image", content:this.candidatoImg});
+      this.meta.updateTag({property: "og:image", content:candidatoImg});
+      
+      // fot whatsapp
+      let candidatoImg11 = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoSMRImgV4_11/${this.candidato.jne_idhojavida}.jpg`
+      this.meta.addTag({property: "og:image", content:candidatoImg11},true)
+      this.meta.addTag({property: "og:image:width", content:"400"},true)
+      this.meta.addTag({property: "og:image:height", content:"400"},true)
+
       
     })
   }

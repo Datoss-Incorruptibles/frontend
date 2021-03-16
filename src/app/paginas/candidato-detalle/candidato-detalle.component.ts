@@ -74,8 +74,8 @@ export class CandidatoDetalleComponent implements OnInit {
       this.meta.updateTag({property: "og:image", content:candidatoImg});
 
       // fot whatsapp
-      let candidatoImg11 = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNeutroV4_11/${this.candidato.jne_idhojavida}.jpg`
-      this.meta.addTag({property: "og:image", content:candidatoImg11},true)
+      // let candidatoImg11 = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNeutroV4_11/${this.candidato.jne_idhojavida}.jpg`
+      // this.meta.addTag({property: "og:image", content:candidatoImg11},true)
       // this.meta.addTag({property: "og:image:width", content:"400"},true)
       // this.meta.addTag({property: "og:image:height", content:"400"},true)
 

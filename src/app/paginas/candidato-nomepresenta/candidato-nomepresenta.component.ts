@@ -49,9 +49,9 @@ export class CandidatoNomepresentaComponent implements OnInit {
       let descriptionTag =`Candidato ${cargoCandidato} - Hoja de vida - Fuente JNE`
       let titleTag = `${this.candidato.nombres} ${this.candidato.apellido_paterno} ${this.candidato.apellido_materno}` 
 
-      let urlDesa = "https://candidatosdev.web.app";
-      // let urlProd = "https://www.candidatos.pe";
-      let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/nomerepresenta/`;
+      // let urlDesa = "https://candidatosdev.web.app";
+      let urlProd = "https://www.candidatos.pe";
+      let candidatoUrlTag = `${urlProd}/candidato/${this.candidato.jne_idhojavida}/nomerepresenta/`;
 
       this.candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV4_19/${this.candidato.jne_idhojavida}.jpg`
 

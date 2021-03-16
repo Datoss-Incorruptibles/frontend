@@ -158,43 +158,43 @@
                 <mat-menu #menu="matMenu" class="custom-menu">
                   <button mat-menu-item>
                     <a *ngIf="status != 'status01' && status != 'status11'"
-                    href="https://www.facebook.com/sharer.php?u={{urlDesa}}/candidato/{{candidato.jne_idhojavida}}/"  target="_blank" >
+                    href="https://www.facebook.com/sharer.php?u={{urlProd}}/candidato/{{candidato.jne_idhojavida}}/"  target="_blank" >
                         <img src="assets/images/iconos/fb.svg">
                     </a>
                     <a *ngIf="status === 'status11'" 
-                    href="https://www.facebook.com/sharer.php?u={{urlDesa}}/candidato/{{candidato.jne_idhojavida}}/simerepresenta/"  target="_blank" >
+                    href="https://www.facebook.com/sharer.php?u={{urlProd}}/candidato/{{candidato.jne_idhojavida}}/simerepresenta/"  target="_blank" >
                         <img src="assets/images/iconos/fb.svg">
                     </a>
                     <a *ngIf="status === 'status01'"
-                    href="https://www.facebook.com/sharer.php?u={{urlDesa}}/candidato/{{candidato.jne_idhojavida}}/nomerepresenta/"  target="_blank" >
+                    href="https://www.facebook.com/sharer.php?u={{urlProd}}/candidato/{{candidato.jne_idhojavida}}/nomerepresenta/"  target="_blank" >
                         <img src="assets/images/iconos/fb.svg">
                     </a>
                   </button>
                   <button mat-menu-item>
                     <a *ngIf="status != 'status01' && status != 'status11'"
-                     href="https://twitter.com/intent/tweet?url={{urlDesa}}/candidato/{{candidato.jne_idhojavida}}/ &text=Conoce a {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}} en estas elecciones &hashtags=candidatos2021"  target="_blank" >
+                     href="https://twitter.com/intent/tweet?url={{urlProd}}/candidato/{{candidato.jne_idhojavida}}/ &text=Conoce a {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}} en estas elecciones &hashtags=candidatos2021"  target="_blank" >
                         <img src="assets/images/iconos/twt.svg">
                     </a>
                     <a *ngIf="status === 'status11'" 
-                    href="https://twitter.com/intent/tweet?url={{urlDesa}}/candidato/{{candidato.jne_idhojavida}}/simerepresenta/ &text=Conoce a {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}} en estas elecciones &hashtags=simerepresenta"  target="_blank" >
+                    href="https://twitter.com/intent/tweet?url={{urlProd}}/candidato/{{candidato.jne_idhojavida}}/simerepresenta/ &text=Conoce a {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}} en estas elecciones &hashtags=simerepresenta"  target="_blank" >
                         <img src="assets/images/iconos/twt.svg">
                     </a>
                     <a *ngIf="status === 'status01'" 
-                    href="https://twitter.com/intent/tweet?url={{urlDesa}}/candidato/{{candidato.jne_idhojavida}}/nomerepresenta/ &text=Conoce a {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}} en estas elecciones &hashtags=nomerepresenta"  target="_blank" >
+                    href="https://twitter.com/intent/tweet?url={{urlProd}}/candidato/{{candidato.jne_idhojavida}}/nomerepresenta/ &text=Conoce a {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}} en estas elecciones &hashtags=nomerepresenta"  target="_blank" >
                         <img src="assets/images/iconos/twt.svg">
                     </a>
                   </button>
                   <button mat-menu-item>
                     <a *ngIf="status != 'status01' && status != 'status11'"
-                    href="https://api.whatsapp.com/send?text=Los invito a dar click y compartir {{urlDesa}}/candidato/{{candidato.jne_idhojavida}}/  |  {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}" target="_blank">
+                    href="https://api.whatsapp.com/send?text=Los invito a dar click y compartir {{urlProd}}/candidato/{{candidato.jne_idhojavida}}/  |  {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}" target="_blank">
                         <img src="assets/images/iconos/wtspp.svg">
                     </a>
                     <a *ngIf="status === 'status11'" 
-                    href="https://api.whatsapp.com/send?text=Los invito a saber mas sobre este candidato que SI me representa {{urlDesa}}/candidato/{{candidato.jne_idhojavida}}/simerepresenta/  |  {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}" target="_blank">
+                    href="https://api.whatsapp.com/send?text=Los invito a saber mas sobre este candidato que SI me representa {{urlProd}}/candidato/{{candidato.jne_idhojavida}}/simerepresenta/  |  {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}" target="_blank">
                         <img src="assets/images/iconos/wtspp.svg">
                     </a>
                     <a *ngIf="status === 'status01'"
-                    href="https://api.whatsapp.com/send?text=Los invito a saber mas sobre este candidato que NO me representa {{urlDesa}}/candidato/{{candidato.jne_idhojavida}}/nomerepresenta/  |  {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}" target="_blank">
+                    href="https://api.whatsapp.com/send?text=Los invito a saber mas sobre este candidato que NO me representa {{urlProd}}/candidato/{{candidato.jne_idhojavida}}/nomerepresenta/  |  {{candidato.nombres}} {{candidato.apellido_paterno}} {{candidato.apellido_materno}}" target="_blank">
                         <img src="assets/images/iconos/wtspp.svg">
                     </a>
                     </button>

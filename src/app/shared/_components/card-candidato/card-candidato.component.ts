@@ -15,7 +15,7 @@ export class CardCandidatoComponent implements OnInit {
   meRepresenta = [];
   noMeRepresenta = [];
   
-  urlDesa = "https://candidatosdev.web.app";
+  // urlDesa = "https://candidatosdev.web.app";
   urlProd = "https://www.candidatos.pe";
 
   status;

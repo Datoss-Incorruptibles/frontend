@@ -14,6 +14,7 @@ export class CandidatoNomepresentaComponent implements OnInit {
 
   fromDetalle = true;
   candidato;
+  candidatoImg;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -52,7 +53,7 @@ export class CandidatoNomepresentaComponent implements OnInit {
       // let urlProd = "https://www.candidatos.pe";
       let candidatoUrlTag = `${urlDesa}/candidato/${this.candidato.jne_idhojavida}/nomerepresenta/`;
 
-      let candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV4_19/${this.candidato.jne_idhojavida}.jpg`
+      this.candidatoImg = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV4_19/${this.candidato.jne_idhojavida}.jpg`
 
       this.title.setTitle(titleTag);
       this.meta.updateTag({name: "description", content:descriptionTag});
@@ -66,7 +67,7 @@ export class CandidatoNomepresentaComponent implements OnInit {
       // this.meta.updateTag({property: "og:image:height", content:"635"});
 
       this.meta.updateTag({property: "og:url", content:candidatoUrlTag});
-      this.meta.updateTag({property: "og:image", content:candidatoImg});
+      this.meta.updateTag({property: "og:image", content:this.candidatoImg });
       
       // fot whatsapp
       let candidatoImg11 = `https://assets-candidatos-share.s3.us-east-2.amazonaws.com/candidatoNMRImgV4_11/${this.candidato.jne_idhojavida}.jpg`

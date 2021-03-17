@@ -27,6 +27,30 @@ u {
         //object-fit: cover;
     }
 }
+
+.wp_image{
+    display: flex;
+    flex-wrap: wrap;
+    #imagen-ayuda2 {
+        flex: 55;
+        img {
+            width: 220px; 
+            height: 200px;
+            // min-width: 600px;
+            //object-fit: cover;
+        }
+    }
+    #imagen-ayuda3 {
+        flex: 55;
+        img {
+            width: 200px;
+            height: 200px;
+            // min-width: 600px;
+            //object-fit: cover;
+        }
+    }
+}
+
 #texto-ayuda {
     flex: 45;
     margin: 5px 15px;

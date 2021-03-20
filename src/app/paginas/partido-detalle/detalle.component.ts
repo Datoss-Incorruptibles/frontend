@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalService } from "src/app/servicios/global.service";
 import {Meta, Title} from '@angular/platform-browser';
 import { RestApiService } from "src/app/servicios/restapi.service";
+import { Partido } from '../../shared/_interfaces/partido.interface';
 
 @Component({
   selector: 'app-detalle',
@@ -11,6 +12,7 @@ import { RestApiService } from "src/app/servicios/restapi.service";
 })
 export class DetalleComponent implements OnInit {
   public tabIndex = 0; // detllae partido  
+  ORGANIZACIONES: Partido[];
 
   partido=null;
   constructor(private route: ActivatedRoute, 
@@ -27,7 +29,7 @@ export class DetalleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.getOrganizaciones();
     // if(history.state.id){
     //   this.partido=history.state; 
     // }else{
@@ -83,5 +85,18 @@ export class DetalleComponent implements OnInit {
     }
     this.global.tabIndexPCSource.next(this.tabIndex);
 
+  }
+  getOrganizaciones(){
+    this.restApi.getOrganizacionesNames().subscribe((res:any) =>{
+      this.ORGANIZACIONES=res.results;   
+      // console.log(this.ORGANIZACIONES);
+    }, error => {  });;
+
+  }
+  changePartido (value) {
+    let ruta = "/partido/" + value + "/."
+    this.router.navigate([ruta])
+    //window.location.reload()
+    console.log(ruta)
   }
 }

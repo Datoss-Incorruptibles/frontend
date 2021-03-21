@@ -95,8 +95,15 @@ export class DetalleComponent implements OnInit {
   }
   changePartido (value) {
     let ruta = "/partido/" + value + "/."
-    this.router.navigate([ruta])
+    // console.log(ruta)
     //window.location.reload()
-    console.log(ruta)
+    // this.router.navigate([ruta])
+    this.redirectTo(ruta)
+    // https://stackoverflow.com/a/49509706/11280142
   }
+
+  redirectTo(uri:string){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate([uri]));
+ }
 }

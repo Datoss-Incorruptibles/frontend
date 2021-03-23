@@ -1,5 +1,17 @@
 <div class="paginaPartido" *ngIf="partido">
     
+    <div class="menu-partidos">
+        <mat-form-field appearance="fill" class="filterOrg">
+            <mat-label>Partido</mat-label>
+            <mat-select  [(value)]="orgIdSelect" (selectionChange)="changePartido($event.value)">
+                <!--<mat-option value="sinseleccion2" >SIN SELECCIÓN</mat-option>-->
+                <mat-option *ngFor="let partido of ORGANIZACIONES" [value] = "partido.id">
+                    {{partido.nombre}}
+                </mat-option>    
+            </mat-select>
+        </mat-form-field>
+    </div>
+
     <div class="cabecera">
         <div class="partido_info">
             <div class="imagen_partido">
@@ -71,8 +83,9 @@
                     </a>
                   </button>
                 </mat-menu>
-            </div>   -->
+            </div>  routerLink="/partido/{{partido.id}}/." -->
         </div>
+        
     </div>
     <mat-tab-group (click)="setearTab()" [(selectedIndex)]="tabIndex" mat-stretch-tabs>
     <!--<mat-tab-group (click)="setearTab()" [(selectedIndex)]="tabIndex" [backgroundColor]="'primary'" mat-stretch-tabs>-->

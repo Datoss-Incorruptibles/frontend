@@ -1,4 +1,11 @@
 <div *ngIf="candidato">
+  <div class="goBack-higher">
+    <button (click)="goBack()" mat-raised-button color="primary">
+      <span class="material-icons">
+        keyboard_return
+        </span>
+    </button>
+  </div>
   <div >
     <app-card-candidato [candidato]="candidato" [fromDetalle]="fromDetalle"></app-card-candidato> 
   </div>

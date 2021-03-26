@@ -6,6 +6,14 @@
     width:30vh;
   }
 }
+.goBack-higher {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  //position: relative;
+  //top: 35px;
+  //z-index: 100;
+}
 
 .navigator{
   margin-top: -20px;

@@ -1,0 +1,25 @@
+.navigation{
+  text-align: center;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  img{
+    width: 150px;
+    height: 150px;
+  }
+}
+.selected{
+
+  background-color: red;
+  color: rebeccapurple;
+}
+
+.disabled{
+  color: gray ;
+  background-color: gray;
+}

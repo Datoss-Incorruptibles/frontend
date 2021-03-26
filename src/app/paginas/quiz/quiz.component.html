@@ -1,0 +1,48 @@
+<div *ngIf="step == '0'">
+  <p>¿Qué temas son importantes para ti?</p>
+  <p>
+    Elije min 4 temas que te agraden mas
+    mientras mas elijas mas precisa seran los resultados
+  </p>
+</div>
+
+<div>
+  <div class="navigation">
+    <div>
+      <button (click)="backQuestions()" [ngClass]="{'disabled': step == '0' }">Atras</button>
+    </div>
+    <div>
+      <button (click)="nextQuestions()">Continuar</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper" *ngIf="step == '0'">
+  <div *ngFor="let od of ods">
+    <!-- <p>{{od.id}}</p>
+    <p>{{od.name}}</p>
+    <p>{{od.selected}}</p> -->
+    <button (click)="selectOds(od.id)" [ngClass]="{'selected': od.selected == true }">
+      <img src="{{od.image}}" alt="">
+    </button>
+  </div>
+</div>
+<div *ngIf="step == '1'">
+  Cuales metas se acomodan mejor a ti?
+  <div>
+    <div *ngFor="let od of selectedOds">
+        <div *ngIf="od.show == true">
+          {{od.name}}
+          <section *ngFor="let meta of od.metas">
+            <mat-checkbox class="example-margin" [(ngModel)]="meta.selected">
+              {{meta.name}}</mat-checkbox>
+          </section>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="step == '2'">
+  Results
+
+</div>

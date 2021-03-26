@@ -25,6 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 //
 import { HttpClientModule } from '@angular/common/http';
@@ -58,6 +59,7 @@ import { CandidatoSimerepresentaComponent } from '../app/paginas/candidato-simer
 import { MilistaComponent } from '../app/paginas/milista/milista.component';
 import { ComoVotarComponent } from '../app/paginas/como-votar/como-votar.component';
 import { AyudaComponent } from '../app/paginas/ayuda/ayuda.component';
+import { QuizComponent } from '../app/paginas/quiz/quiz.component';
 
 /*Utils */
 import {ScrollingModule} from '@angular/cdk/scrolling';
@@ -97,7 +99,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     CandidatoHistoriaComponent,
     CandidatoMediosComponent,
     CandidatoPlanGobiernoComponent,
-    MilistaComponent
+    MilistaComponent,
+    QuizComponent
   ],
   exports:[
     PartidosComponent,
@@ -123,7 +126,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     CandidatoDetalleComponent,
     CandidatoMediosComponent,
     CandidatoPlanGobiernoComponent,
-    MilistaComponent
+    MilistaComponent,
+    QuizComponent
 
   ],
   imports: [
@@ -153,6 +157,7 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     MatAutocompleteModule,
     MatExpansionModule,
     MatTooltipModule,
+    MatCheckboxModule,
     SharedModule,
     ScrollingModule,
     InfiniteScrollModule],

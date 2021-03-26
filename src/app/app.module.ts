@@ -60,6 +60,7 @@ import { MilistaComponent } from '../app/paginas/milista/milista.component';
 import { ComoVotarComponent } from '../app/paginas/como-votar/como-votar.component';
 import { AyudaComponent } from '../app/paginas/ayuda/ayuda.component';
 import { QuizComponent } from '../app/paginas/quiz/quiz.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 /*Utils */
 import {ScrollingModule} from '@angular/cdk/scrolling';
@@ -160,7 +161,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     MatCheckboxModule,
     SharedModule,
     ScrollingModule,
-    InfiniteScrollModule],
+    InfiniteScrollModule,
+    NgxChartsModule],
   providers: [ProcessHTTPMsgService],
   bootstrap: [AppComponent]
 })

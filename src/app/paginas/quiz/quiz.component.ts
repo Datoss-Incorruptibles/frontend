@@ -106,9 +106,9 @@ export class QuizComponent implements OnInit {
 
     }
 
-    console.log(this.step,"this.step");
-    console.log(this.questionStep,"this.questionStep");
-    console.log(this.selectedOds,"this.selectedOds");
+    // console.log(this.step,"this.step");
+    // console.log(this.questionStep,"this.questionStep");
+    // console.log(this.selectedOds,"this.selectedOds");
   } 
 
   backQuestions(){
@@ -139,10 +139,10 @@ export class QuizComponent implements OnInit {
     //   this.step = "0";
     //   this.questionStep = 0;
     // }
-    console.log(this.minToFinish,"this.minToFinish");
-    console.log(this.step,"this.step");
-    console.log(this.questionStep,"this.questionStep");
-    console.log(this.selectedOds,"this.selectedOds");
+    // console.log(this.minToFinish,"this.minToFinish");
+    // console.log(this.step,"this.step");
+    // console.log(this.questionStep,"this.questionStep");
+    // console.log(this.selectedOds,"this.selectedOds");
 
   }
 
@@ -157,18 +157,18 @@ export class QuizComponent implements OnInit {
               this.selectedOds.splice(j, 1);
             }
           }
-          console.log("remove",this.selectedOds);
+          // console.log("remove",this.selectedOds);
         }else if(this.ods[i].selected == false){
           this.ods[i].selected = true;
           this.minToStart = this.minToStart + 1;
           this.selectedOds.push(this.ods[i])
-          console.log("add",this.selectedOds);
+          // console.log("add",this.selectedOds);
         }
       }
     }
-    console.log(this.minToStart,"this.minToStart");
-    console.log(this.selectedOds,"this.selectedOds");
-    console.log(this.ods,"this.ods");
+    // console.log(this.minToStart,"this.minToStart");
+    // console.log(this.selectedOds,"this.selectedOds");
+    // console.log(this.ods,"this.ods");
   }
 
   startAgain(){

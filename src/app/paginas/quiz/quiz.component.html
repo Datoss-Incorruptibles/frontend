@@ -1,59 +1,64 @@
-<ngx-charts-bar-horizontal
-[view]="view"
-[scheme]="colorScheme"
-[results]="single"
-[gradient]="gradient"
-[xAxis]="showXAxis"
-[yAxis]="showYAxis"
-[legend]="showLegend"
-[showXAxisLabel]="showXAxisLabel"
-[showYAxisLabel]="showYAxisLabel"
-[xAxisLabel]="xAxisLabel"
-[yAxisLabel]="yAxisLabel"
-(select)="onSelect($event)"
-(activate)="onActivate($event)"
-(deactivate)="onDeactivate($event)">
-</ngx-charts-bar-horizontal>
-
-
-
-<div *ngIf="step == '0'">
-  <p>¿Qué temas son importantes para ti?</p>
-  <p>
-    Elije min 4 temas que te agraden mas
+<div *ngIf="step == '0'" class="title">
+  <h1>¿Qué temas son importantes para ti?</h1>
+  <h2>
+    Elije min 5 temas que te agraden mas
     mientras mas elijas mas precisa seran los resultados
-  </p>
+  </h2>
 </div>
 
-<div>
+
+<div *ngIf="step != '2'">
   <div class="navigation">
     <div>
-      <button (click)="backQuestions()" [ngClass]="{'disabled': step == '0' }">Atras</button>
+      <button mat-raised-button [disabled]="step == '0'"
+      (click)="backQuestions()" [ngClass]="{'disabled': step == '0' }">Atras</button>
     </div>
     <div>
-      <button (click)="nextQuestions()">Continuar</button>
+      <button mat-raised-button [disabled]="minToStart < 5" 
+       (click)="nextQuestions()" [ngClass]="{'disabled': minToStart < 5 }">Continuar</button>
+      
+       <!-- <button mat-raised-button [disabled]="disabledButtonQ" 
+       *ngIf="step == '1'"
+       (click)="nextQuestions()">Continuar 1</button> -->
     </div>
   </div>
 </div>
 
-<div class="wrapper" *ngIf="step == '0'">
-  <div *ngFor="let od of ods">
-    <!-- <p>{{od.id}}</p>
-    <p>{{od.name}}</p>
-    <p>{{od.selected}}</p> -->
-    <button (click)="selectOds(od.id)" [ngClass]="{'selected': od.selected == true }">
+
+<div class="wrapper_ods_list" *ngIf="step == '0'">
+  <div *ngFor="let od of ods" class="wrapper_button">
+    <button (click)="selectOds(od.id)" [ngClass]="{'selected': od.selected == true }"
+    class="example-ripple-container mat-elevation-z4"
+     matRipple
+     [matRippleCentered]="centered"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     [matRippleRadius]="radius"
+     [matRippleColor]="color"
+     mat-button
+     >
       <img src="{{od.image}}" alt="">
     </button>
+
   </div>
 </div>
-<div *ngIf="step == '1'">
-  Cuales metas se acomodan mejor a ti?
+<div *ngIf="step == '1'" class="wrapper_questions">
+  <div>
+    <h1>
+      Cuales metas se acomodan mejor a ti?
+    </h1>
+  </div>
+  <div  *ngIf="isLastQuestion && minToFinish == false">
+    Parece que no marcarte ningun opcion, 
+    Marca una opcion porfis 
+    <!-- {{this.minToFinish}} -->
+  </div>
   <div>
     <div *ngFor="let od of selectedOds">
         <div *ngIf="od.show == true">
-          {{od.name}}
+          <h2>{{od.name}}</h2>
           <section *ngFor="let meta of od.metas">
-            <mat-checkbox class="example-margin" [(ngModel)]="meta.selected">
+            <mat-checkbox (change)="setAll($event.checked,od.metas)" class="example-margin" [(ngModel)]="meta.selected">
               {{meta.name}}</mat-checkbox>
           </section>
         </div>
@@ -61,7 +66,49 @@
   </div>
 </div>
 
-<div *ngIf="step == '2'">
-  Results
+<div *ngIf="step == '2'" class="wrapper_results">
+  <div>
+    <h1 class="title">Resultados</h1>
+  </div>
+  <div class="results">
+    <div *ngFor="let partido of results">
+      <div class="wrapper-bars">
+        <div>
+          <img src="{{partido.imgPartido}}" alt="">
+        </div>
+        <div>
+          <img src="{{partido.imgCandidato}}" alt="">
+        </div>
+        <div>
+          <div class="bar" [ngStyle]="{width: partido.value * 15 + 'px'}"></div>
+        </div>
+        <div>{{partido.value}}</div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="newTest" 
+*ngIf="step == '2'">
+  <div>
+    <button mat-raised-button 
+    (click)="startAgain()" >Nuevo test</button>
+  </div>
+</div>
+
+<div class="fuentes" *ngIf="step == '2'">
+  <div class="logos">
+    <div class="un">
+      <img src="https://www.unicef.org/peru/sites/unicef.org.peru/files/2019-12/Logo%20Naciones%20Unidas.jpg" alt="">
+    </div>
+    <div class="up">
+      <img src="https://www.up.edu.pe/UP_Landing/dia-de-la-gestion-publica/img/logo_up.png" alt="">
+    </div>
+  </div>
+  <div>
+    <h3> Fuente:
+      <a target="_blank" href="http://sisisemail.up.edu.pe/sisisemail/docs/2021/157/Los-Objetivos-de-Desarrollo-Sostenible-de-la-Agenda-2030-y-los-Planes-de-Gobierno.pdf" >    
+        http://sisisemail.up.edu.pe/sisisemail/docs/2021/157/Los-Objetivos-de-Desarrollo-Sostenible-de-la-Agenda-2030-y-los-Planes-de-Gobierno.pdf</a> 
+    </h3>
+  </div>
 </div>

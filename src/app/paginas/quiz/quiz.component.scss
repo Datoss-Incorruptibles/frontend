@@ -1,25 +1,110 @@
 .navigation{
-  text-align: center;
-}
-
-.wrapper{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  img{
-    width: 150px;
-    height: 150px;
-  }
+  align-items:center;
+  justify-content:center; 
+  
 }
 .selected{
-
-  background-color: red;
-  color: rebeccapurple;
+  background-color: rgb(36, 76, 255);
 }
 
 .disabled{
   color: gray ;
-  background-color: gray;
+}
+
+.wrapper_ods_list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  .wrapper_button{
+    margin: 5px;
+    img{
+      width: 150px;
+      height: 150px;
+      margin:10px 0px;
+    }
+  }
+}
+
+.wrapper_questions{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+
+}
+
+
+.wrapper_results{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+
+  .results{
+    width: 800px;
+    display: flex;
+    align-items:flex-start;
+    justify-content:center;
+    flex-direction: column;
+
+    .wrapper-bars{
+      display: flex;
+      align-items:center;
+      justify-content:flex-start;
+      flex-wrap: wrap;
+      .bar{
+        height: 20px;
+        background-color: rgb(206, 30, 30);
+      }
+      img{
+        // width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+
+
+.title{
+  display: flex;
+  align-items:center;
+  justify-content:center; 
+  flex-direction: column;
+
+}
+
+
+.newTest{
+  display: flex;
+  align-items:center;
+  justify-content:center; 
+}
+
+.fuentes{
+  display: flex;
+  align-items:flex-start;
+  justify-content:flex-start; 
+  flex-direction: column;
+  .logos{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-between; 
+    .up{
+      img{
+        width: 270px;
+        height: 135px;
+      }
+    }
+    .un{
+      img{
+        width: 410px;
+        height: 120px;
+      }
+    }
+  }
+
 }

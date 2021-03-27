@@ -101,8 +101,7 @@ export class QuizComponent implements OnInit {
 
     }
 
-    
-
+  
     console.log(this.step,"this.step");
     console.log(this.questionStep,"this.questionStep");
     console.log(this.selectedOds,"this.selectedOds");
@@ -120,7 +119,8 @@ export class QuizComponent implements OnInit {
         this.questionStep = this.questionStep - 1;
 
         for (let i = 0; i < this.selectedOds.length; i++) {
-          if (i == this.questionStep ){
+          // show the current questions
+          if (i == this.questionStep -1 ){
             // console.log(this.selectedOds[i]);
             this.selectedOds[i]["show"] = true;
           }else {

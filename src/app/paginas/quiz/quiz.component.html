@@ -1,18 +1,103 @@
 <div *ngIf="step == '0'" class="title">
   <!-- <h1>¿Qué temas son importantes para ti?</h1> -->
-  <h2>
-    Elije minimo 5 temas que mas te agraden 
-  </h2>
+  <h1>
+    OBJETIVOS DE DESARROLLO SOSTENIBLE DE LA AGENDA 2030 vs PLANES DE GOBIERNO
+  </h1>
   <p>
-    ...mientras mas elijas mas precisa seran los resultados
+    Elige  5 ó más Objetivos que consideres necesarios para ver si se incluyen en los planes de gobierno.
   </p>
 </div>
 
 <div *ngIf="step == '1'" class="title">
   <div>
     <h1>
-      Cuales metas te interesan mas a ti?
+      OBJETIVOS DE DESARROLLO SOSTENIBLE DE LA AGENDA 2030 vs PLANES DE GOBIERNO
     </h1>
+    <p>
+      Selecciona las metas que consideres más relevantes
+    </p>
+  </div>
+</div>
+
+
+
+
+<div class="wrapper_ods_list" *ngIf="step == '0'">
+  <div *ngFor="let od of ods" class="wrapper_button">
+    <button (click)="selectOds(od.id)" [ngClass]="{'selected': od.selected == true }"
+     class=" mat-elevation-z4"
+     matRipple
+     [matRippleCentered]="centered"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     [matRippleRadius]="radius"
+     [matRippleColor]="color"
+     mat-button
+     >
+      <img src="{{od.image}}" alt="">
+    </button>
+
+  </div>
+</div>
+
+<div *ngIf="step == '1'" class="wrapper_questions">
+  <div  *ngIf="isLastQuestion && minToFinish == false">
+    <p>
+      Ups, Parece que no marcaste ninguna opción.
+      Selecciona las metas por fis ;)
+    </p>
+  </div>
+  <div>
+    <div *ngFor="let od of selectedOds" >
+        <div *ngIf="od.show == true">
+          <h3>{{od.name}}</h3>
+          <div *ngFor="let meta of od.metas" class="checkbox_wrapper">
+            <mat-checkbox 
+            class="checkbox" 
+            [(ngModel)]="meta.selected">
+            <p class="checkbox-text">
+              {{meta.name}}
+            </p>
+              </mat-checkbox>
+          </div>
+          <!-- (change)="setAll($event.checked,od.metas)"  -->
+        </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="step == '2'" class="wrapper_results">
+  <div>
+    <h1 class="title">
+      OBJETIVOS DE DESARROLLO SOSTENIBLE DE LA AGENDA 2030 vs PLANES DE GOBIERNO
+    </h1>
+    <p>
+      Las metas seleccionadas tienen esta prioridad en los planes de gobierno
+    </p>
+  </div>
+  <div class="results">
+    <div *ngFor="let result of results" class="result">
+        <div class="wrapper-bars">
+          <div class="images">
+            <div class="wrapper_imgPartido">
+              <img src="{{result.imgPartido}}" alt="">
+            </div>
+            <div class="wrapper_imgCandidato">
+              <img src="{{result.imgCandidato}}" alt="">
+            </div>
+          </div>
+          <div class="bar_value">          
+            <div class="bar" [ngStyle]="{ width: widthScreen > 500 ?  result.value * 100/numberQA * 6  + 'px' : result.value * 100/numberQA * 2  + 'px'}"></div>
+            <div class="value">{{(result.value * 100/numberQA).toFixed(2)}} %</div>
+          </div>
+        </div>
+        <div class="actions">
+          <!-- Mas sobre el partido -->
+          <a mat-icon-button color="warn" href="/partido/{{result.idDb}}/">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </a>
+        </div>
+    </div>
   </div>
 </div>
 
@@ -33,87 +118,13 @@
   </div>
 </div>
 
-
-<div class="wrapper_ods_list" *ngIf="step == '0'">
-  <div *ngFor="let od of ods" class="wrapper_button">
-    <button (click)="selectOds(od.id)" [ngClass]="{'selected': od.selected == true }"
-    class="example-ripple-container mat-elevation-z4"
-     matRipple
-     [matRippleCentered]="centered"
-     [matRippleDisabled]="disabled"
-     [matRippleUnbounded]="unbounded"
-     [matRippleRadius]="radius"
-     [matRippleColor]="color"
-     mat-button
-     >
-      <img src="{{od.image}}" alt="">
-    </button>
-
-  </div>
-</div>
-
-<div *ngIf="step == '1'" class="wrapper_questions">
-  <div  *ngIf="isLastQuestion && minToFinish == false">
-    Parece que no marcarte ningun opcion, 
-    Marca una opcion porfis 
-    <!-- {{this.minToFinish}} -->
-  </div>
-  <div>
-    <div *ngFor="let od of selectedOds" >
-        <div *ngIf="od.show == true">
-          <h2>{{od.name}}</h2>
-          <div *ngFor="let meta of od.metas" class="checkbox_wrapper">
-            <mat-checkbox 
-            class="checkbox" 
-            [(ngModel)]="meta.selected">
-            <p class="checkbox-text">
-              {{meta.name}}
-            </p>
-              </mat-checkbox>
-          </div>
-          <!-- (change)="setAll($event.checked,od.metas)"  -->
-        </div>
-    </div>
-  </div>
-</div>
-
-<div *ngIf="step == '2'" class="wrapper_results">
-  <div>
-    <h1 class="title">Resultados</h1>
-  </div>
-  <div class="results">
-    <div *ngFor="let result of results" class="result">
-        <div class="wrapper-bars">
-          <div class="images">
-            <div class="wrapper_imgPartido">
-              <img src="{{result.imgPartido}}" alt="">
-            </div>
-            <div class="wrapper_imgCandidato">
-              <img src="{{result.imgCandidato}}" alt="">
-            </div>
-          </div>
-          <div class="bar_value">          
-            <div class="bar" [ngStyle]="{ width: widthScreen > 500 ?  result.value * 100/numberQA * 6  + 'px' : result.value * 100/numberQA * 2  + 'px'}"></div>
-            <div class="value">{{(result.value * 100/numberQA).toFixed(2)}} %</div>
-          </div>
-        </div>
-        <div class="actions">
-          <!-- Mas sobre el partido -->
-          <!-- <button mat-raised-button>
-            <mat-icon>keyboard_arrow_right</mat-icon>
-          </button> -->
-          <a mat-icon-button color="warn" href="/partido/{{result.idDb}}/">
-            <mat-icon>keyboard_arrow_right</mat-icon>
-          </a>
-        </div>
-    </div>
-  </div>
-</div>
-
 <div class="newTest" *ngIf="step == '2'">
   <div>
-    <button mat-raised-button 
-    (click)="startAgain()" >Nuevo test</button>
+    <button mat-raised-button class="button_newTest"
+    (click)="startAgain()" >
+    <span class="material-icons"> keyboard_return</span>
+    Nuevo test
+  </button>
   </div>
 </div>
 
@@ -127,11 +138,11 @@
     </div>
   </div>
   <div class="url_pdf">
-    <h3> Fuente:
+    <h4> Fuente:
       <a target="_blank" href="http://sisisemail.up.edu.pe/sisisemail/docs/2021/157/Los-Objetivos-de-Desarrollo-Sostenible-de-la-Agenda-2030-y-los-Planes-de-Gobierno.pdf" >    
         Los Objetivos de
         Desarrollo Sostenible de la Agenda
         2030 y los Planes de Gobierno</a> 
-    </h3>
+      </h4>
   </div>
 </div>

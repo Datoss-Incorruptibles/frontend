@@ -1,7 +1,15 @@
+
 .navigation{
   display: flex;
   align-items:center;
   justify-content:center; 
+
+  button{
+    margin: 5px;
+    font-size: 30px;
+    width: 250px;
+    height: 40px;
+  }
   
 }
 .selected{
@@ -18,7 +26,7 @@
   justify-content: center;
   flex-wrap: wrap;
   .wrapper_button{
-    margin: 5px;
+    padding: 5px;
     img{
       width: 150px;
       height: 150px;
@@ -32,6 +40,7 @@
   align-items:center;
   justify-content:center;
   flex-direction: column;
+  height: 400px;
   .checkbox{
     font-size: 20px;
   }
@@ -112,6 +121,7 @@
   align-items:center;
   justify-content:center; 
   flex-direction: column;
+  text-align: center;
 
 }
 
@@ -120,6 +130,11 @@
   display: flex;
   align-items:center;
   justify-content:center; 
+  .button_newTest{
+    font-size: 30px;
+    width: 250px;
+    height: 40px;
+  }
 }
 
 .fuentes{
@@ -132,7 +147,7 @@
     width: 100%;
     display: flex;
     align-items:center;
-    justify-content:space-between; 
+    justify-content:space-around; 
     flex-wrap: wrap;
 
     .up{
@@ -148,8 +163,23 @@
       }
     }
   }
+  .url_pdf{
+    width: 100%;
+    text-align: center;
+  }
 }
 
+h1{
+  color: #3386FF;
+}
+h3{
+  font-size: 30px;
+}
+p{
+  font-size: 24px;
+  margin: 0;
+  padding: 5px 0px;
+}
 
 ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
   opacity: 0.03 !important;
@@ -162,15 +192,31 @@
 
 
 @media only screen and (max-width: 450px) {
+  .navigation{
+    button{
+      font-size: 16px;
+      width: 125px;
+      height: 30px;
+    }
+  }
+
+
+  .wrapper_questions{
+    min-height: 200px;
+    .checkbox{
+      font-size: 16px;
+    }
+  }
+  
   .wrapper_results{
     .results{
       .result{
         display: flex;
         align-items:center;
         justify-content:space-between;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         .wrapper-bars{
-          width: 320px;
+          width: 300px;
           .wrapper_imgPartido{
             img{
               width: 30px;
@@ -184,16 +230,19 @@
             }
           }
         }
+        .actions{
+
+        }
       }
     }
+
   }
   .wrapper_ods_list{
     .wrapper_button{
-      margin: 5px;
       img{
-        width: 75px;
-        height: 75px;
-        margin:10px 0px;
+        width: 100px;
+        height: 100px;
+        margin:5px -5px;
       }
     }
   }
@@ -215,6 +264,13 @@
     }
 
   }
+  .newTest{
+    .button_newTest{
+      font-size: 20px;
+      width: 200px;
+      height: 35px;
+    }
+  }
 
   .fuentes{
     display: flex;
@@ -234,10 +290,20 @@
       max-width: 300px;
       a{
         max-width: 300px;
-
       }
     }
   }
+
+  h1{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 20px;
+  }
+  p{
+    font-size: 16px;
+  }
+
   
 }
 

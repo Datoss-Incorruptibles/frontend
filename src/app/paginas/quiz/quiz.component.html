@@ -68,7 +68,6 @@
             [(ngModel)]="meta.selected">
             <p class="checkbox-text">
               {{meta.name}}
-
             </p>
               </mat-checkbox>
           </div>
@@ -83,20 +82,30 @@
     <h1 class="title">Resultados</h1>
   </div>
   <div class="results">
-    <div *ngFor="let partido of results">
-      <div class="wrapper-bars">
-        <div class="wrapper_imgPartido">
-          <img src="{{partido.imgPartido}}" alt="">
+    <div *ngFor="let result of results" class="result">
+        <div class="wrapper-bars">
+          <div class="images">
+            <div class="wrapper_imgPartido">
+              <img src="{{result.imgPartido}}" alt="">
+            </div>
+            <div class="wrapper_imgCandidato">
+              <img src="{{result.imgCandidato}}" alt="">
+            </div>
+          </div>
+          <div class="bar_value">          
+            <div class="bar" [ngStyle]="{ width: widthScreen > 500 ?  result.value * 100/numberQA * 6  + 'px' : result.value * 100/numberQA * 2  + 'px'}"></div>
+            <div class="value">{{(result.value * 100/numberQA).toFixed(2)}} %</div>
+          </div>
         </div>
-        <div class="wrapper_imgCandidato">
-          <img src="{{partido.imgCandidato}}" alt="">
+        <div class="actions">
+          <!-- Mas sobre el partido -->
+          <!-- <button mat-raised-button>
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button> -->
+          <a mat-icon-button color="warn" href="/partido/{{result.idDb}}/">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </a>
         </div>
-        <div>          
-          <div class="bar" [ngStyle]="{ width: widthScreen > 500 ?  partido.value * 15  + 'px' : partido.value * 4  + 'px'}"></div>
-          <!-- <div *ngIf="expression" class="bar" [ngStyle]="{width: partido.value * 15 + 'px'}"></div> -->
-        </div>
-        <div>{{partido.value}}</div>
-      </div>
     </div>
   </div>
 </div>

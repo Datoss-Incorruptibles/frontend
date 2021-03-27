@@ -22,6 +22,7 @@ export class QuizComponent implements OnInit {
   minToFinish = false;
   isLastQuestion = false;
   widthScreen = this.restApi.widthScreen;
+  numberQA = 0;
 
   constructor(private restApi:RestApiService) {     
   }
@@ -66,6 +67,7 @@ export class QuizComponent implements OnInit {
           // to get the results no 
             if (this.selectedOds[l].metas[m].selected == true) {
               this.minToFinish = true;
+              this.numberQA = this.numberQA + 1;         
               for (let n = 0; n < this.selectedOds[l].metas[m].puntaje.length; n++) {
                 // get all the results to map with the puntaje.id
                 for (let a = 0; a < this.results.length; a++) {
@@ -74,7 +76,7 @@ export class QuizComponent implements OnInit {
                     this.results[a].value = this.results[a].value + this.selectedOds[l].metas[m].puntaje[n].score;
                     // console.log("this.results[a].value");
                     
-                  }         
+                  }
                 }
               }
             }
@@ -181,7 +183,7 @@ export class QuizComponent implements OnInit {
     this.minToStart = 0
     this.minToFinish = false;
     this.isLastQuestion = false;
-
+    this.numberQA = 0;
   }
 
 

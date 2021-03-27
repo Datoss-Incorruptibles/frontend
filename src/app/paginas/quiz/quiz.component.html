@@ -1,7 +1,7 @@
 <div *ngIf="step == '0'" class="title">
   <!-- <h1>¿Qué temas son importantes para ti?</h1> -->
   <h2>
-    Elije minimo 5 temas que te agraden mas,
+    Elije minimo 5 temas que mas te agraden 
   </h2>
   <p>
     ...mientras mas elijas mas precisa seran los resultados
@@ -51,25 +51,28 @@
 
   </div>
 </div>
-<div *ngIf="step == '1'" class="wrapper_questions">
 
+<div *ngIf="step == '1'" class="wrapper_questions">
   <div  *ngIf="isLastQuestion && minToFinish == false">
     Parece que no marcarte ningun opcion, 
     Marca una opcion porfis 
     <!-- {{this.minToFinish}} -->
   </div>
   <div>
-    <div *ngFor="let od of selectedOds">
+    <div *ngFor="let od of selectedOds" >
         <div *ngIf="od.show == true">
           <h2>{{od.name}}</h2>
-          <section *ngFor="let meta of od.metas">
+          <div *ngFor="let meta of od.metas" class="checkbox_wrapper">
             <mat-checkbox 
-            [color]="primary"
-            (change)="setAll($event.checked,od.metas)" 
-            class="example-margin" 
+            class="checkbox" 
             [(ngModel)]="meta.selected">
-              {{meta.name}}</mat-checkbox>
-          </section>
+            <p class="checkbox-text">
+              {{meta.name}}
+
+            </p>
+              </mat-checkbox>
+          </div>
+          <!-- (change)="setAll($event.checked,od.metas)"  -->
         </div>
     </div>
   </div>
@@ -97,8 +100,7 @@
   </div>
 </div>
 
-<div class="newTest" 
-*ngIf="step == '2'">
+<div class="newTest" *ngIf="step == '2'">
   <div>
     <button mat-raised-button 
     (click)="startAgain()" >Nuevo test</button>
@@ -114,10 +116,12 @@
       <img src="https://www.up.edu.pe/UP_Landing/dia-de-la-gestion-publica/img/logo_up.png" alt="">
     </div>
   </div>
-  <div>
+  <div class="url_pdf">
     <h3> Fuente:
       <a target="_blank" href="http://sisisemail.up.edu.pe/sisisemail/docs/2021/157/Los-Objetivos-de-Desarrollo-Sostenible-de-la-Agenda-2030-y-los-Planes-de-Gobierno.pdf" >    
-        http://sisisemail.up.edu.pe/sisisemail/docs/2021/157/Los-Objetivos-de-Desarrollo-Sostenible-de-la-Agenda-2030-y-los-Planes-de-Gobierno.pdf</a> 
+        Los Objetivos de
+        Desarrollo Sostenible de la Agenda
+        2030 y los Planes de Gobierno</a> 
     </h3>
   </div>
 </div>

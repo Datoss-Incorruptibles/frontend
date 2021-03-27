@@ -32,7 +32,9 @@
   align-items:center;
   justify-content:center;
   flex-direction: column;
-
+  .checkbox{
+    font-size: 20px;
+  }
 }
 
 
@@ -88,11 +90,14 @@
   align-items:flex-start;
   justify-content:flex-start; 
   flex-direction: column;
+  flex-wrap: wrap;
   .logos{
     width: 100%;
     display: flex;
     align-items:center;
     justify-content:space-between; 
+    flex-wrap: wrap;
+
     .up{
       img{
         width: 270px;
@@ -101,12 +106,11 @@
     }
     .un{
       img{
-        width: 410px;
-        height: 120px;
+        width: 310px;
+        height: 90px;
       }
     }
   }
-
 }
 
 
@@ -118,3 +122,79 @@
 ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
   background-color: #3D94FC;
 }
+
+
+@media only screen and (max-width: 450px) {
+  .wrapper_results{
+    .results{
+      width: 300px;
+  
+    }
+  }
+  .wrapper_ods_list{
+    .wrapper_button{
+      margin: 5px;
+      img{
+        width: 75px;
+        height: 75px;
+        margin:10px 0px;
+      }
+    }
+  }
+
+  .wrapper_questions{
+    margin-top: 20px;
+    .checkbox_wrapper{
+      max-width: 300px;
+      .checkbox{
+        font-size: 15px;
+        max-width: 300px;
+        .checkbox-text{
+          max-width: 300px;
+          display: inline-block;
+          word-wrap: break-word;
+        }
+
+      }
+    }
+
+  }
+
+  .fuentes{
+    display: flex;
+    align-items:flex-start;
+    justify-content:flex-start; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 300px;
+    .logos{
+      width: 100%;
+      display: flex;
+      align-items:center;
+      justify-content:space-between; 
+      flex-wrap: wrap;
+    }
+    .url_pdf{
+      max-width: 300px;
+      a{
+        max-width: 300px;
+
+      }
+    }
+  }
+  
+}
+
+// ::ng-deep .mat-checkbox .mat-checkbox-label {
+//   width: 300px;
+//   word-wrap: break-word;
+//   display: inline-block;
+//   .mat-checkbox-label { // NEW
+//     white-space: initial; // NEW
+//   } // NEW
+//   // TODO(kara): Remove this style when fixing vertical baseline
+//   .mat-checkbox-layout .mat-checkbox-label {
+//     line-height: 20px;
+//   }
+// }
+

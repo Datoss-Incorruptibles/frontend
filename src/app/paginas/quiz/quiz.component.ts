@@ -69,7 +69,7 @@ export class QuizComponent implements OnInit {
                   if(this.results[a].id == this.selectedOds[l].metas[m].puntaje[n].id ){
                     // sum the selected questions to the results 
                     this.results[a].value = this.results[a].value + this.selectedOds[l].metas[m].puntaje[n].score;
-                    console.log("this.results[a].value");
+                    // console.log("this.results[a].value");
                     
                   }         
                 }
@@ -80,13 +80,13 @@ export class QuizComponent implements OnInit {
         
         if (this.minToFinish == false){
           // dont go to resultsz and avisar al usuario que necesita makar unos cheks 
-          console.log("you need to mark some checks");
+          // console.log("you need to mark some checks");
           // this.step = "1"
           // this.questionStep = 1;
           this.questionStep = this.questionStep - 1;
 
         }else{
-          console.log("pasaste");
+          // console.log("pasaste");
           this.step = "2"
           this.results.sort(function(a, b){return b.value - a.value});
         }
@@ -101,7 +101,6 @@ export class QuizComponent implements OnInit {
 
     }
 
-  
     console.log(this.step,"this.step");
     console.log(this.questionStep,"this.questionStep");
     console.log(this.selectedOds,"this.selectedOds");
@@ -117,7 +116,6 @@ export class QuizComponent implements OnInit {
       }else{  
         //show only the questions necesary
         this.questionStep = this.questionStep - 1;
-
         for (let i = 0; i < this.selectedOds.length; i++) {
           // show the current questions
           if (i == this.questionStep -1 ){
@@ -169,7 +167,6 @@ export class QuizComponent implements OnInit {
   }
 
   startAgain(){
- 
     this.results = JSON.parse(JSON.stringify(results));
 
     this.step = "0";
@@ -185,22 +182,21 @@ export class QuizComponent implements OnInit {
   }
 
 
-  setAll(e,metas){
-    // revisar hay por lo menos si uno tiene el selected 
-    // for (let i = 0; i < metas.length; i++) {
-    //   if (metas[i].selected == true) {
-    //    // one has true
-    //     this.minToFinish = false
-    //   }
-    // }
-    // if (e == true){
-    //   this.minToNextQuestion = this.minToNextQuestion + 1;
-    // }else if (e == false){
-    //   this.minToNextQuestion = this.minToNextQuestion - 1;
-    // }
-    // console.log(e,data);
-    console.log(this.minToFinish,"this.minToFinish");
-    
-  }
+  // setAll(e,metas){
+  //   // revisar hay por lo menos si uno tiene el selected 
+  //   // for (let i = 0; i < metas.length; i++) {
+  //   //   if (metas[i].selected == true) {
+  //   //    // one has true
+  //   //     this.minToFinish = false
+  //   //   }
+  //   // }
+  //   // if (e == true){
+  //   //   this.minToNextQuestion = this.minToNextQuestion + 1;
+  //   // }else if (e == false){
+  //   //   this.minToNextQuestion = this.minToNextQuestion - 1;
+  //   // }
+  //   // console.log(e,data);
+  //   // console.log(this.minToFinish,"this.minToFinish");
+  // }
 
 }

@@ -1,11 +1,20 @@
 <div *ngIf="step == '0'" class="title">
-  <h1>¿Qué temas son importantes para ti?</h1>
+  <!-- <h1>¿Qué temas son importantes para ti?</h1> -->
   <h2>
-    Elije min 5 temas que te agraden mas
-    mientras mas elijas mas precisa seran los resultados
+    Elije minimo 5 temas que te agraden mas,
   </h2>
+  <p>
+    ...mientras mas elijas mas precisa seran los resultados
+  </p>
 </div>
 
+<div *ngIf="step == '1'" class="title">
+  <div>
+    <h1>
+      Cuales metas te interesan mas a ti?
+    </h1>
+  </div>
+</div>
 
 <div *ngIf="step != '2'">
   <div class="navigation">
@@ -43,11 +52,7 @@
   </div>
 </div>
 <div *ngIf="step == '1'" class="wrapper_questions">
-  <div>
-    <h1>
-      Cuales metas se acomodan mejor a ti?
-    </h1>
-  </div>
+
   <div  *ngIf="isLastQuestion && minToFinish == false">
     Parece que no marcarte ningun opcion, 
     Marca una opcion porfis 
@@ -58,7 +63,11 @@
         <div *ngIf="od.show == true">
           <h2>{{od.name}}</h2>
           <section *ngFor="let meta of od.metas">
-            <mat-checkbox (change)="setAll($event.checked,od.metas)" class="example-margin" [(ngModel)]="meta.selected">
+            <mat-checkbox 
+            [color]="primary"
+            (change)="setAll($event.checked,od.metas)" 
+            class="example-margin" 
+            [(ngModel)]="meta.selected">
               {{meta.name}}</mat-checkbox>
           </section>
         </div>

@@ -39,7 +39,7 @@ export var results = [
     id:1264,
     value:0,
     imgPartido: 'https://res.cloudinary.com/dv2q4mh6c/image/upload/c_scale,h_70/v1613785548/candidatos/jp_wgxbun.jpg',
-    imgCandidato: 'https://declara.jne.gob.pe/Assets/Fotos-HojaVida/133878.jpg'
+    imgCandidato: 'https://declara.jne.gob.pe/Assets/Fotos-HojaVida/135605.jpg'
   },
   {
     name:"FUERZA POPULAR",

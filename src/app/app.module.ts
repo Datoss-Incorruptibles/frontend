@@ -25,6 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 //
 import { HttpClientModule } from '@angular/common/http';
@@ -41,6 +42,8 @@ import { ListadoCongresistaComponent } from './paginas/partido-detalle/listado-c
 import { SharedModule } from './shared/shared.module';
 import { HistoriaPartidoComponent } from './paginas/partido-detalle/historia-partido/historia-partido.component';
 import { PartidoPlanGobiernoComponent } from './paginas/partido-detalle/partido-plan-gobierno/partido-plan-gobierno.component';
+import { NivelPropuestasComponent } from '../app/paginas/planes-gobierno/nivel-propuestas/nivel-propuestas.component';
+import { ComparativoAnalisisComponent } from '../app/paginas/planes-gobierno/comparativo-analisis/comparativo-analisis.component';
 
 /*Componentes Candidato */
 import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.component';
@@ -58,6 +61,8 @@ import { CandidatoSimerepresentaComponent } from '../app/paginas/candidato-simer
 import { MilistaComponent } from '../app/paginas/milista/milista.component';
 import { ComoVotarComponent } from '../app/paginas/como-votar/como-votar.component';
 import { AyudaComponent } from '../app/paginas/ayuda/ayuda.component';
+import { QuizComponent } from '../app/paginas/quiz/quiz.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 /*Utils */
 import {ScrollingModule} from '@angular/cdk/scrolling';
@@ -88,6 +93,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     AyudaComponent,
     CandidatoNomepresentaComponent,
     CandidatoSimerepresentaComponent,
+    NivelPropuestasComponent, 
+    ComparativoAnalisisComponent,
 /*Componentes Candidato */
     CandidatosComponent,
     CandidatoPresidenteComponent,
@@ -97,7 +104,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     CandidatoHistoriaComponent,
     CandidatoMediosComponent,
     CandidatoPlanGobiernoComponent,
-    MilistaComponent
+    MilistaComponent,
+    QuizComponent
   ],
   exports:[
     PartidosComponent,
@@ -114,6 +122,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     AyudaComponent,
     CandidatoNomepresentaComponent,
     CandidatoSimerepresentaComponent,
+    NivelPropuestasComponent, 
+    ComparativoAnalisisComponent,
     
     /*Componentes Candidato */
     CandidatosComponent,
@@ -123,7 +133,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     CandidatoDetalleComponent,
     CandidatoMediosComponent,
     CandidatoPlanGobiernoComponent,
-    MilistaComponent
+    MilistaComponent,
+    QuizComponent
 
   ],
   imports: [
@@ -153,9 +164,11 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     MatAutocompleteModule,
     MatExpansionModule,
     MatTooltipModule,
+    MatCheckboxModule,
     SharedModule,
     ScrollingModule,
-    InfiniteScrollModule],
+    InfiniteScrollModule,
+    NgxChartsModule],
   providers: [ProcessHTTPMsgService],
   bootstrap: [AppComponent]
 })

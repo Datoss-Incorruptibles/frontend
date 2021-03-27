@@ -1,0 +1,323 @@
+
+.navigation{
+  display: flex;
+  align-items:center;
+  justify-content:center; 
+
+  button{
+    margin: 5px;
+    font-size: 30px;
+    width: 250px;
+    height: 40px;
+  }
+  
+}
+.selected{
+  background-color:#3D94FC;
+}
+
+.disabled{
+  color: gray ;
+}
+
+.wrapper_ods_list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  .wrapper_button{
+    padding: 5px;
+    img{
+      width: 150px;
+      height: 150px;
+      margin:10px 0px;
+    }
+  }
+}
+
+.wrapper_questions{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+  height: 400px;
+  .checkbox{
+    font-size: 20px;
+  }
+}
+
+
+.wrapper_results{
+  display: flex;
+  align-items:center;
+  justify-content:flex-start;
+  flex-direction: column;
+
+  .results{
+    display: flex;
+    align-items:flex-start;
+    justify-content:center;
+    flex-direction: column;
+    margin: 20px 0;
+
+    .result{
+      display: flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap: wrap;
+
+      .wrapper-bars{
+        width: 800px;
+        background-color: aliceblue;
+        display: flex;
+        align-items:center;
+        justify-content:flex-start;
+        flex-wrap: wrap;
+        .images{
+          display: flex;
+          align-items:center;
+          justify-content:flex-start;
+          flex-wrap: wrap;
+        }
+        .bar_value{
+          display: flex;
+          align-items:center;
+          justify-content:flex-start;
+          flex-wrap: wrap;
+          .value{
+            margin-left: 5px;
+          }
+          .bar{
+            height: 25px;
+            background-color: rgb(206, 30, 30);
+          }
+        }
+  
+        .wrapper_imgPartido{
+          img{
+            width: 50px;
+            height: 50px;
+          }
+        }
+        .wrapper_imgCandidato{
+          img{
+            width: 32px;
+            height: 45px;
+          }
+        }
+  
+      }
+      .actions{
+
+      }
+    }
+
+  }
+}
+
+
+
+.title{
+  display: flex;
+  align-items:center;
+  justify-content:center; 
+  flex-direction: column;
+  text-align: center;
+
+}
+
+
+.newTest{
+  display: flex;
+  align-items:center;
+  justify-content:center; 
+  .button_newTest{
+    font-size: 30px;
+    width: 250px;
+    height: 40px;
+  }
+}
+
+.fuentes{
+  display: flex;
+  align-items:flex-start;
+  justify-content:flex-start; 
+  flex-direction: column;
+  flex-wrap: wrap;
+  .logos{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-around; 
+    flex-wrap: wrap;
+
+    .up{
+      img{
+        width: 270px;
+        height: 135px;
+      }
+    }
+    .un{
+      img{
+        width: 310px;
+        height: 90px;
+      }
+    }
+  }
+  .url_pdf{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+h1{
+  color: #3386FF;
+}
+h3{
+  font-size: 30px;
+}
+p{
+  font-size: 24px;
+  margin: 0;
+  padding: 5px 0px;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #3D94FC!important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #3D94FC;
+}
+
+
+@media only screen and (max-width: 450px) {
+  .navigation{
+    button{
+      font-size: 16px;
+      width: 125px;
+      height: 30px;
+    }
+  }
+
+
+  .wrapper_questions{
+    min-height: 200px;
+    .checkbox{
+      font-size: 16px;
+    }
+  }
+  
+  .wrapper_results{
+    .results{
+      .result{
+        display: flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap: nowrap;
+        .wrapper-bars{
+          width: 300px;
+          .wrapper_imgPartido{
+            img{
+              width: 30px;
+              height: 30px;
+            }
+          }
+          .wrapper_imgCandidato{
+            img{
+              width: 22px;
+              height: 30px;
+            }
+          }
+        }
+        .actions{
+
+        }
+      }
+    }
+
+  }
+  .wrapper_ods_list{
+    .wrapper_button{
+      img{
+        width: 100px;
+        height: 100px;
+        margin:5px -5px;
+      }
+    }
+  }
+
+  .wrapper_questions{
+    margin-top: 20px;
+    .checkbox_wrapper{
+      max-width: 300px;
+      .checkbox{
+        font-size: 15px;
+        max-width: 300px;
+        .checkbox-text{
+          max-width: 300px;
+          display: inline-block;
+          word-wrap: break-word;
+        }
+
+      }
+    }
+
+  }
+  .newTest{
+    .button_newTest{
+      font-size: 20px;
+      width: 200px;
+      height: 35px;
+    }
+  }
+
+  .fuentes{
+    display: flex;
+    align-items:flex-start;
+    justify-content:flex-start; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 300px;
+    .logos{
+      width: 100%;
+      display: flex;
+      align-items:center;
+      justify-content:space-between; 
+      flex-wrap: wrap;
+    }
+    .url_pdf{
+      max-width: 300px;
+      a{
+        max-width: 300px;
+      }
+    }
+  }
+
+  h1{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 20px;
+  }
+  p{
+    font-size: 16px;
+  }
+
+  
+}
+
+// ::ng-deep .mat-checkbox .mat-checkbox-label {
+//   width: 300px;
+//   word-wrap: break-word;
+//   display: inline-block;
+//   .mat-checkbox-label { // NEW
+//     white-space: initial; // NEW
+//   } // NEW
+//   // TODO(kara): Remove this style when fixing vertical baseline
+//   .mat-checkbox-layout .mat-checkbox-label {
+//     line-height: 20px;
+//   }
+// }
+

@@ -12,9 +12,10 @@ import { ComoVotarComponent } from './paginas/como-votar/como-votar.component';
 import { AyudaComponent } from './paginas/ayuda/ayuda.component';
 import { CandidatoNomepresentaComponent } from "./paginas/candidato-nomepresenta/candidato-nomepresenta.component";
 import { CandidatoSimerepresentaComponent } from "./paginas/candidato-simerepresenta/candidato-simerepresenta.component";
+import { QuizComponent } from "./paginas/quiz/quiz.component";
 
 const routes: Routes = [
-  { path: '',   redirectTo: 'partidos/.', pathMatch: 'full' }, 
+  { path: '',   redirectTo: 'quiz/.', pathMatch: 'full' }, 
   { path: 'partidos/.', component: PartidosComponent },
   { path: 'partido/:id/.', component: DetalleComponent},
   { path: 'candidatos/.', component: CandidatosComponent },
@@ -26,12 +27,14 @@ const routes: Routes = [
   { path: 'comovotar/.', component: ComoVotarComponent },
   { path: 'ayuda/.', component: AyudaComponent },
   { path: 'planesdegobierno/.', component: PlanesGobiernoComponent },
+  { path: 'quiz/.', component: QuizComponent },
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
+    initialNavigation: 'enabled',
+    relativeLinkResolution: 'legacy'
 })],
   exports: [RouterModule]
 })

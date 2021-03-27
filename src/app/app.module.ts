@@ -42,6 +42,8 @@ import { ListadoCongresistaComponent } from './paginas/partido-detalle/listado-c
 import { SharedModule } from './shared/shared.module';
 import { HistoriaPartidoComponent } from './paginas/partido-detalle/historia-partido/historia-partido.component';
 import { PartidoPlanGobiernoComponent } from './paginas/partido-detalle/partido-plan-gobierno/partido-plan-gobierno.component';
+import { NivelPropuestasComponent } from '../app/paginas/planes-gobierno/nivel-propuestas/nivel-propuestas.component';
+import { ComparativoAnalisisComponent } from '../app/paginas/planes-gobierno/comparativo-analisis/comparativo-analisis.component';
 
 /*Componentes Candidato */
 import { CandidatosComponent } from '../app/paginas/candidatos/candidatos.component';
@@ -91,6 +93,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     AyudaComponent,
     CandidatoNomepresentaComponent,
     CandidatoSimerepresentaComponent,
+    NivelPropuestasComponent, 
+    ComparativoAnalisisComponent,
 /*Componentes Candidato */
     CandidatosComponent,
     CandidatoPresidenteComponent,
@@ -118,6 +122,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     AyudaComponent,
     CandidatoNomepresentaComponent,
     CandidatoSimerepresentaComponent,
+    NivelPropuestasComponent, 
+    ComparativoAnalisisComponent,
     
     /*Componentes Candidato */
     CandidatosComponent,

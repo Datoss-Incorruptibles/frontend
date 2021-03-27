@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from "src/app/servicios/restapi.service";
 import { ods } from './ods';
 import { results } from './results';
 
@@ -20,7 +21,9 @@ export class QuizComponent implements OnInit {
   minToStart = 0
   minToFinish = false;
   isLastQuestion = false;
-  constructor() {     
+  widthScreen = this.restApi.widthScreen;
+
+  constructor(private restApi:RestApiService) {     
   }
 
 

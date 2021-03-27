@@ -85,14 +85,15 @@
   <div class="results">
     <div *ngFor="let partido of results">
       <div class="wrapper-bars">
-        <div>
+        <div class="wrapper_imgPartido">
           <img src="{{partido.imgPartido}}" alt="">
         </div>
-        <div>
+        <div class="wrapper_imgCandidato">
           <img src="{{partido.imgCandidato}}" alt="">
         </div>
-        <div>
-          <div class="bar" [ngStyle]="{width: partido.value * 15 + 'px'}"></div>
+        <div>          
+          <div class="bar" [ngStyle]="{ width: widthScreen > 500 ?  partido.value * 15  + 'px' : partido.value * 4  + 'px'}"></div>
+          <!-- <div *ngIf="expression" class="bar" [ngStyle]="{width: partido.value * 15 + 'px'}"></div> -->
         </div>
         <div>{{partido.value}}</div>
       </div>

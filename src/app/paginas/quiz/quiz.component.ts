@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestApiService } from "src/app/servicios/restapi.service";
 import { ods } from './ods';
 import { results } from './results';
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-quiz',
@@ -24,11 +25,26 @@ export class QuizComponent implements OnInit {
   widthScreen = this.restApi.widthScreen;
   numberQA = 0;
 
-  constructor(private restApi:RestApiService) {     
+  constructor(private restApi:RestApiService,
+    private title: Title,
+    private meta: Meta) {     
   }
 
 
   ngOnInit(): void {
+    this.title.setTitle("Quiz | Planes de partido");
+    this.meta.updateTag({name: "description", content:"Conoce los planes de partidos políticos que tengan tus mismas metas para el Perú"});
+
+    this.meta.updateTag({property: "og:title", content:"Quiz | Planes de partido"});
+    this.meta.updateTag({property: "og:description", content:"Conoce los planes de partidos políticos que tengan tus mismas metas para el Perú"});
+
+    this.meta.updateTag({property: "og:type", content:"website"});
+    this.meta.updateTag({property: "og:image:type", content:"image/jpg"});
+    this.meta.updateTag({property: "og:image:width", content:"1200"});
+    this.meta.updateTag({property: "og:image:height", content:"635"});
+
+    this.meta.updateTag({property: "og:url", content:"https://www.candidatos.pe/quiz/"});
+    this.meta.updateTag({property: "og:image", content:"https://res.cloudinary.com/dv2q4mh6c/image/upload/v1616898915/candidatos/share/quiz_w93cya.jpg"});
   }
 
   nextQuestions(){

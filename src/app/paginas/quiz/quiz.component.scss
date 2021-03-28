@@ -159,8 +159,8 @@
 
 .fuentes{
   display: flex;
-  align-items:flex-start;
-  justify-content:flex-start; 
+  align-items:center;
+  justify-content:center; 
   flex-direction: column;
   flex-wrap: wrap;
   .logos{
@@ -326,7 +326,7 @@ p{
       flex-wrap: wrap;
       .up{
         img{
-          width: 180px;
+          width: 160px;
           height: 45px;
         }
       }
@@ -357,7 +357,7 @@ p{
 
   .titles{
     .revisa{
-      font-size: 8px;
+      font-size: 12px;
     }
   }
   

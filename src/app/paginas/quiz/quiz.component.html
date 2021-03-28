@@ -156,6 +156,15 @@
         2030 y los Planes de Gobierno</a> 
       </h4>
   </div>
+  <div class="newTest" *ngIf="step == '2'">
+    <div>
+      <button mat-raised-button class="button_newTest"
+      (click)="startAgain()" >
+      <span class="material-icons"> keyboard_return</span>
+     Reiniciar
+    </button>
+    </div>
+  </div>
   <div class="logos">
     <div class="un">
       <img src="https://www.unicef.org/peru/sites/unicef.org.peru/files/2019-12/Logo%20Naciones%20Unidas.jpg" alt="">
@@ -166,12 +175,3 @@
   </div>
 </div>
 
-<div class="newTest" *ngIf="step == '2'">
-  <div>
-    <button mat-raised-button class="button_newTest"
-    (click)="startAgain()" >
-    <span class="material-icons"> keyboard_return</span>
-   Reiniciar
-  </button>
-  </div>
-</div>

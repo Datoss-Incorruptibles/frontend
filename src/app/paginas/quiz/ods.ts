@@ -223,7 +223,7 @@ export var ods = [{
         { id: 22, score: 0 },
         { id: 14, score: 1 },
         { id: 21, score: 0.5 },
-        { id: 5, score: 1 },
+        { id: 5, score: 0 },
         { id: 47, score: 0.5 }
       ]
 

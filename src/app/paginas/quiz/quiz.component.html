@@ -1,4 +1,4 @@
-<div *ngIf="step == '0'" class="title">
+<div *ngIf="step == '0'" class="titles">
   <!-- <h1>¿Qué temas son importantes para ti?</h1> -->
   <h1>
     Objetivos de desarrolo sostenible de la agenda 2030 vs planes de gobierno
@@ -8,7 +8,7 @@
   </p>
 </div>
 
-<div *ngIf="step == '1'" class="title">
+<div *ngIf="step == '1'" class="titles">
   <div>
     <h1>
       Objetivos de desarrolo sostenible de la agenda 2030 vs planes de gobierno
@@ -67,40 +67,56 @@
 </div>
 
 <div *ngIf="step == '2'" class="wrapper_results">
-  <div>
+  <div class="titles">
     <h1 class="title">
       Objetivos de desarrolo sostenible de la agenda 2030 vs planes de gobierno
     </h1>
-    <p>
+    <!-- <p>
       Las metas seleccionadas tienen esta prioridad en los planes de gobierno
+    </p> -->
+    <p>
+      % de vinculación de metas seleccionadas con los planes de gobierno <br>
+    </p>
+    <p class="revisa">
+      Revisa el detalle del plan de gobierno,
+      para ver si las acciones a realizar corresponden con tus ideales.
     </p>
   </div>
   <div class="results">
-    <div *ngFor="let result of results" class="result">
-        <div class="wrapper-bars">
-          <div class="images">
-            <div class="wrapper_imgPartido">
-              <img src="{{result.imgPartido}}" alt="">
-            </div>
-            <div class="wrapper_imgCandidato">
-              <img src="{{result.imgCandidato}}" alt="">
-            </div>
-          </div>
-          <div class="bar_value"> 
-            <!-- background-color: #3D94FC; -->
-         
-            <div class="bar" 
-            [ngStyle]="{ 'width': widthScreen > 500 ?  result.value * 100/numberQA * 6  + 'px' : result.value * 100/numberQA * 2  + 'px',
-                         'background-color': (result.value * 100/numberQA )  > 50 ?  '#3D94FC' : '#FF005C' }"></div>
-            <div class="value">{{(result.value * 100/numberQA).toFixed(0)}} %</div>
-          </div>
+    <div *ngFor="let result of results; let i = index" class="wrapper_result">
+        <div *ngIf="i == 0" class="wp_tupartido">
+          <span class="tupartido">
+            Partido con el que tus metas se alinean más
+          </span>
         </div>
-        <div class="actions">
-          <!-- Mas sobre el partido -->
-          <a mat-icon-button color="warn" href="/candidato/{{result.idCandidato}}/">
-            <mat-icon>keyboard_arrow_right</mat-icon>
-          </a>
-          <!-- routerLink="/candidato/{{candidato.jne_idhojavida}}/." -->
+        <div *ngIf="i == 1" class="wp_demaspartidos">
+          <span class="demaspartidos">
+            Demás partidos
+          </span>
+        </div>
+        <div class="result">
+          <div class="wrapper-bars" >
+            <div class="images">
+              <a class="wrapper_imgPartido" href="/partido/{{result.idDb}}/" target="_blank">
+                <img src="{{result.imgPartido}}" alt="">
+              </a>
+              <a class="wrapper_imgCandidato" href="/candidato/{{result.idCandidato}}/" target="_blank">
+                <img src="{{result.imgCandidato}}" alt="">
+              </a>
+            </div>
+            <div class="bar_value"> 
+              <!-- background-color: #3D94FC; -->
+              <div class="bar" 
+              [ngStyle]="{ 'width': widthScreen > 500 ?  result.value * 100/numberQA * 6  + 'px' : result.value * 100/numberQA * 2  + 'px',
+                           'background-color': (result.value * 100/numberQA )  > 50 ?  '#3D94FC' : '#FF005C' }"></div>
+              <div class="value">{{(result.value * 100/numberQA).toFixed(0)}} %</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a mat-icon-button color="warn" href="/candidato/{{result.idCandidato}}/" target="_blank">
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </a>
+          </div>
         </div>
     </div>
   </div>
@@ -123,17 +139,17 @@
   </div>
 </div>
 
-<div class="newTest" *ngIf="step == '2'">
-  <div>
-    <button mat-raised-button class="button_newTest"
-    (click)="startAgain()" >
-    <span class="material-icons"> keyboard_return</span>
-   Reiniciar
-  </button>
-  </div>
-</div>
+
 
 <div class="fuentes" *ngIf="step == '2'">
+  <div class="url_pdf">
+    <h4> Fuente:
+      <a target="_blank" href="http://sisisemail.up.edu.pe/sisisemail/docs/2021/157/Los-Objetivos-de-Desarrollo-Sostenible-de-la-Agenda-2030-y-los-Planes-de-Gobierno.pdf" >    
+        Los Objetivos de
+        Desarrollo Sostenible de la Agenda
+        2030 y los Planes de Gobierno</a> 
+      </h4>
+  </div>
   <div class="logos">
     <div class="un">
       <img src="https://www.unicef.org/peru/sites/unicef.org.peru/files/2019-12/Logo%20Naciones%20Unidas.jpg" alt="">
@@ -142,12 +158,15 @@
       <img src="https://www.up.edu.pe/UP_Landing/dia-de-la-gestion-publica/img/logo_up.png" alt="">
     </div>
   </div>
-  <div class="url_pdf">
-    <h4> Fuente:
-      <a target="_blank" href="http://sisisemail.up.edu.pe/sisisemail/docs/2021/157/Los-Objetivos-de-Desarrollo-Sostenible-de-la-Agenda-2030-y-los-Planes-de-Gobierno.pdf" >    
-        Los Objetivos de
-        Desarrollo Sostenible de la Agenda
-        2030 y los Planes de Gobierno</a> 
-      </h4>
+
+</div>
+
+<div class="newTest" *ngIf="step == '2'">
+  <div>
+    <button mat-raised-button class="button_newTest"
+    (click)="startAgain()" >
+    <span class="material-icons"> keyboard_return</span>
+   Reiniciar
+  </button>
   </div>
 </div>

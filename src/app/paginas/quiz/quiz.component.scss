@@ -60,52 +60,62 @@
     flex-direction: column;
     margin: 20px 0;
 
-    .result{
+    .wrapper_result{
+      // margin: 5px 0;
       display: flex;
       align-items:center;
-      justify-content:space-between;
+      justify-content:center; 
+      flex-direction: column;
       flex-wrap: wrap;
-
-      .wrapper-bars{
-        width: 800px;
-        background-color: aliceblue;
+      .result{
         display: flex;
         align-items:center;
-        justify-content:flex-start;
+        justify-content:center; 
         flex-wrap: wrap;
-        .images{
+
+        .wrapper-bars{
+          width: 800px;
+          background-color: aliceblue;
           display: flex;
           align-items:center;
           justify-content:flex-start;
           flex-wrap: wrap;
-        }
-        .bar_value{
-          display: flex;
-          align-items:center;
-          justify-content:flex-start;
-          flex-wrap: wrap;
-          .value{
-            margin-left: 5px;
+          .images{
+            display: flex;
+            align-items:center;
+            justify-content:flex-start;
+            flex-wrap: wrap;
           }
-          .bar{
-            height: 25px;
+          .bar_value{
+            display: flex;
+            align-items:center;
+            justify-content:flex-start;
+            flex-wrap: wrap;
+            .value{
+              margin-left: 5px;
+            }
+            .bar{
+              height: 25px;
+            }
           }
-        }
-  
-        .wrapper_imgPartido{
-          img{
-            width: 50px;
-            height: 50px;
+    
+          .wrapper_imgPartido{
+            img{
+              width: 50px;
+              height: 50px;
+            }
           }
-        }
-        .wrapper_imgCandidato{
-          img{
-            width: 32px;
-            height: 45px;
+          .wrapper_imgCandidato{
+            img{
+              width: 32px;
+              height: 45px;
+            }
           }
+    
         }
-  
       }
+
+
       .actions{
 
       }
@@ -114,16 +124,20 @@
   }
 }
 
-
-
-.title{
+.titles{
   display: flex;
   align-items:center;
   justify-content:center; 
   flex-direction: column;
   text-align: center;
-
+  .title{
+  }
+  .revisa{
+    font-size: 14px;
+  }
 }
+
+
 
 
 .newTest{
@@ -182,6 +196,22 @@ p{
   padding: 5px 0px;
 }
 
+.wp_tupartido{
+  text-align: center;
+  .tupartido{
+    font-size: 20px;
+  }
+}
+
+.wp_demaspartidos{
+  margin-top: 20px;
+  text-align: center;
+  .demaspartidos{
+    font-size: 20px;
+  }
+}
+
+
 ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
   opacity: 0.03 !important;
   background-color: #3D94FC!important;
@@ -211,29 +241,31 @@ p{
   
   .wrapper_results{
     .results{
-      .result{
-        display: flex;
-        align-items:center;
-        justify-content:space-between;
-        flex-wrap: nowrap;
-        .wrapper-bars{
-          width: 300px;
-          .wrapper_imgPartido{
-            img{
-              width: 30px;
-              height: 30px;
-            }
-          }
-          .wrapper_imgCandidato{
-            img{
-              width: 22px;
-              height: 30px;
-            }
-          }
-        }
-        .actions{
+      
+      .wrapper_result{
+        flex-wrap: wrap;
+        .result{
+          flex-wrap: wrap;
 
-        }
+          .wrapper-bars{
+            width: 300px;
+            .wrapper_imgPartido{
+              img{
+                width: 30px;
+                height: 30px;
+              }
+            }
+            .wrapper_imgCandidato{
+              img{
+                width: 22px;
+                height: 30px;
+              }
+            }
+          }
+          .actions{
+
+            }
+          }
       }
     }
 
@@ -317,7 +349,24 @@ p{
     font-size: 12px;
   }
 
+  .titles{
+    .revisa{
+      font-size: 8px;
+    }
+  }
   
+  .wp_tupartido{
+    .tupartido{
+      font-size: 14px;
+    }
+  }
+  
+  .wp_demaspartidos{
+    margin-top: 10px;
+    .demaspartidos{
+      font-size: 14px;
+    }
+  }
 }
 
 // ::ng-deep .mat-checkbox .mat-checkbox-label {

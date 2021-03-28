@@ -15,7 +15,7 @@ import { CandidatoSimerepresentaComponent } from "./paginas/candidato-simerepres
 import { QuizComponent } from "./paginas/quiz/quiz.component";
 
 const routes: Routes = [
-  { path: '',   redirectTo: 'quiz/.', pathMatch: 'full' }, 
+  { path: '',   redirectTo: 'partidos/.', pathMatch: 'full' }, 
   { path: 'partidos/.', component: PartidosComponent },
   { path: 'partido/:id/.', component: DetalleComponent},
   { path: 'candidatos/.', component: CandidatosComponent },

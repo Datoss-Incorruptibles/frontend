@@ -19,7 +19,6 @@ export class CardCandidatoComponent implements OnInit {
   urlProd = "https://www.candidatos.pe";
 
   status;
-  // ids;
   constructor() { }
 
 

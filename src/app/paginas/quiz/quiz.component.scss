@@ -78,26 +78,32 @@
           background-color: aliceblue;
           display: flex;
           align-items:center;
-          justify-content:flex-start;
+          justify-content:space-between;
           flex-wrap: wrap;
-          .images{
+          .image_bar_value{
             display: flex;
-            align-items:center;
-            justify-content:flex-start;
             flex-wrap: wrap;
-          }
-          .bar_value{
-            display: flex;
-            align-items:center;
-            justify-content:flex-start;
-            flex-wrap: wrap;
-            .value{
-              margin-left: 5px;
+
+            .images{
+              display: flex;
+              align-items:center;
+              justify-content:flex-start;
+              flex-wrap: wrap;
             }
-            .bar{
-              height: 25px;
+            .bar_value{
+              display: flex;
+              align-items:center;
+              justify-content:flex-start;
+              flex-wrap: wrap;
+              .value{
+                margin-left: 5px;
+              }
+              .bar{
+                height: 25px;
+              }
             }
           }
+
     
           .wrapper_imgPartido{
             img{

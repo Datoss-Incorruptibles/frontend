@@ -820,17 +820,17 @@ export var ods = [{
         { id: 2173, score: 0 },
         { id: 2191, score: 0 },
         { id: 2160, score: 0 },
-        { id: 1264, score: 0.5 },
+        { id: 1264, score: 1 },
         { id: 1366, score: 0.5 },
-        { id: 2840, score: 0.5},
+        { id: 2840, score: 1},
         { id: 179, score: 0 },
-        { id: 2218, score: 0.5 },
-        { id: 55, score: 0 },
-        { id: 2731, score: 0.5 },
+        { id: 2218, score: 0 },
+        { id: 55, score: 1 },
+        { id: 2731, score: 1 },
         { id: 15, score: 0 },
-        { id: 22, score: 0 },
-        { id: 14, score: 0 },
-        { id: 21, score: 0.5 },
+        { id: 22, score: 1 },
+        { id: 14, score: 1 },
+        { id: 21, score: 1},
         { id: 5, score: 0.5 },
         { id: 47, score: 0.5 }
       ]
@@ -857,7 +857,7 @@ export var ods = [{
         { id: 14, score: 0 },
         { id: 21, score: 1 },
         { id: 5, score: 0.5 },
-        { id: 47, score: 1 }
+        { id: 47, score: 0 }
       ]
     },
     {

@@ -1,7 +1,7 @@
 <div *ngIf="step == '0'" class="title">
   <!-- <h1>¿Qué temas son importantes para ti?</h1> -->
   <h1>
-    OBJETIVOS DE DESARROLLO SOSTENIBLE DE LA AGENDA 2030 vs PLANES DE GOBIERNO
+    Objetivos de desarrolo sostenible de la agenda 2030 vs planes de gobierno
   </h1>
   <p>
     Elige  5 ó más Objetivos que consideres necesarios para ver si se incluyen en los planes de gobierno.
@@ -11,7 +11,7 @@
 <div *ngIf="step == '1'" class="title">
   <div>
     <h1>
-      OBJETIVOS DE DESARROLLO SOSTENIBLE DE LA AGENDA 2030 vs PLANES DE GOBIERNO
+      Objetivos de desarrolo sostenible de la agenda 2030 vs planes de gobierno
     </h1>
     <p>
       Selecciona las metas que consideres más relevantes
@@ -69,7 +69,7 @@
 <div *ngIf="step == '2'" class="wrapper_results">
   <div>
     <h1 class="title">
-      OBJETIVOS DE DESARROLLO SOSTENIBLE DE LA AGENDA 2030 vs PLANES DE GOBIERNO
+      Objetivos de desarrolo sostenible de la agenda 2030 vs planes de gobierno
     </h1>
     <p>
       Las metas seleccionadas tienen esta prioridad en los planes de gobierno
@@ -86,9 +86,13 @@
               <img src="{{result.imgCandidato}}" alt="">
             </div>
           </div>
-          <div class="bar_value">          
-            <div class="bar" [ngStyle]="{ width: widthScreen > 500 ?  result.value * 100/numberQA * 6  + 'px' : result.value * 100/numberQA * 2  + 'px'}"></div>
-            <div class="value">{{(result.value * 100/numberQA).toFixed(2)}} %</div>
+          <div class="bar_value"> 
+            <!-- background-color: #3D94FC; -->
+         
+            <div class="bar" 
+            [ngStyle]="{ 'width': widthScreen > 500 ?  result.value * 100/numberQA * 6  + 'px' : result.value * 100/numberQA * 2  + 'px',
+                         'background-color': (result.value * 100/numberQA )  > 50 ?  '#3D94FC' : '#FF005C' }"></div>
+            <div class="value">{{(result.value * 100/numberQA).toFixed(0)}} %</div>
           </div>
         </div>
         <div class="actions">
@@ -105,11 +109,11 @@
   <div class="navigation">
     <div>
       <button mat-raised-button [disabled]="step == '0'"
-      (click)="backQuestions()" [ngClass]="{'disabled': step == '0' }">Atras</button>
+      (click)="backQuestions()" [ngClass]="{'disabled': step == '0' }">Anterior</button>
     </div>
     <div>
       <button mat-raised-button [disabled]="minToStart < 5" 
-       (click)="nextQuestions()" [ngClass]="{'disabled': minToStart < 5 }">Continuar</button>
+       (click)="nextQuestions()" [ngClass]="{'disabled': minToStart < 5 }">Siguiente</button>
       
        <!-- <button mat-raised-button [disabled]="disabledButtonQ" 
        *ngIf="step == '1'"
@@ -123,7 +127,7 @@
     <button mat-raised-button class="button_newTest"
     (click)="startAgain()" >
     <span class="material-icons"> keyboard_return</span>
-    Nuevo test
+   Reiniciar
   </button>
   </div>
 </div>

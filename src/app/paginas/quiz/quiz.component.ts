@@ -32,10 +32,10 @@ export class QuizComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.title.setTitle("Quiz | Planes de partido");
+    this.title.setTitle("Test | Planes de partido");
     this.meta.updateTag({name: "description", content:"Conoce los planes de partidos políticos que tengan tus mismas metas para el Perú"});
 
-    this.meta.updateTag({property: "og:title", content:"Quiz | Planes de partido"});
+    this.meta.updateTag({property: "og:title", content:"Test | Planes de partido"});
     this.meta.updateTag({property: "og:description", content:"Conoce los planes de partidos políticos que tengan tus mismas metas para el Perú"});
 
     this.meta.updateTag({property: "og:type", content:"website"});
@@ -43,7 +43,7 @@ export class QuizComponent implements OnInit {
     this.meta.updateTag({property: "og:image:width", content:"1200"});
     this.meta.updateTag({property: "og:image:height", content:"635"});
 
-    this.meta.updateTag({property: "og:url", content:"https://www.candidatos.pe/quiz/"});
+    this.meta.updateTag({property: "og:url", content:"https://www.candidatos.pe/test/"});
     this.meta.updateTag({property: "og:image", content:"https://res.cloudinary.com/dv2q4mh6c/image/upload/v1616898915/candidatos/share/quiz_w93cya.jpg"});
   }
 

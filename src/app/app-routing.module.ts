@@ -15,7 +15,7 @@ import { CandidatoSimerepresentaComponent } from "./paginas/candidato-simerepres
 import { QuizComponent } from "./paginas/quiz/quiz.component";
 
 const routes: Routes = [
-  { path: '',   redirectTo: 'quiz/.', pathMatch: 'full' }, 
+  { path: '',   redirectTo: 'test/.', pathMatch: 'full' }, 
   { path: 'partidos/.', component: PartidosComponent },
   { path: 'partido/:id/.', component: DetalleComponent},
   { path: 'candidatos/.', component: CandidatosComponent },
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'comovotar/.', component: ComoVotarComponent },
   { path: 'ayuda/.', component: AyudaComponent },
   { path: 'planesdegobierno/.', component: PlanesGobiernoComponent },
-  { path: 'quiz/.', component: QuizComponent },
+  { path: 'test/.', component: QuizComponent },
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
 
 ];

@@ -8,8 +8,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;  
-
+  flex-direction: column;
+  h1 {
+    margin-bottom: 0px;
+  }
+  p {
+    font-size: x-small;
+  }  
 }
 h1{
   color: #63AAFF;
@@ -29,4 +34,14 @@ p{
   right: 0;
   width: 100%;
   height: 100%;
+}
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    width: 50%;
+    text-align: justify;
+  }
+  
 }

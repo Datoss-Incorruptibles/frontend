@@ -12,13 +12,18 @@
   h1 {
     margin-bottom: 0px;
   }
-  p {
+  a {
     font-size: x-small;
+    text-decoration: none;
+    color: black;
   }  
+  a:hover {
+    text-decoration: underline;
+  }
 }
 h1{
   color: #63AAFF;
-  width: 60%;
+  width: 75%;
   text-align: center;
 
 }
@@ -40,8 +45,8 @@ p{
   align-items: center;
   justify-content: center;
   p {
-    width: 50%;
-    text-align: justify;
+    width: 70%;
+    text-align: center;
   }
   
 }

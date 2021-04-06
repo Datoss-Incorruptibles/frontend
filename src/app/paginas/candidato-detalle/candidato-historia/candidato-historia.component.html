@@ -296,4 +296,45 @@
      
     </div>
   </mat-card>
+  <div class="card" *ngIf="candidato.info_adicional">
+    <div class="tile-wrapper">
+      <div>
+        <span class="title">
+          <label>Información Adicional</label>
+        </span>
+        <div >
+          <div *ngFor="let info of candidato.info_adicional" class="indicador-detail">
+            <div>
+              {{info.info}} 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" *ngIf="candidato.anotacion">
+    <div class="tile-wrapper">
+      <div>
+        <span class="title">
+          <label>Anotaciones</label>
+        </span>
+        <div >
+          <div *ngFor="let anotacion of candidato.anotacion" class="indicador-detail">
+            <div>
+              DICE:
+              <div [innerHTML]="anotacion.dice">
+              </div>
+            </div>
+            <div>
+              DEBE DECIR:
+              <div [innerHTML]="anotacion.debedecir">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>

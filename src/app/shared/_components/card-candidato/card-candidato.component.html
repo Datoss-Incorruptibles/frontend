@@ -1,7 +1,7 @@
 <mat-card class="card-politico">
     <!-- N° {{candidato.jne_posicion}}.  -->
-        <div class="header">
-            <div class="header-image-title">
+        <div class="header" >
+            <div class="header-image-title link" routerLink="/candidato/{{candidato.jne_idhojavida}}/.">
                 <div mat-card-avatar  class="header-image">
                     <img class="imgCandidato" src="{{candidato.ruta_archivo}}" />
                     <img class="imgPartido" src="{{candidato.organizacion_politica_logo}}" />

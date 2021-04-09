@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from "src/app/servicios/restapi.service";
 
 @Component({
   selector: 'app-como-votar',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComoVotarComponent implements OnInit {
   panelOpenState = false;
-
-  constructor() { }
+  widthScreen =  this.restApi.widthScreen
+  constructor(private restApi:RestApiService) { }
 
   ngOnInit(): void {
+   
+
   }
 
 }

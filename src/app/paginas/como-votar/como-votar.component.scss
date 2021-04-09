@@ -330,3 +330,12 @@
   }
 }
 
+
+.wp{
+  display: flex;
+  flex-wrap: wrap;
+  .dondevotar{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

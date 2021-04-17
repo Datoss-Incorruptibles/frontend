@@ -13,6 +13,7 @@ import { AyudaComponent } from './paginas/ayuda/ayuda.component';
 import { CandidatoNomepresentaComponent } from "./paginas/candidato-nomepresenta/candidato-nomepresenta.component";
 import { CandidatoSimerepresentaComponent } from "./paginas/candidato-simerepresenta/candidato-simerepresenta.component";
 import { QuizComponent } from "./paginas/quiz/quiz.component";
+import { SegundaVueltaComponent } from '../app/paginas/segunda-vuelta/segunda-vuelta.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: 'test/.', pathMatch: 'full' }, 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'ayuda/.', component: AyudaComponent },
   { path: 'planesdegobierno/.', component: PlanesGobiernoComponent },
   { path: 'test/.', component: QuizComponent },
+  { path: 'segundavuelta/.', component: SegundaVueltaComponent },
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
 
 ];

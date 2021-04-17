@@ -53,6 +53,7 @@ import { CandidatoDetalleComponent } from '../app/paginas/candidato-detalle/cand
 import { CandidatoHistoriaComponent } from '../app/paginas/candidato-detalle/candidato-historia/candidato-historia.component';
 import { CandidatoMediosComponent } from '../app/paginas/candidato-detalle/candidato-medios/candidato-medios.component';
 import { CandidatoPlanGobiernoComponent } from '../app/paginas/candidato-detalle/candidato-plan-gobierno/candidato-plan-gobierno.component';
+import { SegundaVueltaComponent } from '../app/paginas/segunda-vuelta/segunda-vuelta.component';
 
 /*Componentes especiales para compartir */
 import { CandidatoNomepresentaComponent } from '../app/paginas/candidato-nomepresenta/candidato-nomepresenta.component';
@@ -108,7 +109,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     CandidatoMediosComponent,
     CandidatoPlanGobiernoComponent,
     MilistaComponent,
-    QuizComponent
+    QuizComponent,
+    SegundaVueltaComponent
   ],
   exports:[
     PartidosComponent,
@@ -138,7 +140,8 @@ import { ProcessHTTPMsgService } from '../app/servicios/process-httpmsg.service'
     CandidatoMediosComponent,
     CandidatoPlanGobiernoComponent,
     MilistaComponent,
-    QuizComponent
+    QuizComponent,
+    SegundaVueltaComponent
 
   ],
   imports: [

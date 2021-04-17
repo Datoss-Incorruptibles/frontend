@@ -1,0 +1,41 @@
+.versus {
+    display: flex;
+    justify-content: space-around;
+    p {
+        text-align: center;
+    }
+    
+}
+.candidato {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-image{
+    /*display: flex;
+    justify-content: center;*/
+    position: relative;
+    //left: 45%;
+    width: 200px;
+    height: 240px;
+    .imgCandidato{
+        border-radius: 10%;
+        width: 162px;
+        height: 216px;
+        border: 1px solid;
+        //border-color: #C4C4C4;
+        border-color: #1b1b1b;
+        //border-color: rgb(232, 6, 6);
+    }
+    .imgPartido{
+        position: absolute;
+        right: 0px;
+        bottom:0px;
+        border-radius: 10px;
+        width: 50px; //antes 35px
+        height: 50px; //antes 35px
+        //border: 1px solid;
+        // border-color: black;
+    }
+}

@@ -1,0 +1,47 @@
+<div class="versus">
+    <div class="candidato">
+        <div class="header-image">
+            <img class="imgCandidato" src="{{candidato_1.ruta_archivo}}" />
+            <img class="imgPartido" src="{{candidato_1.organizacion_politica_logo}}" />
+        </div>
+
+        <mat-tab-group mat-stretch-tabs class="navigator">
+            <mat-tab label="Historia">
+                <app-candidato-historia [candidato]="candidato_1"></app-candidato-historia>
+            </mat-tab>
+
+            <mat-tab label="Plan Gobierno" *ngIf="candidato_1.cargo_id==1">
+                <app-candidato-plan-gobierno [candidato]="candidato_1"></app-candidato-plan-gobierno>
+            </mat-tab>
+    
+            <mat-tab label="Noticias">
+                <app-candidato-medios [candidato]="candidato_1"></app-candidato-medios>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <div class="candidato">
+        <div class="header-image">
+            <img class="imgCandidato" src="{{candidato_2.ruta_archivo}}" />
+            <img class="imgPartido" src="{{candidato_2.organizacion_politica_logo}}" />
+        </div>
+
+        <mat-tab-group mat-stretch-tabs class="navigator">
+            <mat-tab label="Historia">
+                <app-candidato-historia [candidato]="candidato_2"></app-candidato-historia>
+            </mat-tab>
+
+            <mat-tab label="Plan Gobierno" *ngIf="candidato_2.cargo_id==1">
+                <app-candidato-plan-gobierno [candidato]="candidato_2"></app-candidato-plan-gobierno>
+            </mat-tab>
+
+            <mat-tab label="Noticias">
+                <app-candidato-medios [candidato]="candidato_2"></app-candidato-medios>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+<!--
+    
+-->
+
+</div>

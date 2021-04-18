@@ -1,10 +1,17 @@
-<div class="versus">
-    <div class="candidato">
-        <div class="header-image">
-            <img class="imgCandidato" src="{{candidato_1.ruta_archivo}}" />
-            <img class="imgPartido" src="{{candidato_1.organizacion_politica_logo}}" />
-        </div>
+<div class="img-candidato">
+    <div class="header-image" id="header-image_1">
+        <img class="imgCandidato" src="{{candidato_1.ruta_archivo}}" (click)="mostrarCandidato_1()"/>
+        <img class="imgPartido" src="{{candidato_1.organizacion_politica_logo}}" />
+    </div>
 
+    <div class="header-image" id="header-image_2">
+        <img class="imgCandidato" src="{{candidato_2.ruta_archivo}}" (click)="mostrarCandidato_2()"/>
+        <img class="imgPartido" src="{{candidato_2.organizacion_politica_logo}}" />
+    </div>
+</div>
+
+<div class="versus">
+    <div class="candidato oculto" id="candidato_1">
         <mat-tab-group mat-stretch-tabs class="navigator">
             <mat-tab label="Historia">
                 <app-candidato-historia [candidato]="candidato_1"></app-candidato-historia>
@@ -20,12 +27,7 @@
         </mat-tab-group>
     </div>
 
-    <div class="candidato">
-        <div class="header-image">
-            <img class="imgCandidato" src="{{candidato_2.ruta_archivo}}" />
-            <img class="imgPartido" src="{{candidato_2.organizacion_politica_logo}}" />
-        </div>
-
+    <div class="candidato oculto" id="candidato_2">
         <mat-tab-group mat-stretch-tabs class="navigator">
             <mat-tab label="Historia">
                 <app-candidato-historia [candidato]="candidato_2"></app-candidato-historia>

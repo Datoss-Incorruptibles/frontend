@@ -18,6 +18,8 @@ mat-panel-title {
     max-width: 1100px;
     //color: #274482;
     font-weight: 400;
+    display: flex;
+    flex-direction: column;
 }
 .objetivo {
     padding: 0px 20px;

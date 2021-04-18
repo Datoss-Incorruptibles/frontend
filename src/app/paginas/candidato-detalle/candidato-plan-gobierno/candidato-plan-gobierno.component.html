@@ -3,7 +3,7 @@
 
         <div class="planGobierno">
             <div *ngIf="candidato.cargo_id==1" class="planes">
-                <a href="#">Presidencial</a>
+                <!--<a href="#">Presidencial</a>-->
             </div>
 
             <div *ngIf="candidato.cargo_id==5" class="planes">
@@ -51,7 +51,10 @@
                             <mat-accordion>
                                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                                     <mat-expansion-panel-header>
-                                        <mat-panel-title>Problema identificado: {{ onInitial(p.problema) }}</mat-panel-title>
+                                        <mat-panel-title> 
+                                            <p><b>Problema identificado:&nbsp;</b></p>
+                                            <p>{{ onInitial(p.problema) }} </p>
+                                        </mat-panel-title>
                                         <!--
                                         <mat-panel-description>
                                             {{panelOpenState ? 'Menos' : 'Más'}} información
@@ -98,12 +101,10 @@
                             <mat-accordion>
                                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                                     <mat-expansion-panel-header>
-                                        <mat-panel-title>Problema identificado: {{ onInitial(p.problema) }}</mat-panel-title>
-                                        <!--
-                                        <mat-panel-description>
-                                            {{panelOpenState ? 'Menos' : 'Más'}} información
-                                        </mat-panel-description>
-                                        -->
+                                        <mat-panel-title> 
+                                            <p><b>Problema identificado:&nbsp;</b></p>
+                                            <p>{{ onInitial(p.problema) }} </p>
+                                        </mat-panel-title>
                                     </mat-expansion-panel-header>
                                     <div class="objetivo">
                                         <p><b>Objetivo Estratégico (Solución al problema)</b></p>
@@ -135,12 +136,10 @@
                             <mat-accordion>
                                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                                     <mat-expansion-panel-header>
-                                        <mat-panel-title>Problema identificado: {{ onInitial(p.problema) }}</mat-panel-title>
-                                        <!--
-                                        <mat-panel-description>
-                                            {{panelOpenState ? 'Menos' : 'Más'}} información
-                                        </mat-panel-description>
-                                        -->
+                                        <mat-panel-title> 
+                                            <p><b>Problema identificado:&nbsp;</b></p>
+                                            <p>{{ onInitial(p.problema) }} </p>
+                                        </mat-panel-title>
                                     </mat-expansion-panel-header>
                                     <div class="objetivo">
                                         <p><b>Objetivo Estratégico (Solución al problema)</b></p>
@@ -172,12 +171,10 @@
                             <mat-accordion>
                                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                                     <mat-expansion-panel-header>
-                                        <mat-panel-title>Problema identificado: {{ onInitial(p.problema) }}</mat-panel-title>
-                                        <!--
-                                        <mat-panel-description>
-                                            {{panelOpenState ? 'Menos' : 'Más'}} información
-                                        </mat-panel-description>
-                                        -->
+                                        <mat-panel-title> 
+                                            <p><b>Problema identificado:&nbsp;</b></p>
+                                            <p>{{ onInitial(p.problema) }} </p>
+                                        </mat-panel-title>
                                     </mat-expansion-panel-header>
                                     <div class="objetivo">
                                         <p><b>Objetivo Estratégico (Solución al problema)</b></p>

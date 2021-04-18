@@ -36,4 +36,32 @@ export class SegundaVueltaComponent implements OnInit {
       this.showLoader = false;
     })
   }
+  mostrarCandidato_1 () {
+    let cand_1 = document.querySelector("#candidato_1")
+    let cand_2 = document.querySelector("#candidato_2")
+    let img_1 = document.querySelector("#header-image_1")
+    let img_2 = document.querySelector("#header-image_2")
+
+    if (cand_1.classList.contains("oculto")) {
+      cand_1.classList.remove("oculto")
+      cand_2.classList.add("oculto")
+
+      img_1.classList.add("elegido")
+      img_2.classList.remove("elegido")
+    }
+  }
+  mostrarCandidato_2 () {
+    let cand_1 = document.querySelector("#candidato_1")
+    let cand_2 = document.querySelector("#candidato_2")
+    let img_1 = document.querySelector("#header-image_1")
+    let img_2 = document.querySelector("#header-image_2")
+
+    if (cand_2.classList.contains("oculto")) {
+      cand_2.classList.remove("oculto")
+      cand_1.classList.add("oculto")
+
+      img_2.classList.add("elegido")
+      img_1.classList.remove("elegido")
+    }
+  }
 }

@@ -37,6 +37,30 @@
         // border-color: black;
     }
 }
+.nav-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    button {
+        margin: 10px 0px;
+        color: white;
+        background-color: #FF005C;
+        border: 0px;
+        border-radius: 15px;
+        padding: 3px 5px;
+    }
+    
+}
+.aviso {
+    display: none;
+    margin-top: 20px;
+    p {
+        font-size: 20px;
+        font-weight: 600;
+        color: #2c4484;
+        text-align: center;
+    }
+}
 @media only screen and (max-width: 450px) {
     .versus {
         flex-direction: column;
@@ -59,12 +83,15 @@
             height: 35px; //antes 35px
         }
     }
-    .oculto {
-        display: none;
-    }
     .elegido {
         border: 4px solid;
         border-color: #BD005C;
         border-radius: 10%;
+    }
+    .aviso {
+        display: block;
+    }
+    .oculto {
+        display: none;
     }
 }

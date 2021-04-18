@@ -41,6 +41,7 @@ export class SegundaVueltaComponent implements OnInit {
     let cand_2 = document.querySelector("#candidato_2")
     let img_1 = document.querySelector("#header-image_1")
     let img_2 = document.querySelector("#header-image_2")
+    let aviso = document.querySelector(".aviso")
 
     if (cand_1.classList.contains("oculto")) {
       cand_1.classList.remove("oculto")
@@ -48,6 +49,9 @@ export class SegundaVueltaComponent implements OnInit {
 
       img_1.classList.add("elegido")
       img_2.classList.remove("elegido")
+
+      aviso.classList.add("oculto")
+      
     }
   }
   mostrarCandidato_2 () {
@@ -55,6 +59,7 @@ export class SegundaVueltaComponent implements OnInit {
     let cand_2 = document.querySelector("#candidato_2")
     let img_1 = document.querySelector("#header-image_1")
     let img_2 = document.querySelector("#header-image_2")
+    let aviso = document.querySelector(".aviso")
 
     if (cand_2.classList.contains("oculto")) {
       cand_2.classList.remove("oculto")
@@ -62,6 +67,8 @@ export class SegundaVueltaComponent implements OnInit {
 
       img_2.classList.add("elegido")
       img_1.classList.remove("elegido")
+
+      aviso.classList.add("oculto")
     }
   }
 }

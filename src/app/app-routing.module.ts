@@ -16,7 +16,7 @@ import { QuizComponent } from "./paginas/quiz/quiz.component";
 import { SegundaVueltaComponent } from '../app/paginas/segunda-vuelta/segunda-vuelta.component';
 
 const routes: Routes = [
-  { path: '',   redirectTo: 'test/.', pathMatch: 'full' }, 
+  { path: '',   redirectTo: 'segundavuelta/.', pathMatch: 'full' }, 
   { path: 'partidos/.', component: PartidosComponent },
   { path: 'partido/:id/.', component: DetalleComponent},
   { path: 'candidatos/.', component: CandidatosComponent },

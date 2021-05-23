@@ -10,6 +10,7 @@ export class SegundaVueltaComponent implements OnInit {
   showLoader = false;
   candidato_1;
   candidato_2;
+  public tabIndex = 0; //presidentes 
 
   constructor(
     private restApi:RestApiService
@@ -70,5 +71,10 @@ export class SegundaVueltaComponent implements OnInit {
 
       aviso.classList.add("oculto")
     }
+  }
+
+  setearTab(number){
+     this.tabIndex = number; //presidentes 
+
   }
 }

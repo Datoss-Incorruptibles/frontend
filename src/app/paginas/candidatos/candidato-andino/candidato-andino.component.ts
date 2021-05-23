@@ -321,4 +321,9 @@ onFiltroOrganizacion(value: any){
       //console.log(this.masFiltros);
     }
   }
+
+  toggleElegidos(e){
+    console.log(e);
+    this.restApiService.checkedElecto = e ;
+  }
 }

@@ -32,4 +32,5 @@ export interface Candidato{
     indicadores: IndicadorCandidato[];
     medios: MedioCandidato[];
     postula: PostulaCandidato [];
+    votos_validos:number;
 }

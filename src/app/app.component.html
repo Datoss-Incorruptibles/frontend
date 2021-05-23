@@ -19,19 +19,33 @@
             </div>
             <!--h2 class="nav-caption">Candidatos.pe</h2--> 
             <!--hr/><br-->
-            <br>
+
+                <a mat-list-item routerLink="/segundavuelta/." routerLinkActive='active' (click)="sidenav.close()">
+                    <mat-icon></mat-icon> <span class="nav-caption">Segunda Vuelta</span>   
+                    </a>
+                <a mat-list-item routerLink="/partidos/." routerLinkActive='active' (click)="sidenav.close()">
+                     
+                     <mat-icon></mat-icon> <span class="nav-caption">Virtuales Elegidos</span>   
+
+                    </a>
+                <a mat-list-item routerLink="/candidatos/." routerLinkActive='active' (click)="sidenav.close()"> 
+                    
+                    <mat-icon></mat-icon> <span class="nav-caption">Candidatos</span>   
+                </a>
+
+            <!-- <br>
             <a mat-list-item routerLink="/partidos/." routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon> <span class="nav-caption">Partidos</span>   
             </a>
             <a mat-list-item routerLink="/candidatos/." routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon> <span class="nav-caption">Candidatos</span>   
-            </a>
+            </a> -->
             <!-- <a mat-list-item routerLink="/" routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon> <span class="nav-caption">Indicadores Generales</span>   
             </a> -->
             	
             <!--<hr />-->
-            <a mat-list-item  style="align-items: center;" routerLink="/milista/." routerLinkActive='active' (click)="sidenav.close()">
+            <!-- <a mat-list-item  style="align-items: center;" routerLink="/milista/." routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon><span class="nav-caption">Mi lista</span>
             </a>
 
@@ -40,7 +54,7 @@
             </a>
             <a mat-list-item  style="align-items: center;" routerLink="/comovotar/." routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon><span class="nav-caption">Como votar</span>
-            </a>
+            </a> -->
             <!--
             <a mat-list-item  style="align-items: center;" routerLink="/planesdegobierno/." routerLinkActive='active' (click)="sidenav.close()">
                 <mat-icon></mat-icon><span class="nav-caption">Planes de Gobierno</span>

@@ -1,49 +1,49 @@
 <div class="img-candidato">
     <div class="header-image" id="header-image_1">
-        <img class="imgCandidato" src="{{candidato_1.ruta_archivo}}" (click)="mostrarCandidato_1()"/>
-        <img class="imgPartido" src="{{candidato_1.organizacion_politica_logo}}" />
+        <img class="imgCandidato" *ngIf="candidato_1 && candidato_1.ruta_archivo" src="{{candidato_1.ruta_archivo}}" (click)="mostrarCandidato_1()"/>
+        <img class="imgPartido" *ngIf="candidato_1 && candidato_1.organizacion_politica_logo" src="{{candidato_1.organizacion_politica_logo}}" />
     </div>
 
     <div class="nav-bar">
-        <button>Historia</button>
-        <button>Plan de Gobierno</button>
-        <button>Noticias</button>
+        <button mat-button (click)="setearTab(0)">Historia</button>
+        <button mat-button (click)="setearTab(1)">Plan de Gobierno</button>
+        <button mat-button (click)="setearTab(2)">Noticias</button>
     </div>
 
     <div class="header-image" id="header-image_2">
-        <img class="imgCandidato" src="{{candidato_2.ruta_archivo}}" (click)="mostrarCandidato_2()"/>
-        <img class="imgPartido" src="{{candidato_2.organizacion_politica_logo}}" />
+        <img class="imgCandidato" *ngIf="candidato_2 && candidato_2.ruta_archivo" src="{{candidato_2.ruta_archivo}}" (click)="mostrarCandidato_2()"/>
+        <img class="imgPartido" *ngIf="candidato_2 && candidato_2.organizacion_politica_logo"  src="{{candidato_2.organizacion_politica_logo}}" />
     </div>
 </div>
 
-<div class="versus">
+<div class="versus" *ngIf="candidato_1 && candidato_2">
     <div class="candidato oculto" id="candidato_1">
-        <mat-tab-group mat-stretch-tabs class="navigator">
-            <mat-tab label="Historia">
+        <mat-tab-group mat-stretch-tabs [(selectedIndex)]="tabIndex" class="navigator">
+            <mat-tab >
                 <app-candidato-historia [candidato]="candidato_1"></app-candidato-historia>
             </mat-tab>
 
-            <mat-tab label="Plan Gobierno" *ngIf="candidato_1.cargo_id==1">
+            <mat-tab>
                 <app-candidato-plan-gobierno [candidato]="candidato_1"></app-candidato-plan-gobierno>
             </mat-tab>
     
-            <mat-tab label="Noticias">
+            <mat-tab>
                 <app-candidato-medios [candidato]="candidato_1"></app-candidato-medios>
             </mat-tab>
         </mat-tab-group>
     </div>
 
-    <div class="candidato oculto" id="candidato_2">
-        <mat-tab-group mat-stretch-tabs class="navigator">
-            <mat-tab label="Historia">
+    <div class="candidato oculto"  id="candidato_2">
+        <mat-tab-group mat-stretch-tabs class="navigator" [(selectedIndex)]="tabIndex">
+            <mat-tab >
                 <app-candidato-historia [candidato]="candidato_2"></app-candidato-historia>
             </mat-tab>
 
-            <mat-tab label="Plan Gobierno" *ngIf="candidato_2.cargo_id==1">
+            <mat-tab >
                 <app-candidato-plan-gobierno [candidato]="candidato_2"></app-candidato-plan-gobierno>
             </mat-tab>
 
-            <mat-tab label="Noticias">
+            <mat-tab >
                 <app-candidato-medios [candidato]="candidato_2"></app-candidato-medios>
             </mat-tab>
         </mat-tab-group>

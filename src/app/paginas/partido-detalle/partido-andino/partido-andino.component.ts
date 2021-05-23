@@ -221,4 +221,7 @@ export class PartidoAndinoComponent implements OnInit {
     this.getCanAndinosOnFilters();
 
   }
+  toggleElegidos(e){
+
+  }
 }

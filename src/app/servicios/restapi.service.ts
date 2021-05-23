@@ -16,6 +16,7 @@ export class RestApiService {
   // private domain: string = "https://api.candidatos.pe/v1/";
 
   widthScreen;    
+  checkedElecto = true;
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -47,6 +48,8 @@ export class RestApiService {
     // }
 
     let params = new HttpParams().set("limit",limit);
+    params = this.checkedElecto ? params.set('electo', 'true') : params.set('', '') ;            
+
     if(nextUrl){
       return this.http.get(`${nextUrl}`);
     }else{
@@ -70,6 +73,9 @@ export class RestApiService {
       limit = "5"
     }
     let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", limit);//Create new HttpParams
+    if(this.checkedElecto){
+      params = params.set('electo', 'true');            
+    }
     if(nextUrl){
       return this.http.get(`${nextUrl}`);
     }else{
@@ -78,12 +84,13 @@ export class RestApiService {
   }
 
   getPresidenteByOrganization(idOrganization: string,nextUrl?) {
-    let _url = this.domain + URL_API.candidato;
+    let _url = this.domain + URL_API.candidato ;
     let id_cargos = CHARGE.PRESIDENTE+ "," + CHARGE.PRIMER_VICEPRESIDENTE +","+CHARGE.SEGUNDO_VICEPRESIDENTE;
     let params = new HttpParams()
     .set("cargo_ids", id_cargos)
     .set("organizacion_politica_id", idOrganization) //Create new HttpParams
     .set("limit", "5"); //Create new HttpParams
+
 
     if(nextUrl){
       return this.http.get(`${nextUrl}`);
@@ -104,7 +111,9 @@ export class RestApiService {
       limit = "5"
     }
 
-    let params = new HttpParams().set("cargo_ids", id_cargos).set("limit", limit);//Create new HttpParams
+    let params = new HttpParams().set("cargo_ids", id_cargos).set("electo", "true").set("limit", limit);//Create new HttpParams
+    params = this.checkedElecto ? params.set('electo', 'true') :params.set('', '') ;            
+
     if(nextUrl){
       return this.http.get(`${nextUrl}`);
     }else{
@@ -126,11 +135,13 @@ export class RestApiService {
     .set("cargo_ids", CHARGE.CONGRESISTA)
     .set("organizacion_politica_id", idOrganization)
     .set("limit", limit); //Create new HttpParams
-      if(nextUrl){
-        return this.http.get(`${nextUrl}`);
-      }else{
-        return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
-      }
+    params = this.checkedElecto ? params.set('electo', 'true') :params.set('', '') ;            
+
+    if(nextUrl){
+      return this.http.get(`${nextUrl}`);
+    }else{
+      return this.http.get(_url,{ headers: this.httpOptions.headers, params: params});
+    }
     }
     
   getCongresistasByRegion(idUbigeos: string, nextUrl?) {
@@ -145,6 +156,8 @@ export class RestApiService {
       .set("cargo_ids", CHARGE.CONGRESISTA)
       .set("ubigeo_postula", idUbigeos)
       .set("limit", limit); //Create new HttpParams
+      params = this.checkedElecto ? params.set('electo', 'true') :params.set('', '') ;            
+
         if(nextUrl){
           return this.http.get(`${nextUrl}`);
         }else{
@@ -166,6 +179,8 @@ export class RestApiService {
       .set("organizacion_politica_id", idOrganization)
       .set("ubigeo_postula", idUbigeos)
       .set("limit", limit);//Create new HttpParams
+      params = this.checkedElecto ? params.set('electo', 'true') :params.set('', '') ;            
+
       if(nextUrl){
         return this.http.get(`${nextUrl}`);
       }else{
@@ -183,7 +198,10 @@ export class RestApiService {
       limit = "5"
     }
 
+    
     let params = new HttpParams().set("cargo_ids", CHARGE.PARLAMENTO_ANDINO).set("limit", limit); //Create new HttpParams
+    params = this.checkedElecto ? params.set('electo', 'true') : params.set('', '') ;            
+
     if(nextUrl){
       return this.http.get(`${nextUrl}`);
     }else{
@@ -203,6 +221,7 @@ export class RestApiService {
     .set("cargo_ids", CHARGE.PARLAMENTO_ANDINO)
     .set("organizacion_politica_id", idOrganization)
     .set("limit", limit); 
+    params = this.checkedElecto ? params.set('electo', 'true') : params.set('', '') ;            
 
       if(nextUrl){
         return this.http.get(`${nextUrl}`);
@@ -235,6 +254,8 @@ export class RestApiService {
     }
 
     let params = new HttpParams().set("ordering",ordering).set("limit",limit);
+    params = this.checkedElecto ? params.set('electo', 'true') : params.set('', '') ;            
+
     if(nextUrl){
       return this.http.get(`${nextUrl}`);
     }else{
@@ -257,6 +278,7 @@ export class RestApiService {
     .set("search",search)
     .set("limit",limit)
     .set("cargo_ids", id_cargos);
+    params = this.checkedElecto ? params.set('electo', 'true') :params.set('', '') ;            
 
     return this.http.get(_url,{ headers: this.httpOptions.headers, params: params}); 
 
@@ -276,6 +298,7 @@ export class RestApiService {
     .set("limit",limit)
     .set("cargo_ids", id_cargos)
     .set("organizacion_politica_id", idPartido);
+    params = this.checkedElecto ? params.set('electo', 'true') :params.set('', '') ;            
 
     return this.http.get(_url,{ headers: this.httpOptions.headers, params: params}); 
 
@@ -291,15 +314,18 @@ export class RestApiService {
       limit = "5"
     }
 
+
     let params = new HttpParams()
     .set("cargo_ids",cargo_ids)
     .set("limit",limit)
     .set("organizacion_politica_id",organizacion_politica_id)
     .set("ubigeo_postula",ubigeo_postula)
     .set("max_estudios_ids",max_estudios_ids)
-    .set("indicador_ids",indicador_ids);
+    .set("indicador_ids",indicador_ids)
+      params = this.checkedElecto ? params.set('electo', 'true') : params.set('', '') ;            
 
-   // console.log(params);
+
+   console.log(params);
     if(nextUrl){
       return this.http.get(`${nextUrl}`);
     }else{

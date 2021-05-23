@@ -25,6 +25,13 @@
                     </mat-select>
                 </mat-form-field>
               </div>
+              <div fxLayoutAlign="center center">
+                <mat-checkbox 
+                [checked]="true"
+                disabled
+                (change)="toggleElegidos($event.checked)" 
+                class="example-margin">Elegidos</mat-checkbox>
+            </div>
           </div>
           <!-- (unigeoIdSelect == '' || unigeoIdSelect == 'sinseleccion1' || unigeoIdSelect == '140100') && (orgIdSelect == 'sinseleccion2' || orgIdSelect == '')  -->
           <div fxLayoutAlign="center center" class="search" *ngIf="

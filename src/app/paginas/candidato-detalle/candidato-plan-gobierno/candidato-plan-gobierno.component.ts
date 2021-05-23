@@ -20,9 +20,9 @@ export class CandidatoPlanGobiernoComponent implements OnInit {
   ngOnInit(): void {
     //this.plan = this.restApiService.getPlanGobByPartidoId("1","1")
     //console.log(this.plan)
-    if (this.candidato.cargo_id==1){
+    if (this.candidato && this.candidato.cargo_id==1){
       this.getPlanGob("1")
-    } else if (this.candidato.cargo_id==5){
+    } else if (this.candidato && this.candidato.cargo_id==5){
       //console.log("CARGO_ID: "+this.candidato.cargo_id)
       this.getPlanGob("3")
     } else {

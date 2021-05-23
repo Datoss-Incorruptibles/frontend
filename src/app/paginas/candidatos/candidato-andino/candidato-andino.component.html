@@ -1,6 +1,6 @@
 <mat-progress-bar mode="indeterminate" *ngIf="!listParAndino" ></mat-progress-bar>
 <div *ngIf="listParAndino">
-    <div class="wraper-filtrado-search">
+    <!-- <div class="wraper-filtrado-search">
         <div class="filtrado"  fxLayout="row" fxLayoutAlign="space-around stretch" fxLayoutGap="5px"  *ngIf="!notesText">
             <div fxLayoutAlign="center center">      
                 <mat-form-field appearance="fill" class="filterOrg">
@@ -63,8 +63,14 @@
                 <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
         </div>
+    </div> -->
+    <div fxLayoutAlign="center center">
+        <mat-checkbox 
+        [checked]="true"
+        disabled
+        (change)="toggleElegidos($event.checked)" 
+        class="example-margin">Elegidos</mat-checkbox>
     </div>
-
 
         <div>
             <div

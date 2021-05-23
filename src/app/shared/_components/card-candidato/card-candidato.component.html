@@ -32,7 +32,13 @@
                         <p >{{candidato.profesion}} <br>                 
                         </p>
                     </div>
+                    <div>
+                        <h3>
+                            votos: {{candidato.votos_validos}}
+                        </h3>
+                    </div>
                 </div>
+               
                 <div class="number" *ngIf="candidato.cargo_id > 3 ">
                     {{candidato.jne_posicion}}
                 </div>

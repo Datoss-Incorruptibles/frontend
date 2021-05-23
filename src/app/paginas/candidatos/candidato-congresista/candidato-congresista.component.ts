@@ -280,4 +280,9 @@ export class CandidatoCongresistaComponent implements OnInit {
       //console.log(this.masFiltros);
     }
   }
+
+  toggleElegidos(e){
+    console.log(e);
+    this.restApiService.checkedElecto = e ;
+  }
 }

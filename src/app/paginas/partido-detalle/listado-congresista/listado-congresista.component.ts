@@ -304,5 +304,8 @@ export class ListadoCongresistaComponent implements OnInit {
       //console.log(this.masFiltros);
     }
   }
+  toggleElegidos(e){
+
+  }
 
 }

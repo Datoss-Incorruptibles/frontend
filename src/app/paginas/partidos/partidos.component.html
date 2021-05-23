@@ -2,7 +2,6 @@
     <div class="filtrado" fxLayoutAlign="center center">
         <mat-form-field appearance="fill" class="filter">
             <mat-label>Ordenado por</mat-label>
-            
             <mat-select (selectionChange)="onOrdernar($event.value)">
                 <mat-option value="nombre">Nombre A-Z</mat-option>
                 <mat-option value="-nombre">Nombre Z-A</mat-option>
@@ -11,7 +10,14 @@
                 <mat-option value="-sentencias">Más a Menos Sentencias</mat-option>
                 <mat-option value="sentencias">Menos a Más Sentencias</mat-option>
             </mat-select>
-        </mat-form-field>      
+        </mat-form-field>   
+        <div fxLayoutAlign="center center">
+            <mat-checkbox 
+            [checked]="true"
+            disabled
+            (change)="toggleElegidos($event.checked)" 
+            class="example-margin">Elegidos</mat-checkbox>
+        </div>   
     </div>
     <mat-progress-bar mode="indeterminate" *ngIf="partidos.length==0" ></mat-progress-bar>
     <div 

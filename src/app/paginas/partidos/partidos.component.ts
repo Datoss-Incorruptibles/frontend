@@ -162,4 +162,9 @@ export class PartidosComponent  {
     return cont;
   }
 
+  toggleElegidos(e){
+    console.log(e);
+    this.restApi.checkedElecto = e ;
+  }
+
 }
